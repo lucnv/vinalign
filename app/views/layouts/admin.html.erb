@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag  "admin/application", media: "all", "data-turbolinks-track": "reload" %>
+    <%= javascript_include_tag "admin/application", "data-turbolinks-track": "reload" %>
+  </head>
+
+  <body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+      <%= render "layouts/admin/header" %>
+      <%= render "layouts/admin/side_bar" %>
+
+      <div class="content-wrapper">
+        <div id="flash-messages">
+          <%= render "layouts/shared/flash" %>
+        </div>
+        <section class="content-header">
+        </section>
+        <section class="content">
+          <%= yield %>
+        </section>
+      </div>
+
+      <footer class="main-footer">
+      </footer>
+    </div>
+  </body>
+</html>

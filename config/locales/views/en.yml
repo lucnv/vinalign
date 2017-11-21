@@ -1,5 +1,17 @@
 en:
+  dictionary:
+    app_name: &app_name Vinalign
   devise:
     sessions:
       new: 
         login: Login
+  layouts:
+    admin:
+      header:
+        app_name: *app_name
+        admin: Admin
+        toggle_navigation: Toggle navigation
+        logo_short_title_html: <b>A</b>Vi
+      side_bar: 
+        online: Online
+        main_navigation: MAIN NAVIGATION

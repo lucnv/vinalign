@@ -5,6 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts "Create admin account"
+User.new(email: "admin@gmail.com", username: "admin", password: "123456", 
+  role: :admin, confirmed_at: Time.zone.now).save validate: false
+
 puts "Create bussiness users"
 5.times do |i|
   User.create! email: "business#{i+1}@gmail.com",
