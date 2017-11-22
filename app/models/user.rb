@@ -10,7 +10,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :confirmable, :recoverable, 
     :rememberable, :trackable, :validatable
 
-  enum role: [:business, :admin]
+  enum role: [:admin, :doctor]
 
 
   class << self
