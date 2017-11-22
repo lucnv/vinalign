@@ -10,10 +10,105 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171121040225) do
+ActiveRecord::Schema.define(version: 20171122182943) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "albums", force: :cascade do |t|
+    t.bigint "treatment_phase_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["treatment_phase_id"], name: "index_albums_on_treatment_phase_id"
+  end
+
+  create_table "clinics", force: :cascade do |t|
+    t.string "name"
+    t.string "phone_number"
+    t.bigint "district_id"
+    t.string "address"
+    t.string "website"
+    t.string "facebook"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["district_id"], name: "index_clinics_on_district_id"
+  end
+
+  create_table "districts", force: :cascade do |t|
+    t.bigint "province_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["province_id"], name: "index_districts_on_province_id"
+  end
+
+  create_table "doctor_profiles", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "clinic_id"
+    t.string "avatar"
+    t.string "first_name"
+    t.string "last_name"
+    t.date "dob"
+    t.integer "gender"
+    t.string "phone_number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["clinic_id"], name: "index_doctor_profiles_on_clinic_id"
+    t.index ["user_id"], name: "index_doctor_profiles_on_user_id"
+  end
+
+  create_table "images", force: :cascade do |t|
+    t.bigint "album_id"
+    t.string "source"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["album_id"], name: "index_images_on_album_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.bigint "treatment_phase_id"
+    t.bigint "sender_id"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["sender_id"], name: "index_messages_on_sender_id"
+    t.index ["treatment_phase_id"], name: "index_messages_on_treatment_phase_id"
+  end
+
+  create_table "patient_records", force: :cascade do |t|
+    t.bigint "clinic_id"
+    t.date "start_date"
+    t.string "first_name"
+    t.string "last_name"
+    t.date "dob"
+    t.integer "gender"
+    t.bigint "district_id"
+    t.string "phone_number"
+    t.string "email"
+    t.string "fax"
+    t.string "doctor"
+    t.string "profile_photo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["clinic_id"], name: "index_patient_records_on_clinic_id"
+    t.index ["district_id"], name: "index_patient_records_on_district_id"
+  end
+
+  create_table "provinces", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "treatment_phases", force: :cascade do |t|
+    t.bigint "patient_record_id"
+    t.string "name"
+    t.date "start_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["patient_record_id"], name: "index_treatment_phases_on_patient_record_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -40,4 +135,14 @@ ActiveRecord::Schema.define(version: 20171121040225) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "albums", "treatment_phases"
+  add_foreign_key "clinics", "districts"
+  add_foreign_key "districts", "provinces"
+  add_foreign_key "doctor_profiles", "clinics"
+  add_foreign_key "doctor_profiles", "users"
+  add_foreign_key "images", "albums"
+  add_foreign_key "messages", "treatment_phases"
+  add_foreign_key "patient_records", "clinics"
+  add_foreign_key "patient_records", "districts"
+  add_foreign_key "treatment_phases", "patient_records"
 end
