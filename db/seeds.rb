@@ -11,10 +11,10 @@ User.new(email: "admin@gmail.com", username: "admin", password: "123456",
 
 puts "Create bussiness users"
 5.times do |i|
-  User.create! email: "business#{i+1}@gmail.com",
-    username: "business#{i+1}",
+  User.create! email: "doctor#{i+1}@gmail.com",
+    username: "doctor#{i+1}",
     password: "123456",
     password_confirmation: "123456",
-    role: :business,
+    role: :doctor,
     confirmed_at: Time.zone.now
 end
