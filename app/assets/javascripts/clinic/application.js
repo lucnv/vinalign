@@ -16,4 +16,4 @@
 //= require jquery_ujs
 //= require js/bootstrap
 //= require js/adminlte
-//= require load_dynamic_options
+//= require shared/load_dynamic_options

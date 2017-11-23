@@ -1,0 +1,8 @@
+<% if @price_list.errors.blank? %>
+  $("#new-price-list").modal("hide");
+  $("#price-lists").html("<%= j render partial: :price_list, collection: @price_lists, as: :price_list %>");
+<% else %>
+  $("#new-price-list .bootstrap-dialog-message").html("<%= j render 'form', price_list: @price_list, \
+    form_path: admin_patient_record_price_lists_path(@patient_record) %>".replace(/\n/g, ''));
+<% end %>
+$("#flash-messages").html("<%= j render 'layouts/shared/flash' %>");
