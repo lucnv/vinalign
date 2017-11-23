@@ -10,4 +10,3 @@ en:
       create: 
         success: Create Patient record success
         failed: Fail to create Patient record
-
