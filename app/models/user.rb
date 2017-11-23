@@ -2,6 +2,7 @@ class User < ApplicationRecord
   attr_accessor :login
 
   has_one :doctor_profile
+  has_one :clinic, through: :doctor_profile
   has_many :messages, foreign_key: :sender_id
   
   validates :username, presence: true, uniqueness: {case_sensitive: false},

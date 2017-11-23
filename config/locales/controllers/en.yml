@@ -1,2 +1,7 @@
 en:
   no_permission: You have no permission to perform this action.
+  clinic:
+    patient_records:
+      create: 
+        success: Create Patient record success
+        failed: Fail to create Patient record

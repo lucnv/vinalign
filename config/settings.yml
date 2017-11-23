@@ -9,3 +9,13 @@ validations:
     username:
       max_length: 30
       min_length: 6
+  patient_record:
+    first_name:
+      max_length: 50
+    last_name:
+      max_length: 50
+    address:
+      max_length: 250
+genders: 
+  - male 
+  - female
