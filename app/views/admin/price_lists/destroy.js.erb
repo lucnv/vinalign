@@ -1,0 +1,4 @@
+<% if @price_list.errors.blank? %>
+  $("#price-lists").html("<%= j render partial: :price_list, collection: @price_lists, as: :price_list %>");
+<% end %>
+$("#flash-messages").html("<%= j render 'layouts/shared/flash' %>");
