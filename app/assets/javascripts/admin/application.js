@@ -16,3 +16,4 @@
 //= require jquery_ujs
 //= require js/bootstrap
 //= require js/adminlte
+//= require admin/adminlte_turbolink
