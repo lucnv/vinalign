@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   namespace :clinic do 
     root "patient_records#index"
-    resources :patient_records, only: [:index, :new, :create]
+    resources :patient_records, only: [:index, :new, :create] do 
+      resources :price_lists, only: :index
+    end
   end
 end

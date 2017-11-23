@@ -17,3 +17,4 @@
 //= require js/bootstrap
 //= require js/adminlte
 //= require shared/load_dynamic_options
+//= require shared/adminlte_turbolink
