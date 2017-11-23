@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     resources :patient_records, only: :index do 
       resources :price_lists, only: [:index, :new, :create]
     end
+    resources :price_lists, only: [:edit, :update]
   end
 
   namespace :clinic do 

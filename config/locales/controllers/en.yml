@@ -5,6 +5,9 @@ en:
       create:
         success: Create Price list success
         failed: Fail to create Price list
+      update:
+        success: Update Price list success
+        failed: Fail to update Price list
   clinic:
     patient_records:
       create: 
