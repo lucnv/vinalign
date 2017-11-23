@@ -44,3 +44,19 @@ User.doctor.each_with_index do |user, index|
     user: user,
     clinic: clinics[index]
 end
+
+puts "Create patient records"
+clinics.each do |clinic|
+  15.times do
+    clinic.patient_records.create! start_date: Faker::Date.backward(7),
+      first_name: Faker::Name.first_name,
+      last_name: Faker::Name.last_name,
+      dob: Faker::Date.backward(365 * 50),
+      gender: DoctorProfile::genders.values.sample,
+      district: districts.sample,
+      address: Faker::Address.street_address,
+      phone_number: Faker::PhoneNumber.cell_phone,
+      email: Faker::Internet.email,
+      doctor: Faker::Name.name
+  end
+end
