@@ -1,6 +1,6 @@
 class Admin::PriceListsController < Admin::BaseController 
   before_action :patient_record, only: [:index, :new, :create]
-  before_action :price_list, only: [:edit, :update]
+  before_action :price_list, only: [:edit, :update, :destroy]
 
   def index
     price_list_collection
@@ -31,6 +31,16 @@ class Admin::PriceListsController < Admin::BaseController
       flash.now[:success] = t ".success"
     else
       flash.now[:failed] = t ".failed"
+    end
+  end
+
+  def destroy
+    if @price_list.destroy
+      @patient_record = @price_list.patient_record
+      price_list_collection
+      flash.now[:alert] = t ".success"
+    else
+      flash.now[:danger] = t ".fail"
     end
   end
 

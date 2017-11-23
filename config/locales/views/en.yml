@@ -11,6 +11,7 @@ en:
     update: &update Update
     edit: &edit Edit
     cancel: &cancel Cancel
+    delete: &delete Delete
   devise:
     sessions:
       new: 
@@ -53,6 +54,14 @@ en:
         cancel: *cancel
       price_list:
         edit: *edit
+        delete: *delete
+      delete_price_list_popup:
+        js:
+          erb:
+            delete_price_list: Delete Price list
+            confirm_delete_message: Do you wanna delete item
+            delete: *delete
+            cancel: *cancel
   clinic:
     patient_records:
       index:

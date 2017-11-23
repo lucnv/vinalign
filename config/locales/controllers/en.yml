@@ -8,6 +8,9 @@ en:
       update:
         success: Update Price list success
         failed: Fail to update Price list
+      destroy:
+        success: Delete Price list success
+        failed: Fail to delete Price list
   clinic:
     patient_records:
       create: 

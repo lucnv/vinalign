@@ -1,0 +1,31 @@
+$(document).on("click", ".delete-price-list", function() {
+  var price_list_id = $(this).data("price-list-id"),
+    item = $(this).data("item");
+  BootstrapDialog.show({
+    title: "<%= t '.delete_price_list' %>",
+    message: "<%= t '.confirm_delete_message' %>" + "&nbsp;<strong>" + item + "</strong>&nbsp;?",
+    type: BootstrapDialog.TYPE_DANGER,
+    closeByBackdrop: false,
+    closeByKeyboard: false,
+    buttons: [{
+      label: "<%= t '.cancel' %>",
+      action: function(dialog){
+        dialog.close();
+      }
+    },
+    {
+      label: "<%= t '.delete' %>",
+      cssClass: "btn-danger",
+      action: function(dialogRef){
+        $.ajax({
+          url: "/admin/price_lists/" + price_list_id,
+          type: "DELETE",
+          dataType: "script",
+          complete: function(data) {
+            dialogRef.close();
+          }
+        });
+      }
+    }]
+  });
+});

@@ -3,8 +3,15 @@
   <td><%= price_list.item %></td>
   <td><%= price_list.price %></td>
   <td>
-    <%= link_to edit_admin_price_list_path(price_list), remote: true do %>
-      <i class="fa fa-pencil-square-o" title="<%= t ".edit" %>"></i>
+    <%= link_to edit_admin_price_list_path(price_list), remote: true, 
+      class: "btn btn-warning btn-xs" do %>
+      <i class="fa fa-pencil-square-o"></i>
+      <%= t ".edit" %>
+    <% end %>
+    <%= link_to "javascript:void(0)", class: "delete-price-list btn btn-danger btn-xs", 
+      data: {"price-list-id": price_list.id, item: price_list.item} do %>
+      <i class="fa fa-trash-o"></i>
+      <%= t ".delete" %>
     <% end %>
   </td>
 </tr>
