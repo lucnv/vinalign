@@ -6,18 +6,15 @@
     <%= javascript_include_tag "clinic/application", "data-turbolinks-track": "reload" %>
   </head>
 
-  <body class="hold-transition skin-yellow-light sidebar-mini">
+  <body class="hold-transition skin-blue sidebar-mini">
     <div class="wrapper">
       <%= render "layouts/clinic/header" %>
       <%= render "layouts/clinic/side_bar" %>
-
+      <div id="flash-messages">
+        <%= render "layouts/shared/flash" %>
+      </div>
       <div class="content-wrapper">
-        <div class="content">
-          <div id="flash-messages">
-            <%= render "layouts/shared/flash" %>
-          </div>
-          <%= yield %>
-        </div>
+        <%= yield %>
       </div>
 
       <footer class="main-footer">

@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   end
 
   namespace :clinic do 
-    root "pages#show", page: :home
-    resources :patient_records, only: [:new, :create]
+    root "patient_records#index"
+    resources :patient_records, only: [:index, :new, :create]
   end
 end

@@ -16,6 +16,8 @@ validations:
       max_length: 50
     address:
       max_length: 250
+patient_records:
+  per_page: 10
 genders: 
   - male 
   - female

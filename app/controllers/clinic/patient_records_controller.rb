@@ -1,5 +1,10 @@
 class Clinic::PatientRecordsController < Clinic::BaseController
-  before_action :clinic, only: :create
+  before_action :clinic, only: [:index, :create]
+
+  def index 
+    @patient_records = @clinic.patient_records.recent_created.page(params[:page])
+      .per(Settings.patient_records.per_page).decorate
+  end
 
   def new
     @patient_record = PatientRecord.new

@@ -17,6 +17,7 @@ class PatientRecord < ApplicationRecord
   validates :email, email_format: true
   validates :doctor, presence: true
 
+  scope :recent_created, ->{order created_at: :desc}
 
   enum gender: Settings.genders.map(&:to_sym)
 

@@ -1,6 +1,8 @@
 en:
   dictionary:
     app_name: &app_name Vinalign
+    online: &online Online
+    main_navigation: &main_navigation MAIN NAVIGATION
   devise:
     sessions:
       new: 
@@ -13,5 +15,19 @@ en:
         toggle_navigation: Toggle navigation
         logo_short_title_html: <b>A</b>Vi
       side_bar: 
-        online: Online
-        main_navigation: MAIN NAVIGATION
+        online: *online
+        main_navigation: *main_navigation
+    clinic:
+      header:
+        clinic: Clinic
+        management: Management
+        logo_short_title_html: <b>C</b/>M
+      side_bar:
+        online: *online
+        main_navigation: *main_navigation
+        patient_records: Patient records
+  clinic:
+    patient_records:
+      index:
+        patient_record_list: Patient record list
+        add_patient_record: Add new Patient record
