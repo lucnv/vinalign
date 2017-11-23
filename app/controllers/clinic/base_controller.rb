@@ -7,4 +7,8 @@ class Clinic::BaseController < ApplicationController
   def authenticate_doctor!
     raise Pundit::NotAuthorizedError unless current_user.try :doctor?
   end
+
+  def clinic
+    @clinic = current_user.doctor_profile.clinic
+  end
 end

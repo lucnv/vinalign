@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   root "pages#show", page: :home
   get "pages/:page", to: "pages#show", as: :page  
 
+  namespace :supports do 
+    resources :districts, ony: :index
+  end
+
   namespace :admin do 
     root "homes#index"
     resources :homes, only: :index
@@ -11,5 +15,6 @@ Rails.application.routes.draw do
 
   namespace :clinic do 
     root "pages#show", page: :home
+    resources :patient_records, only: [:new, :create]
   end
 end
