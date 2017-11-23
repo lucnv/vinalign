@@ -6,6 +6,7 @@ class PatientRecord < ApplicationRecord
   belongs_to :district
   has_one :province, through: :district
   has_many :treatment_phases
+  has_many :price_lists
 
   validates :start_date, presence: true
   validates :first_name, presence: true, length: {maximum: Settings.validations.patient_record.first_name.max_length}

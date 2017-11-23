@@ -7,6 +7,8 @@ en:
     male: &male Male
     female: &female Female
     patient_record_list: &patient_record_list Patient record list
+    create: &create Create
+    cancel: &cancel Cancel
   devise:
     sessions:
       new: 
@@ -38,6 +40,11 @@ en:
       patient_record: 
         male: *male
         female: *female
+    price_lists:
+      new:
+        new_price_list: New Price list
+        create: *create
+        cancel: *cancel
   clinic:
     patient_records:
       index:

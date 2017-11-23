@@ -16,4 +16,6 @@
 //= require jquery_ujs
 //= require js/bootstrap
 //= require js/adminlte
-//= require admin/adminlte_turbolink
+//= require shared/adminlte_turbolink
+//= require js/bootstrap-dialog
+//= require shared/bootstrap_dialog_turbolinks

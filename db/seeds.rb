@@ -60,3 +60,12 @@ clinics.each do |clinic|
       doctor: Faker::Name.name
   end
 end
+
+puts "Create price lists"
+patient_records = PatientRecord.all
+patient_records.each do |patient_record|
+  15.times do 
+    patient_record.price_lists.create! item: Faker::Commerce.product_name,
+      price: Faker::Commerce.price.to_i * 20_000
+  end
+end

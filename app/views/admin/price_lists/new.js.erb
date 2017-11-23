@@ -1,0 +1,22 @@
+BootstrapDialog.show({
+  title: "<%= t '.new_price_list' %>",
+  id: "new-price-list",
+  message: "<%= j render 'form', price_list: @price_list, \
+    form_path: admin_patient_record_price_lists_path(@patient_record) %>".replace(/\n/g, ''),
+  closeByBackdrop: false,
+  closeByKeyboard: false,
+  buttons: [{
+    label: "<%= t '.cancel' %>",
+    action: function(dialog){
+      dialog.close();
+    }
+  },
+  {
+    label: "<%= t '.create' %>",
+    cssClass: "btn-primary",
+    id: "create-genre",
+    action: function(dialogRef){
+      dialogRef.getModalBody().find("form").submit();
+    }
+  }]
+});
