@@ -7,17 +7,15 @@
   </head>
 
   <body class="hold-transition skin-black sidebar-mini">
-    <div class="wrapper" style="height: auto; min-height: 100%;">
+    <div class="wrapper">
       <%= render "layouts/admin/header" %>
       <%= render "layouts/admin/side_bar" %>
+      <div id="flash-messages">
+        <%= render "layouts/shared/flash" %>
+      </div>
 
       <div class="content-wrapper">
-        <div class="content">
-          <div id="flash-messages">
-            <%= render "layouts/shared/flash" %>
-          </div>
-          <%= yield %>
-        </div>
+        <%= yield %>
       </div>
 
       <footer class="main-footer">

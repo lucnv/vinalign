@@ -3,6 +3,10 @@ en:
     app_name: &app_name Vinalign
     online: &online Online
     main_navigation: &main_navigation MAIN NAVIGATION
+    patient_records: &patient_records Patient records
+    male: &male Male
+    female: &female Female
+    patient_record_list: &patient_record_list Patient record list
   devise:
     sessions:
       new: 
@@ -17,6 +21,7 @@ en:
       side_bar: 
         online: *online
         main_navigation: *main_navigation
+        patient_records: *patient_records
     clinic:
       header:
         clinic: Clinic
@@ -25,9 +30,20 @@ en:
       side_bar:
         online: *online
         main_navigation: *main_navigation
-        patient_records: Patient records
+        patient_records: *patient_records
+  admin:
+    patient_records:
+      index:
+        patient_record_list: *patient_record_list
+      patient_record: 
+        male: *male
+        female: *female
   clinic:
     patient_records:
       index:
-        patient_record_list: Patient record list
+        patient_record_list: *patient_record_list
         add_patient_record: Add new Patient record
+      patient_record: 
+        male: *male
+        female: *female
+
