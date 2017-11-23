@@ -2,4 +2,9 @@
   <td><%= price_list.id %></td>
   <td><%= price_list.item %></td>
   <td><%= price_list.price %></td>
+  <td>
+    <%= link_to edit_admin_price_list_path(price_list), remote: true do %>
+      <i class="fa fa-pencil-square-o" title="<%= t ".edit" %>"></i>
+    <% end %>
+  </td>
 </tr>

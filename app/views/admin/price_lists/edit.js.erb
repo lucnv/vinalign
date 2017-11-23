@@ -1,8 +1,8 @@
 BootstrapDialog.show({
-  title: "<%= t '.new_price_list' %>",
-  id: "new-price-list",
+  title: "<%= t '.edit_price_list' %>",
+  id: "edit-price-list",
   message: "<%= j render 'form', price_list: @price_list, \
-    form_path: admin_patient_record_price_lists_path(@patient_record) %>".replace(/\n/g, ''),
+    form_path: admin_price_list_path(@price_list) %>".replace(/\n/g, ''),
   closeByBackdrop: false,
   closeByKeyboard: false,
   buttons: [{
@@ -12,9 +12,9 @@ BootstrapDialog.show({
     }
   },
   {
-    label: "<%= t '.create' %>",
+    label: "<%= t '.update' %>",
     cssClass: "btn-primary",
-    id: "button-create-price-list",
+    id: "button-update-prict-list",
     action: function(dialogRef){
       dialogRef.getModalBody().find("form").submit();
     }
