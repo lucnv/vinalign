@@ -15,7 +15,7 @@ class Clinic::PatientRecordsController < Clinic::BaseController
     @patient_record = @clinic.patient_records.build patient_record_params
     if @patient_record.save 
       flash[:success] = t ".success"
-      redirect_to root_path
+      redirect_to clinic_patient_records_path
     else 
       support_for_patient_record
       flash.now[:failed] = t ".failed"

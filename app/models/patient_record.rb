@@ -1,6 +1,6 @@
 class PatientRecord < ApplicationRecord
   ATTRIBUTES = [:start_date, :first_name, :last_name, :dob, :gender, :district_id,
-    :address, :phone_number, :email, :doctor]
+    :address, :phone_number, :email, :doctor, :profile_photo]
 
   belongs_to :clinic
   belongs_to :district
@@ -19,6 +19,8 @@ class PatientRecord < ApplicationRecord
   validates :doctor, presence: true
 
   scope :recent_created, ->{order created_at: :desc}
+
+  mount_uploader :profile_photo, AvatarUploader
 
   enum gender: Settings.genders.map(&:to_sym)
 

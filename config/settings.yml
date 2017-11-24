@@ -21,3 +21,7 @@ patient_records:
 genders: 
   - male 
   - female
+avatar:
+  versions:
+    medium: [200, 200]
+    small: [100, 100]
