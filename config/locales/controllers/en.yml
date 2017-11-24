@@ -16,3 +16,6 @@ en:
       create: 
         success: Create Patient record success
         failed: Fail to create Patient record
+      update:
+        success: Update Patient record success
+        failed: Fail to update Patient record

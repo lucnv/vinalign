@@ -10,10 +10,11 @@
     <div class="wrapper">
       <%= render "layouts/clinic/header" %>
       <%= render "layouts/clinic/side_bar" %>
-      <div id="flash-messages">
-        <%= render "layouts/shared/flash" %>
-      </div>
+
       <div class="content-wrapper">
+        <div id="flash-messages">
+          <%= render "layouts/shared/flash" %>
+        </div>
         <%= yield %>
       </div>
 
