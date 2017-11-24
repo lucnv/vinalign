@@ -36,6 +36,10 @@ en:
         online: *online
         main_navigation: *main_navigation
         patient_records: *patient_records
+    shared:
+      patient_record_side_bar:
+        administrative_informations: Administrative informations
+        price_lists: Price lists
   admin:
     patient_records:
       index:
@@ -70,4 +74,10 @@ en:
       patient_record: 
         male: *male
         female: *female
-
+      show:
+        edit: *edit
+  shared:
+    patient_records:
+      details: 
+        male: *male
+        female: *female

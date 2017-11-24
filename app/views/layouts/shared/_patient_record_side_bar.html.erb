@@ -1,0 +1,14 @@
+<ul class="treeview-menu">
+  <li class="<%= content_for :patient_record_administrative_informations_activation %>">
+    <%= link_to url_for [scope, patient_record] do %>
+      <i class="fa fa-circle-o"></i>
+      <%= t ".administrative_informations" %>
+    <% end %>
+  </li>
+  <li class="<%= content_for :patient_record_price_lists_activation %>">
+    <%= link_to url_for [scope, patient_record, :price_lists] do %>
+      <i class="fa fa-circle-o"></i>
+      <%= t ".price_lists" %>
+    <% end %>
+  </li>
+</ul>

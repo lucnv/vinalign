@@ -24,6 +24,7 @@ class PatientRecord < ApplicationRecord
 
   enum gender: Settings.genders.map(&:to_sym)
 
-  delegate :id, to: :province, prefix: true, allow_nil: true
+  delegate :id, :name, to: :province, prefix: true, allow_nil: true
   delegate :name, to: :clinic, prefix: true, allow_nil: true
+  delegate :name, to: :district, prefix: true, allow_nil: true
 end

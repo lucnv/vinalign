@@ -1,0 +1,16 @@
+<%= render "shared/patient_records/element", attribute: :start_date, 
+  value: patient_record.start_date %>
+<%= render "shared/patient_records/element", attribute: :full_name, 
+  value: patient_record.full_name %>
+<%= render "shared/patient_records/element", attribute: :dob, 
+  value: patient_record.dob %>
+<%= render "shared/patient_records/element", attribute: :gender, 
+  value: t(".#{patient_record.gender}") %>
+<%= render "shared/patient_records/element", attribute: :full_address, 
+  value: patient_record.full_address %>
+<%= render "shared/patient_records/element", attribute: :phone_number, 
+  value: patient_record.phone_number %>
+<%= render "shared/patient_records/element", attribute: :email, 
+  value: patient_record.email %>
+<%= render "shared/patient_records/element", attribute: :doctor, 
+  value: patient_record.doctor %>

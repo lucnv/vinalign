@@ -1,4 +1,5 @@
-<% content_for :price_lists_activation, "active" %>
+<%= render "shared/patient_records/provide_patient_record_side_bar", patient_record: @patient_record, 
+  scope: :clinic, current_site: :price_lists %>
 <section class="content-header">
   <h1><%= t ".price_lists_activation" %></h1>
 </section>

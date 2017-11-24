@@ -16,12 +16,16 @@ class Clinic::PatientRecordsController < Clinic::BaseController
     @patient_record = @clinic.patient_records.build patient_record_params
     if @patient_record.save 
       flash[:success] = t ".success"
-      redirect_to clinic_patient_records_path
+      redirect_to clinic_patient_record_path(@patient_record)
     else 
       support_for_patient_record
       flash.now[:failed] = t ".failed"
       render :new
     end
+  end
+
+  def show
+    @patient_record = PatientRecord.find(params[:id]).decorate
   end
 
   def edit
@@ -32,7 +36,7 @@ class Clinic::PatientRecordsController < Clinic::BaseController
     @patient_record.assign_attributes patient_record_params
     if @patient_record.save 
       flash[:success] = t ".success"
-      redirect_to clinic_patient_records_path
+      redirect_to clinic_patient_record_path(@patient_record)
     else
       support_for_patient_record
       flash.now[:failed] = t ".failed"

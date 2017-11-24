@@ -1,7 +1,9 @@
 <tr>
   <td><%= patient_record.id %></td>
   <td><%= patient_record.clinic_name %></td>
-  <td><%= patient_record.full_name %></td>
+  <td>
+    <%= link_to patient_record.full_name, admin_patient_record_path(patient_record) %>  
+  </td>
   <td><%= t ".#{patient_record.gender}" %></td>
   <td><%= patient_record.age %></td>
   <td><%= patient_record.phone_number %></td>
