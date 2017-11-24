@@ -15,13 +15,17 @@
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu" data-widget="tree">
       <li class="header"><%= t ".main_navigation" %></li>
-      <li class="<%= content_for :patient_records_activation %>">
+      <li class="<%= content_for :patient_records_activation %> 
+        <%= 'active menu-open' if content_for? :patient_record_side_bar %>">
         <%= link_to clinic_patient_records_path do %>
           <i class="fa fa-file-text"></i>
           <span><%= t ".patient_records" %></span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
           </span>
+        <% end %>
+        <% if content_for? :patient_record_side_bar %>
+          <%= yield :patient_record_side_bar %>
         <% end %>
       </li>
     </ul>
