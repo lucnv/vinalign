@@ -1,4 +1,4 @@
-class Clinic::ImagesController < Clinic::BaseController 
+class ImagesController < ApplicationController 
   before_action :album
 
   def index 

@@ -1,0 +1,11 @@
+<ul class="nav nav-tabs">
+  <li class="<%= content_for :treatment_phase_images_activation %>">
+    <%= link_to t(".images"), polymorphic_path([scope, treatment_phase], tab: :images) %>
+  </li>
+  <li class="<%= content_for :treatment_phase_treatment_plans_activation %>">
+    <a href="#timeline" data-toggle="tab"><%= t ".treatment_plans" %></a>
+  </li>
+  <li class="<%= content_for :treatment_phase_communication_activation %>">
+    <a href="#settings" data-toggle="tab"><%= t ".communication" %></a>
+  </li>
+</ul>
