@@ -15,4 +15,3 @@
 //= require jquery
 //= require jquery_ujs
 //= require js/bootstrap
-//= require shared/auto_submit_remote_form
