@@ -18,3 +18,8 @@
  *= require css/font-awesome
  *= require css/bootstrap-dialog
  */
+
+.active-album {
+  border-left-width: 3px;
+  border-left-color: #3c8dbc;
+}

@@ -1,0 +1,3 @@
+$("#images-presentation").html("<%= j render 'images_presentation', images: @images, album: @album %>");
+$(".group-item-album").removeClass("active-album");
+$(".group-item-album#album-<%= @album.id %>").addClass("active-album");

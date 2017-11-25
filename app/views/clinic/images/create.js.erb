@@ -1,0 +1,3 @@
+<% if @upload_success %>
+  $("#images-presentation").html("<%= j render 'images_presentation', images: @images, album: @album %>");
+<% end %>

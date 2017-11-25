@@ -1,0 +1,7 @@
+<%= form_tag clinic_album_images_path(album), multipart: true, authenticity_token: true,
+  class: "auto_remote_form" do %>
+  <%= file_field_tag :sources, multiple: true, name: "sources[]" %>
+<% end %>
+<div class="row">
+  <%= render partial: :image, collection: images, as: :image %>
+</div>

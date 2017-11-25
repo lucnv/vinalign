@@ -1,4 +1,4 @@
-class Clinic::AlbumsController < ApplicationController 
+class Clinic::AlbumsController < Clinic::BaseController 
   before_action :treatment_phase
 
   def new
