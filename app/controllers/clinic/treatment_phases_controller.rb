@@ -1,4 +1,5 @@
 class Clinic::TreatmentPhasesController < Clinic::BaseController  
+  TABS = %w(images treatment_plans communication)
   before_action :patient_record, only: [:index, :new, :create]
 
   def index
@@ -20,6 +21,11 @@ class Clinic::TreatmentPhasesController < Clinic::BaseController
     end
   end
 
+  def show
+    @treatment_phase = TreatmentPhase.find params[:id]
+    @support = Supports::TreatmentPhase.new @treatment_phase
+  end
+
   private
   def patient_record
     @patient_record = PatientRecord.find params[:patient_record_id]
@@ -28,4 +34,10 @@ class Clinic::TreatmentPhasesController < Clinic::BaseController
   def treatment_phase_params
     params.require(:treatment_phase).permit TreatmentPhase::ATTRIBUTES
   end
+
+  def active_tab
+    TABS.include?(params[:tab]) ? params[:tab] : TABS.first
+  end
+
+  helper_method :active_tab
 end

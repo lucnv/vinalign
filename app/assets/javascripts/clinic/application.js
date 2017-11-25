@@ -19,3 +19,4 @@
 //= require shared/load_dynamic_options
 //= require shared/adminlte_turbolink
 //= require shared/preview_upload_image
+//= require js/bootstrap-dialog

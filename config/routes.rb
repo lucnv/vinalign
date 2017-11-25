@@ -23,5 +23,8 @@ Rails.application.routes.draw do
       resources :price_lists, only: :index
       resources :treatment_phases, only: [:index, :new, :create]
     end
+    resources :treatment_phases, only: :show do 
+      resources :albums, only: [:new, :create]
+    end
   end
 end

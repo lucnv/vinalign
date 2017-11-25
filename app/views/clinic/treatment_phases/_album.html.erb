@@ -1,0 +1,8 @@
+<%= content_tag :div, class: "list-group-item" do %>
+  <%= link_to "#" do %>
+    <i class="fa fa-folder"></i>
+    <%= album.name %>
+  <% end %>
+  <br/>
+  <small class="date"><%= album.created_at %></small>
+<% end %>
