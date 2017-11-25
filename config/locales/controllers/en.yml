@@ -19,3 +19,7 @@ en:
       update:
         success: Update Patient record success
         failed: Fail to update Patient record
+    treatment_phases:
+      create: 
+        success: Create Treatment phase success
+        failed: Fail to create Treatment phase

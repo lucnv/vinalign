@@ -13,7 +13,7 @@
         <div class="col-md-7">
           <%= image_tag @patient_record.profile_photo.small.url %>
           <%= link_to edit_clinic_patient_record_path(@patient_record), 
-            class: "pull-right btn btn-warning" do %>
+            class: "pull-right btn btn-warning btn-flat" do %>
             <i class="fa fa-pencil-square-o"></i>
             <%= t ".edit" %>
           <% end %>

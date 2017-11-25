@@ -1,0 +1,18 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <strong>
+      <i class="fa fa-calendar" aria-hidden="true"></i>
+      <%= treatment_phase.name %>
+    </strong>
+  </div>
+  <div class="panel-body">
+    <p>
+      <strong><%= TreatmentPhase.human_attribute_name :start_date %>:</strong>
+      <%= treatment_phase.start_date %>
+    </p>
+    <p>
+      <strong><%= TreatmentPhase.human_attribute_name :description %>:</strong><br/>
+      <%= custom_simple_format treatment_phase.description %>
+    </p>
+  </div>
+</div>

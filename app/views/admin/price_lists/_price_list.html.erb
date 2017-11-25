@@ -4,11 +4,11 @@
   <td><%= price_list.price %></td>
   <td>
     <%= link_to edit_admin_price_list_path(price_list), remote: true, 
-      class: "btn btn-warning btn-xs" do %>
+      class: "btn btn-warning btn-xs btn-flat" do %>
       <i class="fa fa-pencil-square-o"></i>
       <%= t ".edit" %>
     <% end %>
-    <%= link_to "javascript:void(0)", class: "delete-price-list btn btn-danger btn-xs", 
+    <%= link_to "javascript:void(0)", class: "delete-price-list btn btn-danger btn-xs btn-flat", 
       data: {"price-list-id": price_list.id, item: price_list.item} do %>
       <i class="fa fa-trash-o"></i>
       <%= t ".delete" %>
