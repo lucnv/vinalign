@@ -11,6 +11,10 @@ en:
       destroy:
         success: Delete Price list success
         failed: Fail to delete Price list
+    treatment_phases:
+      create: 
+        success: Create Treatment phase success
+        failed: Fail to create Treatment phase
   clinic:
     patient_records:
       create: 

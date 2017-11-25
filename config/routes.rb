@@ -13,8 +13,10 @@ Rails.application.routes.draw do
     resources :homes, only: :index
     resources :patient_records, only: [:index, :show] do 
       resources :price_lists, only: [:index, :new, :create]
+      resources :treatment_phases, only: [:index, :new, :create]
     end
     resources :price_lists, only: [:edit, :update, :destroy]
+    resources :treatment_phases, only: :show
   end
 
   namespace :clinic do 
@@ -26,8 +28,9 @@ Rails.application.routes.draw do
     resources :treatment_phases, only: :show do 
       resources :albums, only: [:new, :create]
     end
-    resources :albums do 
-      resources :images, only: [:index, :create]
-    end
+  end
+
+  resources :albums do 
+    resources :images, only: [:index, :create]
   end
 end

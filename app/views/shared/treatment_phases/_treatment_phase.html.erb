@@ -2,7 +2,7 @@
   <div class="panel-heading">
     <strong>
       <i class="fa fa-calendar" aria-hidden="true"></i>
-      <%= link_to treatment_phase.name, clinic_treatment_phase_path(treatment_phase) %>
+      <%= link_to treatment_phase.name, url_for([scope, treatment_phase]) %>
     </strong>
   </div>
   <div class="panel-body">
