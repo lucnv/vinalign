@@ -5,6 +5,12 @@
       <%= t ".administrative_informations" %>
     <% end %>
   </li>
+  <li class="<%= content_for :patient_record_treatment_phases_activation %>">
+    <%= link_to url_for [scope, patient_record, :treatment_phases] do %>
+      <i class="fa fa-circle-o"></i>
+      <%= t ".treatment_phases" %>
+    <% end %>
+  </li>
   <li class="<%= content_for :patient_record_price_lists_activation %>">
     <%= link_to url_for [scope, patient_record, :price_lists] do %>
       <i class="fa fa-circle-o"></i>

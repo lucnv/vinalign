@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     root "patient_records#index"
     resources :patient_records, except: :destroy do 
       resources :price_lists, only: :index
+      resources :treatment_phases, only: [:index, :new, :create]
     end
   end
 end

@@ -7,13 +7,14 @@ BootstrapDialog.show({
   closeByKeyboard: false,
   buttons: [{
     label: "<%= t '.cancel' %>",
+    cssClass: "btn-flat",
     action: function(dialog){
       dialog.close();
     }
   },
   {
     label: "<%= t '.update' %>",
-    cssClass: "btn-primary",
+    cssClass: "btn-primary btn-flat",
     id: "button-update-prict-list",
     action: function(dialogRef){
       dialogRef.getModalBody().find("form").submit();

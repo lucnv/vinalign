@@ -7,13 +7,14 @@ BootstrapDialog.show({
   closeByKeyboard: false,
   buttons: [{
     label: "<%= t '.cancel' %>",
+    cssClass: "btn-flat",
     action: function(dialog){
       dialog.close();
     }
   },
   {
     label: "<%= t '.create' %>",
-    cssClass: "btn-primary",
+    cssClass: "btn-primary btn-flat",
     id: "button-create-price-list",
     action: function(dialogRef){
       dialogRef.getModalBody().find("form").submit();

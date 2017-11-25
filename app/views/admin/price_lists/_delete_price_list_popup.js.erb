@@ -9,13 +9,14 @@ $(document).on("click", ".delete-price-list", function() {
     closeByKeyboard: false,
     buttons: [{
       label: "<%= t '.cancel' %>",
+      cssClass: "btn-danger btn-flat",
       action: function(dialog){
         dialog.close();
       }
     },
     {
       label: "<%= t '.delete' %>",
-      cssClass: "btn-danger",
+      cssClass: "btn-danger btn-flat",
       action: function(dialogRef){
         $.ajax({
           url: "/admin/price_lists/" + price_list_id,
