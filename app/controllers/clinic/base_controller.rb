@@ -9,6 +9,6 @@ class Clinic::BaseController < ApplicationController
   end
 
   def clinic
-    @clinic = current_user.doctor_profile.clinic
+    @clinic = current_user.clinic
   end
 end

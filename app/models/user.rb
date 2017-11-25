@@ -1,8 +1,8 @@
 class User < ApplicationRecord
   attr_accessor :login
 
-  has_one :doctor_profile
-  has_one :clinic, through: :doctor_profile
+  has_one :user_profile
+  has_one :clinic
   has_many :messages, foreign_key: :sender_id
   
   validates :username, presence: true, uniqueness: {case_sensitive: false},
@@ -16,6 +16,7 @@ class User < ApplicationRecord
 
   enum role: [:admin, :doctor]
 
+  delegate :avatar, to: :user_profile, allow_nil: true
 
   class << self
     def find_for_database_authentication warden_conditions

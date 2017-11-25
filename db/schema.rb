@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171125054243) do
+ActiveRecord::Schema.define(version: 20171125155538) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,7 +32,9 @@ ActiveRecord::Schema.define(version: 20171125054243) do
     t.string "facebook"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
     t.index ["district_id"], name: "index_clinics_on_district_id"
+    t.index ["user_id"], name: "index_clinics_on_user_id"
   end
 
   create_table "districts", force: :cascade do |t|
@@ -41,21 +43,6 @@ ActiveRecord::Schema.define(version: 20171125054243) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["province_id"], name: "index_districts_on_province_id"
-  end
-
-  create_table "doctor_profiles", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "clinic_id"
-    t.string "avatar"
-    t.string "first_name"
-    t.string "last_name"
-    t.date "dob"
-    t.integer "gender"
-    t.string "phone_number"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["clinic_id"], name: "index_doctor_profiles_on_clinic_id"
-    t.index ["user_id"], name: "index_doctor_profiles_on_user_id"
   end
 
   create_table "images", force: :cascade do |t|
@@ -121,6 +108,19 @@ ActiveRecord::Schema.define(version: 20171125054243) do
     t.index ["patient_record_id"], name: "index_treatment_phases_on_patient_record_id"
   end
 
+  create_table "user_profiles", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "avatar"
+    t.string "first_name"
+    t.string "last_name"
+    t.date "dob"
+    t.integer "gender"
+    t.string "phone_number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_user_profiles_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -148,13 +148,13 @@ ActiveRecord::Schema.define(version: 20171125054243) do
 
   add_foreign_key "albums", "treatment_phases"
   add_foreign_key "clinics", "districts"
+  add_foreign_key "clinics", "users"
   add_foreign_key "districts", "provinces"
-  add_foreign_key "doctor_profiles", "clinics"
-  add_foreign_key "doctor_profiles", "users"
   add_foreign_key "images", "albums"
   add_foreign_key "messages", "treatment_phases"
   add_foreign_key "patient_records", "clinics"
   add_foreign_key "patient_records", "districts"
   add_foreign_key "price_lists", "patient_records"
   add_foreign_key "treatment_phases", "patient_records"
+  add_foreign_key "user_profiles", "users"
 end
