@@ -21,11 +21,21 @@ puts "Create doctor users"
     confirmed_at: Time.zone.now
 end
 
+puts "Create user profiles"
+User.all.each do |user|
+  UserProfile.create! user: user,
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    dob: Faker::Date.backward(365 * 50),
+    gender: UserProfile::genders.values.sample
+end
+
 districts = District.all.includes :province
 puts "Create clinic"
-5.times do |i|
+User.doctor.each do |user|
   name = Faker::Company.name
-  Clinic.create! name: name,
+  Clinic.create! user: user,
+    name: name,
     phone_number: Faker::PhoneNumber.cell_phone,
     district: districts.sample,
     address: Faker::Address.street_address,
@@ -33,26 +43,14 @@ puts "Create clinic"
     facebook: "https:://facebook.com/#{name.tableize}"
 end
 
-clinics = Clinic.all
-puts "Create doctor profile"
-User.doctor.each_with_index do |user, index|
-  DoctorProfile.create! first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    dob: Faker::Date.backward(365 * 50),
-    gender: DoctorProfile::genders.values.sample,
-    phone_number: Faker::PhoneNumber.cell_phone,
-    user: user,
-    clinic: clinics[index]
-end
-
 puts "Create patient records"
-clinics.each do |clinic|
+Clinic.all.each do |clinic|
   15.times do
     clinic.patient_records.create! start_date: Faker::Date.backward(7),
       first_name: Faker::Name.first_name,
       last_name: Faker::Name.last_name,
       dob: Faker::Date.backward(365 * 50),
-      gender: DoctorProfile::genders.values.sample,
+      gender: PatientRecord::genders.values.sample,
       district: districts.sample,
       address: Faker::Address.street_address,
       phone_number: Faker::PhoneNumber.cell_phone,
@@ -61,8 +59,20 @@ clinics.each do |clinic|
   end
 end
 
-puts "Create price lists"
 patient_records = PatientRecord.all
+puts "Create treatment phases"
+patient_records.each do |patient_record|
+  phase_count = Faker::Number.between 1, 3
+  phase_count.times do |i|
+    day_1 = (phase_count - i) * 100
+    day_2 = (phase_count - i - 1) * 100
+    patient_record.treatment_phases.create! name: "Đợt điều trị #{i+1}",
+      start_date: Faker::Date.between(day_1.days.ago, day_2.days.ago),
+      description: Faker::Lorem.paragraphs.join("\n")
+  end
+end
+
+puts "Create price lists"
 patient_records.each do |patient_record|
   15.times do 
     patient_record.price_lists.create! item: Faker::Commerce.product_name,
