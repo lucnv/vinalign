@@ -26,5 +26,8 @@ Rails.application.routes.draw do
     resources :treatment_phases, only: :show do 
       resources :albums, only: [:new, :create]
     end
+    resources :albums do 
+      resources :images, only: [:index, :create]
+    end
   end
 end

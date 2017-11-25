@@ -1,5 +1,6 @@
-<%= content_tag :div, class: "list-group-item" do %>
-  <%= link_to "#" do %>
+<%= content_tag :div, class: "list-group-item group-item-album", 
+  id: "album-#{album.id}" do %>
+  <%= link_to clinic_album_images_path(album), remote: true do %>
     <i class="fa fa-folder"></i>
     <%= album.name %>
   <% end %>
