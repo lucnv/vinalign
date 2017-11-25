@@ -76,6 +76,16 @@ en:
         female: *female
       show:
         edit: *edit
+    treatment_phases:
+      show:
+        images: Images
+        treatment_plans: Treatment plans
+        communication: Communication
+    albums:
+      new: 
+        new_album: New album
+        cancel: *cancel
+        create: *create
   shared:
     patient_records:
       details: 

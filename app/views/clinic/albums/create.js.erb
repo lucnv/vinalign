@@ -1,0 +1,8 @@
+<% if @album.errors.blank? %>
+  $("#new-album").modal("hide");
+  $("#album-list").html("<%= j render partial: 'clinic/treatment_phases/album', \
+    collection: @albums, as: :album %>");
+<% else %>
+  $("#new-album .bootstrap-dialog-message").html("<%= j render 'form', album: @album, \
+    form_path: clinic_treatment_phase_albums_path(@treatment_phase) %>".replace(/\n/g, ''));
+<% end %>
