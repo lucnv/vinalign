@@ -6,10 +6,14 @@ class Supports::TreatmentPhase
   end
 
   def albums
-    @albums ||= @treatment_phase.albums
+    @albums ||= treatment_phase.albums
   end
 
   def messages
-    @messages ||= @treatment_phase.messages.earlier_created.includes user: :user_profile
+    @messages ||= treatment_phase.messages.earlier_created.includes user: :user_profile
+  end
+
+  def treatment_plan_files
+    @treatment_plan_files ||= treatment_phase.treatment_plan_files
   end
 end

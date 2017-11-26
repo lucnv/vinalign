@@ -1,0 +1,5 @@
+<h4><%= t ".treatment_plan_files" %></h4>
+<ul class="list-group" id="treatment_plan_file_list">
+  <%= render partial: "shared/treatment_phases/treatment_plan_file", collection: treatment_plan_files,
+    as: :treatment_plan_file %>
+</ul>

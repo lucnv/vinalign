@@ -19,3 +19,4 @@
 //= require shared/adminlte_turbolink
 //= require js/bootstrap-dialog
 //= require shared/bootstrap_dialog_turbolinks
+//= require shared/auto_upload_files
