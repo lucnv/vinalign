@@ -79,3 +79,15 @@ patient_records.each do |patient_record|
       price: Faker::Commerce.price.to_i * 20_000
   end
 end
+
+puts "Create messages" 
+patient_record =  PatientRecord.first
+doctor = patient_record.clinic.user
+admin = User.admin.first
+patient_record.treatment_phases.each do |treatment_phase|
+  message_count = Faker::Number.between 2, 4
+  message_count.times do |i| 
+    treatment_phase.messages.create! user: [doctor, admin][i%2],
+      content: Faker::Lorem.paragraph
+  end
+end

@@ -33,4 +33,8 @@ Rails.application.routes.draw do
   resources :albums do 
     resources :images, only: [:index, :create]
   end
+
+  resources :treatment_phases do 
+    resources :messages, only: :create
+  end
 end

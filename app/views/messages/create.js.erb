@@ -1,0 +1,3 @@
+$(".direct-chat-messages").append("<%= j render 'shared/treatment_phases/my_message', message: @message, \
+  sender_profile: current_user.user_profile %>");
+$("#message_content").val("");
