@@ -39,4 +39,8 @@ Rails.application.routes.draw do
   resources :treatment_phases do 
     resources :messages, only: :create
   end
+
+  namespace :download do 
+    resources :treatment_plan_files, only: :show
+  end
 end
