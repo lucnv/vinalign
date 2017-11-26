@@ -17,6 +17,7 @@
  *= require css/skins/skin-black
  *= require css/font-awesome
  *= require css/bootstrap-dialog
+ *= require content_loading
  */
 
 .active-album {

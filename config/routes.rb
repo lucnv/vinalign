@@ -16,7 +16,9 @@ Rails.application.routes.draw do
       resources :treatment_phases, only: [:index, :new, :create]
     end
     resources :price_lists, only: [:edit, :update, :destroy]
-    resources :treatment_phases, only: :show
+    resources :treatment_phases, only: :show do 
+      resources :treatment_plan_files, only: :create
+    end
   end
 
   namespace :clinic do 

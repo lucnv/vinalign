@@ -5,11 +5,11 @@
   </div>
 
   <div class="col col-md-4">
-    <h4><%= t ".treatment_plan_files" %></h4>
-    <ul class="list-group">
-      <li class="list-group-item">Treatment plan file 1</li>
-      <li class="list-group-item">Treatment plan file 2</li>
-      <li class="list-group-item">Treatment plan file 3</li>
-    </ul>
+    <%= render "shared/treatment_phases/treatment_plan_files", 
+      treatment_plan_files: support.treatment_plan_files %>
+    <%= form_for [:admin, treatment_phase, TreatmentPlanFile.new], 
+      html: {class: "auto_upload_files"} do |f| %>
+      <%= f.file_field :source %>
+    <% end %>
   </div>
 </div>
