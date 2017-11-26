@@ -1,0 +1,15 @@
+<h4><%= t ".conversation" %></h4>
+<div class="box box-primary direct-chat direct-chat-primary">
+  <div class="box-body">
+    <div class="direct-chat-messages" style="height: 450px;">
+      <%= render partial: "shared/treatment_phases/message", collection: messages,
+        as: :message %>
+    </div>
+  </div>
+  <div class="box-footer">
+    <%= form_for [treatment_phase, Message.new], remote: true do |f| %>
+      <%= f.text_area :content, class: "form-control", required: true %>
+      <%= f.submit "Send", class: "btn btn-primary btn-flat" %>
+    <% end %>
+  </div>
+</div>

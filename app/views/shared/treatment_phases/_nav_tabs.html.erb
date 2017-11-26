@@ -3,9 +3,6 @@
     <%= link_to t(".images"), polymorphic_path([scope, treatment_phase], tab: :images) %>
   </li>
   <li class="<%= content_for :treatment_phase_treatment_plans_activation %>">
-    <a href="#timeline" data-toggle="tab"><%= t ".treatment_plans" %></a>
-  </li>
-  <li class="<%= content_for :treatment_phase_communication_activation %>">
-    <a href="#settings" data-toggle="tab"><%= t ".communication" %></a>
+    <%= link_to t(".treatment_plans"), polymorphic_path([scope, treatment_phase], tab: :treatment_plans) %>
   </li>
 </ul>

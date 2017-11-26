@@ -1,0 +1,2 @@
+<%= render "shared/treatment_phases/#{message.sender_id == current_user.id ? 'my_message' : 'partner_message'}", 
+  message: message, sender_profile: message.user_profile %>
