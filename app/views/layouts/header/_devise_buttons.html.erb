@@ -1,0 +1,21 @@
+<div class="col-10 col-md-7">
+  <div id="header-top-second" class="clearfix text-right">
+    <ul class="list-inline">
+       <% if user_signed_in? %>
+         <%= link_to destroy_user_session_path, method: :delete, class: "btn btn-default btn-sm link-light" do %>
+           <i class="fa fa-sign-out pr-2"></i>
+           <%= t(".log_out") %>
+         <% end %>
+       <% else %>
+         <%= link_to new_user_registration_path, class: "btn btn-default btn-sm link-light" do %>
+           <i class="fa fa-user pr-2"></i>
+           <%= t(".sign_up") %>
+         <% end %>
+         <%= link_to new_user_session_path, class: "btn btn-default btn-sm link-light" do %>
+           <i class="fa fa-lock pr-2"></i>
+           <%= t(".log_in") %>
+         <% end %>
+       <% end %>
+    </ul>
+  </div>
+</div>

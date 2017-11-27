@@ -14,6 +14,8 @@
 //= require turbolinks
 //= require jquery
 //= require jquery_ujs
+//= require js/popper-v4.min
+//= require js/bootstrap-v4.min
 //= require plugins/modernizr
 //= require plugins/waypoints/jquery.waypoints
 //= require plugins/waypoints/sticky

@@ -1,0 +1,69 @@
+<header class="header fixed fixed-desktop clearfix">
+  <div class="container">
+     <div class="row">
+        <div class="col-md-auto hidden-md-down">
+           <div class="header-first clearfix">
+              <div id="logo" class="logo">
+                <%= link_to root_path do %>
+                  <%= image_tag Settings.logo.url, id: "logo_img", width: "135" %>
+                <% end %>
+              </div>
+              <div class="site-slogan">
+                 <%= t(".site_slogan") %>
+              </div>
+           </div>
+        </div>
+        <div class="col-lg-8 ml-lg-auto">
+           <div class="header-second clearfix">
+              <div class="main-navigation main-navigation--mega-menu animated">
+                 <nav class="navbar navbar-expand-lg navbar-light p-0">
+                    <div class="navbar-brand clearfix hidden-lg-up">
+                       <div id="logo-mobile" class="logo">
+                         <%= link_to root_path do %>
+                           <%= image_tag Settings.logo.url, id: "logo-img-mobile", width: "135" %>
+                         <% end %>
+                       </div>
+                       <div class="site-slogan">
+                          <%= t(".site_slogan") %>
+                       </div>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse-1" aria-controls="navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                       <!-- main-menu -->
+                       <ul class="navbar-nav ml-xl-auto">
+                          <li class="nav-item dropdown ">
+                             <a href="portfolio-grid-2-3-col.html" class="nav-link dropdown-toggle" id="fifth-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Portfolio</a>
+                             <ul class="dropdown-menu" aria-labelledby="fifth-dropdown">
+                                <li class="dropdown ">
+                                   <a class="dropdown-toggle" data-toggle="dropdown" href="#">Portfolio List</a>
+                                   <ul class="dropdown-menu">
+                                      <li><a href="portfolio-list-1.html">List - Large Images</a></li>
+                                   </ul>
+                                </li>
+                                <li><a href="portfolio-item.html">Single Item 1</a></li>
+                             </ul>
+                          </li>
+                          <li class="nav-item dropdown ">
+                             <a href="index-shop.html" class="nav-link dropdown-toggle" id="sixth-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
+                             <ul class="dropdown-menu" aria-labelledby="sixth-dropdown">
+                                <li><a href="index-shop.html">Shop Home 1</a></li>
+                             </ul>
+                          </li>
+                          <li class="nav-item dropdown ">
+                             <a href="blog-large-image-right-sidebar.html" class="nav-link dropdown-toggle" id="seventh-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
+                             <ul class="dropdown-menu" aria-labelledby="seventh-dropdown">
+                                <li><a href="index-blog.html">Blog Home <span class="badge">v1.1</span></a></li>
+                                <li><a href="index-blog-2.html">Blog Home 2 <span class="badge">v1.3</span></a></li>
+                             </ul>
+                          </li>
+                       </ul>
+                    </div>
+                 </nav>
+              </div>
+           </div>
+        </div>
+     </div>
+  </div>
+</header>
