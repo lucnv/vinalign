@@ -16,6 +16,23 @@ en:
     sessions:
       new:
         login: Login
+    registrations:
+      new:
+        sign_up: Sign up
+    passwords:
+      new:
+        forgot_your_password: Forgot your password
+        send_me_reset_password_instructions: Send me reset password instructions
+    confirmations:
+      new:
+        resend_confirmation_instructions: Resend confirmation instructions
+    shared:
+      links:
+        log_in: Log in
+        sign_up: Sign up
+        not_a_member: Not a member?
+        did_not_receive_confirmation_instructions: Didn't receive confirmation instructions?
+        have_your_own_account: Have your own account?
   layouts:
     header:
       navigation:

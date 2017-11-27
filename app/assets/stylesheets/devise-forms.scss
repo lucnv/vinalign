@@ -1,0 +1,45 @@
+.devise-form {
+  margin: 50px auto;
+
+  .z-depth-1a {
+    -webkit-box-shadow: 0 2px 5px 0 rgba(55, 161, 255, 0.26), 0 4px 12px 0 rgba(121, 155, 254, 0.25);
+    box-shadow: 0 2px 5px 0 rgba(55, 161, 255, 0.26), 0 4px 12px 0 rgba(121, 155, 254, 0.25);
+  }
+
+  .btn:hover,
+  .z-depth-1-half {
+    -webkit-box-shadow: 0 5px 11px 0 rgba(85, 182, 255, 0.28), 0 4px 15px 0 rgba(36, 133, 255, 0.15);
+    box-shadow: 0 5px 11px 0 rgba(85, 182, 255, 0.28), 0 4px 15px 0 rgba(36, 133, 255, 0.15);
+  }
+
+  .blue-text {
+    color: #2196F3!important;
+  }
+
+  .card:not([class*=card-outline-]) {
+    border: 1;
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+  }
+
+  .btn {
+    color: #FFF!important;
+    border: none;
+    cursor: pointer;
+
+    &.btn-rounded {
+      border-radius: 10em!important;
+    }
+
+    &.blue-gradient {
+      background: -webkit-linear-gradient(50deg,#45cafc,#303f9f)!important;
+      background: linear-gradient(40deg,#45cafc,#303f9f)!important;
+      -webkit-transition: 0.5s ease;
+      transition: 0.5s ease;
+    }
+
+    &.btn-block {
+      min-height: 40px;
+    }
+  }
+}
