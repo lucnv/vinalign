@@ -13,7 +13,7 @@
 //= require turbolinks
 //= require jquery
 //= require jquery_ujs
-//= require js/bootstrap
+//= require js/bootstrap-v3
 //= require js/adminlte
 //= require shared/load_dynamic_options
 //= require shared/adminlte_turbolink

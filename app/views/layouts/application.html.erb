@@ -5,24 +5,23 @@
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track": "reload" %>
-    <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" %>
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
     <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic" %>
     <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Raleway:700,400,300" %>
     <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Pacifico" %>
     <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=PT+Serif" %>
 
     <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
-    <%= javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" %>
-    <%= javascript_include_tag "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" %>
   </head>
 
   <body>
+    <%= render "layouts/header" %>
     <div class="container">
       <div id="flash-messages">
         <%= render "layouts/shared/flash" %>
       </div>
       <%= yield %>
     </div>
+    <%= render "layouts/footer" %>
   </body>
 </html>

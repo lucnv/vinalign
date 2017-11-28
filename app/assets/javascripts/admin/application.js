@@ -14,7 +14,7 @@
 //= require turbolinks
 //= require jquery
 //= require jquery_ujs
-//= require js/bootstrap
+//= require js/bootstrap-v3
 //= require js/adminlte
 //= require shared/adminlte_turbolink
 //= require js/bootstrap-dialog

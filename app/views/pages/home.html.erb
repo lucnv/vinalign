@@ -1,6 +1,10 @@
-<h1>Welcome to Vinalign</h1>
-<% if user_signed_in? %>
-  <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-<% else %>
-  <%= link_to "Login", new_user_session_path %>
-<% end %>
+<div class="front-page">
+   <div class="scrollToTop circle"><i class="fa fa-arrow-up"></i></div>
+   <div class="page-wrapper">
+      <div id="page-start"></div>
+      <%= render "general_info" %>
+      <%= render "news_and_services" %>
+      <%= render "technologies" %>
+      <%= render "team_introduction" %>
+   </div>
+</div>
