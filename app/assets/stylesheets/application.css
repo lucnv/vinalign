@@ -10,6 +10,10 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require css/bootstrap
+ *= require css/font-awesome
+ *= require css/medical-theme-animations
+ *= require css/medical-theme-style
+ *= require css/medical-theme-typography
+ *= require css/medical-theme-blue-skin
  *= require_self
  */

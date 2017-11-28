@@ -14,4 +14,7 @@
 //= require turbolinks
 //= require jquery
 //= require jquery_ujs
-//= require js/bootstrap
+//= require plugins/modernizr
+//= require plugins/waypoints/jquery.waypoints
+//= require plugins/waypoints/sticky
+//= require js/medical-theme
