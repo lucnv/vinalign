@@ -1,4 +1,4 @@
-<%= render "shared/patient_records/provide_patient_record_side_bar", patient_record: @patient_record, 
+<%= render "shared/patient_records/provide_patient_record_side_bar", patient_record: @patient_record,
   scope: :admin, current_site: :price_lists %>
 <section class="content-header">
   <h1><%= t ".price_lists_activation" %></h1>
@@ -6,7 +6,7 @@
 <section class="content">
   <div class="box">
     <div class="box-body">
-      <%= link_to new_admin_patient_record_price_list_path(@patient_record), 
+      <%= link_to new_admin_patient_record_price_list_path(@patient_record),
         class: "btn btn-primary btn-flat", remote: true do %>
         <i class="fa fa-plus"></i>
         <%= t ".add_price_list" %>
@@ -14,9 +14,9 @@
       <hr/>
       <table class="table table-hover">
         <thead>
-          <th><%= PatientRecord.human_attribute_name :id %></th>
-          <th><%= PatientRecord.human_attribute_name :item %></th>
-          <th><%= PatientRecord.human_attribute_name :price %></th>
+          <th><%= PriceList.human_attribute_name :id %></th>
+          <th><%= PriceList.human_attribute_name :item %></th>
+          <th><%= PriceList.human_attribute_name :price %></th>
           <th><%= t ".action" %></th>
         </thead>
         <tbody id="price-lists">

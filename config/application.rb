@@ -11,5 +11,6 @@ module Vinalign
     config.load_defaults 5.1
     config.i18n.load_path += Dir["#{Rails.root.to_s}/config/locales/**/*.{rb,yml}"]
     config.time_zone = "Hanoi"
+    I18n.default_locale = :vi
   end
 end

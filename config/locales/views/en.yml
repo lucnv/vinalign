@@ -16,6 +16,7 @@ en:
     sessions:
       new:
         login: Login
+        forgot_your_password: Forgot your password?
     registrations:
       new:
         sign_up: Sign up

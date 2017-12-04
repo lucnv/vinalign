@@ -1,0 +1,44 @@
+vi:
+  activerecord:
+    models:
+      patient_record: Hồ sơ bệnh nhân
+      clinic: Phòng khám
+      district: Quận/Huyện
+      image: Ảnh
+      message: Tin nhắn
+      price_list: Bảng giá
+      province: Tỉnh/Thành phố
+      treatment_phase: Giai đoạn điều trị
+      treatment_plan_file: Kế hoạch điều trị
+      user_profile: Hồ sơ người dùng
+      user: Người dùng
+    attributes:
+      user:
+        login: Đăng nhập
+        password: Mật khẩu
+        password_confirmation: Xác nhận khẩu
+      patient_record:
+        id: Id
+        clinic: Phòng khám
+        full_name: Họ và tên
+        gender: Giới tính
+        age: Tuổi
+        phone_number: Số điện thoại
+        start_date: Ngày bắt đầu
+        dob: Ngày sinh
+        full_address: Địa chỉ đầy đủ
+        doctor: Bác sĩ
+        first_name: Tên
+        last_name: Họ
+        province: Tỉnh/Thành phố
+        district: Quận/Huyện
+        address: Địa chỉ
+        profile_photo: Ảnh đại diện
+      treatment_phase:
+        start_date: Ngày bắt đầu
+        description: Mô tả
+        name: Tên
+      price_list:
+        id: Id
+        item: Mục
+        price: Giá
