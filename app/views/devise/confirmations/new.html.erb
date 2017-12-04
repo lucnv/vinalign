@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="devise-form col-md-6 offset-md-3">
+    <div class="card">
+      <div class="card-body mx-4">
+        <div class="text-center">
+          <h2 class="mb-5 mt-4"><%= t ".resend_confirmation_instructions" %></h2>
+        </div>
+        <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: {method: :post}) do |f| %>
+          <div class="form-group has-feedback">
+            <%= f.label class: "control-label" do %>
+              <%= User.human_attribute_name :email %>
+              <span class="text-danger small">*</span>
+            <% end %>
+            <%= f.email_field :email, autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), class: "form-control" %>
+            <i class="fa fa-envelope form-control-feedback pr-4"></i>
+          </div>
+          <div class="actions mb-3 mt-5">
+            <%= f.submit t(".resend_confirmation_instructions"), class: "btn blue-gradient btn-block btn-rounded z-depth-1a" %>
+          </div>
+        <% end %>
+      </div>
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>
