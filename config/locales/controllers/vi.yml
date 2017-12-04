@@ -1,0 +1,33 @@
+vi:
+  no_permission: Bạn không được phép thực hiện hành động này.
+  admin:
+    price_lists:
+      create:
+        success: Tạo mới bảng giá thành công
+        failed: Tạo mới bảng giá thất bại
+      update:
+        success: Cập nhật bảng giá thành công
+        failed: Cập nhật bảng giá thất bại
+      destroy:
+        success: Xóa bảng giá thành công
+        failed: Xóa bảng giá thất bại
+    treatment_phases:
+      create:
+        success: Tạo mới giai đoạn điều trị thành công
+        failed: Tạo mới giai đoạn điều trị thất bại
+    treatment_plan_files:
+      create:
+        success: Tạo mới hồ sơ điều trị thành công
+        failed: Tạo mới hồ sơ điều trị thất bại
+  clinic:
+    patient_records:
+      create:
+        success: Tạo mới hồ sơ bệnh nhân thành công
+        failed: Tạo mới hồ sơ bệnh nhân thất bại
+      update:
+        success: Cập nhật hồ sơ bệnh nhân thành công
+        failed: Cập nhật hồ sơ bệnh nhân thất bại
+    treatment_phases:
+      create:
+        success: Tạo mới giai đoạn điều trị thành công
+        failed: Tạo mới giai đoạn điều trị thất bại
