@@ -34,3 +34,8 @@ image:
     thumb: [400, 250]
 logo:
   url: logo-vinalign.png
+information:
+  address: Ha Noi - Viet Nam
+  phone_no: (+84) 0243 7552 999
+  email: info@vinalign.com
+  website: www.vinalign.com

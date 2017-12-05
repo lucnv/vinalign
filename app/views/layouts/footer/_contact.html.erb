@@ -1,24 +1,16 @@
-<div class="col-lg-8">
+<div class="col-lg-3 col-md-6">
   <div class="footer-content">
-    <h2 class="title">Contact Us</h2>
-    <div class="row">
-      <div class="col-lg-5 col-md-5">
-        <ul class="social-links circle animated-effect-1">
-          <li class="facebook"><a target="_blank" href="http://www.facebook.com"><i class="fa fa-facebook"></i></a></li>
-          <li class="googleplus"><a target="_blank" href="http://plus.google.com"><i class="fa fa-google-plus"></i></a></li>
-          <li class="skype"><a target="_blank" href="http://www.skype.com"><i class="fa fa-skype"></i></a></li>
-          <li class="youtube"><a target="_blank" href="https://www.youtube.com"><i class="fa fa-youtube"></i></a></li>
-        </ul>
-        <ul class="list-icons">
-          <li><i class="fa fa-map-marker pr-10 text-default"></i> One infinity loop, 54100</li>
-          <li><i class="fa fa-phone pr-10 text-default"></i> +00 1234567890</li>
-          <li><a href="mailto:info@theproject.com"><i class="fa fa-envelope-o pr-10"></i>info@theproject.com</a></li>
-        </ul>
-      </div>
-      <div class="col-lg-7 col-md-7">
-        <!-- Cần nhúng maps sẽ nhúng vào đây, tạm thời để ảnh -->
-        <%= image_tag "https://nguoivietphone.com/images/file/SNRsu0pV1AgBAMJV/google-maps-dang-muon-tro-thanh-mang-xa-hoi-moi.jpg" %>
-      </div>
-    </div>
+    <h3 class="title text-default">Contact us</h3>
+    <ul class="social-links circle animated-effect-1 mt-0 mb-1">
+      <li class="facebook"><a target="_blank" href="http://www.facebook.com"><i class="fa fa-facebook"></i></a></li>
+      <li class="twitter"><a target="_blank" href="http://plus.google.com"><i class="fa fa-twitter"></i></a></li>
+      <li class="skype"><a target="_blank" href="http://www.skype.com"><i class="fa fa-skype"></i></a></li>
+      <li class="youtube"><a target="_blank" href="https://www.youtube.com"><i class="fa fa-youtube"></i></a></li>
+    </ul>
+    <ul class="list-icons">
+      <li><i class="fa fa-map-marker pr-10 text-default"></i><%= Settings.information.address %></li>
+      <li><i class="fa fa-phone pr-10 text-default"></i><%= Settings.information.phone_no %></li>
+      <li><a href="mailto:<%= Settings.information.email %>"><i class="fa fa-envelope-o pr-10"></i><%= Settings.information.email %></a></li>
+    </ul>
   </div>
 </div>

@@ -1,0 +1,45 @@
+.header .navbar-nav li .nav-link {
+  padding: 0!important;
+  background-color: transparent!important;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #3697d9;
+  &:hover {
+    color: #0299ff;
+  }
+}
+
+@media (min-width: 991px) {
+  #navbar-collapse-1 {
+    display: block!important;
+  }
+
+  .navigation-links {
+    padding: 5px 0;
+    .nav-link {
+      border: none!important;
+    }
+    .nav-item a {
+
+    }
+
+    .nav-seperated {
+      border-left: 1px solid #cccccc;
+    }
+  }
+
+  .main-navigation .navbar-nav>li {
+    margin: 0 6px;
+    &:first-child {
+      margin-right: 6px;
+    }
+  }
+
+  .header-baner {
+    padding-bottom: 7px;
+  }
+
+  .site-slogan {
+    font-size: 30px;
+  }
+}
