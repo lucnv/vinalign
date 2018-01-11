@@ -151,12 +151,6 @@ vi:
         new_album: Album mới
         cancel: *cancel
         create: *create
-  views:
-    pagination:
-      first: Đầu
-      previous: Trước
-      next: Sau
-      last: Cuối
   shared:
     patient_records:
       details:

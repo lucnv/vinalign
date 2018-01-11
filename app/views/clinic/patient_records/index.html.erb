@@ -12,13 +12,11 @@
       <%= render "filter", q: @q %>
     </div>
     <div class="box-body">
-      <%= t ".total_records_found", count: @patient_records.total_count %>
+      <%= render "shared/full_pagination", records: @patient_records %>
       <% if @patient_records.present? %>
         <%= render "patient_record_list", patient_records: @patient_records %>
+        <%= render "shared/full_pagination", records: @patient_records %>
       <% end %>
-    </div>
-    <div class="box-footer">
-      <%= paginate @patient_records, theme: "twitter-bootstrap-3" %>
     </div>
   </div>
 </section>
