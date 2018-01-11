@@ -19,6 +19,10 @@ class PatientRecord < ApplicationRecord
   validates :doctor, presence: true
 
   scope :recent_created, ->{order created_at: :desc}
+  scope :full_name_cont, ->(name) do
+    where "LOWER(CONCAT(#{PatientRecord.table_name}.last_name, #{PatientRecord.table_name}.first_name)) \
+      LIKE '%#{name.to_s.downcase}%'"
+  end
 
   mount_uploader :profile_photo, AvatarUploader
 
@@ -27,4 +31,10 @@ class PatientRecord < ApplicationRecord
   delegate :id, :name, to: :province, prefix: true, allow_nil: true
   delegate :name, to: :clinic, prefix: true, allow_nil: true
   delegate :name, to: :district, prefix: true, allow_nil: true
+
+  class << self
+    def ransackable_scopes auth_object = nil
+      [:full_name_cont]
+    end
+  end
 end

@@ -14,6 +14,11 @@ vi:
     delete: &delete Xóa
     action: &action Hành động
     log_out: &log_out Thoát
+    search: &search Tìm kiếm
+    total_records_found: &total_records_found
+      zero: Không tìm thấy bản ghi
+      one: "%{count} bản ghi được tìm thấy"
+      other: "%{count} bản ghi được tìm thấy"
   devise:
     sessions:
       new:
@@ -111,9 +116,9 @@ vi:
   clinic:
     patient_records:
       index:
-        patient_record_list: *patient_record_list
-        add_patient_record: Thêm mới hồ sơ bệnh nhân
-
+        patient_record_management: Quản lý hồ sơ bệnh nhân
+        add_patient_record: Thêm mới hồ sơ
+        total_records_found: *total_records_found
       patient_record:
         male: *male
         female: *female
@@ -123,12 +128,19 @@ vi:
       edit:
         edit_patient_record: Sửa hồ sơ bệnh nhân
       new:
-        new_patient_record: Thêm mới hồ sơ bệnh nhân
+        new_patient_record: Thêm mới hồ sơ
       form:
         select_gender: Chọn giới tính
         select_province: Chọn tỉnh/thành phố
         select_district: Chọn quận/huyện
         create_patient_record: Tạo hồ sơ bệnh nhân
+      filter:
+        all_gender: Tất cả giới tính
+        male: *male
+        female: *female
+        search: *search
+        start_date_from: Ngày bắt đầu từ
+        start_date_to: Ngày bắt đầu đến
     treatment_phases:
       show:
         images: Ảnh

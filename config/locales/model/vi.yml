@@ -20,7 +20,7 @@ vi:
       patient_record:
         id: Id
         clinic: Phòng khám
-        full_name: Họ và tên
+        full_name: Họ tên
         gender: Giới tính
         age: Tuổi
         phone_number: Số điện thoại
