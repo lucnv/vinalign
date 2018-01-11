@@ -28,3 +28,19 @@
 .no-margin {
   margin: 0px;
 }
+
+.pagination {
+  margin: 0px;
+}
+
+.full-pagination {
+  .page-entries-info {
+    padding-top: 10px;
+  }
+  .paginate {
+    text-align: right;
+    .pagination {
+      margin: 0px;
+    }
+  }
+}
