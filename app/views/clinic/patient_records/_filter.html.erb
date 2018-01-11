@@ -1,0 +1,24 @@
+<%= search_form_for q, url: clinic_patient_records_path, html: {class: "form-horizontal"} do |f| %>
+  <div class="row">
+    <div class="col-md-2">
+      <%= f.label :full_name_cont, PatientRecord.human_attribute_name(:full_name) %>
+      <%= f.text_field :full_name_cont, class: "form-control" %>
+    </div>
+    <div class="col-md-2">
+      <%= f.label :gender_eq, PatientRecord.human_attribute_name(:gender) %>
+      <%= f.select :gender_eq, gender_options, {include_blank: t(".all_gender")},
+        class: "form-control" %>
+    </div>
+    <div class="col-md-2">
+      <%= f.label :start_date_gteq, t(".start_date_from") %>
+      <%= f.date_field :start_date_gteq, class: "form-control" %>
+    </div>
+    <div class="col-md-2">
+      <%= f.label :start_date_lteq, t(".start_date_to") %>
+      <%= f.date_field :start_date_lteq, class: "form-control" %>
+    </div>
+    <div class="col-md-2">
+      <%= f.submit t(".search"), class: "btn btn-flat btn-primary" %>
+    </div>
+  </div>
+<% end %>

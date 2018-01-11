@@ -1,0 +1,13 @@
+<table class="table table-hover">
+  <thead>
+    <th>#</th>
+    <th><%= PatientRecord.human_attribute_name :full_name %></th>
+    <th><%= PatientRecord.human_attribute_name :gender %></th>
+    <th><%= PatientRecord.human_attribute_name :age %></th>
+    <th><%= PatientRecord.human_attribute_name :phone_number %></th>
+    <th><%= PatientRecord.human_attribute_name :start_date %></th>
+  </thead>
+  <tbody>
+    <%= render partial: :patient_record, collection: patient_records, as: :patient_record %>
+  </tbody>
+</table>

@@ -24,3 +24,7 @@
   border-left-width: 3px;
   border-left-color: #3c8dbc;
 }
+
+.no-margin {
+  margin: 0px;
+}
