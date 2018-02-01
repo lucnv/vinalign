@@ -2,15 +2,15 @@
 <html>
   <head>
     <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag  "admin/application", media: "all", "data-turbolinks-track": "reload" %>
-    <%= javascript_include_tag "admin/application", "data-turbolinks-track": "reload" %>
+    <%= stylesheet_link_tag  "management/application", media: "all", "data-turbolinks-track": "reload" %>
+    <%= javascript_include_tag "management/application", "data-turbolinks-track": "reload" %>
   </head>
 
   <body class="hold-transition skin-black sidebar-mini">
     <div class="wrapper">
       <%= render "layouts/admin/header" %>
       <%= render "layouts/admin/side_bar" %>
-      
+
       <div class="content-wrapper">
         <div id="flash-messages">
           <%= render "layouts/shared/flash" %>
