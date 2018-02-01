@@ -20,3 +20,5 @@
 //= require shared/preview_upload_image
 //= require js/bootstrap-dialog
 //= require shared/auto_upload_files
+//= require jquery.magnific-popup
+//= require shared/images_presentation
