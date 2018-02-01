@@ -1,6 +1,8 @@
 <div class="col col-md-4">
   <div class="thumbnail">
-    <%= image_tag image.source.thumb.url %>
-    <%= File.basename image.source.url %>
+    <%= link_to image.source.url, class: "image-popup image-link" do %>
+      <%= image_tag image.source.thumb.url %>
+      <span class="image-name"><%= File.basename image.source.url %></span>
+    <% end %>
   </div>
 </div>

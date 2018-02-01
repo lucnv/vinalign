@@ -20,3 +20,5 @@
 //= require js/bootstrap-dialog
 //= require shared/bootstrap_dialog_turbolinks
 //= require shared/auto_upload_files
+//= require jquery.magnific-popup
+//= require shared/images_presentation
