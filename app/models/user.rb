@@ -4,19 +4,20 @@ class User < ApplicationRecord
   has_one :user_profile
   has_one :clinic
   has_many :messages, foreign_key: :sender_id
-  
+
   validates :username, presence: true, uniqueness: {case_sensitive: false},
     length: {maximum: Settings.validations.user.username.max_length,
     minimum: Settings.validations.user.username.min_length}
 
   before_save :downcase_username
 
-  devise :database_authenticatable, :registerable, :confirmable, :recoverable, 
+  devise :database_authenticatable, :registerable, :confirmable, :recoverable,
     :rememberable, :trackable, :validatable
 
   enum role: [:admin, :doctor]
 
   delegate :avatar, to: :user_profile, allow_nil: true
+  delegate :id, to: :clinic, allow_nil: true, prefix: true
 
   class << self
     def find_for_database_authentication warden_conditions
