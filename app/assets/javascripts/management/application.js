@@ -10,15 +10,11 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
 //= require turbolinks
 //= require jquery
 //= require jquery_ujs
 //= require js/bootstrap-v3
 //= require js/adminlte
-//= require shared/adminlte_turbolink
 //= require js/bootstrap-dialog
-//= require shared/bootstrap_dialog_turbolinks
-//= require shared/auto_upload_files
 //= require jquery.magnific-popup
-//= require shared/images_presentation
+//= require_directory ./../management

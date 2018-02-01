@@ -1,7 +1,7 @@
 class Clinic::BaseController < ApplicationController
   before_action :authenticate_doctor!
 
-  layout "clinic"
+  layout "clinic_management"
 
   helper_method :current_clinic
 

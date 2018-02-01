@@ -52,7 +52,7 @@ en:
         online: *online
         main_navigation: *main_navigation
         patient_records: *patient_records
-    clinic:
+    clinic_management:
       header:
         clinic: Clinic
         management: Management
