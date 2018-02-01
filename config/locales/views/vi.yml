@@ -122,6 +122,7 @@ vi:
       patient_record:
         male: *male
         female: *female
+        confirm_delete: Bạn có chắc chắn muốn xóa hồ sơ này?
       show:
         edit: *edit
         patient_record: Hồ sơ bệnh nhân

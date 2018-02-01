@@ -1,5 +1,5 @@
 class Clinic::PatientRecordsController < Clinic::BaseController
-  before_action :patient_record, only: [:edit, :update]
+  before_action :patient_record, :authorize_patient_record, except: [:index, :new, :create]
 
   def index
     @q = current_clinic.patient_records.ransack params[:q]
@@ -44,6 +44,15 @@ class Clinic::PatientRecordsController < Clinic::BaseController
     end
   end
 
+  def destroy
+    if @patient_record.destroy
+      flash[:success] = t ".success"
+    else
+      flash[:success] = t ".failed"
+    end
+    redirect_to clinic_patient_records_path
+  end
+
   private
   def patient_record_params
     params.require(:patient_record).permit PatientRecord::ATTRIBUTES
@@ -55,5 +64,9 @@ class Clinic::PatientRecordsController < Clinic::BaseController
 
   def support_for_patient_record
     @support = Supports::PatientRecord.new @patient_record
+  end
+
+  def authorize_patient_record
+    authorize @patient_record
   end
 end

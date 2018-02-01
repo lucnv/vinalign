@@ -5,8 +5,8 @@ class PatientRecord < ApplicationRecord
   belongs_to :clinic
   belongs_to :district
   has_one :province, through: :district
-  has_many :treatment_phases
-  has_many :price_lists
+  has_many :treatment_phases, dependent: :destroy
+  has_many :price_lists, dependent: :delete_all
 
   validates :start_date, presence: true
   validates :first_name, presence: true, length: {maximum: Settings.validations.patient_record.first_name.max_length}
@@ -32,9 +32,22 @@ class PatientRecord < ApplicationRecord
   delegate :name, to: :clinic, prefix: true, allow_nil: true
   delegate :name, to: :district, prefix: true, allow_nil: true
 
+
+  before_destroy :clean_s3
+
   class << self
     def ransackable_scopes auth_object = nil
       [:full_name_cont]
     end
+  end
+
+  private
+  def clean_s3
+    profile_photo.remove!
+    profile_photo.medium.remove!
+    profile_photo.small.remove!
+  rescue Excon::Errors::Error => error
+    puts error
+    false
   end
 end

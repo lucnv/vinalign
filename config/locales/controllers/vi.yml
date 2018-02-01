@@ -27,6 +27,9 @@ vi:
       update:
         success: Cập nhật hồ sơ bệnh nhân thành công
         failed: Cập nhật hồ sơ bệnh nhân thất bại
+      destroy:
+        success: Xóa hồ sơ bệnh nhân thành công
+        failed: Xóa hồ sơ bệnh nhân thất bại
     treatment_phases:
       create:
         success: Tạo mới giai đoạn điều trị thành công

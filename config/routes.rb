@@ -2,45 +2,45 @@ Rails.application.routes.draw do
   devise_for :users
 
   root "pages#show", page: :home
-  get "pages/:page", to: "pages#show", as: :page  
+  get "pages/:page", to: "pages#show", as: :page
 
-  namespace :supports do 
+  namespace :supports do
     resources :districts, ony: :index
   end
 
-  namespace :admin do 
+  namespace :admin do
     root "homes#index"
     resources :homes, only: :index
-    resources :patient_records, only: [:index, :show] do 
+    resources :patient_records, only: [:index, :show] do
       resources :price_lists, only: [:index, :new, :create]
       resources :treatment_phases, only: [:index, :new, :create]
     end
     resources :price_lists, only: [:edit, :update, :destroy]
-    resources :treatment_phases, only: :show do 
+    resources :treatment_phases, only: :show do
       resources :treatment_plan_files, only: :create
     end
   end
 
-  namespace :clinic do 
+  namespace :clinic do
     root "patient_records#index"
-    resources :patient_records, except: :destroy do 
+    resources :patient_records do 
       resources :price_lists, only: :index
       resources :treatment_phases, only: [:index, :new, :create]
     end
-    resources :treatment_phases, only: :show do 
+    resources :treatment_phases, only: :show do
       resources :albums, only: [:new, :create]
     end
   end
 
-  resources :albums do 
+  resources :albums do
     resources :images, only: [:index, :create]
   end
 
-  resources :treatment_phases do 
+  resources :treatment_phases do
     resources :messages, only: :create
   end
 
-  namespace :download do 
+  namespace :download do
     resources :treatment_plan_files, only: :show
   end
 end
