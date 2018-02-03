@@ -17,5 +17,6 @@
  *= require css/medical-theme-typography
  *= require css/medical-theme-blue-skin
  *= require devise-forms
+ *= require flash_messages
  *= require_self
  */

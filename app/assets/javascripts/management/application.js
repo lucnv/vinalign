@@ -18,3 +18,4 @@
 //= require js/bootstrap-dialog
 //= require jquery.magnific-popup
 //= require_directory ./../management
+//= require flash_messages
