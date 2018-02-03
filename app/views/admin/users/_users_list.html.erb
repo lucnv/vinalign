@@ -1,0 +1,14 @@
+<table class="table table-hover">
+  <thead>
+    <th>#</th>
+    <th><%= UserProfile.human_attribute_name :avatar %></th>
+    <th><%= UserProfile.human_attribute_name :full_name %></th>
+    <th><%= UserProfile.human_attribute_name :email %></th>
+    <th><%= UserProfile.human_attribute_name :phone_number %></th>
+    <th><%= User.human_attribute_name :clinic %></th>
+    <th></th>
+  </thead>
+  <tbody>
+    <%= render partial: :user, collection: users, as: :user %>
+  </tbody>
+</table>

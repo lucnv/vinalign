@@ -1,0 +1,12 @@
+<tr>
+  <td>
+    <%= index_on_pagination user_counter, assigns["users"].current_page,
+      Settings.users.per_page %>
+  </td>
+  <td><%= image_tag user.avatar.small.url, class: "avatar_in_list" %></td>
+  <td><%= user.user_profile.full_name %></td>
+  <td><%= user.email %></td>
+  <td><%= user.phone_number %></td>
+  <td><%= user.clinic_name %></td>
+  <td><%= t ".action" %></td>
+</tr>

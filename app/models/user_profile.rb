@@ -7,6 +7,10 @@ class UserProfile < ApplicationRecord
 
   before_destroy :clean_s3
 
+  def full_name
+    last_name + " " +first_name
+  end
+
   private
   def clean_s3
     avatar.remove!
