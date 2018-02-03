@@ -76,6 +76,9 @@ vi:
         price_lists: Bảng giá
         treatment_phases: Giai đoạn điều trị
   admin:
+    clinics:
+      filter:
+        search: *search
     patient_records:
       index:
         patient_record_list: *patient_record_list

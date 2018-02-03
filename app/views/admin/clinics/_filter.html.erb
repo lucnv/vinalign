@@ -1,0 +1,16 @@
+<%= search_form_for q, url: admin_clinics_path, html: {class: "form-horizontal"} do |f| %>
+  <div class="row">
+    <div class="col-md-2">
+      <%= f.label :name_cont, Clinic.human_attribute_name(:name) %>
+      <%= f.text_field :name_cont, class: "form-control" %>
+    </div>
+    <div class="col-md-2">
+      <%= f.label :province_id_eq, Clinic.human_attribute_name(:province) %>
+      <%= f.select :province_id_eq, support.province_options,
+        {include_blank: t(".all_provinces")}, class: "form-control" %>
+    </div>
+    <div class="col-md-2">
+      <%= f.submit t(".search"), class: "btn btn-flat btn-primary" %>
+    </div>
+  </div>
+<% end %>
