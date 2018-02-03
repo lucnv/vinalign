@@ -1,3 +1,5 @@
+<% content_for :clinics_activation, "active" %>
+<%= render "admin/clinics/provide_clinic_side_bar", clinic: @clinic, current_site: :details %>
 <% provide :header_title, t(".clinic_title", clinic_name: @clinic.name) %>
 <% breadcrumb :admin_clinic, @clinic %>
 <%= link_to "patient_records", admin_clinic_patient_records_path(@clinic) %>

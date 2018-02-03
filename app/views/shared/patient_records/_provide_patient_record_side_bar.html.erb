@@ -1,5 +1,5 @@
 <% content_for "patient_record_#{current_site}_activation".to_sym, "active" %>
-<% content_for :patient_record_side_bar do %>
-  <%= render "layouts/shared/patient_record_side_bar", scope: scope, 
+<% provide :patient_record_side_bar do %>
+  <%= render "layouts/shared/patient_record_side_bar", scope: scope,
     patient_record: patient_record %>
 <% end %>

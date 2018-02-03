@@ -1,0 +1,19 @@
+<ul class="treeview-menu">
+  <li class="<%= content_for :clinic_details_activation %>">
+    <%= link_to admin_clinic_path(clinic) do %>
+      <i class="fa fa-file-text"></i>
+      <span><%= t ".details" %></span>
+    <% end %>
+  </li>
+  <li class="<%= content_for :clinic_patient_records_activation %>
+    <%='active menu-open' if content_for? :patient_record_side_bar %>">
+    <%= link_to admin_clinic_patient_records_path(clinic) do %>
+      <i class="fa fa-file-text"></i>
+      <span><%= t ".patient_records" %></span>
+      <span class="pull-right-container">
+        <i class="fa fa-angle-left pull-right"></i>
+      </span>
+    <% end %>
+    <%= yield :patient_record_side_bar %>
+  </li>
+</ul>
