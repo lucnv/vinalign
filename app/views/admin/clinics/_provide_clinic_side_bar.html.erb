@@ -1,0 +1,4 @@
+<% content_for "clinic_#{current_site}_activation".to_sym, "active" %>
+<% content_for :clinic_side_bar do %>
+  <%= render "layouts/admin/clinic_side_bar", clinic: clinic %>
+<% end %>
