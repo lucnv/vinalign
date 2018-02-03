@@ -3,6 +3,7 @@ class ClinicManagement::TreatmentPhasesController < ClinicManagement::BaseContro
   before_action :patient_record, only: [:index, :new, :create]
 
   def index
+    @patient_record = @patient_record.decorate
     @treatment_phases = @patient_record.treatment_phases
   end
 

@@ -85,8 +85,6 @@ vi:
       patient_record:
         male: *male
         female: *female
-      show:
-        patient_record: Hồ sơ bệnh nhân
     price_lists:
       new:
         new_price_list: Bảng giá mới
@@ -132,7 +130,7 @@ vi:
         delete: Xóa
       show:
         edit: *edit
-        patient_record: Hồ sơ bệnh nhân
+        patient_record_title_html: Hồ sơ bệnh nhân <small>%{name}</small>
       edit:
         edit_patient_record: Sửa hồ sơ bệnh nhân
       new:
@@ -153,13 +151,14 @@ vi:
       new:
         new_treatment_phase: Tạo mới giai đoạn điều trị
       index:
-        treatment_phases: Giai đoạn điều trị
         add_treatment_phase: Thêm mới giai đoạn điều trị
+        treatment_phases_title_html: Hồ sơ bệnh nhân - Các giai đoạn điều trị <small>%{name}</small>
       show:
         images: Ảnh
         treatment_plans: Kế hoạch điều trị
         communication: Giao tiếp
         treatment_phase_details: Chi tiết giai đoạn điều trị
+        treatment_phase_title_html: Hồ sơ bệnh nhân - %{treatment_phase_name} <small>%{patient_record_name}</small>
       images_tab:
         new_album: Album mới
     albums:
@@ -169,8 +168,7 @@ vi:
         create: *create
     price_lists:
       index:
-        price_lists_activation: Danh sách bảng giá
-
+        price_lists_title_html: Hồ sơ bệnh nhân - Danh sách bảng giá <small>%{patient_record_name}</small>
   shared:
     patient_records:
       details:

@@ -1,22 +1,19 @@
+<% provide :header_title, t(".patient_record_management") %>
 <% content_for :patient_records_activation, "active" %>
-<section class="content-header clearfix">
-  <h1 class="pull-left"><%= t ".patient_record_management" %></h1>
-  <%= link_to new_clinic_management_patient_record_path, class: "btn btn-primary btn-flat pull-right" do %>
-    <i class="fa fa-plus"></i>
-    <%= t ".add_patient_record" %>
-  <% end %>
-</section>
-<section class="content">
-  <div class="box">
-    <div class="box-header with-border">
-      <%= render "filter", q: @q %>
-    </div>
-    <div class="box-body">
-      <%= render "shared/full_pagination", records: @patient_records %>
-      <% if @patient_records.present? %>
-        <%= render "patient_record_list", patient_records: @patient_records %>
-        <%= render "shared/full_pagination", records: @patient_records %>
-      <% end %>
-    </div>
+<% breadcrumb :clinic_mngt_patient_records %>
+<%= link_to new_clinic_management_patient_record_path, class: "btn btn-primary btn-flat" do %>
+  <i class="fa fa-plus"></i>
+  <%= t ".add_patient_record" %>
+<% end %>
+<div class="box">
+  <div class="box-header with-border">
+    <%= render "filter", q: @q %>
   </div>
-</section>
+  <div class="box-body">
+    <%= render "shared/full_pagination", records: @patient_records %>
+    <% if @patient_records.present? %>
+      <%= render "patient_record_list", patient_records: @patient_records %>
+      <%= render "shared/full_pagination", records: @patient_records %>
+    <% end %>
+  </div>
+</div>

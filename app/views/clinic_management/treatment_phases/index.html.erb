@@ -1,14 +1,12 @@
 <%= render "shared/patient_records/provide_patient_record_side_bar", patient_record: @patient_record,
   scope: :clinic_management, current_site: :treatment_phases %>
-<section class="content-header clearfix">
-  <h1 class="pull-left"><%= t ".treatment_phases" %></h1>
-  <%= link_to new_clinic_management_patient_record_treatment_phase_path(@patient_record),
-    class: "btn btn-primary btn-flat pull-right" do  %>
-    <i class="fa fa-plus"></i>
-    <%= t ".add_treatment_phase" %>
-  <% end %>
-</section>
-<section class="content">
-  <%= render partial: "shared/treatment_phases/treatment_phase",
-    collection: @treatment_phases, as: :treatment_phase, locals: {scope: :clinic_management} %>
-</section>
+<% provide :header_title, t(".treatment_phases_title_html", name: @patient_record.full_name) %>
+<% breadcrumb :clinic_mngt_patient_record_treatment_phases, @patient_record %>
+<%= link_to new_clinic_management_patient_record_treatment_phase_path(@patient_record),
+  class: "btn btn-primary btn-flat" do  %>
+  <i class="fa fa-plus"></i>
+  <%= t ".add_treatment_phase" %>
+<% end %>
+<%= render partial: "shared/treatment_phases/treatment_phase",
+  collection: @treatment_phases, as: :treatment_phase, locals: {scope: :clinic_management} %>
+
