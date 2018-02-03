@@ -5,4 +5,8 @@ class Admin::ClinicsController < Admin::BaseController
       .decorate
     @support = Supports::Clinic.new
   end
+
+  def show
+    @clinic = Clinic.find params[:id]
+  end
 end

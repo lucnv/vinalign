@@ -1,6 +1,8 @@
 class Admin::PatientRecordsController < Admin::BaseController
   def index
-    @patient_records = PatientRecord.recent_created.page(params[:page])
+    @clinic = Clinic.find params[:clinic_id]
+    @q = @clinic.patient_records.ransack params[:q]
+    @patient_records = @q.result.recent_created.page(params[:page])
       .per(Settings.patient_records.per_page).includes(:clinic).decorate
   end
 

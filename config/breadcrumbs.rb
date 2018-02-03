@@ -7,6 +7,16 @@ crumb :admin_clinics do
   parent :admin_root
 end
 
+crumb :admin_clinic do |clinic|
+  link clinic.name, admin_clinic_path(clinic)
+  parent :admin_clinics
+end
+
+crumb :admin_clinic_patient_records do |clinic|
+  link I18n.t("breadcrumbs.patient_records"), admin_clinic_patient_records_path(clinic_id: clinic.id)
+  parent :admin_clinic, clinic
+end
+
 crumb :clinic_mngt_root do
   link I18n.t("breadcrumbs.home"), clinic_management_root_path
 end
@@ -47,6 +57,7 @@ crumb :clinic_mngt_patient_record_price_lists do |patient_record|
     clinic_management_patient_record_price_lists_path(patient_record_id: patient_record.id)
   parent :clinic_mngt_patient_record, patient_record
 end
+
 # crumb :projects do
 #   link "Projects", projects_path
 # end
