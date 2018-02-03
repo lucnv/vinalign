@@ -4,7 +4,7 @@ module ApplicationHelper
   end
 
   def gender_options
-    Settings.genders.map {|gender| [t(".#{gender}"), gender]}
+    PatientRecord.genders.map {|gender, value| [t(".#{gender}"), value]}
   end
 
   def custom_simple_format text
