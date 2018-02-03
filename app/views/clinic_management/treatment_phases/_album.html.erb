@@ -1,9 +1,9 @@
-<%= content_tag :div, class: "list-group-item group-item-album", 
+<%= content_tag :div, class: "list-group-item group-item-album",
   id: "album-#{album.id}" do %>
   <%= link_to album_images_path(album), remote: true do %>
     <i class="fa fa-folder"></i>
     <%= album.name %>
   <% end %>
   <br/>
-  <small class="date"><%= album.created_at %></small>
+  <small class="date"><%= time_with_format album.created_at %></small>
 <% end %>

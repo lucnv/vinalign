@@ -2,7 +2,7 @@ BootstrapDialog.show({
   title: "<%= t '.new_album' %>",
   id: "new-album",
   message: "<%= j render 'form', album: @album, \
-    form_path: clinic_treatment_phase_albums_path(@treatment_phase) %>".replace(/\n/g, ''),
+    form_path: clinic_management_treatment_phase_albums_path(@treatment_phase) %>".replace(/\n/g, ''),
   closeByBackdrop: false,
   closeByKeyboard: false,
   buttons: [{
