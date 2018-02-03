@@ -43,6 +43,7 @@ gem "draper"
 gem "bootstrap-kaminari-views"
 gem "pg", "~> 0.20"
 gem "magnific-popup-rails"
+gem "gretel"
 
 group :production do
   gem "pg", "~> 0.20"

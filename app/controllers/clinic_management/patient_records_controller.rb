@@ -29,6 +29,7 @@ class ClinicManagement::PatientRecordsController < ClinicManagement::BaseControl
   end
 
   def edit
+    @patient_record = @patient_record.decorate
     support_for_patient_record
   end
 
@@ -39,6 +40,7 @@ class ClinicManagement::PatientRecordsController < ClinicManagement::BaseControl
       redirect_to clinic_management_patient_record_path(@patient_record)
     else
       support_for_patient_record
+      @patient_record = @patient_record.decorate
       flash.now[:failed] = t ".failed"
       render :edit
     end

@@ -35,6 +35,10 @@ class PatientRecord < ApplicationRecord
 
   before_destroy :clean_s3
 
+  def full_name
+    first_name + " " + last_name
+  end
+
   class << self
     def ransackable_scopes auth_object = nil
       [:full_name_cont]
