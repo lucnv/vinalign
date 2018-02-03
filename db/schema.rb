@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171126163511) do
+ActiveRecord::Schema.define(version: 20180203142520) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,9 +32,7 @@ ActiveRecord::Schema.define(version: 20171126163511) do
     t.string "facebook"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id"
     t.index ["district_id"], name: "index_clinics_on_district_id"
-    t.index ["user_id"], name: "index_clinics_on_user_id"
   end
 
   create_table "districts", force: :cascade do |t|
@@ -126,6 +124,8 @@ ActiveRecord::Schema.define(version: 20171126163511) do
     t.string "phone_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "clinic_id"
+    t.index ["clinic_id"], name: "index_user_profiles_on_clinic_id"
     t.index ["user_id"], name: "index_user_profiles_on_user_id"
   end
 
@@ -156,7 +156,6 @@ ActiveRecord::Schema.define(version: 20171126163511) do
 
   add_foreign_key "albums", "treatment_phases"
   add_foreign_key "clinics", "districts"
-  add_foreign_key "clinics", "users"
   add_foreign_key "districts", "provinces"
   add_foreign_key "images", "albums"
   add_foreign_key "messages", "treatment_phases"
@@ -165,5 +164,6 @@ ActiveRecord::Schema.define(version: 20171126163511) do
   add_foreign_key "price_lists", "patient_records"
   add_foreign_key "treatment_phases", "patient_records"
   add_foreign_key "treatment_plan_files", "treatment_phases"
+  add_foreign_key "user_profiles", "clinics"
   add_foreign_key "user_profiles", "users"
 end

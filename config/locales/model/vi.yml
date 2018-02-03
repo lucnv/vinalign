@@ -53,3 +53,6 @@ vi:
       clinic:
         name: Tên
         province: Tỉnh thành
+        phone_number: Số điện thoại
+        district: Quận huyện
+        address: Địa chỉ

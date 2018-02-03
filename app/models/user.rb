@@ -2,8 +2,8 @@ class User < ApplicationRecord
   attr_accessor :login
 
   has_one :user_profile
-  has_one :clinic
-  has_many :messages, foreign_key: :sender_id
+  has_one :clinic, through: :user_profile
+  has_many :messages, through: :user_profile
 
   validates :username, presence: true, uniqueness: {case_sensitive: false},
     length: {maximum: Settings.validations.user.username.max_length,

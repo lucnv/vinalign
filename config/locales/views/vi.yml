@@ -91,6 +91,11 @@ vi:
       index:
         clinics_management: Quản lí phòng khám
         add_new_clinic: Thêm mới phòng khám
+      form:
+        select_province: Chọn tỉnh thành
+        select_district: Chọn quận huyện
+      new:
+        new_clinic: Thêm mới phòng khám
     patient_records:
       index:
         patient_records_title_html: Hồ sơ bệnh nhân <small>%{clinic_name}</small>

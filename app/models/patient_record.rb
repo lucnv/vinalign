@@ -35,6 +35,8 @@ class PatientRecord < ApplicationRecord
 
   before_destroy :clean_s3
 
+  ransacker :gender, formatter: proc {|value| genders[value]}
+
   def full_name
     last_name + " " + first_name
   end

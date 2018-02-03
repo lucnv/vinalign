@@ -1,7 +1,7 @@
 <% provide :header_title, t(".clinics_management") %>
 <% breadcrumb :admin_clinics %>
 <% content_for :clinics_activation, "active" %>
-<%= link_to "#", class: "btn btn-primary btn-flat" do %>
+<%= link_to new_admin_clinic_path, class: "btn btn-primary btn-flat" do %>
   <i class="fa fa-plus"></i>
   <%= t ".add_new_clinic" %>
 <% end %>

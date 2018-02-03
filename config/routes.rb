@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root "homes#index"
     resources :homes, only: :index
-    resources :clinics, only: [:index, :show] do
+    resources :clinics, only: [:index, :show, :new, :create] do
       resources :patient_records, only: :index
     end
     resources :users, only: :index

@@ -1,5 +1,9 @@
 class UserProfile < ApplicationRecord
   belongs_to :user
+  belongs_to :clinic, optional: true
+
+  has_many :messages, foreign_key: :sender_id
+
 
   enum gender: Settings.genders.map(&:to_sym)
 
@@ -8,7 +12,7 @@ class UserProfile < ApplicationRecord
   before_destroy :clean_s3
 
   def full_name
-    last_name + " " +first_name
+    last_name + " " + first_name
   end
 
   private
