@@ -93,6 +93,7 @@ vi:
         add_new_clinic: Thêm mới phòng khám
     patient_records:
       index:
+        patient_records_title_html: Hồ sơ bệnh nhân <small>%{clinic_name}</small>
         patient_record_list: *patient_record_list
       patient_record:
         male: *male
