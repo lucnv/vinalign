@@ -42,3 +42,5 @@ vi:
         id: Id
         item: Mục
         price: Giá
+      album:
+        name: Tên

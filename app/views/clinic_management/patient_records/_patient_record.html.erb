@@ -12,7 +12,7 @@
   <td><%= time_with_format patient_record.start_date %></td>
   <td>
     <%= link_to clinic_management_patient_record_path(patient_record), method: :delete,
-      data: {confirm: t(".confirm_delete")}, class: "pull-right btn btn-danger btn-flat" do %>
+      data: {confirm: t(".confirm_delete")}, class: "btn btn-danger btn-xs btn-flat" do %>
       <i class="fa fa-pencil-square-o"></i>
       <%= t ".delete" %>
     <% end %>

@@ -9,7 +9,7 @@
   <div class="box-footer">
     <%= form_for [treatment_phase, Message.new], remote: true do |f| %>
       <%= f.text_area :content, class: "form-control", required: true %>
-      <%= f.submit "Send", class: "btn btn-primary btn-flat" %>
+      <%= f.submit t(".send"), class: "btn btn-primary btn-flat" %>
     <% end %>
   </div>
 </div>
