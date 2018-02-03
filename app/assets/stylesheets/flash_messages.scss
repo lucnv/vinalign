@@ -1,0 +1,10 @@
+#flash-messages .alert {
+  display: inline-block;
+  margin: 0px auto;
+  position: fixed;
+  transition: all 0.5s ease-in-out;
+  z-index: 1031;
+  top: 20px;
+  right: 20px;
+  animation-iteration-count: 1;
+  }

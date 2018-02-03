@@ -1,8 +1,13 @@
 <% Settings.flash.each do |key, value| %>
   <% unless flash[key].blank? %>
-    <div class="alert <%= value %>">
-      <a class="close" data-dismiss="alert" href="#" aria-hidden="true">&times;</a>
-      <%= content_for?(:flash_errors) ? yield(:flash_errors) : flash[key] %>
+    <div data-notify="container" class="col-xs-11 col-sm-4 alert animated fadeInDown alert <%= value %>" role="alert" data-notify-position="top-right">
+      <a class="close" data-dismiss="alert" href="#" aria-hidden="true" data-notify="dismiss">&times;</a>
+      <span data-notify="icon"></span>
+      <span data-notify="title"></span>
+      <span data-notify="message">
+        <%= content_for?(:flash_errors) ? yield(:flash_errors) : flash[key] %>
+      </span>
+      <a href="#" target="_blank" data-notify="url"></a>
     </div>
   <% end %>
 <% end %>

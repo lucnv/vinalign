@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= require turbolinks
 //= require jquery
 //= require jquery_ujs
 //= require js/popper-v4.min
@@ -19,3 +20,4 @@
 //= require plugins/waypoints/jquery.waypoints
 //= require plugins/waypoints/sticky
 //= require js/medical-theme
+//= require flash_messages
