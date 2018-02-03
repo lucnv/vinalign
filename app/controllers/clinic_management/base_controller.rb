@@ -1,4 +1,4 @@
-class Clinic::BaseController < ApplicationController
+class ClinicManagement::BaseController < ApplicationController
   before_action :authenticate_doctor!
 
   layout "clinic_management"

@@ -113,7 +113,7 @@ vi:
       index:
         treatment_phases: Giai đoạn điều trị
         add_treatment_phase: Thêm mới giai đoạn điều trị
-  clinic:
+  clinic_management:
     patient_records:
       index:
         patient_record_management: Quản lý hồ sơ bệnh nhân

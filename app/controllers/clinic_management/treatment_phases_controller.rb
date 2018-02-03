@@ -1,4 +1,4 @@
-class Clinic::TreatmentPhasesController < Clinic::BaseController  
+class ClinicManagement::TreatmentPhasesController < ClinicManagement::BaseController
   TABS = %w(images treatment_plans communication)
   before_action :patient_record, only: [:index, :new, :create]
 
@@ -12,9 +12,9 @@ class Clinic::TreatmentPhasesController < Clinic::BaseController
 
   def create
     @treatment_phase = @patient_record.treatment_phases.build treatment_phase_params
-    if @treatment_phase.save 
+    if @treatment_phase.save
       flash[:success] = t ".success"
-      redirect_to clinic_treatment_phase_path @treatment_phase
+      redirect_to clinic_management_treatment_phase_path @treatment_phase
     else
       flash.now[:failed] = t ".failed"
       render :new

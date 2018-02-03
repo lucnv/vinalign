@@ -1,4 +1,4 @@
-<%= search_form_for q, url: clinic_patient_records_path, html: {class: "form-horizontal"} do |f| %>
+<%= search_form_for q, url: clinic_management_patient_records_path, html: {class: "form-horizontal"} do |f| %>
   <div class="row">
     <div class="col-md-2">
       <%= f.label :full_name_cont, PatientRecord.human_attribute_name(:full_name) %>

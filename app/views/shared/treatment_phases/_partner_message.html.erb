@@ -3,7 +3,7 @@
     <span class="direct-chat-name pull-left">
       <%= sender_profile.first_name + " " + sender_profile.last_name %>
     </span>
-    <span class="direct-chat-timestamp pull-right"><%= message.created_at %></span>
+    <span class="direct-chat-timestamp pull-right"><%= time_with_format message.created_at %></span>
   </div>
   <%= image_tag sender_profile.avatar.small.url, class: "direct-chat-img" %>
   <div class="direct-chat-text">

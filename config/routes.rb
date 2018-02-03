@@ -21,9 +21,9 @@ Rails.application.routes.draw do
     end
   end
 
-  namespace :clinic do
+  namespace :clinic_management do
     root "patient_records#index"
-    resources :patient_records do 
+    resources :patient_records do
       resources :price_lists, only: :index
       resources :treatment_phases, only: [:index, :new, :create]
     end

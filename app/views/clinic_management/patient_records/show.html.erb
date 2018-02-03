@@ -1,5 +1,5 @@
-<%= render "shared/patient_records/provide_patient_record_side_bar", patient_record: @patient_record, 
-  scope: :clinic, current_site: :administrative_informations %>
+<%= render "shared/patient_records/provide_patient_record_side_bar", patient_record: @patient_record,
+  scope: :clinic_management, current_site: :administrative_informations %>
 <section class="content-header">
   <h1><%= t ".patient_record" %></h1>
 </section>
@@ -12,7 +12,7 @@
         </div>
         <div class="col-md-7">
           <%= image_tag @patient_record.profile_photo.small.url %>
-          <%= link_to edit_clinic_patient_record_path(@patient_record), 
+          <%= link_to edit_clinic_management_patient_record_path(@patient_record),
             class: "pull-right btn btn-warning btn-flat" do %>
             <i class="fa fa-pencil-square-o"></i>
             <%= t ".edit" %>

@@ -1,5 +1,5 @@
-<%= render "shared/patient_records/provide_patient_record_side_bar", 
-  patient_record: @treatment_phase.patient_record, scope: :clinic, current_site: :treatment_phases %>
+<%= render "shared/patient_records/provide_patient_record_side_bar",
+  patient_record: @treatment_phase.patient_record, scope: :clinic_management, current_site: :treatment_phases %>
 <% content_for "treatment_phase_#{active_tab}_activation".to_sym, "active" %>
 
 <section class="content-header">
@@ -13,7 +13,7 @@
   </div>
   <div class="nav-tabs-custom">
     <%= render "shared/treatment_phases/nav_tabs", treatment_phase: @treatment_phase,
-      scope: :clinic %>
+      scope: :clinic_management %>
     <div class="tab-content">
       <%= render "#{active_tab}_tab", treatment_phase: @treatment_phase, support: @support %>
     </div>

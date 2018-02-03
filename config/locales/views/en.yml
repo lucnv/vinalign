@@ -91,7 +91,7 @@ en:
             confirm_delete_message: Do you wanna delete item
             delete: *delete
             cancel: *cancel
-  clinic:
+  clinic_management:
     patient_records:
       index:
         patient_record_list: *patient_record_list
