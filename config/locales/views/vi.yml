@@ -103,6 +103,7 @@ vi:
       price_list:
         edit: *edit
         delete: *delete
+        confirm_delete: Bạn có muốn xóa bảng giá này?
       delete_price_list_popup:
         js:
           erb:
@@ -116,6 +117,8 @@ vi:
       index:
         treatment_phases: Giai đoạn điều trị
         add_treatment_phase: Thêm mới giai đoạn điều trị
+      show:
+        treatment_phase_details: Chi tiết giai đoạn điều trị
   clinic_management:
     patient_records:
       index:
@@ -126,6 +129,7 @@ vi:
         male: *male
         female: *female
         confirm_delete: Bạn có chắc chắn muốn xóa hồ sơ này?
+        delete: Xóa
       show:
         edit: *edit
         patient_record: Hồ sơ bệnh nhân
@@ -146,15 +150,27 @@ vi:
         start_date_from: Ngày bắt đầu từ
         start_date_to: Ngày bắt đầu đến
     treatment_phases:
+      new:
+        new_treatment_phase: Tạo mới giai đoạn điều trị
+      index:
+        treatment_phases: Giai đoạn điều trị
+        add_treatment_phase: Thêm mới giai đoạn điều trị
       show:
         images: Ảnh
         treatment_plans: Kế hoạch điều trị
         communication: Giao tiếp
+        treatment_phase_details: Chi tiết giai đoạn điều trị
+      images_tab:
+        new_album: Album mới
     albums:
       new:
         new_album: Album mới
         cancel: *cancel
         create: *create
+    price_lists:
+      index:
+        price_lists_activation: Danh sách bảng giá
+
   shared:
     patient_records:
       details:
@@ -163,3 +179,11 @@ vi:
     treatment_phases:
       form:
         create_treatment_phase: Tạo mới giai đoạn điều trị
+      nav_tabs:
+        images: Hình ảnh
+        treatment_plans: Kế hoạch điều trị
+      conversation:
+        conversation: Trao đổi
+        send: Gửi
+      treatment_plan_files:
+        treatment_plan_files: Tệp tin kế hoạch điều trị

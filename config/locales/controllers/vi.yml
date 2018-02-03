@@ -19,7 +19,7 @@ vi:
       create:
         success: Tạo mới hồ sơ điều trị thành công
         failed: Tạo mới hồ sơ điều trị thất bại
-  clinic:
+  clinic_management:
     patient_records:
       create:
         success: Tạo mới hồ sơ bệnh nhân thành công
