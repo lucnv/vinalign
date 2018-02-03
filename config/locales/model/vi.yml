@@ -13,10 +13,16 @@ vi:
       user_profile: Hồ sơ người dùng
       user: Người dùng
     attributes:
+      user_profile:
+        avatar: Ảnh đại diện
+        full_name: Họ tên
+        email: Email
+        phone_number: Số điện thoại
       user:
         login: Đăng nhập
         password: Mật khẩu
         password_confirmation: Xác nhận khẩu
+        clinic: Phòng khám
       patient_record:
         id: Id
         clinic: Phòng khám
@@ -44,3 +50,6 @@ vi:
         price: Giá
       album:
         name: Tên
+      clinic:
+        name: Tên
+        province: Tỉnh thành

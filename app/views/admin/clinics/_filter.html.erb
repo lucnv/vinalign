@@ -10,7 +10,11 @@
         {include_blank: t(".all_provinces")}, class: "form-control" %>
     </div>
     <div class="col-md-2">
-      <%= f.submit t(".search"), class: "btn btn-flat btn-primary" %>
+      </br>
+      <%= f.button class: "btn btn-flat btn-primary btn-search" do %>
+        <i class="fa fa-search fa-lg" aria-hidden="true"></i>
+        <%= t(".search") %>
+      <% end %>
     </div>
   </div>
 <% end %>

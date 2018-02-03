@@ -8,7 +8,7 @@
 Rake::Task["master_data:import"].invoke
 
 puts "Create admin account"
-User.new(email: "admin@gmail.com", username: "admin", password: "123456", 
+User.new(email: "admin@gmail.com", username: "admin", password: "123456",
   role: :admin, confirmed_at: Time.zone.now).save validate: false
 
 puts "Create doctor users"
@@ -26,6 +26,7 @@ User.all.each do |user|
   UserProfile.create! user: user,
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
+    phone_number: "01234567890",
     dob: Faker::Date.backward(365 * 50),
     gender: UserProfile::genders.values.sample
 end
@@ -74,19 +75,19 @@ end
 
 puts "Create price lists"
 patient_records.each do |patient_record|
-  15.times do 
+  15.times do
     patient_record.price_lists.create! item: Faker::Commerce.product_name,
       price: Faker::Commerce.price.to_i * 20_000
   end
 end
 
-puts "Create messages" 
+puts "Create messages"
 patient_record =  PatientRecord.first
 doctor = patient_record.clinic.user
 admin = User.admin.first
 patient_record.treatment_phases.each do |treatment_phase|
   message_count = Faker::Number.between 2, 4
-  message_count.times do |i| 
+  message_count.times do |i|
     treatment_phase.messages.create! user: [doctor, admin][i%2],
       content: Faker::Lorem.paragraph
   end

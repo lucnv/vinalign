@@ -9,6 +9,12 @@ class User < ApplicationRecord
     length: {maximum: Settings.validations.user.username.max_length,
     minimum: Settings.validations.user.username.min_length}
 
+  scope :profile_full_name_cont, ->(name) do
+    joins(:user_profile)
+      .where "LOWER(CONCAT(#{UserProfile.table_name}.last_name, #{UserProfile.table_name}.first_name)) \
+        LIKE '%#{name.to_s.downcase}%'"
+  end
+
   before_save :downcase_username
 
   devise :database_authenticatable, :registerable, :confirmable, :recoverable,
@@ -18,6 +24,8 @@ class User < ApplicationRecord
 
   delegate :avatar, to: :user_profile, allow_nil: true
   delegate :id, to: :clinic, allow_nil: true, prefix: true
+  delegate :name, to: :clinic, allow_nil: true, prefix: true
+  delegate :phone_number, to: :user_profile, allow_nil: true
 
   class << self
     def find_for_database_authentication warden_conditions
@@ -27,6 +35,10 @@ class User < ApplicationRecord
       elsif conditions.has_key?(:username) || conditions.has_key?(:email)
         where(conditions.to_hash).first
       end
+    end
+
+    def ransackable_scopes auth_object = nil
+      [:profile_full_name_cont]
     end
   end
 

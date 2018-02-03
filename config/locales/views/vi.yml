@@ -60,6 +60,8 @@ vi:
         online: *online
         main_navigation: *main_navigation
         patient_records: *patient_records
+        doctors: Bác sĩ
+        clinics: Phòng khám
     clinic_management:
       header:
         clinic: Phòng khám
@@ -76,9 +78,19 @@ vi:
         price_lists: Bảng giá
         treatment_phases: Giai đoạn điều trị
   admin:
+    users:
+      filter:
+        search: *search
+      index:
+        users_management: Quản lí bác sĩ
+        add_new_user: Thêm mới bác sĩ
     clinics:
       filter:
         search: *search
+        all_provinces: Chọn tỉnh thành
+      index:
+        clinics_management: Quản lí phòng khám
+        add_new_clinic: Thêm mới phòng khám
     patient_records:
       index:
         patient_record_list: *patient_record_list
