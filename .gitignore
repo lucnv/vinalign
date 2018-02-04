@@ -22,3 +22,10 @@ public/uploads/*
 config/settings.local.yml
 config/settings/*.local.yml
 config/environments/*.local.yml
+
+# Other
+config/database.yml
+public/*
+.env
+coverage/
+.rspec
