@@ -4,5 +4,5 @@ class Album < ApplicationRecord
   belongs_to :treatment_phase
   has_many :images, dependent: :destroy
 
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: {scope: :treatment_phase_id}
 end

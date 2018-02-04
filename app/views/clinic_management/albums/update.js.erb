@@ -1,8 +1,8 @@
 <% if @album.errors.blank? %>
+  $("#album-<%= @album.id %> .album-name").text("<%= @album.name %>");
   $("#persit_album_modal").modal("hide");
-  $("#album-list").append("<%= j render 'clinic_management/treatment_phases/album', album: @album %>");
 <% else %>
   $("#album-form").html("<%= j render 'form', album: @album, \
-    form_path: clinic_management_treatment_phase_albums_path(@treatment_phase) %>");
+    form_path: clinic_management_album_path(@album) %>");
 <% end %>
 $("#flash-messages").html("<%= j render 'layouts/shared/flash' %>");
