@@ -124,13 +124,6 @@ vi:
         edit: *edit
         delete: *delete
         confirm_delete: Bạn có muốn xóa bảng giá này?
-      delete_price_list_popup:
-        js:
-          erb:
-            delete_price_list: Xóa bảng giá
-            confirm_delete_message: Bạn có muốn xóa
-            delete: *delete
-            cancel: *cancel
     treatment_phases:
       new:
         new_treatment_phase: Tạo mới giai đoạn điều trị
@@ -186,11 +179,20 @@ vi:
         treatment_phase_title_html: Hồ sơ bệnh nhân - %{treatment_phase_name} <small>%{patient_record_name}</small>
       images_tab:
         new_album: Album mới
+      album:
+        edit: *edit
+        delete: *delete
+        confirm_delete: Bạn chắc chắn muốn xóa album '%{album}'?
     albums:
       new:
         new_album: Album mới
         cancel: *cancel
         create: *create
+      persist_album_modal:
+        new_album: Tạo mới album
+        edit_album: Chỉnh sửa album
+      form:
+        cancel: *cancel
     price_lists:
       index:
         price_lists_title_html: Hồ sơ bệnh nhân - Danh sách bảng giá <small>%{patient_record_name}</small>
