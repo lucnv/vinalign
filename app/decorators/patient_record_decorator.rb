@@ -1,6 +1,6 @@
 class PatientRecordDecorator < ApplicationDecorator
   def full_name
-    first_name + " " + last_name
+    last_name + " " + first_name
   end
 
   def age
@@ -12,7 +12,7 @@ class PatientRecordDecorator < ApplicationDecorator
     [address, district_name, province_name].compact.join ", "
   end
 
-  class << self 
+  class << self
     def collection_decorator_class
       PaginatingDecorator
     end

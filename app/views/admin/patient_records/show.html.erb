@@ -1,20 +1,18 @@
 <%= render "shared/patient_records/provide_patient_record_side_bar", patient_record: @patient_record,
   scope: :admin, current_site: :administrative_informations %>
 <%= render "admin/clinics/provide_clinic_side_bar", clinic: @patient_record.clinic, current_site: :patient_records %>
-<section class="content-header">
-  <h1><%= t ".patient_record" %></h1>
-</section>
-<section class="content">
-  <div class="box">
-    <div class="box-body">
-      <div class="row">
-        <div class="col-md-5">
-          <%= render "shared/patient_records/details", patient_record: @patient_record %>
-        </div>
-        <div class="col-md-7">
-          <%= image_tag @patient_record.profile_photo.small.url %>
-        </div>
+<% provide :header_title, t(".patient_record_title_html", clinic_name: @patient_record.clinic.name,
+  patient_name: @patient_record.full_name) %>
+<% breadcrumb :admin_patient_record, @patient_record %>
+<div class="box">
+  <div class="box-body">
+    <div class="row">
+      <div class="col-md-5">
+        <%= render "shared/patient_records/details", patient_record: @patient_record %>
+      </div>
+      <div class="col-md-7">
+        <%= image_tag @patient_record.profile_photo.small.url %>
       </div>
     </div>
   </div>
-</section>
+</div>
