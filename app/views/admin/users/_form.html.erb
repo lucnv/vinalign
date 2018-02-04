@@ -1,0 +1,45 @@
+<div class="col-md-6">
+  <div class="form-group">
+    <%= f.label :email, User.human_attribute_name(:email),
+      class: "control-label col-md-4" %>
+    <div class="col-md-5">
+      <%= f.text_field :email, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :username, User.human_attribute_name(:username),
+      class: "control-label col-md-4" %>
+    <div class="col-md-5">
+      <%= f.text_field :username, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :password, User.human_attribute_name(:password),
+      class: "control-label col-md-4" %>
+    <div class="col-md-5">
+      <%= f.text_field :password, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :password_confirmation, User.human_attribute_name(:password_confirmation),
+      class: "control-label col-md-4" %>
+    <div class="col-md-5">
+      <%= f.text_field :password_confirmation, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.fields_for :user_profile, @user.user_profile do |ff| %>
+      <%= ff.label :clinic_id, User.human_attribute_name(:clinic),
+      class: "control-label col-md-4" %>
+      <div class="col-md-5">
+        <%= ff.select :clinic_id, clinic_options, {include_blank: t(".select_clinic")},
+          class: "form-control" %>
+      </div>
+    <% end %>
+  </div>
+  <div class="form-group">
+    <div class="col-md-offset-4 col-md-5">
+      <%= f.submit class: "btn btn-primary btn-flat" %>
+    </div>
+  </div>
+</div>
