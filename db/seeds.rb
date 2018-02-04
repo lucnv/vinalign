@@ -11,40 +11,41 @@ puts "Create admin account"
 User.new(email: "admin@gmail.com", username: "admin", password: "123456",
   role: :admin, confirmed_at: Time.zone.now).save validate: false
 
-puts "Create doctor users"
-5.times do |i|
-  User.create! email: "doctor#{i+1}@gmail.com",
-    username: "doctor#{i+1}",
-    password: "123456",
-    password_confirmation: "123456",
-    role: :doctor,
-    confirmed_at: Time.zone.now
-end
-
-puts "Create user profiles"
-User.all.each do |user|
-  full_name = Faker::Name.name.split
-  first_name = full_name.pop
-  last_name = full_name.join " "
-  UserProfile.create! user: user,
-    first_name: first_name,
-    last_name: last_name,
+UserProfile.create! user: User.first,
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
     phone_number: "01234567890",
     dob: Faker::Date.backward(365 * 50),
     gender: UserProfile::genders.values.sample
-end
 
 districts = District.all.includes :province
 puts "Create clinic"
-User.doctor.each do |user|
+15.times do
   name = Faker::Company.name
-  Clinic.create! user: user,
-    name: name,
+  Clinic.create! name: name,
     phone_number: Faker::PhoneNumber.cell_phone,
     district: districts.sample,
     address: Faker::Address.street_address,
     website: Faker::Internet.url,
     facebook: "https:://facebook.com/#{name.tableize}"
+end
+
+puts "Create doctor users"
+Clinic.all.each_with_index do |clinic, i|
+  user = User.create! email: "doctor#{i+1}@gmail.com",
+    username: "doctor#{i+1}",
+    password: "123456",
+    password_confirmation: "123456",
+    role: :doctor,
+    confirmed_at: Time.zone.now
+
+  UserProfile.create! user: user,
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    phone_number: "01234567890",
+    dob: Faker::Date.backward(365 * 50),
+    gender: UserProfile::genders.values.sample,
+    clinic: clinic
 end
 
 puts "Create patient records"
@@ -89,12 +90,12 @@ end
 
 puts "Create messages"
 patient_record =  PatientRecord.first
-doctor = patient_record.clinic.user
-admin = User.admin.first
+doctor = patient_record.clinic.doctor
+admin = User.admin.first.user_profile
 patient_record.treatment_phases.each do |treatment_phase|
   message_count = Faker::Number.between 2, 4
   message_count.times do |i|
-    treatment_phase.messages.create! user: [doctor, admin][i%2],
+    treatment_phase.messages.create! user_profile: [doctor, admin][i%2],
       content: Faker::Lorem.paragraph
   end
 end
