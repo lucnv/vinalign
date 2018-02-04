@@ -1,29 +1,28 @@
 <%= render "shared/patient_records/provide_patient_record_side_bar", patient_record: @patient_record,
   scope: :admin, current_site: :price_lists %>
 <%= render "admin/clinics/provide_clinic_side_bar", clinic: @patient_record.clinic, current_site: :patient_records %>
-<section class="content-header">
-  <h1><%= t ".price_lists_activation" %></h1>
-</section>
-<section class="content">
-  <div class="box">
-    <div class="box-body">
-      <%= link_to new_admin_patient_record_price_list_path(@patient_record),
-        class: "btn btn-primary btn-flat", remote: true do %>
-        <i class="fa fa-plus"></i>
-        <%= t ".add_price_list" %>
-      <% end %>
-      <hr/>
-      <table class="table table-hover">
-        <thead>
-          <th><%= PriceList.human_attribute_name :id %></th>
-          <th><%= PriceList.human_attribute_name :item %></th>
-          <th><%= PriceList.human_attribute_name :price %></th>
-          <th><%= t ".action" %></th>
-        </thead>
-        <tbody id="price-lists">
-          <%= render partial: :price_list, collection: @price_lists, as: :price_list %>
-        </tbody>
-      </table>
-    </div>
+<% provide :header_title, t(".price_lists_title_html", clinic_name: @patient_record.clinic_name,
+  patient_name: @patient_record.full_name) %>
+<% breadcrumb :admin_patient_record_price_lists, @patient_record %>
+
+<div class="box">
+  <div class="box-body">
+    <%= link_to new_admin_patient_record_price_list_path(@patient_record),
+      class: "btn btn-primary btn-flat", remote: true do %>
+      <i class="fa fa-plus"></i>
+      <%= t ".add_price_list" %>
+    <% end %>
+    <hr/>
+    <table class="table table-hover">
+      <thead>
+        <th><%= PriceList.human_attribute_name :id %></th>
+        <th><%= PriceList.human_attribute_name :item %></th>
+        <th><%= PriceList.human_attribute_name :price %></th>
+        <th><%= t ".action" %></th>
+      </thead>
+      <tbody id="price-lists">
+        <%= render partial: :price_list, collection: @price_lists, as: :price_list %>
+      </tbody>
+    </table>
   </div>
-</section>
+</div>

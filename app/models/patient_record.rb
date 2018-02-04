@@ -36,7 +36,7 @@ class PatientRecord < ApplicationRecord
   before_destroy :clean_s3
 
   def full_name
-    first_name + " " + last_name
+    last_name + " " + first_name
   end
 
   class << self

@@ -23,9 +23,12 @@ end
 
 puts "Create user profiles"
 User.all.each do |user|
+  full_name = Faker::Name.name.split
+  first_name = full_name.pop
+  last_name = full_name.join " "
   UserProfile.create! user: user,
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
+    first_name: first_name,
+    last_name: last_name,
     phone_number: "01234567890",
     dob: Faker::Date.backward(365 * 50),
     gender: UserProfile::genders.values.sample
@@ -47,9 +50,12 @@ end
 puts "Create patient records"
 Clinic.all.each do |clinic|
   15.times do
+    full_name = Faker::Name.name.split
+    first_name = full_name.pop
+    last_name = full_name.join " "
     clinic.patient_records.create! start_date: Faker::Date.backward(7),
-      first_name: Faker::Name.first_name,
-      last_name: Faker::Name.last_name,
+      first_name: first_name,
+      last_name: last_name,
       dob: Faker::Date.backward(365 * 50),
       gender: PatientRecord::genders.values.sample,
       district: districts.sample,

@@ -17,6 +17,26 @@ crumb :admin_clinic_patient_records do |clinic|
   parent :admin_clinic, clinic
 end
 
+crumb :admin_patient_record do |patient_record|
+  link patient_record.full_name, admin_patient_record_path(patient_record)
+  parent :admin_clinic_patient_records, patient_record.clinic
+end
+
+crumb :admin_patient_record_treatment_phases do |patient_record|
+  link I18n.t("breadcrumbs.treatment_phases"), admin_patient_record_treatment_phases_path(patient_record_id: patient_record.id)
+  parent :admin_patient_record, patient_record
+end
+
+crumb :admin_patient_record_price_lists do |patient_record|
+  link I18n.t("breadcrumbs.price_lists"), admin_patient_record_price_lists_path(patient_record_id: patient_record.id)
+  parent :admin_patient_record, patient_record
+end
+
+crumb :admin_treatment_phase do |treatment_phase|
+  link treatment_phase.name, admin_treatment_phase_path(treatment_phase)
+  parent :admin_patient_record_treatment_phases, treatment_phase.patient_record
+end
+
 crumb :clinic_mngt_root do
   link I18n.t("breadcrumbs.home"), clinic_management_root_path
 end

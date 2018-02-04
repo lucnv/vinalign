@@ -98,13 +98,15 @@ vi:
       patient_record:
         male: *male
         female: *female
+      show:
+        patient_record_title_html: Hồ sơ bệnh nhân <small>%{clinic_name} - %{patient_name}</small>
     price_lists:
       new:
         new_price_list: Bảng giá mới
         create: *create
         cancel: *cancel
       index:
-        price_lists_activation: Danh sách bảng giá
+        price_lists_title_html: Hồ sơ bệnh nhân - Danh sách bảng giá <small>%{clinic_name} - %{patient_name}</small>
         add_price_list: Thêm bảng giá
         action: *action
       edit:
@@ -126,10 +128,11 @@ vi:
       new:
         new_treatment_phase: Tạo mới giai đoạn điều trị
       index:
+        treatment_phases_title_html: Hồ sơ bệnh nhân - Các giai đoạn điều trị <small>%{clinic_name} - %{patient_name}</small>
         treatment_phases: Giai đoạn điều trị
         add_treatment_phase: Thêm mới giai đoạn điều trị
       show:
-        treatment_phase_details: Chi tiết giai đoạn điều trị
+        treatment_phase_title_html: Hồ sơ bệnh nhân - %{treatment_phase_name} <small>%{clinic_name} - %{patient_name}</small>
   clinic_management:
     patient_records:
       index:
