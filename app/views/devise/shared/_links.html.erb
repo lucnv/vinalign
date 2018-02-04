@@ -1,15 +1,8 @@
 <div class="modal-footer mx-5 pt-3 mb-1">
   <p class="text-right">
-    <% unless controller_name == "registrations" %>
-      <%= t ".not_a_member" %>
-      <%= link_to t(".sign_up"), new_registration_path(resource_name) %><br />
-    <% end %>
     <% unless controller_name == "sessions" %>
       <%= t ".have_your_own_account" %>
       <%= link_to t(".log_in"), new_session_path(resource_name) %><br />
-    <% end %>
-    <% unless controller_name == "confirmations" %>
-      <%= link_to t(".did_not_receive_confirmation_instructions"), new_confirmation_path(resource_name) %><br />
     <% end %>
   </p>
 </div>

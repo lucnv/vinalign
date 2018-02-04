@@ -7,6 +7,10 @@ module ApplicationHelper
     Settings.genders.map {|gender| [t(".#{gender}"), gender]}
   end
 
+  def clinic_options
+    Clinic.has_no_doctor.pluck :name, :id
+  end
+
   def custom_simple_format text
     simple_format strip_tags text
   end

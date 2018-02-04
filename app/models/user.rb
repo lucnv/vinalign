@@ -5,6 +5,10 @@ class User < ApplicationRecord
   has_one :clinic, through: :user_profile
   has_many :messages, through: :user_profile
 
+  ADMIN_PERSIT_PARAMS = [:email, :password, :password_confirmation, :username, user_profile_attributes: [:clinic_id]]
+
+  accepts_nested_attributes_for :user_profile
+
   validates :username, presence: true, uniqueness: {case_sensitive: false},
     length: {maximum: Settings.validations.user.username.max_length,
     minimum: Settings.validations.user.username.min_length}
@@ -17,8 +21,7 @@ class User < ApplicationRecord
 
   before_save :downcase_username
 
-  devise :database_authenticatable, :registerable, :confirmable, :recoverable,
-    :rememberable, :trackable, :validatable
+  devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable
 
   enum role: [:admin, :doctor]
 

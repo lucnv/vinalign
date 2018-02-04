@@ -7,10 +7,6 @@
            <%= t(".log_out") %>
          <% end %>
        <% else %>
-         <%= link_to new_user_registration_path, class: "btn btn-default btn-sm link-light" do %>
-           <i class="fa fa-user pr-2"></i>
-           <%= t(".sign_up") %>
-         <% end %>
          <%= link_to new_user_session_path, class: "btn btn-default btn-sm link-light" do %>
            <i class="fa fa-lock pr-2"></i>
            <%= t(".log_in") %>

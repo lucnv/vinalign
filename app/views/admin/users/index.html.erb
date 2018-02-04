@@ -1,7 +1,7 @@
 <% content_for :users_activation, "active" %>
 <section class="content-header clearfix">
   <h1 class="pull-left"><%= t ".users_management" %></h1>
-  <%= link_to "#", class: "btn btn-primary btn-flat pull-right" do %>
+  <%= link_to new_admin_user_path, class: "btn btn-primary btn-flat pull-right" do %>
     <i class="fa fa-plus"></i>
     <%= t ".add_new_user" %>
   <% end %>
