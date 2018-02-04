@@ -153,6 +153,8 @@ vi:
         new_patient_record: Thêm mới hồ sơ
       form:
         select_gender: Chọn giới tính
+        male: *male
+        female: *female
         select_province: Chọn tỉnh/thành phố
         select_district: Chọn quận/huyện
         create_patient_record: Tạo hồ sơ bệnh nhân
@@ -201,3 +203,7 @@ vi:
         send: Gửi
       treatment_plan_files:
         treatment_plan_files: Tệp tin kế hoạch điều trị
+  supports:
+    districts:
+      index:
+        select_district: Chọn quận/huyện
