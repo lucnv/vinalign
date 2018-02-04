@@ -44,6 +44,11 @@ gem "bootstrap-kaminari-views"
 gem "pg", "~> 0.20"
 gem "magnific-popup-rails"
 gem "gretel"
+gem "capistrano"
+gem "capistrano3-puma"
+gem "capistrano-rails", require: false
+gem "capistrano-bundler", require: false
+gem "capistrano-rvm"
 
 group :production do
   gem "pg", "~> 0.20"
