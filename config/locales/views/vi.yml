@@ -96,6 +96,8 @@ vi:
         select_district: Chọn quận huyện
       new:
         new_clinic: Thêm mới phòng khám
+      show:
+        clinic_title_html: Thông tin phòng khám <small>%{clinic_name}</small>
     patient_records:
       index:
         patient_records_title_html: Hồ sơ bệnh nhân <small>%{clinic_name}</small>

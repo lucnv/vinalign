@@ -8,7 +8,7 @@
   <div class="panel-body">
     <p>
       <strong><%= TreatmentPhase.human_attribute_name :start_date %>:</strong>
-      <%= treatment_phase.start_date %>
+      <%= time_with_format treatment_phase.start_date %>
     </p>
     <p>
       <strong><%= TreatmentPhase.human_attribute_name :description %>:</strong><br/>

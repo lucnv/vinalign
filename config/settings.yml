@@ -17,7 +17,7 @@ validations:
     address:
       max_length: 250
 patient_records:
-  per_page: 10
+  per_page: 15
 clinics:
   per_page: 10
 users:
