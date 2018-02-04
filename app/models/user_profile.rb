@@ -5,9 +5,11 @@ class UserProfile < ApplicationRecord
   has_many :messages, foreign_key: :sender_id
 
   validates :user, presence: true
-  validates :clinic, presence: true
+  validates :clinic, presence: true, if: :doctor?
 
   enum gender: Settings.genders.map(&:to_sym)
+
+  delegate :doctor?, to: :user, allow_nil: true
 
   mount_uploader :avatar, AvatarUploader
 
