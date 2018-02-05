@@ -84,6 +84,8 @@ vi:
       index:
         users_management: Quản lí bác sĩ
         add_new_user: Thêm mới bác sĩ
+      new:
+        new_user: Tạo mới bác sĩ
     clinics:
       filter:
         search: *search
