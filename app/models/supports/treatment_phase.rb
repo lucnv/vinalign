@@ -10,7 +10,7 @@ class Supports::TreatmentPhase
   end
 
   def messages
-    @messages ||= treatment_phase.messages.earlier_created.includes user: :user_profile
+    @messages ||= treatment_phase.messages.earlier_created.includes :user_profile
   end
 
   def treatment_plan_files

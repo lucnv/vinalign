@@ -1,8 +1,8 @@
-class MessagesController < ApplicationController 
+class MessagesController < ApplicationController
   before_action :treatment_phase
 
   def create
-    @message = @treatment_phase.messages.create message_params.merge user: current_user
+    @message = @treatment_phase.messages.create message_params.merge user_profile: current_user.user_profile
   end
 
   private
