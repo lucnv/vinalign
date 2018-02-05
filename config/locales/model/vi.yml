@@ -18,11 +18,14 @@ vi:
         full_name: Họ tên
         email: Email
         phone_number: Số điện thoại
+        first_name: Tên
+        last_name: Họ
       user:
         login: Đăng nhập
         password: Mật khẩu
         password_confirmation: Xác nhận khẩu
         clinic: Phòng khám
+        username: Tên đăng nhập
       patient_record:
         id: Id
         clinic: Phòng khám

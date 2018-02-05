@@ -8,7 +8,7 @@
         <p><%= current_user.username %></p>
         <%= link_to "#" do %>
           <i class="fa fa-circle text-success"></i>
-          <%= t ".online" %>
+          <%= current_user.clinic_name %>
         <% end %>
       </div>
     </div>

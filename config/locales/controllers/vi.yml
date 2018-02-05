@@ -23,6 +23,10 @@ vi:
       create:
         success: Tạo mới phòng khám thành công
         failed: Tạo mới phòng khám thất bại
+    users:
+      create:
+        success: Tạo mới bác sĩ thành công
+        failed: Tạo mới bác sĩ thất bại
   clinic_management:
     patient_records:
       create:

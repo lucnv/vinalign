@@ -5,7 +5,7 @@ class UserProfile < ApplicationRecord
   has_many :messages, foreign_key: :sender_id
 
   validates :user, presence: true
-  validates :clinic, presence: true, if: :doctor?
+  validates :clinic, :first_name, :last_name, presence: true, if: :doctor?
 
   enum gender: Settings.genders.map(&:to_sym)
 
