@@ -11,7 +11,6 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require turbolinks
 //= require jquery
 //= require jquery_ujs
 //= require js/popper-v4.min
@@ -21,3 +20,14 @@
 //= require plugins/waypoints/sticky
 //= require js/medical-theme
 //= require flash_messages
+
+$(document).ready(function() {
+  function setSelectedPageNav() {
+    var pathName = document.location.pathname;
+    if ($("nav ul li a") != null) {
+      var currentLink = $("nav ul li a[href='" + pathName + "']");
+      currentLink.addClass("active");
+    }
+  }
+  setSelectedPageNav();
+})

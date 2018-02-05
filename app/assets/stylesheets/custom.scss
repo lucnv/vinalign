@@ -9,6 +9,14 @@
   }
 }
 
+.home-section {
+  margin-bottom: 40px;
+}
+
+.navigation-links .active {
+  font-weight: bold!important
+}
+
 @media (min-width: 991px) {
   #navbar-collapse-1 {
     display: block!important;
@@ -41,5 +49,6 @@
 
   .site-slogan {
     font-size: 30px;
+    letter-spacing: 2px;
   }
 }
