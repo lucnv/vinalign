@@ -1,10 +1,14 @@
 class Admin::BaseController < ApplicationController
-  layout "admin"
+  before_action :authenticate_admin!, :set_locale
 
-  before_action :authenticate_admin!
+  layout "admin"
 
   private
   def authenticate_admin!
     raise Pundit::NotAuthorizedError unless current_user.try :admin?
+  end
+
+  def set_locale
+    I18n.locale = :vi
   end
 end

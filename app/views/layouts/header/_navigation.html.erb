@@ -5,14 +5,14 @@
         <div class="header-first clearfix">
           <div id="logo" class="logo">
             <%= link_to root_path do %>
-              <%= image_tag Settings.logo.url, id: "logo_img", width: "250" %>
+              <%= image_tag Settings.logo.url, id: "logo_img", width: "300" %>
             <% end %>
           </div>
         </div>
       </div>
       <div class="col-lg-6 offset-lg-2 ml-lg-auto">
-        <div class="header-first clearfix">
-            <span class="site-slogan pull-right">Clean Aligner Solutions</span>
+        <div class="header-first clearfix pt-3">
+            <span class="site-slogan pull-right"><strong>Clean Aligner Solutions</strong></span>
         </div>
       </div>
     </div>
@@ -37,16 +37,16 @@
           <div class="collapse navbar-collapse" id="navbar-collapse-1">
             <!-- main-menu -->
             <ul class="navbar-nav ml-xl-auto">
-              <li class="nav-item">
+              <li class="nav-item ">
                 <%= link_to t(".home"), root_path, class: "nav-link" %>
               </li>
               <li class="nav-seperated"></li>
               <li class="nav-item">
-                <a href="#" class="nav-link">Case gallery</a>
+                <li><%= link_to "Case gallery", "#", class: "nav-link" %></li>
               </li>
               <li class="nav-seperated"></li>
               <li class="nav-item">
-                <a href="#" class="nav-link">Why Vinalign</a>
+                <li><%= link_to "Why Vinalign", "/pages/about", class: "nav-link" %></li>
               </li>
               <li class="nav-seperated"></li>
               <li class="nav-item">

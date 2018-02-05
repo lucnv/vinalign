@@ -117,3 +117,6 @@ en:
       details:
         male: *male
         female: *female
+  images:
+    create:
+      success: Add photos successfuly

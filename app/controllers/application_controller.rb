@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   include Pundit
-
+  before_action :set_locale
   protect_from_forgery with: :exception
 
   rescue_from Pundit::NotAuthorizedError, with: :no_permission
@@ -17,5 +17,9 @@ class ApplicationController < ActionController::Base
     else
       clinic_management_root_path
     end
+  end
+
+  def set_locale
+    I18n.locale = :en
   end
 end
