@@ -1,5 +1,5 @@
 class ClinicManagement::BaseController < ApplicationController
-  before_action :authenticate_doctor!
+  before_action :authenticate_doctor!, :set_locale
 
   layout "clinic_management"
 
@@ -12,5 +12,9 @@ class ClinicManagement::BaseController < ApplicationController
 
   def current_clinic
     @current_clinic ||= current_user.user_profile.clinic
+  end
+
+  def set_locale
+    I18n.locale = :vi
   end
 end

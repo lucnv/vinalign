@@ -183,6 +183,9 @@ vi:
         edit: *edit
         delete: *delete
         confirm_delete: Bạn chắc chắn muốn xóa album '%{album}'?
+      nav_tabs:
+        images: Hình ảnh
+        treatment_plans: Kế hoạch điều trị
     albums:
       new:
         new_album: Album mới
