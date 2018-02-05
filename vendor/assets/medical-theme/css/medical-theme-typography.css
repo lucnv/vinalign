@@ -18,7 +18,8 @@ button, input, optgroup, select, textarea {
 }
 
 .logo-font {
-  font-family: "Pacifico", cursive, sans-serif;
+  font-family: "Raleway", cursive, sans-serif;
+  font-weight: bold;
 }
 
 /*Typography
