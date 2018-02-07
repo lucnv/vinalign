@@ -1,0 +1,19 @@
+<% provide :experts_activation, "active" %>
+<% provide :header_title, t(".experts_title") %>
+<% breadcrumb :admin_experts %>
+<%= link_to new_admin_expert_path, class: "btn btn-primary btn-flat" do %>
+  <i class="fa fa-plus"></i>
+  <%= t ".add_new_expert" %>
+<% end %>
+<div class="box">
+  <div class="box-header with-border">
+    <%= render "filter", q: @q, support: @support %>
+  </div>
+  <div class="box-body">
+    <%= render "shared/full_pagination", records: @experts %>
+    <% if @experts.present? %>
+      <%= render "expert_list", experts: @experts %>
+      <%= render "shared/full_pagination", records: @experts %>
+    <% end %>
+  </div>
+</div>
