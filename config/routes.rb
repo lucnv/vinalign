@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    root "homes#index"
+    root "clinics#index"
     resources :homes, only: :index
     resources :clinics, only: [:index, :show, :new, :create] do
       resources :patient_records, only: :index
@@ -23,6 +23,7 @@ Rails.application.routes.draw do
     resources :treatment_phases, only: :show do
       resources :treatment_plan_files, only: :create
     end
+    resources :experts, except: :show
   end
 
   namespace :clinic_management do

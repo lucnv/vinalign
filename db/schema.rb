@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180203142520) do
+ActiveRecord::Schema.define(version: 20180207130226) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,20 @@ ActiveRecord::Schema.define(version: 20180203142520) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["province_id"], name: "index_districts_on_province_id"
+  end
+
+  create_table "experts", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "avatar"
+    t.string "title"
+    t.string "workplace"
+    t.string "facebook_url"
+    t.string "address"
+    t.bigint "district_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["district_id"], name: "index_experts_on_district_id"
   end
 
   create_table "images", force: :cascade do |t|
@@ -157,6 +171,7 @@ ActiveRecord::Schema.define(version: 20180203142520) do
   add_foreign_key "albums", "treatment_phases"
   add_foreign_key "clinics", "districts"
   add_foreign_key "districts", "provinces"
+  add_foreign_key "experts", "districts"
   add_foreign_key "images", "albums"
   add_foreign_key "messages", "treatment_phases"
   add_foreign_key "patient_records", "clinics"

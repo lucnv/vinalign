@@ -1,0 +1,13 @@
+<table class="table table-hover">
+  <thead>
+    <th>#</th>
+    <th><%= Expert.human_attribute_name :avatar %></th>
+    <th><%= Expert.human_attribute_name :name %></th>
+    <th><%= Expert.human_attribute_name :title %></th>
+    <th><%= Expert.human_attribute_name :workplace %></th>
+    <th></th>
+  </thead>
+  <tbody>
+    <%= render partial: :expert, collection: experts, as: :expert %>
+  </tbody>
+</table>

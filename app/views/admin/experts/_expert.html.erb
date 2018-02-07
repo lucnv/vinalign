@@ -1,0 +1,12 @@
+<tr>
+  <td>
+    <%= index_on_pagination expert_counter, assigns["experts"].current_page,
+      Settings.experts.per_page %>
+  </td>
+  <td><%= image_tag expert.avatar.small.url %></td>
+  <td><%= expert.full_name %></td>
+  <td><%= expert.title %></td>
+  <td><%= expert.workplace %></td>
+  <td>
+  </td>
+</tr>

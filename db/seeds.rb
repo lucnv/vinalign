@@ -99,3 +99,18 @@ patient_record.treatment_phases.each do |treatment_phase|
       content: Faker::Lorem.paragraph
   end
 end
+
+
+puts "create experts"
+20.times do
+  full_name = Faker::Name.name.split
+  first_name = full_name.pop
+  last_name = full_name.join " "
+  Expert.create! first_name: first_name,
+    last_name: last_name,
+    title: Faker::Job.title,
+    district: districts.sample,
+    address: Faker::Address.street_address,
+    workplace: Faker::Company.name,
+    facebook_url: Faker::Internet.url
+end

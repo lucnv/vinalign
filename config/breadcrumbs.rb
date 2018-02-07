@@ -37,6 +37,11 @@ crumb :admin_treatment_phase do |treatment_phase|
   parent :admin_patient_record_treatment_phases, treatment_phase.patient_record
 end
 
+crumb :admin_experts do
+  link I18n.t("breadcrumbs.experts"), admin_experts_path
+  parent :admin_root
+end
+
 crumb :clinic_mngt_root do
   link I18n.t("breadcrumbs.home"), clinic_management_root_path
 end

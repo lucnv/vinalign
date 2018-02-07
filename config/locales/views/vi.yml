@@ -62,6 +62,7 @@ vi:
         patient_records: *patient_records
         doctors: Bác sĩ
         clinics: Phòng khám
+        experts: Chuyên gia
     clinic_management:
       header:
         clinic: Phòng khám
@@ -135,6 +136,9 @@ vi:
         add_treatment_phase: Thêm mới giai đoạn điều trị
       show:
         treatment_phase_title_html: Hồ sơ bệnh nhân - %{treatment_phase_name} <small>%{clinic_name} - %{patient_name}</small>
+    experts:
+      index:
+        experts_title: Quản lý chuyên gia
   clinic_management:
     patient_records:
       index:
