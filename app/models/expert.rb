@@ -13,6 +13,7 @@ class Expert < ApplicationRecord
     where "LOWER(CONCAT(#{Expert.table_name}.last_name, #{Expert.table_name}.first_name)) \
       LIKE '%#{name.to_s.downcase}%'"
   end
+  scope :priority_desc, ->{order priority: :desc}
 
   mount_uploader :avatar, AvatarUploader
 
