@@ -3,7 +3,7 @@ class PatientRecord < ApplicationRecord
     :address, :phone_number, :email, :doctor, :profile_photo]
 
   belongs_to :clinic
-  belongs_to :district
+  belongs_to :district, optional: true
   has_one :province, through: :district
   has_many :treatment_phases, dependent: :destroy
   has_many :price_lists, dependent: :delete_all
@@ -11,12 +11,9 @@ class PatientRecord < ApplicationRecord
   validates :start_date, presence: true
   validates :first_name, presence: true, length: {maximum: Settings.validations.patient_record.first_name.max_length}
   validates :last_name, presence: true, length: {maximum: Settings.validations.patient_record.last_name.max_length}
-  validates :dob, presence: true
   validates :gender, presence: true
-  validates :district_id, presence: true
-  validates :address, presence: true, length: {maximum: Settings.validations.patient_record.address.max_length}
+  validates :address, length: {maximum: Settings.validations.patient_record.address.max_length}
   validates :email, email_format: true
-  validates :doctor, presence: true
 
   scope :recent_created, ->{order created_at: :desc}
   scope :full_name_cont, ->(name) do

@@ -4,6 +4,7 @@ class PatientRecordDecorator < ApplicationDecorator
   end
 
   def age
+    return unless dob.present?
     today = Time.zone.today
     today.year - dob.year - ((today.month > dob.month || (today.month == dob.month && today.day >= dob.day)) ? 0 : 1)
   end

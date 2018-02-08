@@ -9,7 +9,7 @@
         <%= render "shared/patient_records/details", patient_record: @patient_record %>
       </div>
       <div class="col-md-7">
-        <%= image_tag @patient_record.profile_photo.small.url %>
+        <%= image_tag @patient_record.profile_photo.medium.url %>
         <%= link_to edit_clinic_management_patient_record_path(@patient_record),
           class: "pull-right btn btn-warning btn-flat" do %>
           <i class="fa fa-pencil-square-o"></i>

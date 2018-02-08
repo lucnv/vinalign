@@ -16,6 +16,6 @@ module ApplicationHelper
   end
 
   def time_with_format time, format = :default
-    l time, format: format
+    l time, format: format if time.present?
   end
 end
