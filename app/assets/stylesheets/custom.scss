@@ -17,6 +17,14 @@
   font-weight: bold!important
 }
 
+h1.title {
+  font-size: 38px;
+}
+
+img.image-full-width {
+  width: 100%;
+}
+
 @media (min-width: 991px) {
   #navbar-collapse-1 {
     display: block!important;
