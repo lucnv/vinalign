@@ -49,6 +49,7 @@ gem "capistrano3-puma"
 gem "capistrano-rails", require: false
 gem "capistrano-bundler", require: false
 gem "capistrano-rvm"
+gem "redis", "~> 3.0"
 
 group :production do
   gem "pg", "~> 0.20"
