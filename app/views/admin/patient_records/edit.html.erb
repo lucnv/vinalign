@@ -1,0 +1,11 @@
+<% provide :header_title, t(".edit_patient_record_title_html", clinic_name: @patient_record.clinic.name,
+  patient_name: @patient_record.full_name) %>
+<% breadcrumb :admin_edit_patient_record, @patient_record %>
+<% content_for :patient_records_activation, "active" %>
+<div class="box">
+  <div class="box-body">
+    <%= form_for [:admin, @patient_record], html: {class: "form-horizontal", multipart: true} do |f| %>
+      <%= render "form", f: f, patient_record: @patient_record %>
+    <% end %>
+  </div>
+</div>

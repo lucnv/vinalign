@@ -1,6 +1,16 @@
 vi:
   no_permission: Bạn không được phép thực hiện hành động này.
   admin:
+    patient_records:
+      create:
+        success: Tạo mới hồ sơ bệnh nhân thành công
+        failed: Tạo mới hồ sơ bệnh nhân thất bại
+      update:
+        success: Cập nhật hồ sơ bệnh nhân thành công
+        failed: Cập nhật hồ sơ bệnh nhân thất bại
+      destroy:
+        success: Xóa hồ sơ bệnh nhân thành công
+        failed: Xóa hồ sơ bệnh nhân thất bại
     price_lists:
       create:
         success: Tạo mới bảng giá thành công

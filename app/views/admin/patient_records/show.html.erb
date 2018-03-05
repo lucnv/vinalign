@@ -12,6 +12,11 @@
       </div>
       <div class="col-md-7">
         <%= image_tag @patient_record.profile_photo.medium.url %>
+        <%= link_to edit_admin_patient_record_path(@patient_record),
+          class: "pull-right btn btn-warning btn-flat" do %>
+          <i class="fa fa-pencil-square-o"></i>
+          <%= t ".edit" %>
+        <% end %>
       </div>
     </div>
   </div>
