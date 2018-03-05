@@ -12,6 +12,7 @@ vi:
       treatment_plan_file: Kế hoạch điều trị
       user_profile: Hồ sơ người dùng
       user: Người dùng
+      expert: Chuyên gia
     attributes:
       user_profile:
         avatar: Ảnh đại diện
@@ -59,3 +60,14 @@ vi:
         phone_number: Số điện thoại
         district: Quận huyện
         address: Địa chỉ
+      expert:
+        avatar: Ảnh đại diện
+        first_name: Tên
+        last_name: Họ
+        title: Chức vụ
+        workplace: Nơi làm việc
+        facebook_url: Địa chỉ facebook
+        province: Tỉnh thành
+        district: Quận Huyện
+        address: Địa chỉ
+        priority: Độ ưu tiên

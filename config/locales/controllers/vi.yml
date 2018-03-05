@@ -37,6 +37,10 @@ vi:
       create:
         success: Tạo mới bác sĩ thành công
         failed: Tạo mới bác sĩ thất bại
+    experts:
+      create:
+        success: Tạo mới chuyên gia thành công
+        failed: Tạo mới chuyên gia thất bại
   clinic_management:
     patient_records:
       create:

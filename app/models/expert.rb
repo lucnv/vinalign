@@ -1,4 +1,7 @@
 class Expert < ApplicationRecord
+  ATTRIBUTES = [:first_name, :last_name, :district_id, :address,
+    :avatar, :title, :workplace, :facebook_url, :priority]
+
   belongs_to :district
   has_one :province, through: :district
 
@@ -16,6 +19,8 @@ class Expert < ApplicationRecord
   scope :priority_desc, ->{order priority: :desc}
 
   mount_uploader :avatar, AvatarUploader
+
+  delegate :id, :name, to: :province, prefix: true, allow_nil: true
 
   class << self
     def ransackable_scopes auth_object = nil
