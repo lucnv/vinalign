@@ -2,8 +2,8 @@ class Clinic < ApplicationRecord
   belongs_to :district
 
   has_one :province, through: :district
-  has_one :doctor, class_name: UserProfile.name, foreign_key: :clinic_id
-  has_many :patient_records
+  has_one :doctor, class_name: UserProfile.name, foreign_key: :clinic_id, dependent: :destroy
+  has_many :patient_records, dependent: :destroy
 
   ADMIN_PERSIT_PARAMS = [:name, :phone_number, :district_id, :address]
 

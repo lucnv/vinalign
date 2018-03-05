@@ -33,6 +33,12 @@ vi:
       create:
         success: Tạo mới phòng khám thành công
         failed: Tạo mới phòng khám thất bại
+      update:
+        success: Cập nhật phòng khám thành công
+        failed: Cập nhật phòng khám thất bại
+      destroy:
+        success: Xóa phòng khám thành công
+        failed: Xóa phòng khám thất bại
     users:
       create:
         success: Tạo mới bác sĩ thành công

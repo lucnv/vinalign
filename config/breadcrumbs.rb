@@ -12,6 +12,11 @@ crumb :admin_clinic do |clinic|
   parent :admin_clinics
 end
 
+crumb :admin_edit_clinic do |clinic|
+  link I18n.t("breadcrumbs.edit"), edit_admin_clinic_path(clinic)
+  parent :admin_clinic, clinic
+end
+
 crumb :admin_clinic_patient_records do |clinic|
   link I18n.t("breadcrumbs.patient_records"), admin_clinic_patient_records_path(clinic_id: clinic.id)
   parent :admin_clinic, clinic

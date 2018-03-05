@@ -104,6 +104,12 @@ vi:
         new_clinic: Thêm mới phòng khám
       show:
         clinic_title_html: Thông tin phòng khám <small>%{clinic_name}</small>
+      edit:
+        edit_clinic: Chỉnh sửa phòng khám
+      clinic:
+        edit: *edit
+        delete: *delete
+        confirm_delete: Bạn có muốn xóa phòng khám này?
     patient_records:
       index:
         patient_records_title_html: Hồ sơ bệnh nhân <small>%{clinic_name}</small>
