@@ -139,6 +139,12 @@ vi:
     experts:
       index:
         experts_title: Quản lý chuyên gia
+        add_new_expert: Tạo mới chuyên gia
+      form:
+        select_province: Chọn tỉnh/thành phố
+        select_district: Chọn quận/huyện
+      new:
+        new_expert: Tạo mới chuyên gia
   clinic_management:
     patient_records:
       index:

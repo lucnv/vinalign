@@ -1,0 +1,10 @@
+<% provide :header_title, t(".new_expert") %>
+<% breadcrumb :admin_new_expert %>
+<% content_for :experts_activation, "active" %>
+<div class="box">
+  <div class="box-body">
+    <%= form_for [:admin, @expert], html: {class: "form-horizontal", multipart: true} do |f| %>
+      <%= render "form", f: f, expert: @expert %>
+    <% end %>
+  </div>
+</div>
