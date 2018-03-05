@@ -24,7 +24,7 @@ Rails.application.routes.draw do
     resources :treatment_phases, only: :show do
       resources :treatment_plan_files, only: :create
     end
-    resources :experts, except: :show
+    resources :experts
   end
 
   namespace :clinic_management do

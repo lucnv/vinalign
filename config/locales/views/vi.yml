@@ -172,6 +172,18 @@ vi:
         select_district: Chọn quận/huyện
       new:
         new_expert: Tạo mới chuyên gia
+      expert:
+        edit: *edit
+        delete: *delete
+        confirm_delete: Bạn có chắc chắn muốn xóa chuyên gia này?
+      edit:
+        edit_expert_title_html: Chỉnh sửa chuyên gia <small>%{name}</small>
+      filter:
+        search: *search
+        all_provinces: Chọn tỉnh thành
+      show:
+        expert_title_html: Chuyên gia <small>%{name}</small>
+        edit: *edit
   clinic_management:
     patient_records:
       index:
