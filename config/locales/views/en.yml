@@ -37,8 +37,9 @@ en:
   layouts:
     header:
       navigation:
-        site_slogan: VNL - Clean Aligner Solutions
+        site_slogan: VNL - Clear Aligner Solutions
         home: Home
+        expert: Expert
       devise_buttons:
         sign_up: Sign up
         log_in: Log in
@@ -120,3 +121,16 @@ en:
   images:
     create:
       success: Add photos successfuly
+  experts:
+    filter:
+      search: Search
+    index:
+      experts_list: Experts list
+      no_expert_found: No expert found!
+  views:
+    pagination:
+      first: "&laquo;"
+      last: "&raquo;"
+      previous: "&lsaquo;"
+      next: "&rsaquo;"
+      truncate: "&hellip;"

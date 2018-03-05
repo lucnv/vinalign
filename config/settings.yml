@@ -54,3 +54,6 @@ information:
   phone_no: (+84) 0243 7552 999
   email: info@vinalign.com
   website: www.vinalign.com
+front:
+  experts:
+    per_page: 12
