@@ -1,6 +1,10 @@
 <%= render "admin/clinics/provide_clinic_side_bar", clinic: @clinic, current_site: :patient_records %>
 <% provide :header_title, t(".patient_records_title_html", clinic_name: @clinic.name) %>
 <% breadcrumb :admin_clinic_patient_records, @clinic %>
+<%= link_to new_admin_clinic_patient_record_path(@clinic), class: "btn btn-primary btn-flat" do %>
+  <i class="fa fa-plus"></i>
+  <%= t ".add_patient_record" %>
+<% end %>
 <div class="box">
   <div class="box-header with-border">
     <%= render "filter", q: @q, clinic: @clinic %>

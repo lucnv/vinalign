@@ -13,10 +13,10 @@ Rails.application.routes.draw do
     root "clinics#index"
     resources :homes, only: :index
     resources :clinics, only: [:index, :show, :new, :create] do
-      resources :patient_records, only: :index
+      resources :patient_records, only: [:index, :new, :create]
     end
     resources :users, only: [:index, :new, :create]
-    resources :patient_records, only: :show do
+    resources :patient_records, except: [:index, :new, :create] do
       resources :price_lists, only: [:index, :new, :create]
       resources :treatment_phases, only: [:index, :new, :create]
     end

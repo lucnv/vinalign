@@ -63,6 +63,9 @@ vi:
         doctors: Bác sĩ
         clinics: Phòng khám
         experts: Chuyên gia
+      clinic_side_bar:
+        patient_records: Hồ sơ bệnh nhân
+        details: Thông tin phòng khám
     clinic_management:
       header:
         clinic: Phòng khám
@@ -105,11 +108,35 @@ vi:
       index:
         patient_records_title_html: Hồ sơ bệnh nhân <small>%{clinic_name}</small>
         patient_record_list: *patient_record_list
+        total_records_found: *total_records_found
+        add_patient_record: Thêm mới hồ sơ
       patient_record:
         male: *male
         female: *female
+        confirm_delete: Bạn có chắc chắn muốn xóa hồ sơ này?
+        delete: Xóa
       show:
         patient_record_title_html: Hồ sơ bệnh nhân <small>%{clinic_name} - %{patient_name}</small>
+        edit: *edit
+      edit:
+        edit_patient_record: Sửa hồ sơ bệnh nhân
+        edit_patient_record_title_html: Sửa hồ sơ bệnh nhân <small>%{clinic_name} - %{patient_name}</small>
+      new:
+        new_patient_record_title_html: Thêm mới hồ sơ bệnh nhân <small>%{clinic_name}</small>
+      form:
+        select_gender: Chọn giới tính
+        male: *male
+        female: *female
+        select_province: Chọn tỉnh/thành phố
+        select_district: Chọn quận/huyện
+        create_patient_record: Tạo hồ sơ bệnh nhân
+      filter:
+        all_gender: Tất cả giới tính
+        male: *male
+        female: *female
+        search: *search
+        start_date_from: Ngày bắt đầu từ
+        start_date_to: Ngày bắt đầu đến
     price_lists:
       new:
         new_price_list: Bảng giá mới
