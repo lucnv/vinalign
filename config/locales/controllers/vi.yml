@@ -41,6 +41,12 @@ vi:
       create:
         success: Tạo mới chuyên gia thành công
         failed: Tạo mới chuyên gia thất bại
+      update:
+        success: Cập nhật chuyên gia thành công
+        failed: Cập nhật chuyên gia thất bại
+      destroy:
+        success: Xóa bảng chuyên gia thành công
+        failed: Xóa bảng chuyên gia thất bại
   clinic_management:
     patient_records:
       create:

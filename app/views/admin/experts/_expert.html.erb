@@ -4,10 +4,19 @@
       Settings.experts.per_page %>
   </td>
   <td><%= image_tag expert.avatar.small.url %></td>
-  <td><%= expert.full_name %></td>
+  <td><%= link_to expert.full_name, admin_expert_path(expert) %></td>
   <td><%= expert.title %></td>
   <td><%= expert.workplace %></td>
   <td><%= expert.priority %></td>
   <td>
+    <%= link_to edit_admin_expert_path(expert), class: "btn btn-warning btn-xs btn-flat" do %>
+      <i class="fa fa-pencil-square-o"></i>
+      <%= t ".edit" %>
+    <% end %>
+    <%= link_to admin_expert_path(expert), method: :delete,
+      data: {confirm: t(".confirm_delete")}, class: "btn btn-danger btn-xs btn-flat" do %>
+      <i class="fa fa-trash-o"></i>
+      <%= t ".delete" %>
+    <% end %>
   </td>
 </tr>
