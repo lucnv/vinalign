@@ -1,4 +1,6 @@
 class Admin::ClinicsController < Admin::BaseController
+  before_action :clinic, except: [:index, :new, :create]
+
   def index
     @q = Clinic.ransack params[:q]
     @clinics = @q.result.recent_created.page(params[:page]).per(Settings.clinics.per_page)
@@ -7,12 +9,11 @@ class Admin::ClinicsController < Admin::BaseController
   end
 
   def show
-    @clinic = Clinic.find params[:id]
   end
 
   def new
     @clinic = Clinic.new
-    @support = Supports::Clinic.new @clinic
+    support_for_clinic
   end
 
   def create
@@ -21,14 +22,47 @@ class Admin::ClinicsController < Admin::BaseController
       flash[:success] = t ".success"
       redirect_to admin_clinics_path
     else
-      @support = Supports::Clinic.new @clinic
+      support_for_clinic
       flash.now[:failed] = t ".failed"
       render :new
     end
   end
 
+  def edit
+    @clinic = @clinic.decorate
+    support_for_clinic
+  end
+
+  def update
+    if @clinic.update_attributes clinic_params
+      flash[:success] = t ".success"
+      redirect_to admin_clinics_path
+    else
+      support_for_clinic
+      flash.now[:failed] = t ".failed"
+      render :edit
+    end
+  end
+
+  def destroy
+    if @clinic.destroy
+      flash[:success] = t ".success"
+    else
+      flash[:success] = t ".failed"
+    end
+    redirect_back fallback_location: admin_root_path
+  end
+
   private
   def clinic_params
     params.require(:clinic).permit Clinic::ADMIN_PERSIT_PARAMS
+  end
+
+  def clinic
+    @clinic = Clinic.find params[:id]
+  end
+
+  def support_for_clinic
+    @support = Supports::Clinic.new @clinic
   end
 end
