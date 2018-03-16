@@ -6,14 +6,24 @@
   <td><%= link_to clinic.name, admin_clinic_path(clinic) %></td>
   <td><%= clinic.full_address %></td>
   <td>
-    <%= link_to edit_admin_clinic_path(clinic), class: "btn btn-warning btn-xs btn-flat" do %>
-      <i class="fa fa-pencil-square-o"></i>
-      <%= t ".edit" %>
-    <% end %>
-    <%= link_to admin_clinic_path(clinic), method: :delete,
-      data: {confirm: t(".confirm_delete")}, class: "btn btn-danger btn-xs btn-flat" do %>
-      <i class="fa fa-trash-o"></i>
-      <%= t ".delete" %>
-    <% end %>
+    <div class="dropdown btn-dropdown">
+      <a data-toggle="dropdown">...</a>
+      <ul class="dropdown-menu dropdown-menu-right dropdown-btns">
+        <li>
+          <%= link_to edit_admin_clinic_path(clinic), class: "btn btn-xs btn-flat" do %>
+            <i class="fa fa-pencil-square-o"></i>
+            <%= t ".edit" %>
+          <% end %>
+        </li>
+        <li class="divider"></li>
+        <li>
+          <%= link_to admin_clinic_path(clinic), method: :delete,
+            data: {confirm: t(".confirm_delete")}, class: "btn btn-xs btn-flat" do %>
+            <i class="fa fa-trash-o"></i>
+            <%= t ".delete" %>
+          <% end %>
+        </li>
+      </ul>
+    </div>
   </td>
 </tr>
