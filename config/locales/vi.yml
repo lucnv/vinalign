@@ -8,6 +8,7 @@ vi:
   activerecord:
     errors:
       messages:
+        must_in_list: phải thuộc danh sách %{list}
         record_invalid: "Có các lỗi sau: %{errors}"
         restrict_dependent_destroy:
           has_one: Không thể xóa do tồn tại đối tượng phụ thuộc %{record}
