@@ -4,7 +4,7 @@
       Settings.patient_records.per_page %>
   </td>
   <td>
-    <%= link_to patient_record.full_name, clinic_management_patient_record_path(patient_record) %>
+    <%= link_to patient_record.full_name, url_for([:clinic_management, patient_record, :treatment_phases]) %>
   </td>
   <td><%= t ".#{patient_record.gender}" %></td>
   <td><%= patient_record.age %></td>

@@ -76,6 +76,7 @@ vi:
         online: *online
         main_navigation: *main_navigation
         patient_records: *patient_records
+        experts: Chuyên gia 
     shared:
       patient_record_side_bar:
         administrative_informations: Thông tin hành chính
