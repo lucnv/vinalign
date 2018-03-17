@@ -4,8 +4,8 @@
       <%= image_tag expert.avatar.medium.url, class: "image-full-width"%>
     </div>
     <div class="body">
-      <h5 class="margin-clear"><%= expert.full_name %></h5>
-      <small><%= expert.title %></small>
+      <h5 class="margin-clear display-one-line"><%= expert.full_name %></h5>
+      <div class="small display-one-line"><%= expert.title %></div>
       <div class="separator mt-10"></div>
       <p class="small margin-clear"><%= expert.workplace %></p>
       <% if expert.facebook_url.present? %>

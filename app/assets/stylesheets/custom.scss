@@ -25,6 +25,12 @@ img.image-full-width {
   width: 100%;
 }
 
+.display-one-line {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 @media (min-width: 991px) {
   #navbar-collapse-1 {
     display: block!important;
