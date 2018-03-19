@@ -3,15 +3,25 @@
   <td><%= price_list.item %></td>
   <td><%= number_with_delimiter price_list.price %></td>
   <td>
-    <%= link_to edit_admin_price_list_path(price_list), remote: true,
-      class: "btn btn-warning btn-xs btn-flat" do %>
-      <i class="fa fa-pencil-square-o"></i>
-      <%= t ".edit" %>
-    <% end %>
-    <%= link_to admin_price_list_path(price_list), method: :delete,
-      data: {confirm: t(".confirm_delete")}, class: "btn btn-danger btn-xs btn-flat" do %>
-      <i class="fa fa-pencil-square-o"></i>
-      <%= t ".delete" %>
-    <% end %>
+    <div class="dropdown btn-dropdown">
+      <a data-toggle="dropdown">...</a>
+      <ul class="dropdown-menu dropdown-menu-right dropdown-btns">
+        <li>
+          <%= link_to edit_admin_price_list_path(price_list), remote: true,
+            class: "btn btn-xs btn-flat" do %>
+            <i class="fa fa-pencil-square-o"></i>
+            <%= t ".edit" %>
+          <% end %>
+        </li>
+        <li class="divider"></li>
+        <li>
+          <%= link_to admin_price_list_path(price_list), method: :delete,
+            data: {confirm: t(".confirm_delete")}, class: "btn btn-xs btn-flat" do %>
+            <i class="fa fa-pencil-square-o"></i>
+            <%= t ".delete" %>
+          <% end %>
+        </li>
+      </ul>
+    </div>
   </td>
 </tr>
