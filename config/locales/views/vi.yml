@@ -294,3 +294,8 @@ vi:
     districts:
       index:
         select_district: Chọn quận/huyện
+  images:
+    form_upload:
+      not_supported: Trình duyệt của bạn không hỗ trợ Flash, Silverlight hoặc HTML5.
+    filed_uploaded: Đã tải lên thành công
+    images: ảnh!

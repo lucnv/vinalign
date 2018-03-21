@@ -78,3 +78,17 @@ vi:
       create:
         success: Tạo mới giai đoạn điều trị thành công
         failed: Tạo mới giai đoạn điều trị thất bại
+    albums:
+      create:
+        success: Tạo mới album thành công
+        failed: Tạo mới album thất bại
+      update:
+        success: Cập nhật album thành công
+        failed: Cập nhật album thất bại
+      destroy:
+        success: Xóa album thành công
+        failed: Xóa album thất bại
+  images:
+    create:
+      success: Thêm mới ảnh thành công
+      failed: Thêm mới ảnh thất bại

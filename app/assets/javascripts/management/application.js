@@ -20,3 +20,10 @@
 //= require_directory ./../management
 //= require flash_messages
 //= require ckeditor/init
+//= require js/moxie.min
+//= require js/plupload.dev
+//= require js/plupload.full.min
+//= require js/jquery-ui-1.10.4.custom.min
+//= require js/jquery.ui.plupload/jquery.ui.plupload.min
+//= require js/jquery-ui.min
+//= require js/i18n/vi
