@@ -3,7 +3,7 @@
     <%= index_on_pagination clinic_counter, assigns["clinics"].current_page,
       Settings.clinics.per_page %>
   </td>
-  <td><%= link_to clinic.name, admin_clinic_path(clinic) %></td>
+  <td><%= link_to clinic.name, url_for([:admin, clinic, :patient_records]) %></td>
   <td><%= clinic.full_address %></td>
   <td>
     <div class="dropdown btn-dropdown">
