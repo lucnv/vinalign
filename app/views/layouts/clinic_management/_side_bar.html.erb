@@ -28,6 +28,12 @@
           <%= yield :patient_record_side_bar %>
         <% end %>
       </li>
+      <li class="<%= content_for :experts_activation %>">
+        <%= link_to experts_path do %>
+          <i class="fa fa-briefcase"></i>
+          <span><%= t ".experts" %></span>
+        <% end %>
+      </li>
     </ul>
   </section>
 </aside>
