@@ -2,6 +2,7 @@ class Article < ApplicationRecord
   PERSIST_ATTRIBUTES = [:title, :summary, :content, :category, :represent_image]
 
   scope :recent_created, ->{order created_at: :desc}
+  scope :by_category, ->(category){where category: category}
 
   enum category: [:news, :case_gallery]
 
