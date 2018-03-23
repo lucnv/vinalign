@@ -21,7 +21,7 @@ class User < ApplicationRecord
 
   before_save :downcase_username
 
-  devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable
+  devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   enum role: [:admin, :doctor]
 
