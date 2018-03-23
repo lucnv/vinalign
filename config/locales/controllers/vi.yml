@@ -1,4 +1,4 @@
-vi:
+\vi:
   no_permission: Bạn không được phép thực hiện hành động này.
   admin:
     patient_records:
@@ -53,6 +53,10 @@ vi:
       destroy:
         success: Xóa bảng chuyên gia thành công
         failed: Xóa bảng chuyên gia thất bại
+    articles:
+      create:
+        success: Tạo mới bài viết thành công
+        failed: Tạo mới bài viết thất bại
   clinic_management:
     patient_records:
       create:

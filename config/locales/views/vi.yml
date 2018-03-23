@@ -198,6 +198,8 @@ vi:
         articles_management: Quản lý bài viết
       filter:
         search: *search
+      new:
+        new_article: Tạo mới bài viết
   clinic_management:
     patient_records:
       index:

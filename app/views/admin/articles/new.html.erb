@@ -1,0 +1,10 @@
+<% provide :header_title, t(".new_article") %>
+<% breadcrumb :admin_new_article %>
+<% content_for :articles_activation, "active" %>
+<div class="box">
+  <div class="box-body">
+    <%= form_for [:admin, @article], html: {multipart: true} do |f| %>
+      <%= render "form", f: f, clinic: @article %>
+    <% end %>
+  </div>
+</div>

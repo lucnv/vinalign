@@ -51,6 +51,7 @@ gem "capistrano-bundler", require: false
 gem "capistrano-rvm"
 gem "redis", "~> 3.0"
 gem "ckeditor"
+gem "file_validators"
 
 group :production do
   gem "pg", "~> 0.20"
