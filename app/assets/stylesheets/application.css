@@ -20,4 +20,5 @@
  *= require flash_messages
  *= require custom
  *= require_self
+ *= require article
  */

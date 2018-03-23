@@ -48,6 +48,7 @@ experts:
   per_page: 10
 articles:
   per_page: 15
+  per_page_front: 10
 genders:
   - male
   - female
@@ -57,7 +58,7 @@ avatar:
     small: [100, 100]
 preview_image:
   versions:
-    thumb: [400, 250]
+    thumb: [400, 200]
     big_thumb: [1200, 700]
 image:
   versions:

@@ -42,11 +42,16 @@
               </li>
               <li class="nav-seperated"></li>
               <li class="nav-item">
-                <li><%= link_to "Case gallery", "#", class: "nav-link" %></li>
+                <%= link_to t(".news"), category_articles_path(category: :news), class: "nav-link" %>
               </li>
               <li class="nav-seperated"></li>
               <li class="nav-item">
-                <li><%= link_to "Why Vinalign", "/pages/about", class: "nav-link" %></li>
+                <%= link_to t(".case_gallery"), category_articles_path(category: :case_gallery),
+                  class: "nav-link" %>
+              </li>
+              <li class="nav-seperated"></li>
+              <li class="nav-item">
+                <%= link_to "Why Vinalign", "/pages/about", class: "nav-link" %>
               </li>
               <li class="nav-seperated"></li>
               <li class="nav-item">
