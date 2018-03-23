@@ -77,6 +77,10 @@ crumb :admin_articles do
   parent :admin_root
 end
 
+crumb :admin_new_article do
+  link I18n.t("breadcrumbs.new"), new_admin_article_path
+  parent :admin_articles
+end
 
 crumb :clinic_mngt_root do
   link I18n.t("breadcrumbs.home"), clinic_management_root_path

@@ -1,0 +1,24 @@
+<div class="form-group">
+  <%= f.label :title, Article.human_attribute_name(:title) %>
+  <%= f.text_field :title, class: "form-control" %>
+</div>
+<div class="form-group">
+  <%= f.label :represent_image, Article.human_attribute_name(:represent_image) %>
+  <%= f.file_field :represent_image %>
+</div>
+<div class="form-group">
+  <%= f.label :category, Article.human_attribute_name(:category) %>
+  <%= f.select :category, Article::categories.keys.map{|c| [t(".#{c}"), c]},
+    {include_blank: t(".select_category")}, class: "form-control" %>
+</div>
+<div class="form-group">
+  <%= f.label :summary, Article.human_attribute_name(:summary) %>
+  <%= f.text_area :summary, class: "form-control", rows: 3 %>
+</div>
+<div class="form-group">
+  <%= f.label :content, Article.human_attribute_name(:content) %>
+  <%= f.cktext_area :content %>
+</div>
+<div class="form-group">
+  <%= f.submit class: "btn btn-primary btn-flat" %>
+</div>
