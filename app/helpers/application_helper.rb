@@ -11,6 +11,10 @@ module ApplicationHelper
     Clinic.has_no_doctor.pluck :name, :id
   end
 
+  def article_category_options
+    Article::categories.map {|key, value| [t(".#{key}"), value]}
+  end
+
   def custom_simple_format text
     simple_format strip_tags text
   end

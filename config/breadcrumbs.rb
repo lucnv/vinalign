@@ -72,6 +72,11 @@ crumb :admin_edit_expert do |expert|
   parent :admin_expert, expert
 end
 
+crumb :admin_articles do
+  link I18n.t("breadcrumbs.articles"), admin_articles_path
+  parent :admin_root
+end
+
 
 crumb :clinic_mngt_root do
   link I18n.t("breadcrumbs.home"), clinic_management_root_path

@@ -1,0 +1,11 @@
+<tr>
+  <td>
+    <%= index_on_pagination article_counter, assigns["articles"].current_page,
+      Settings.articles.per_page %>
+  </td>
+  <td><%= article.title %></td>
+  <td><%= t ".#{article.category}" %></td>
+  <td><%= time_with_format article.created_at %></td>
+  <td>
+  </td>
+</tr>

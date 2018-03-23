@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
   mount ActionCable.server => "/cable"
   devise_for :users
 
@@ -25,6 +26,7 @@ Rails.application.routes.draw do
       resources :treatment_plan_files, only: :create
     end
     resources :experts
+    resources :articles
   end
 
   namespace :clinic_management do
