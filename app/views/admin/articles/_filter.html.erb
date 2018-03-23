@@ -1,6 +1,6 @@
 <%= search_form_for q, url: admin_articles_path, html: {class: "form-horizontal"} do |f| %>
   <div class="row">
-    <div class="col-md-2">
+    <div class="col-md-4">
       <%= f.label :title_cont, Article.human_attribute_name(:title) %>
       <%= f.text_field :title_cont, class: "form-control" %>
     </div>

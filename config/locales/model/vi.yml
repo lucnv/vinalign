@@ -13,6 +13,7 @@ vi:
       user_profile: Hồ sơ người dùng
       user: Người dùng
       expert: Chuyên gia
+      article: Bài viết
     attributes:
       user_profile:
         avatar: Ảnh đại diện

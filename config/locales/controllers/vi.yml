@@ -1,4 +1,4 @@
-\vi:
+vi:
   no_permission: Bạn không được phép thực hiện hành động này.
   admin:
     patient_records:
@@ -57,6 +57,12 @@
       create:
         success: Tạo mới bài viết thành công
         failed: Tạo mới bài viết thất bại
+      update:
+        success: Cập nhật bài viết thành công
+        failed: Cập nhật bài viết thất bại
+      destroy:
+        success: Xóa bài viết thành công
+        failed: Xóa bài viết thất bại
   clinic_management:
     patient_records:
       create:
