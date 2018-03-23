@@ -105,6 +105,7 @@ vi:
         new_clinic: Thêm mới phòng khám
       show:
         clinic_title_html: Thông tin phòng khám <small>%{clinic_name}</small>
+        edit: *edit
       edit:
         edit_clinic: Chỉnh sửa phòng khám
       clinic:

@@ -2,3 +2,52 @@
 <%= render "admin/clinics/provide_clinic_side_bar", clinic: @clinic, current_site: :details %>
 <% provide :header_title, t(".clinic_title_html", clinic_name: @clinic.name) %>
 <% breadcrumb :admin_clinic, @clinic %>
+<div class="box">
+  <div class="box-body">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="row" style="margin: 5px;">
+          <div class="col-md-3 text-right">
+            <strong><%= Clinic.human_attribute_name :name %></strong>
+          </div>
+          <div class="col-md-9"><%= @clinic.name %></div>
+        </div>
+        <div class="row" style="margin: 5px;">
+          <div class="col-md-3 text-right">
+            <strong><%= Clinic.human_attribute_name :phone_number %></strong>
+          </div>
+          <div class="col-md-9"><%= @clinic.phone_number %></div>
+        </div>
+        <div class="row" style="margin: 5px;">
+          <div class="col-md-3 text-right">
+            <strong><%= Clinic.human_attribute_name :address %></strong>
+          </div>
+          <div class="col-md-9"><%= @clinic.full_address %></div>
+        </div>
+        <div class="row" style="margin: 5px;">
+          <div class="col-md-3 text-right">
+            <strong><%= Clinic.human_attribute_name :website %></strong>
+          </div>
+          <div class="col-md-9">
+            <%= link_to @clinic.facebook, @clinic.website, target: "_blank" if @clinic.facebook.present? %>
+          </div>
+        </div>
+        <div class="row" style="margin: 5px;">
+          <div class="col-md-3 text-right">
+            <strong><%= Clinic.human_attribute_name :facebook %></strong>
+          </div>
+          <div class="col-md-9">
+            <%= link_to @clinic.facebook, @clinic.facebook, target: "_blank" if @clinic.facebook.present? %>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 pull-right">
+        <%= link_to edit_admin_clinic_path(@clinic), class: "btn btn-warning btn-xs btn-flat" do %>
+          <i class="fa fa-pencil-square-o"></i>
+          <%= t ".edit" %>
+        <% end %>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>

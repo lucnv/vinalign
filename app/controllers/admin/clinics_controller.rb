@@ -9,6 +9,7 @@ class Admin::ClinicsController < Admin::BaseController
   end
 
   def show
+    @clinic = @clinic.decorate
   end
 
   def new
