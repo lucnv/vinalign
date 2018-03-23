@@ -37,6 +37,8 @@ users:
   per_page: 10
 experts:
   per_page: 10
+articles:
+  per_page: 10
 genders:
   - male
   - female

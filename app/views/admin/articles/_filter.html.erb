@@ -1,0 +1,20 @@
+<%= search_form_for q, url: admin_articles_path, html: {class: "form-horizontal"} do |f| %>
+  <div class="row">
+    <div class="col-md-2">
+      <%= f.label :title_cont, Article.human_attribute_name(:title) %>
+      <%= f.text_field :title_cont, class: "form-control" %>
+    </div>
+    <div class="col-md-2">
+      <%= f.label :category_eq, Article.human_attribute_name(:category) %>
+      <%= f.select :category_eq, article_category_options,
+        {include_blank: t(".all_categories")}, class: "form-control" %>
+    </div>
+    <div class="col-md-2">
+      </br>
+      <%= f.button class: "btn btn-flat btn-primary btn-search" do %>
+        <i class="fa fa-search fa-lg" aria-hidden="true"></i>
+        <%= t(".search") %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

@@ -38,6 +38,12 @@
           <span><%= t ".experts" %></span>
         <% end %>
       </li>
+      <li class="<%= content_for :articles_activation %>">
+        <%= link_to admin_articles_path do %>
+          <i class="fa fa-newspaper-o"></i>
+          <span><%= t ".articles" %></span>
+        <% end %>
+      </li>
     </ul>
   </section>
 </aside>

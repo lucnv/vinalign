@@ -1,0 +1,19 @@
+<% provide :header_title, t(".articles_management") %>
+<% breadcrumb :admin_articles %>
+<% content_for :articles_activation, "active" %>
+<%= link_to new_admin_article_path, class: "btn btn-primary btn-flat" do %>
+  <i class="fa fa-plus"></i>
+  <%= t ".add_new_article" %>
+<% end %>
+<div class="box">
+  <div class="box-header with-border">
+    <%= render "filter", q: @q %>
+  </div>
+  <div class="box-body">
+    <%= render "shared/full_pagination", records: @articles %>
+    <% if @articles.present? %>
+      <%= render "article_list", articles: @articles %>
+      <%= render "shared/full_pagination", records: @articles %>
+    <% end %>
+  </div>
+</div>

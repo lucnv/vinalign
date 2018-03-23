@@ -19,3 +19,4 @@
 //= require jquery.magnific-popup
 //= require_directory ./../management
 //= require flash_messages
+//= require ckeditor/init

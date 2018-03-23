@@ -63,6 +63,7 @@ vi:
         doctors: Bác sĩ
         clinics: Phòng khám
         experts: Chuyên gia
+        articles: Bài viết
       clinic_side_bar:
         patient_records: Hồ sơ bệnh nhân
         details: Thông tin phòng khám
@@ -76,7 +77,7 @@ vi:
         online: *online
         main_navigation: *main_navigation
         patient_records: *patient_records
-        experts: Chuyên gia 
+        experts: Chuyên gia
     shared:
       patient_record_side_bar:
         administrative_informations: Thông tin hành chính
@@ -191,6 +192,11 @@ vi:
       show:
         expert_title_html: Chuyên gia <small>%{name}</small>
         edit: *edit
+    articles:
+      index:
+        articles_management: Quản lý bài viết
+      filter:
+        search: *search
   clinic_management:
     patient_records:
       index:

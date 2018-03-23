@@ -114,3 +114,11 @@ puts "create experts"
     workplace: Faker::Company.name,
     facebook_url: Faker::Internet.url
 end
+
+puts "create articles"
+20.times do
+  Article.create! title: Faker::Lorem.sentence,
+    summary: Faker::Lorem.paragraph,
+    content: Faker::Lorem.paragraphs(5).join("\n"),
+    category: Article::categories.values.sample
+end
