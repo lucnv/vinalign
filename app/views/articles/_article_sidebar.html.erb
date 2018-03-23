@@ -1,0 +1,15 @@
+<div class="margin-clear">
+  <%= link_to article do %>
+    <%= image_tag article.represent_image.thumb.url %>
+  <% end %>
+  <br/>
+  <div class="media-body">
+    <h6 class="media-heading">
+      <%= link_to article.title, article %>
+    </h6>
+    <p class="small margin-clear">
+      <i class="fa fa-calendar pr-10"></i><%= time_with_format article.created_at %>
+    </p>
+  </div>
+</div>
+<hr>

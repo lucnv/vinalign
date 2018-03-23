@@ -49,6 +49,7 @@ experts:
 articles:
   per_page: 15
   per_page_front: 10
+  related_on_page: 5
 genders:
   - male
   - female

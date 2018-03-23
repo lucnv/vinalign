@@ -20,6 +20,6 @@ class ApplicationController < ActionController::Base
   end
 
   def set_locale
-    I18n.locale = :en
+    I18n.locale = :vi
   end
 end
