@@ -11,17 +11,15 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= require turbolinks
 //= require jquery
 //= require jquery_ujs
 //= require js/popper-v4.min
 //= require js/bootstrap-v4.min
-//= require plugins/modernizr
-//= require plugins/waypoints/jquery.waypoints
-//= require plugins/waypoints/sticky
-//= require js/medical-theme
 //= require flash_messages
+//= require behavior_scroll
 
-$(document).ready(function() {
+$(document).on("turbolinks:load", function() {
   function setSelectedPageNav() {
     var pathName = document.location.pathname;
     if ($("nav ul li a") != null) {
