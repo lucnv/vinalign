@@ -1,0 +1,10 @@
+<p>Xin chào <%= @resource.email %>!</p>
+
+<% if @resource.try(:unconfirmed_email?) %>
+  <p>Chúng tôi đang liên hệ với bạn để thông báo rằng email của bạn đang được thay đổi thành <%= @resource.unconfirmed_email %>.</p>
+<% else %>
+  <p>Chúng tôi đang liên hệ với bạn để thông báo rằng email của bạn đã được đổi thành <%= @resource.email %>.</p>
+<% end %>
+
+</br>
+<p> Vinalign Việt Nam.</p>

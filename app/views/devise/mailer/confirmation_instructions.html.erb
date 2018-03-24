@@ -1,0 +1,9 @@
+<p>Xin chào <%= @email %>!</p>
+
+<p> Cảm ơn bạn đã đăng ký tài khoản Vinalign Việt Nam </p>
+<p> Để hoàn thành việc đăng ký tài khoản, bạn hãy kích hoạt tài khoản bằng đường dẫn dưới đây:</p>
+<p><%= link_to "Xác nhận tài khoản", confirmation_url(@resource, confirmation_token: @token) %></p>
+
+<p>Cảm ơn bạn đã đăng ký!</p>
+</br>
+<p> Vinalign Việt Nam.</p>

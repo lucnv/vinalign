@@ -1,41 +1,47 @@
-<div class="container">
-  <div class="row">
-    <div class="devise-form col-md-6 offset-md-3">
-      <div class="card">
-        <div class="card-body mx-4">
-          <div class="text-center">
-            <h2 class="mb-5 mt-4"><%= User.human_attribute_name :login %></h2>
+<section class="main-container">
+  <div class="container">
+    <div class="row">
+      <div class="devise-form col-md-6 offset-md-3">
+        <div class="card">
+          <div class="card-body mx-4">
+            <div class="text-center">
+              <h2 class="mb-5 mt-4"><%= User.human_attribute_name :login %></h2>
+            </div>
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+              <div class="form-group has-feedback">
+                <%= f.label class: "control-label" do %>
+                  <%= User.human_attribute_name :login %>
+                  <span class="text-danger small">*</span>
+                <% end %>
+                <%= f.text_field :login, autofocus: true, class: "form-control" %>
+                <i class="fa fa-envelope form-control-feedback pr-4"></i>
+              </div>
+              <div class="form-group has-feedback">
+                <%= f.label class: "control-label" do %>
+                  <%= User.human_attribute_name(:password) %>
+                  <span class="text-danger small">*</span>
+                <% end %>
+                <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+                <i class="fa fa-lock form-control-feedback pr-4"></i>
+              </div>
+              <div class="form-group   has-feedback">
+                <div class="pull-left">
+                  <%= f.check_box :remember_me %>
+                  <%= f.label :remember_me, t(".remember_me") %>
+                </div>
+                <div class="pull-right">
+                  <p class="font-small blue-text d-flex">
+                    <%= link_to t(".forgot_your_password"), new_password_path(resource_name) %>
+                  </p>
+                </div>
+              </div>
+              <div class="actions mb-3">
+                <%= f.submit t(".login"), class: "btn blue-gradient btn-block btn-rounded z-depth-1a" %>
+              </div>
+            <% end %>
           </div>
-          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-            <div class="form-group has-feedback">
-              <%= f.label class: "control-label" do %>
-                <%= User.human_attribute_name :login %>
-                <span class="text-danger small">*</span>
-              <% end %>
-              <%= f.text_field :login, autofocus: true, class: "form-control" %>
-              <i class="fa fa-envelope form-control-feedback pr-4"></i>
-            </div>
-            <div class="form-group has-feedback">
-              <%= f.label class: "control-label" do %>
-                <%= User.human_attribute_name(:password) %>
-                <span class="text-danger small">*</span>
-              <% end %>
-              <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
-              <i class="fa fa-lock form-control-feedback pr-4"></i>
-            </div>
-            <div class="form-group   has-feedback">
-              <%= f.check_box :remember_me %>
-              <%= f.label :remember_me, t(".remember_me") %>
-            </div>
-            <div class="actions mb-3">
-              <%= f.submit t(".login"), class: "btn blue-gradient btn-block btn-rounded z-depth-1a" %>
-            </div>
-            <p class="font-small blue-text d-flex">
-              <%= link_to t(".forgot_your_password"), new_password_path(resource_name) %>
-            </p>
-          <% end %>
+          <%= render "devise/shared/links" %>
         </div>
-        <%= render "devise/shared/links" %>
       </div>
     </div>
   </div>
