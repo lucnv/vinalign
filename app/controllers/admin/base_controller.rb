@@ -7,8 +7,4 @@ class Admin::BaseController < ApplicationController
   def authenticate_admin!
     raise Pundit::NotAuthorizedError unless current_user.try :admin?
   end
-
-  def set_locale
-    I18n.locale = :vi
-  end
 end

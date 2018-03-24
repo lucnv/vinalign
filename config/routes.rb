@@ -55,5 +55,6 @@ Rails.application.routes.draw do
 
   resources :experts, only: :index
 
-  get "articles/:category", to: "category/articles#index", as: "category_articles"
+  resources :articles, only: :show
+  get ":category", to: "category/articles#index", as: "category_articles"
 end
