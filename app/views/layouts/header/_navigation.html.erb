@@ -1,10 +1,11 @@
-<header class="header fixed fixed-desktop clearfix">
-  <div class="container">
-    <div class="row header-baner">
-      <div class="col-md-auto hidden-md-down">
-        <div class="header-first clearfix">
-          <div id="logo" class="logo">
-            <%= link_to root_path do %>
+<div id="sticked-navbar" class="sticky-wrapper">
+  <header class="header fixed fixed-desktop clearfix">
+    <div class="container">
+      <div class="row header-baner">
+        <div class="col-md-auto hidden-md-down">
+          <div class="header-first clearfix">
+            <div id="logo" class="logo">
+              <%= link_to root_path do %>
               <%= image_tag Settings.logo.url, id: "logo_img", width: "300" %>
             <% end %>
           </div>
@@ -12,57 +13,57 @@
       </div>
       <div class="col-lg-6 offset-lg-2 ml-lg-auto">
         <div class="header-first clearfix pt-3">
-            <span class="site-slogan pull-right"><strong>Clear Aligner Solutions</strong></span>
+          <span class="site-slogan pull-right">
+            <strong>Clear Aligner Solutions</strong>
+          </span>
         </div>
       </div>
     </div>
-  <div class="seperated">
-    <hr class="m-0"/>
-  </div>
-  <div class="row navigation-links">
-    <div class="col-lg-12 ml-lg-auto">
-      <div class="header-second clearfix">
-        <div class="main-navigation main-navigation--mega-menu animated">
-          <nav class="navbar navbar-expand-lg navbar-light p-0">
-            <div class="navbar-brand clearfix hidden-lg-up">
-              <div id="logo-mobile" class="logo">
-                <%= link_to root_path do %>
-                <%= image_tag Settings.logo.url, id: "logo-img-mobile", width: "135" %>
-              <% end %>
+    <div class="seperated">
+      <hr class="m-0"/>
+    </div>
+    <div class="row navigation-links">
+      <div class="col-lg-12 ml-lg-auto">
+        <div class="header-second clearfix">
+          <div class="main-navigation main-navigation--mega-menu animated">
+            <nav class="navbar navbar-expand-lg navbar-light p-0">
+              <div class="navbar-brand clearfix hidden-lg-up">
+                <div id="logo-mobile" class="logo">
+                  <%= link_to root_path do %>
+                  <%= image_tag Settings.logo.url, id: "logo-img-mobile", width: "135" %>
+                <% end %>
+              </div>
             </div>
-          </div>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse-1" aria-controls="navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbar-collapse-1">
-            <!-- main-menu -->
-            <ul class="navbar-nav ml-xl-auto">
-              <li class="nav-item ">
-                <%= link_to t(".home"), root_path, class: "nav-link" %>
-              </li>
-              <li class="nav-seperated"></li>
-              <li class="nav-item">
-                <%= link_to t(".news"), category_articles_path(category: :news), class: "nav-link" %>
-              </li>
-              <li class="nav-seperated"></li>
-              <li class="nav-item">
-                <%= link_to t(".case_gallery"), category_articles_path(category: :case_gallery),
-                  class: "nav-link" %>
-              </li>
-              <li class="nav-seperated"></li>
-              <li class="nav-item">
-                <%= link_to "Why Vinalign", "/pages/about", class: "nav-link" %>
-              </li>
-              <li class="nav-seperated"></li>
-              <li class="nav-item">
-                <%= link_to t(".expert"), experts_path, class: "nav-link" %>
-              </li>
-            </ul>
-          </div>
-        </nav>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse-1" aria-controls="navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar-collapse-1">
+              <!-- main-menu -->
+              <ul class="navbar-nav ml-xl-auto">
+                <li class="nav-item ">
+                  <%= link_to t(".home"), root_path, class: "nav-link" %>
+                </li>
+                <li class="nav-seperated"></li>
+                <li class="nav-item">
+                  <%= link_to t(".news"), category_articles_path(category: :news), class: "nav-link" %>
+                </li>
+                <li class="nav-seperated"></li>
+                <li class="nav-item">
+                  <%= link_to t(".case_gallery"), category_articles_path(category: :case_gallery), class: "nav-link" %>
+                </li>
+                <li class="nav-seperated"></li>
+                <li class="nav-item">
+                  <%= link_to "Why Vinalign", "/pages/about", class: "nav-link" %>
+                </li>
+                <li class="nav-seperated"></li>
+                <li class="nav-item">
+                  <%= link_to t(".expert"), experts_path, class: "nav-link" %>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
       </div>
     </div>
-  </div>
+  </header>
 </div>
-</div>
-</header>

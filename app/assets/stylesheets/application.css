@@ -18,6 +18,7 @@
  *= require css/medical-theme-blue-skin
  *= require devise-forms
  *= require flash_messages
+ *= require navbar
  *= require custom
  *= require_self
  *= require article

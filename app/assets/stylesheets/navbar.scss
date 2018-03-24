@@ -1,0 +1,14 @@
+#sticked-navbar {
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.sticked {
+  position: fixed;
+  top: 0;
+  width: 100%
+}
+
+.sticked-body {
+  margin-top: 136px;
+}
