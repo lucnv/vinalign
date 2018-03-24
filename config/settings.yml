@@ -46,6 +46,7 @@ users:
   per_page: 10
 experts:
   per_page: 10
+  priorities: [1, 2, 3, 4, 5]
 articles:
   per_page: 15
   per_page_front: 10
