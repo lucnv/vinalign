@@ -1,4 +1,4 @@
-class Admin::TreatmentPhasesController < Admin::BaseController  
+class Admin::TreatmentPhasesController < Admin::BaseController
   TABS = %w(images treatment_plans communication)
   before_action :patient_record, only: [:index, :new, :create]
 
@@ -8,11 +8,12 @@ class Admin::TreatmentPhasesController < Admin::BaseController
 
   def new
     @treatment_phase = TreatmentPhase.new
+    @treatment_phase.start_date = Time.zone.now
   end
 
   def create
     @treatment_phase = @patient_record.treatment_phases.build treatment_phase_params
-    if @treatment_phase.save 
+    if @treatment_phase.save
       flash[:success] = t ".success"
       redirect_to admin_treatment_phase_path @treatment_phase
     else

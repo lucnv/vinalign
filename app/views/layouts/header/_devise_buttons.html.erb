@@ -1,17 +1,36 @@
 <div class="col-10 col-md-7">
   <div id="header-top-second" class="clearfix text-right">
     <ul class="list-inline">
-       <% if user_signed_in? %>
-         <%= link_to destroy_user_session_path, method: :delete, class: "btn btn-default btn-sm link-light" do %>
-           <i class="fa fa-sign-out pr-2"></i>
-           <%= t(".log_out") %>
-         <% end %>
-       <% else %>
-         <%= link_to new_user_session_path, class: "btn btn-default btn-sm link-light" do %>
-           <i class="fa fa-lock pr-2"></i>
-           <%= t(".log_in") %>
-         <% end %>
+      <% if user_signed_in? %>
+        <div class="dropdown">
+          <button type="button" class="btn btn-default btn-sm link-light dropdown-toggle" data-toggle="dropdown">
+            <%= current_user.full_name %>
+          </button>
+          <div class="dropdown-menu">
+            <% if current_user.admin? %>
+              <%= link_to admin_root_path, class: "dropdown-item" do %>
+                <i class="fa fa-cogs pr-2"></i>
+                <%= t ".management" %>
+              <% end %>
+            <% else %>
+              <%= link_to clinic_management_root_path, class: "dropdown-item" do %>
+                <i class="fa fa-cogs pr-2"></i>
+                <%= t ".management" %>
+              <% end %>
+            <% end %>
+            <div class="dropdown-divider"></div>
+            <%= link_to destroy_user_session_path, method: :delete, class: "dropdown-item" do %>
+              <i class="fa fa-sign-out pr-2"></i>
+              <%= t(".log_out") %>
+            <% end %>
+          </div>
+        </div>
+      <% else %>
+       <%= link_to new_user_session_path, class: "btn btn-default btn-sm link-light" do %>
+         <i class="fa fa-lock pr-2"></i>
+         <%= t(".log_in") %>
        <% end %>
+      <% end %>
     </ul>
   </div>
 </div>

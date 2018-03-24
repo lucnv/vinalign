@@ -9,6 +9,7 @@ class ClinicManagement::TreatmentPhasesController < ClinicManagement::BaseContro
 
   def new
     @treatment_phase = TreatmentPhase.new
+    @treatment_phase.start_date = Time.zone.now
   end
 
   def create

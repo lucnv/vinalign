@@ -9,6 +9,7 @@ class ClinicManagement::PatientRecordsController < ClinicManagement::BaseControl
 
   def new
     @patient_record = PatientRecord.new
+    @patient_record.start_date = Time.zone.now
     support_for_patient_record
   end
 

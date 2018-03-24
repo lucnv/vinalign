@@ -1,8 +1,10 @@
 <%= form_for album, url: form_path, html: {class: "form-horizontal"}, remote: true do |f| %>
   <div class="modal-body">
     <div class="form-group">
-      <%= f.label :name, Album.human_attribute_name(:name),
-        class: "control-label col-md-3" %>
+      <%= f.label :name, class: "control-label col-md-3" do %>
+        <%= Album.human_attribute_name(:name) %>
+        <span class="text-danger">*</span>
+      <% end %>
       <div class="col-md-7">
         <%= f.text_field :name, class: "form-control" %>
       </div>

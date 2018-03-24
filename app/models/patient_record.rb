@@ -14,6 +14,7 @@ class PatientRecord < ApplicationRecord
   validates :gender, presence: true
   validates :address, length: {maximum: Settings.validations.patient_record.address.max_length}
   validates :email, email_format: true
+  validates :dob, presence: true
 
   scope :recent_created, ->{order created_at: :desc}
   scope :full_name_cont, ->(name) do
