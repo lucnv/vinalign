@@ -1,8 +1,14 @@
-<div class="modal-footer mx-5 pt-3 mb-1">
-  <p class="text-right">
+<div class="separator mt-0"></div>
+<div class="mx-5 mb-4 pr-0">
+  <span class="font-small grey-text pull-right ">
+    <% unless controller_name == "confirmations" %>
+      <%= link_to t(".did_not_receive_confirmation_instructions"), new_confirmation_path(resource_name) %><br />
+    <% end %>
+  </span>
+  <span class="pull-right">
     <% unless controller_name == "sessions" %>
-      <%= t ".have_your_own_account" %>
+      <%= t ".have_your_own_account" %>&nbsp;
       <%= link_to t(".log_in"), new_session_path(resource_name) %><br />
     <% end %>
-  </p>
+  </span
 </div>
