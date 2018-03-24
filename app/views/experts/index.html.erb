@@ -1,12 +1,14 @@
-<h1 class="text-center title logo-font text-default pt-4"><%= t ".experts_list" %></h1>
-<%= render "filter", q: @q, support: @support %>
-<% if @experts.present? %>
-  <div class="row grid-space-10">
-    <%= render partial: :expert, collection: @experts, as: :expert %>
-  </div>
-  <div class="paginate">
-    <%= paginate @experts, theme: "front-bs4" %>
-  </div>
-<% else %>
- <span class="text-danger"><%= t ".no_expert_found" %></span>
-<% end %>
+<div class="container">
+  <h1 class="text-center title logo-font text-default pt-4"><%= t ".experts_list" %></h1>
+  <%= render "filter", q: @q, support: @support %>
+  <% if @experts.present? %>
+    <div class="row grid-space-10">
+      <%= render partial: :expert, collection: @experts, as: :expert %>
+    </div>
+    <div class="paginate">
+      <%= paginate @experts, theme: "front-bs4" %>
+    </div>
+  <% else %>
+   <span class="text-danger"><%= t ".no_expert_found" %></span>
+  <% end %>
+</div>

@@ -26,12 +26,6 @@
         <% end %>
         <%= yield :clinic_side_bar %>
       </li>
-      <li class="<%= content_for :doctors_activation %>">
-        <%= link_to admin_users_path do %>
-          <i class="fa fa-user"></i>
-          <span><%= t ".doctors" %></span>
-        <% end %>
-      </li>
       <li class="<%= content_for :experts_activation %>">
         <%= link_to admin_experts_path do %>
           <i class="fa fa-briefcase"></i>
@@ -42,6 +36,13 @@
         <%= link_to admin_articles_path do %>
           <i class="fa fa-newspaper-o"></i>
           <span><%= t ".articles" %></span>
+        <% end %>
+      </li>
+      <li class="header"></li>
+      <li>
+        <%= link_to root_path do %>
+          <i class="fa fa-home"></i>
+          <span><%= t ".home_page" %></span>
         <% end %>
       </li>
     </ul>

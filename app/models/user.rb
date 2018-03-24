@@ -29,6 +29,7 @@ class User < ApplicationRecord
   delegate :id, to: :clinic, allow_nil: true, prefix: true
   delegate :name, to: :clinic, allow_nil: true, prefix: true
   delegate :phone_number, to: :user_profile, allow_nil: true
+  delegate :full_name, to: :user_profile, prefix: false
 
   class << self
     def find_for_database_authentication warden_conditions

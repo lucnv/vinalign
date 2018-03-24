@@ -1,35 +1,45 @@
 <div class="col-md-6">
   <div class="form-group">
-    <%= f.label :start_date, PatientRecord.human_attribute_name(:start_date),
-      class: "control-label col-md-4" %>
+    <%= f.label :start_date, class: "control-label col-md-4" do %>
+      <%= PatientRecord.human_attribute_name(:start_date) %>
+      <span class="text-danger">*</span>
+    <% end %>
     <div class="col-md-5">
       <%= f.date_field :start_date, class: "form-control" %>
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :first_name, PatientRecord.human_attribute_name(:first_name),
-      class: "control-label col-md-4" %>
+    <%= f.label :first_name, class: "control-label col-md-4" do %>
+      <%= PatientRecord.human_attribute_name(:first_name) %>
+      <span class="text-danger">*</span>
+    <% end %>
     <div class="col-md-5">
       <%= f.text_field :first_name, class: "form-control" %>
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :last_name, PatientRecord.human_attribute_name(:last_name),
-      class: "control-label col-md-4" %>
+    <%= f.label :last_name, class: "control-label col-md-4" do %>
+      <%= PatientRecord.human_attribute_name(:last_name) %>
+      <span class="text-danger">*</span>
+    <% end %>
     <div class="col-md-5">
       <%= f.text_field :last_name, class: "form-control" %>
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :dob, PatientRecord.human_attribute_name(:dob),
-      class: "control-label col-md-4" %>
+    <%= f.label :dob, class: "control-label col-md-4" do %>
+      <%= PatientRecord.human_attribute_name(:dob) %>
+      <span class="text-danger">*</span>
+    <% end %>
     <div class="col-md-5">
       <%= f.date_field :dob, class: "form-control" %>
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :gender, PatientRecord.human_attribute_name(:gender),
-      class: "control-label col-md-4" %>
+    <%= f.label :gender, class: "control-label col-md-4" do %>
+      <%= PatientRecord.human_attribute_name(:gender) %>
+      <span class="text-danger">*</span>
+    <% end %>
     <div class="col-md-5">
       <%= f.select :gender, gender_options, {include_blank: t(".select_gender")}, class: "form-control" %>
     </div>

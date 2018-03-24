@@ -15,7 +15,9 @@ class Clinic < ApplicationRecord
 
   delegate :id, :name, to: :province, prefix: true, allow_nil: true
   delegate :name, to: :district, prefix: true, allow_nil: true
+  delegate :full_name, to: :doctor, prefix: true, allow_nil: true
 
   validates :name, presence: true
   validates :district_id, presence: true
+  validates :address, presence: true
 end

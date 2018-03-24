@@ -28,10 +28,11 @@
           <%= yield :patient_record_side_bar %>
         <% end %>
       </li>
-      <li class="<%= content_for :experts_activation %>">
-        <%= link_to experts_path do %>
-          <i class="fa fa-briefcase"></i>
-          <span><%= t ".experts" %></span>
+      <li class="header"></li>
+      <li>
+        <%= link_to root_path do %>
+          <i class="fa fa-home"></i>
+          <span><%= t ".home_page" %></span>
         <% end %>
       </li>
     </ul>

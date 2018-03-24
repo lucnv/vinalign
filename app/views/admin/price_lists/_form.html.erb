@@ -1,14 +1,18 @@
 <%= form_for price_list, url: form_path, html: {class: "form-horizontal"}, remote: true do |f| %>
   <div class="form-group">
-    <%= f.label :item, PriceList.human_attribute_name(:item), 
-      class: "control-label col-md-3" %>
+    <%= f.label :item, class: "control-label col-md-3" do %>
+      <%= PriceList.human_attribute_name(:item) %>
+      <span class="text-danger">*</span>
+    <% end %>
     <div class="col-md-7">
       <%= f.text_field :item, class: "form-control" %>
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :price, PriceList.human_attribute_name(:price), 
-      class: "control-label col-md-3" %>
+    <%= f.label :price, class: "control-label col-md-3" do %>
+      <%= PriceList.human_attribute_name(:price) %>
+      <span class="text-danger">*</span>
+    <% end %>
     <div class="col-md-7">
       <%= f.text_field :price, class: "form-control" %>
     </div>

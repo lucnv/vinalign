@@ -1,5 +1,8 @@
 <div class="form-group">
-  <%= f.label :title, Article.human_attribute_name(:title) %>
+  <%= f.label :title do %>
+    <%= Article.human_attribute_name(:title) %>
+    <span class="text-danger">*</span>
+  <% end %>
   <%= f.text_field :title, class: "form-control" %>
 </div>
 <div class="form-group">
@@ -7,16 +10,25 @@
   <%= f.file_field :represent_image %>
 </div>
 <div class="form-group">
-  <%= f.label :category, Article.human_attribute_name(:category) %>
+  <%= f.label :category do %>
+    <%= Article.human_attribute_name(:category) %>
+    <span class="text-danger">*</span>
+  <% end %>
   <%= f.select :category, Article::categories.keys.map{|c| [t(".#{c}"), c]},
     {include_blank: t(".select_category")}, class: "form-control" %>
 </div>
 <div class="form-group">
-  <%= f.label :summary, Article.human_attribute_name(:summary) %>
+  <%= f.label :summary do %>
+    <%= Article.human_attribute_name(:summary) %>
+    <span class="text-danger">*</span>
+  <% end %>
   <%= f.text_area :summary, class: "form-control", rows: 3 %>
 </div>
 <div class="form-group">
-  <%= f.label :content, Article.human_attribute_name(:content) %>
+  <%= f.label :content do %>
+    <%= Article.human_attribute_name(:content) %>
+    <span class="text-danger">*</span>
+  <% end %>
   <%= f.cktext_area :content %>
 </div>
 <div class="form-group">

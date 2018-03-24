@@ -1,13 +1,17 @@
 <div class="form-group">
-  <%= f.label :name, TreatmentPhase.human_attribute_name(:name),
-    class: "control-label col-md-2" %>
+  <%= f.label :name, class: "control-label col-md-2" do %>
+    <%= TreatmentPhase.human_attribute_name(:name) %>
+    <span class="text-danger">*</span>
+  <% end %>
   <div class="col-md-4">
     <%= f.text_field :name, class: "form-control" %>
   </div>
 </div>
 <div class="form-group">
-  <%= f.label :start_date, TreatmentPhase.human_attribute_name(:start_date),
-    class: "control-label col-md-2" %>
+  <%= f.label :start_date, class: "control-label col-md-2" do %>
+    <%= TreatmentPhase.human_attribute_name(:start_date) %>
+    <span class="text-danger">*</span>
+  <% end %>
   <div class="col-md-4">
     <%= f.date_field :start_date, class: "form-control" %>
   </div>
