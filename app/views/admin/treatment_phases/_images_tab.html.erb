@@ -3,6 +3,11 @@
     <div class="list-group" id="album-list">
       <%= render partial: "album", collection: @support.albums, as: :album %>
     </div>
+    <%= link_to new_admin_treatment_phase_album_path(treatment_phase), remote: true,
+      class: "btn btn-primary btn-flat" do %>
+      <i class="fa fa-plus"></i>
+      <%= t ".new_album" %>
+    <% end %>
   </div>
   <div class="col col-md-9">
     <div id="form-upload">

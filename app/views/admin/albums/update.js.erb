@@ -1,0 +1,8 @@
+<% if @album.errors.blank? %>
+  $("#album-<%= @album.id %> .album-name").text("<%= @album.name %>");
+  $("#persit_album_modal").modal("hide");
+<% else %>
+  $("#album-form").html("<%= j render 'form', album: @album, \
+    form_path: admin_album_path(@album) %>");
+<% end %>
+$("#flash-messages").html("<%= j render 'layouts/shared/flash' %>");

@@ -1,0 +1,19 @@
+<%= form_for album, url: form_path, html: {class: "form-horizontal"}, remote: true do |f| %>
+  <div class="modal-body">
+    <div class="form-group">
+      <%= f.label :name, class: "control-label col-md-3" do %>
+        <%= Album.human_attribute_name(:name) %>
+        <span class="text-danger">*</span>
+      <% end %>
+      <div class="col-md-7">
+        <%= f.text_field :name, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-gray btn-flat" data-dismiss="modal">
+      <%= t ".cancel" %>
+    </button>
+    <%= f.submit class: "btn btn-primary btn-flat" %>
+  </div>
+<% end %>

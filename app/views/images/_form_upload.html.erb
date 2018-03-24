@@ -1,4 +1,4 @@
-<% if policy(album).add_images? %>
+<% if policy(album).add_images? || current_user.admin? %>
   <div class="modal fade" id="modal-upload-images" style="display: none;">
     <div class="modal-dialog">
       <div class="modal-content">
