@@ -112,7 +112,8 @@ puts "create experts"
     district: districts.sample,
     address: Faker::Address.street_address,
     workplace: Faker::Company.name,
-    facebook_url: Faker::Internet.url
+    facebook_url: Faker::Internet.url,
+    priority: [1, 2, 3, 4, 5].sample
 end
 
 puts "create articles"
