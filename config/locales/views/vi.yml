@@ -60,6 +60,7 @@ vi:
         toggle_navigation: Chuyển đổi điều hướng
         logo_short_title_html: <b>A</b>Vi
         log_out: *log_out
+        welcome: Xin chào %{name}!
       side_bar:
         online: *online
         main_navigation: *main_navigation
@@ -77,6 +78,7 @@ vi:
         management: Quản lí
         logo_short_title_html: <b>C</b/>M
         log_out: *log_out
+        welcome: Xin chào %{name}!
       side_bar:
         online: *online
         main_navigation: *main_navigation
