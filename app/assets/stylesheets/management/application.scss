@@ -100,6 +100,10 @@ body {
   section.content >a {
     margin-bottom: 15px;
   }
+
+  .wrap-ck-editor .cke_contents {
+    min-height: 35vh;
+  }
 }
 //begin custom adminLTE according to client requirement
 .main-sidebar {

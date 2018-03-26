@@ -21,7 +21,7 @@ class PreviewImageUploader < CarrierWave::Uploader::Base
   #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
   # end
   def default_url *args
-    [version_name, "represent_image.jpeg"].compact.join "_"
+    [version_name, "represent_image.png"].compact.join "_"
   end
 
   # Process files as they are uploaded:
