@@ -15,6 +15,7 @@ vi:
     action: &action Hành động
     log_out: &log_out Thoát
     search: &search Tìm kiếm
+    edit_info: &edit_info Chỉnh sửa thông tin
     total_records_found: &total_records_found
       zero: Không tìm thấy bản ghi
       one: "%{count} bản ghi được tìm thấy"
@@ -69,6 +70,8 @@ vi:
         clinics: Phòng khám
         experts: Chuyên gia
         articles: Bài viết
+        log_out: *log_out
+        edit_info: *edit_info
       clinic_side_bar:
         patient_records: Hồ sơ bệnh nhân
         details: Thông tin phòng khám
@@ -84,6 +87,8 @@ vi:
         main_navigation: *main_navigation
         patient_records: *patient_records
         experts: Chuyên gia
+        log_out: *log_out
+        edit_info: *edit_info
     shared:
       patient_record_side_bar:
         administrative_informations: Thông tin hành chính

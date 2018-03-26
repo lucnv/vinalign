@@ -73,6 +73,10 @@
   margin-top: 130px;
 }
 
+.pointer {
+  cursor: pointer;
+}
+
 //begin custom adminLTE according to client requirement
 .main-sidebar {
   background-color:  #3c8dbc!important;
@@ -107,6 +111,17 @@
 
 .content-header > .breadcrumb {
   position: static!important;
+}
+
+.main-sidebar .user-panel {
+  overflow: unset!important;
+}
+
+.sidebar a {
+  color: #777777!important;
+  &.text-danger {
+    color: red!important;
+  }
 }
 
 //end
