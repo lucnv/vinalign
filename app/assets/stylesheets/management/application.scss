@@ -77,6 +77,30 @@
   cursor: pointer;
 }
 
+body {
+  .brand-logo-small.logo {
+    width: 50px;
+    display: none;
+    padding: 0;
+    float: left;
+  }
+  .brand-logo-large {
+    display: block;
+  }
+  &.sidebar-collapse {
+    .brand-logo-small {
+      display: block;
+      padding: 0;
+    }
+    .brand-logo-large {
+      display: none;
+    }
+  }
+
+  section.content >a {
+    margin-bottom: 15px;
+  }
+}
 //begin custom adminLTE according to client requirement
 .main-sidebar {
   background-color:  #3c8dbc!important;

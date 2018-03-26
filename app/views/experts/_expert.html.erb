@@ -8,16 +8,18 @@
       <div class="small display-one-line"><%= expert.title %></div>
       <div class="separator mt-10"></div>
       <p class="small margin-clear"><%= expert.workplace %></p>
-      <% if expert.facebook_url.present? %>
-        <div class="separator mt-10"></div>
+      <div class="separator mt-10"></div>
         <ul class="social-links colored margin-clear">
           <li class="facebook">
-            <%= link_to expert.facebook_url, target: "_blank" do %>
-              <i class="fa fa-facebook"></i>
+            <% if expert.facebook_url %>
+              <%= link_to expert.facebook_url, target: "_blank" do %>
+                <i class="fa fa-facebook"></i>
+              <% end %>
+            <% else %>
+              <%= image_tag "https://s3-ap-southeast-1.amazonaws.com/vinalign/40x40.png"  %>
             <% end %>
           </li>
         </ul>
-      <% end %>
     </div>
   </div>
 </div>

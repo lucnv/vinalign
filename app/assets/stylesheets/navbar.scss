@@ -12,3 +12,9 @@
 .sticked-body {
   margin-top: 136px;
 }
+
+@media (max-width: 991px) {
+  .sticked-body {
+    margin-top: 63px;
+  }
+}

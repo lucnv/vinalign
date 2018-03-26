@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title><%= t ".title_clinic" %></title>
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag  "management/application", media: "all", "data-turbolinks-track": "reload" %>
     <%= javascript_include_tag "management/application", "data-turbolinks-track": "reload" %>
+
+    <link rel="shortcut icon" type="image/png" href="https://s3-ap-southeast-1.amazonaws.com/vinalign/favicon.png"/>
   </head>
 
   <body class="hold-transition skin-blue sidebar-mini">
@@ -13,9 +16,10 @@
       <%= render "layouts/clinic_management/header" %>
       <%= render "layouts/clinic_management/side_bar" %>
       <div class="content-wrapper">
+
         <section class="content-header clearfix">
-          <h1><%= yield :header_title %></h1>
           <%= breadcrumbs style: :bootstrap %>
+          <h1><%= yield :header_title %></h1>
         </section>
         <div id="flash-messages">
           <%= render "layouts/shared/flash" %>

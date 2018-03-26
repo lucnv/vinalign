@@ -47,6 +47,8 @@ vi:
         have_your_own_account: "Bạn đã có tài khoản?"
 
   layouts:
+    application:
+      title_front: Vinalign | Clear Aligner Solutions
     header:
       navigation:
         site_slogan: VNL - Clean Aligner Solutions
@@ -55,6 +57,7 @@ vi:
         log_in: Đăng nhập
         log_out: *log_out
     admin:
+      title_admin: Vinalign | Admin
       header:
         app_name: *app_name
         admin: Admin
@@ -76,6 +79,7 @@ vi:
         patient_records: Hồ sơ bệnh nhân
         details: Thông tin phòng khám
     clinic_management:
+      title_clinic: Vinalign | Clinic management
       header:
         clinic: Phòng khám
         management: Quản lí
