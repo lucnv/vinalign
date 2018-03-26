@@ -1,0 +1,60 @@
+<% if policy(album).add_images? %>
+  <div class="modal fade" id="modal-upload-images" style="display: none;">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span></button>
+          <h4 class="modal-title"><%= t(".add_image") %></h4>
+        </div>
+        <div class="">
+          <div id="uploader">
+            <p><%= t ".not_supported" %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    $(function () {
+      $("#uploader").plupload({
+        runtimes: "html5,flash,silverlight,html4",
+        url: "<%= album_images_path(album) %>",
+        multipart_params: {
+          "<%= request_forgery_protection_token %>": "<%= form_authenticity_token %>"
+        },
+        file_data_name: "sources",
+        filters: [
+          {
+            title: "Image files",
+            extensions: "jpg, gif, png, jpeg"
+          }, {
+            title: "Zip files",
+            extensions: "zip,avi"
+          }
+        ],
+        rename: true,
+        sortable: true,
+        dragdrop: true,
+        views: {
+          list: true,
+          thumbs: true,
+          active: "thumbs"
+        },
+        init: {
+          FilesAdded: function(up, files) {
+            up.start();
+          },
+          UploadComplete: function(up, files) {
+            alert("<%= I18n.t('images.filed_uploaded') %> " + files.length + " <%= I18n.t('images.images') %>");
+            $("#modal-upload-images").modal("hide");
+            $(".modal-backdrop").hide();
+            $.ajax({
+              url: "<%= album_images_path(album) %>"
+            }).done(function() {});
+          }
+        }
+      });
+    });
+  </script>
+<% end %>

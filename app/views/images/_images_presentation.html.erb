@@ -1,9 +1,13 @@
-<% if policy(album).add_images? %>
-  <%= form_tag album_images_path(album), multipart: true, authenticity_token: true,
-    class: "auto_upload_files" do %>
-    <%= file_field_tag :sources, multiple: true, name: "sources[]" %>
-  <% end %>
-<% end %>
+<div class="row">
+  <div class="col-md-12">
+    <%= button_tag class: "btn btn-primary btn-flat pull-right", id: "add-images",
+      data: {toggle: "modal", target: "#modal-upload-images"} do %>
+      <i class="fa fa-plus" aria-hidden="true"></i>
+      <%= t(".add") %>
+    <% end %>
+  </div>
+</div>
+</br>
 <div class="row">
   <%= render partial: :image, collection: images, as: :image %>
 </div>
