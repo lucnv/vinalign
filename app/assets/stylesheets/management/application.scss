@@ -23,6 +23,7 @@
  *= require flash_messages
  *= require js/jquery.ui.plupload/css/jquery.ui.plupload
  *= require css/jquery-ui-1.10.4.custom
+ *= require custom
  */
 
 .active-album {
@@ -71,3 +72,41 @@
 .modal-dialog {
   margin-top: 130px;
 }
+
+//begin custom adminLTE according to client requirement
+.main-sidebar {
+  background-color:  #3c8dbc!important;
+ }
+
+.sidebar-menu > li > a {
+  color: #ccd3d6!important;
+}
+
+.sidebar-menu > li > .treeview-menu {
+  background-color: #367fa9!important;
+}
+
+.sidebar-menu > li:hover > a, .sidebar-menu > li.active > a {
+  background-color: transparent!important;
+  color: #FFFFFF!important;
+}
+
+.sidebar-menu > li.header {
+  color: #ffffff!important;
+  font-weight: 700;
+  background-color: #367fa9!important;
+}
+
+.treeview-menu > li > a {
+  color: #ccd3d6!important;
+}
+
+.treeview-menu > li.active > a, .treeview-menu > li > a:hover {
+  color: #ffffff!important;
+}
+
+.content-header > .breadcrumb {
+  position: static!important;
+}
+
+//end
