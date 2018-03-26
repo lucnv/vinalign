@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title> Vinalign | Admin </title>
+    <title><%= t ".title_admin" %></title>
     <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag  "management/application", media: "all", "data-turbolinks-track": "reload" %>
     <%= javascript_include_tag "management/application", "data-turbolinks-track": "reload" %>
+
+    <link rel="shortcut icon" type="image/png" href="https://s3-ap-southeast-1.amazonaws.com/vinalign/favicon.png"/>
   </head>
 
   <body class="hold-transition skin-blue sidebar-mini">

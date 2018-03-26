@@ -2,11 +2,11 @@
   <div id="header-top-second" class="clearfix text-right">
     <ul class="list-inline">
       <% if user_signed_in? %>
-        <div class="dropdown">
-          <button type="button" class="btn btn-default btn-sm link-light dropdown-toggle" data-toggle="dropdown">
+        <div class="dropdown show active-drop">
+          <button type="button" class="btn btn-default btn-sm pointer dropdown-toggle">
             <%= current_user.full_name %>
           </button>
-          <div class="dropdown-menu">
+          <div class="dropdown-menu dropdown-menu-right show">
             <% if current_user.admin? %>
               <%= link_to admin_root_path, class: "dropdown-item" do %>
                 <i class="fa fa-cogs pr-2"></i>

@@ -31,13 +31,36 @@ img.image-full-width {
   text-overflow: ellipsis;
 }
 
+.header-top.colored a {
+  text-decoration: none;
+  &:hover {
+    color: #3697d9;
+  }
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.active-drop {
+  .dropdown-menu {
+    visibility: hidden;
+  }
+  &:hover, .dropdown-menu:hover {
+    .dropdown-menu {
+      visibility: visible;
+    }
+  }
+}
+
 .main-container {
   h1, h2, h3, h4, h5, h6 {
     font-family: "Roboto", sans-serif;
   }
+  min-height: 40vh;
 }
 
-@media (min-width: 991px) {
+@media (min-width: 992px) {
   #navbar-collapse-1 {
     display: block!important;
   }
