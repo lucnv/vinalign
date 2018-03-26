@@ -77,3 +77,6 @@ information:
 front:
   experts:
     per_page: 12
+  carousel:
+    news:
+      limit: 5

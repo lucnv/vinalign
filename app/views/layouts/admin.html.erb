@@ -17,8 +17,8 @@
       <%= render "layouts/admin/side_bar" %>
       <div class="content-wrapper">
         <section class="content-header clearfix">
-          <h1><%= yield :header_title %></h1>
           <%= breadcrumbs style: :bootstrap %>
+          <h1><%= yield :header_title %></h1>
         </section>
         <div id="flash-messages">
           <%= render "layouts/shared/flash" %>
