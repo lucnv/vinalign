@@ -1,0 +1,15 @@
+<div class="modal fade" id="persit_album_modal" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <%= t(album.persisted? ? ".edit_album" : ".new_album") %>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div id="album-form">
+        <%= render "form", album: album, form_path: form_path %>
+      </div>
+    </div>
+  </div>
+</div>
