@@ -1,5 +1,5 @@
 <div class="separator mt-0"></div>
-<div class="mx-5 mb-4 pr-0">
+<div class="devise-links">
   <span class="font-small grey-text pull-right ">
     <% unless controller_name == "confirmations" %>
       <%= link_to t(".did_not_receive_confirmation_instructions"), new_confirmation_path(resource_name) %><br />
@@ -10,5 +10,5 @@
       <%= t ".have_your_own_account" %>&nbsp;
       <%= link_to t(".log_in"), new_session_path(resource_name) %><br />
     <% end %>
-  </span
+  </span>
 </div>

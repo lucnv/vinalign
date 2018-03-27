@@ -20,9 +20,9 @@ vi:
       zero: Không tìm thấy bản ghi
       one: "%{count} bản ghi được tìm thấy"
       other: "%{count} bản ghi được tìm thấy"
-  devise:
+  devise: &devise
     sessions:
-      new:
+      new: &new
         login: Đăng nhập
         forgot_your_password: Quên mật khẩu?
         remember_me: Giữ tôi đăng nhập
@@ -53,9 +53,11 @@ vi:
       navigation:
         site_slogan: VNL - Clean Aligner Solutions
       devise_buttons:
+        <<: *new
         sign_up: Đăng kí
         log_in: Đăng nhập
         log_out: *log_out
+        did_not_receive_confirmation_instructions: Bạn chưa nhận được hướng dẫn xác nhận tài khoản?
     admin:
       title_admin: Vinalign | Admin
       header:
