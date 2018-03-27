@@ -44,13 +44,43 @@ img.image-full-width {
 
 .active-drop {
   .dropdown-menu {
-    visibility: hidden;
+      visibility: hidden;
+    .actions {
+      visibility: hidden;
+      transition-delay: 0s;
+    }
+    transition-delay: 0.15s;
   }
   &:hover, .dropdown-menu:hover {
     .dropdown-menu {
       visibility: visible;
+      transition-delay: 0s;
+      .actions {
+        visibility: visible;
+        transition-delay: 0s;
+      }
     }
   }
+}
+
+.link-light:hover {
+  color: #ffffff!important;
+  text-decoration: none!important;
+}
+
+.login-dropdown {
+  width: 300px;
+  padding: 20px;
+  .devise-links, p.blue-text {
+    a:hover {
+      color: #c6c6c6;
+    }
+  }
+}
+
+.devise-form .devise-links {
+  margin: 0 1.5rem;
+  padding: 0 1.25rem 1.25rem;
 }
 
 .main-container {

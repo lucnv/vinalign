@@ -26,10 +26,56 @@
           </div>
         </div>
       <% else %>
-       <%= link_to new_user_session_path, class: "btn btn-default btn-sm link-light" do %>
-         <i class="fa fa-lock pr-2"></i>
-         <%= t(".log_in") %>
-       <% end %>
+      <div class="active-drop show">
+        <%= link_to new_user_session_path, id: "btn-login", class: "btn btn-default btn-flat btn-sm link-light dropdown-toggle--no-caret" do %>
+          <i class="fa fa-lock pr-2"></i>
+          <%= t(".log_in") %>
+        <% end %>
+        <ul class="dropdown-menu dropdown-menu-right login-dropdown show">
+          <li>
+            <div class="">
+              <%= form_for(User.new, as: :user, url: session_path(:user)) do |f| %>
+                <div class="form-group has-feedback">
+                  <%= f.label class: "control-label" do %>
+                    <%= User.human_attribute_name :login %>
+                    <span class="text-danger small">*</span>
+                  <% end %>
+                  <%= f.text_field :login, autofocus: true, class: "form-control" %>
+                  <i class="fa fa-envelope form-control-feedback pr-4"></i>
+                </div>
+                <div class="form-group has-feedback">
+                  <%= f.label class: "control-label" do %>
+                    <%= User.human_attribute_name(:password) %>
+                    <span class="text-danger small">*</span>
+                  <% end %>
+                  <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+                  <i class="fa fa-lock form-control-feedback pr-4"></i>
+                </div>
+                <div class="form-group   has-feedback">
+                  <div class="pull-left">
+                    <%= f.check_box :remember_me %>
+                    <%= f.label :remember_me, t(".remember_me") %>
+                  </div>
+                  <div class="pull-right">
+                    <p class="font-small blue-text d-flex">
+                      <%= link_to t(".forgot_your_password"), new_password_path(:user) %>
+                    </p>
+                  </div>
+                </div>
+                <div class="actions mb-3">
+                  <%= f.submit t(".login"), class: "btn btn-default btn-block pointer" %>
+                </div>
+              <% end %>
+              <div class="separator mt-0"></div>
+              <div class="devise-links">
+                <span class="font-small grey-text pull-right ">
+                  <%= link_to t(".did_not_receive_confirmation_instructions"), new_confirmation_path(resource_name) %><br />
+                </span>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
       <% end %>
     </ul>
   </div>
