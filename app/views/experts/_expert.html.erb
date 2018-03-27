@@ -11,7 +11,7 @@
       <div class="separator mt-10"></div>
         <ul class="social-links colored margin-clear">
           <li class="facebook">
-            <% if expert.facebook_url %>
+            <% if expert.facebook_url.present? %>
               <%= link_to expert.facebook_url, target: "_blank" do %>
                 <i class="fa fa-facebook"></i>
               <% end %>
