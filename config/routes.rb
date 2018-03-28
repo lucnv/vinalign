@@ -46,6 +46,7 @@ Rails.application.routes.draw do
 
   namespace :my_page do
     resources :notifications, only: :index
+    resource :profile, only: :show
   end
 
   resources :albums do

@@ -1,0 +1,15 @@
+<div class="box">
+  <div class="box-header">
+    <h3 class="box-title"><%= t ".general_info" %></h3>
+  </div>
+  <div class="box-body">
+    <table class="table table-striped">
+      <%= render "shared/data", attribute: UserProfile.human_attribute_name(:full_name), value: user_profile.full_name %>
+      <%= render "shared/data", attribute: UserProfile.human_attribute_name(:dob),
+        value: time_with_format(user_profile.dob) %>
+      <%= render "shared/data", attribute: UserProfile.human_attribute_name(:gender),
+        value: t("gender.#{user_profile.gender}") %>
+      <%= render "shared/data", attribute: UserProfile.human_attribute_name(:phone_number), value: user_profile.phone_number %>
+    </table>
+  </div>
+</div>

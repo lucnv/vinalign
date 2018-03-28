@@ -20,6 +20,9 @@ vi:
       zero: Không tìm thấy bản ghi
       one: "%{count} bản ghi được tìm thấy"
       other: "%{count} bản ghi được tìm thấy"
+  gender:
+    male: Nam
+    female: Nữ
   devise: &devise
     sessions:
       new: &new

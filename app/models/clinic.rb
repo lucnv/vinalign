@@ -20,4 +20,8 @@ class Clinic < ApplicationRecord
   validates :name, presence: true
   validates :district_id, presence: true
   validates :address, presence: true
+
+  def full_address
+    [address, district_name, province_name].compact.join ", "
+  end
 end

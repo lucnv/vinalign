@@ -9,7 +9,7 @@ class UserProfile < ApplicationRecord
 
   enum gender: Settings.genders.map(&:to_sym)
 
-  delegate :doctor?, to: :user, allow_nil: true
+  delegate :doctor?, :username, :email, to: :user, allow_nil: true
 
   mount_uploader :avatar, AvatarUploader
 

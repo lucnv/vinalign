@@ -1,0 +1,13 @@
+<% content_for :my_profile_activation, "active" %>
+<% provide :header_title, t(".profile") %>
+<div class="row">
+  <div class="col-md-6">
+    <%= render "account", user: current_user %>
+    <%= render "general_info", user_profile: current_user.user_profile %>
+  </div>
+  <% if current_user.doctor? %>
+    <div class="col-md-6">
+      <%= render "clinic_info", clinic: current_user.user_profile.clinic %>
+    </div>
+  <% end %>
+</div>

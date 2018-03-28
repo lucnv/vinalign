@@ -1,0 +1,16 @@
+<div class="box">
+  <div class="box-header">
+    <h3 class="box-title"><%= t ".clinic_info" %></h3>
+  </div>
+  <div class="box-body">
+    <table class="table table-striped">
+      <%= render "shared/data", attribute: Clinic.human_attribute_name(:name), value: clinic.name %>
+      <%= render "shared/data", attribute: Clinic.human_attribute_name(:phone_number), value: clinic.phone_number %>
+      <%= render "shared/data", attribute: Clinic.human_attribute_name(:address), value: clinic.full_address %>
+      <%= render "shared/data", attribute: Clinic.human_attribute_name(:website),
+        value: link_to(clinic.website, clinic.website, target: :_blank) %>
+      <%= render "shared/data", attribute: Clinic.human_attribute_name(:facebook),
+        value: link_to(clinic.facebook, clinic.facebook, target: :_blank) %>
+    </table>
+  </div>
+</div>
