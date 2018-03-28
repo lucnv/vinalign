@@ -49,6 +49,7 @@ vi:
     content:
       new_patient_record: Phòng khám <b>%{clinic_name}</b> đã thêm một hồ sơ bệnh nhân mới
       images_uploaded: Phòng khám <b>%{clinic_name}</b> đã thêm %{images_count} ảnh vào album <b>%{album_name}</b> của bệnh nhân
+      treatment_plan_file_uploaded: Quản trị viên đã tải lên file điều trị <b>%{file_name}</b> cho bệnh nhân
   layouts:
     application:
       title_front: Vinalign | Clear Aligner Solutions
@@ -80,6 +81,8 @@ vi:
         articles: Bài viết
         log_out: *log_out
         edit_info: *edit_info
+        manage_my_page: QUẢN LÝ TRANG CÁ NHÂN
+        notifications: Thông báo
       clinic_side_bar:
         patient_records: Hồ sơ bệnh nhân
         details: Thông tin phòng khám
@@ -98,6 +101,8 @@ vi:
         experts: Chuyên gia
         log_out: *log_out
         edit_info: *edit_info
+        manage_my_page: QUẢN LÝ TRANG CÁ NHÂN
+        notifications: Thông báo
     shared:
       patient_record_side_bar:
         administrative_informations: Thông tin hành chính
@@ -290,6 +295,10 @@ vi:
     price_lists:
       index:
         price_lists_title_html: Hồ sơ bệnh nhân - Danh sách bảng giá <small>%{patient_record_name}</small>
+  my_page:
+    notifications:
+      index:
+        notifications: Thông báo
   shared:
     patient_records:
       details:

@@ -44,6 +44,10 @@ Rails.application.routes.draw do
     resources :albums, only: [:edit, :update, :destroy]
   end
 
+  namespace :my_page do
+    resources :notifications, only: :index
+  end
+
   resources :albums do
     resources :images, only: [:index, :create]
   end

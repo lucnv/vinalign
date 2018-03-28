@@ -14,6 +14,7 @@ vi:
       user: Người dùng
       expert: Chuyên gia
       article: Bài viết
+      notification: Thông báo
     attributes:
       user_profile:
         avatar: Ảnh đại diện
