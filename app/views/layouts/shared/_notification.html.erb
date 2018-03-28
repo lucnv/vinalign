@@ -1,0 +1,6 @@
+<li class="<%= 'bg-warning' unless notification.is_read? %>">
+  <%= link_to notification.target_path do %>
+    <div><i class="fa fa-users text-aqua"></i><%= notification.message %></div>
+    <%= time_with_format notification.created_at %>
+  <% end %>
+</li>

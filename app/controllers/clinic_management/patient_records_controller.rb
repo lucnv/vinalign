@@ -16,6 +16,7 @@ class ClinicManagement::PatientRecordsController < ClinicManagement::BaseControl
   def create
     @patient_record = current_clinic.patient_records.build patient_record_params
     if @patient_record.save
+      CreateNotificationForAdminsService.new(@patient_record, :new_patient_record).perform
       flash[:success] = t ".success"
       redirect_to clinic_management_patient_record_path(@patient_record)
     else

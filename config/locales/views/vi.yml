@@ -45,7 +45,6 @@ vi:
         not_a_member: Bạn chưa phải là thành viên?
         did_not_receive_confirmation_instructions: Bạn chưa nhận được hướng dẫn xác nhận tài khoản?
         have_your_own_account: "Bạn đã có tài khoản?"
-
   layouts:
     application:
       title_front: Vinalign | Clear Aligner Solutions
