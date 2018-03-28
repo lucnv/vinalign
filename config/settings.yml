@@ -51,6 +51,8 @@ articles:
   per_page: 15
   per_page_front: 10
   related_on_page: 5
+notifications:
+  on_dropdown_menu: 10
 genders:
   - male
   - female

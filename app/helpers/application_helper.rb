@@ -22,4 +22,8 @@ module ApplicationHelper
   def time_with_format time, format = :default
     l time, format: format if time.present?
   end
+
+  def notification_content_format content
+    simple_format content, {}, wrapper_tag: "span"
+  end
 end

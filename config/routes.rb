@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   namespace :supports do
     resources :districts, ony: :index
+    resources :notifications, only: :index
   end
 
   namespace :admin do
@@ -57,6 +58,5 @@ Rails.application.routes.draw do
 
   resources :experts, only: :index
   resources :articles, only: :show
-  resources :notifications, only: :index
   get ":category", to: "category/articles#index", as: "category_articles"
 end

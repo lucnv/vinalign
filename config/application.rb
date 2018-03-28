@@ -14,5 +14,6 @@ module Vinalign
     config.time_zone = "Hanoi"
     config.i18n.enforce_available_locales = true
     I18n.default_locale = :vi
+    config.active_job.queue_adapter = :sidekiq
   end
 end

@@ -1,7 +1,7 @@
 $(document).on("turbolinks:load", function() {
   $("#notification-icon").on("click", function(){
     $.ajax({
-      url: "/notifications",
+      url: "/supports/notifications",
       type: "GET",
       dataType: "script"
     });
