@@ -1,6 +1,6 @@
 class PatientRecord < ApplicationRecord
   ATTRIBUTES = [:start_date, :first_name, :last_name, :dob, :gender, :district_id,
-    :address, :phone_number, :email, :doctor, :profile_photo]
+    :address, :phone_number, :email, :doctor, :profile_photo, :status]
 
   belongs_to :clinic
   belongs_to :district, optional: true

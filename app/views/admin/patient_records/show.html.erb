@@ -4,20 +4,14 @@
 <% provide :header_title, t(".patient_record_title_html", clinic_name: @patient_record.clinic.name,
   patient_name: @patient_record.full_name) %>
 <% breadcrumb :admin_patient_record, @patient_record %>
-<div class="box">
-  <div class="box-body">
-    <div class="row">
-      <div class="col-md-5">
-        <%= render "shared/patient_records/details", patient_record: @patient_record %>
-      </div>
-      <div class="col-md-7">
-        <%= image_tag @patient_record.profile_photo.medium.url %>
-        <%= link_to edit_admin_patient_record_path(@patient_record),
-          class: "pull-right btn btn-warning btn-flat" do %>
-          <i class="fa fa-pencil-square-o"></i>
-          <%= t ".edit" %>
-        <% end %>
-      </div>
-    </div>
+<div class="row">
+  <div class="col-md-6">
+    <%= render "shared/patient_records/details", patient_record: @patient_record %>
   </div>
+  <%= image_tag @patient_record.profile_photo.medium.url %>
 </div>
+<%= link_to edit_admin_patient_record_path(@patient_record),
+  class: "btn btn-warning btn-flat" do %>
+  <i class="fa fa-pencil-square-o"></i>
+  <%= t ".edit" %>
+<% end %>

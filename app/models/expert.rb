@@ -26,6 +26,10 @@ class Expert < ApplicationRecord
 
   delegate :id, :name, to: :province, prefix: true, allow_nil: true
 
+  def full_name
+    last_name + " " + first_name
+  end
+
   class << self
     def ransackable_scopes auth_object = nil
       [:full_name_cont]

@@ -63,7 +63,8 @@ Clinic.all.each do |clinic|
       address: Faker::Address.street_address,
       phone_number: Faker::PhoneNumber.cell_phone,
       email: Faker::Internet.email,
-      doctor: Faker::Name.name
+      doctor: Faker::Name.name,
+      status: Faker::Lorem.sentence
   end
 end
 

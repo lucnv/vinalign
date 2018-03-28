@@ -46,6 +46,7 @@ vi:
         district: Quận/Huyện
         address: Địa chỉ
         profile_photo: Ảnh đại diện
+        status: Trạng thái
       treatment_phase:
         start_date: Ngày bắt đầu
         description: Mô tả
