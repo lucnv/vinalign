@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   namespace :supports do
     resources :districts, ony: :index
-    resources :notifications, only: :index
+    resources :notifications, only: [:index, :update]
   end
 
   namespace :admin do

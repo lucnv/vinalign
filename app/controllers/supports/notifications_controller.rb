@@ -8,4 +8,9 @@ class Supports::NotificationsController < ApplicationController
       end
     end
   end
+
+  def update
+    current_user.user_profile.received_notifications.find(params[:id]).update is_read: true
+    render body: nil
+  end
 end
