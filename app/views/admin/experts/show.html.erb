@@ -1,63 +1,34 @@
 <% provide :header_title, t(".expert_title_html", name: @expert.full_name) %>
 <% breadcrumb :admin_expert, @expert %>
 <% content_for :experts_activation, "active" %>
-<div class="box">
-  <div class="box-body">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="row" style="margin: 5px;">
-          <div class="col-md-3 text-right">
-            <strong><%= Expert.human_attribute_name :first_name %></strong>
-          </div>
-          <div class="col-md-9"><%= @expert.first_name %></div>
-        </div>
-        <div class="row" style="margin: 5px;">
-          <div class="col-md-3 text-right">
-            <strong><%= Expert.human_attribute_name :last_name %></strong>
-          </div>
-          <div class="col-md-9"><%= @expert.last_name %></div>
-        </div>
-        <div class="row" style="margin: 5px;">
-          <div class="col-md-3 text-right">
-            <strong><%= Expert.human_attribute_name :title %></strong>
-          </div>
-          <div class="col-md-9"><%= @expert.title %></div>
-        </div>
-        <div class="row" style="margin: 5px;">
-          <div class="col-md-3 text-right">
-            <strong><%= Expert.human_attribute_name :workplace %></strong>
-          </div>
-          <div class="col-md-9"><%= @expert.workplace %></div>
-        </div>
-        <div class="row" style="margin: 5px;">
-          <div class="col-md-3 text-right">
-            <strong><%= Expert.human_attribute_name :facebook_url %></strong>
-          </div>
-          <div class="col-md-9">
-            <%= link_to @expert.facebook_url, @expert.facebook_url, target: "_blank" if @expert.facebook_url.present? %>
-          </div>
-        </div>
-        <div class="row" style="margin: 5px;">
-          <div class="col-md-3 text-right">
-            <strong><%= Expert.human_attribute_name :address %></strong>
-          </div>
-          <div class="col-md-9"><%= @expert.full_address %></div>
-        </div>
-        <div class="row" style="margin: 5px;">
-          <div class="col-md-3 text-right">
-            <strong><%= Expert.human_attribute_name :priority %></strong>
-          </div>
-          <div class="col-md-9"><%= @expert.priority %></div>
-        </div>
+<div class="row">
+  <div class="col-md-6">
+    <div class="box">
+      <div class="box-header">
+        <h3 class="box-title"><%= t ".account" %></h3>
       </div>
-      <div class="col-md-6">
-        <%= image_tag @expert.avatar.medium.url %>
-        <%= link_to edit_admin_expert_path(@expert),
-          class: "pull-right btn btn-warning btn-flat" do %>
-          <i class="fa fa-pencil-square-o"></i>
-          <%= t ".edit" %>
-        <% end %>
+      <div class="box-body">
+        <table class="table table-striped">
+          <%= render "shared/data", attribute: Expert.human_attribute_name(:full_name),
+            value: @expert.full_name %>
+          <%= render "shared/data", attribute: Expert.human_attribute_name(:title),
+            value: @expert.title %>
+          <%= render "shared/data", attribute: Expert.human_attribute_name(:workplace),
+            value: @expert.workplace %>
+            <%= render "shared/data", attribute: Expert.human_attribute_name(:facebook_url),
+            value: link_to(@expert.facebook_url, @expert.facebook_url, targer: :_blank) %>
+          <%= render "shared/data", attribute: Expert.human_attribute_name(:address),
+            value: @expert.full_address %>
+          <%= render "shared/data", attribute: Expert.human_attribute_name(:priority),
+            value: @expert.priority %>
+        </table>
       </div>
     </div>
   </div>
+  <%= image_tag @expert.avatar.medium.url %>
 </div>
+<%= link_to edit_admin_expert_path(@expert),
+  class: "btn btn-warning btn-flat" do %>
+  <i class="fa fa-pencil-square-o"></i>
+  <%= t ".edit" %>
+<% end %>

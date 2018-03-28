@@ -89,6 +89,13 @@
     </div>
   </div>
   <div class="form-group">
+    <%= f.label :status, PatientRecord.human_attribute_name(:status),
+      class: "control-label col-md-4" %>
+    <div class="col-md-5">
+      <%= f.text_field :status, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
     <div class="col-md-offset-4 col-md-5">
       <%= f.submit class: "btn btn-primary btn-flat" %>
     </div>
@@ -99,7 +106,7 @@
     <%= f.label :profile_photo, PatientRecord.human_attribute_name(:profile_photo),
       class: "control-label col-md-2" %>
     <div class="col-md-7">
-      <%= f.file_field :profile_photo, id: "image_upload", class: "form-control" %>
+      <%= f.file_field :profile_photo, id: "image_upload" %>
       <%= image_tag patient_record.profile_photo_url, id: "image_preview",
         size: "300x300", style: "border: 1px;" %>
     </div>
