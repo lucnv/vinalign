@@ -56,7 +56,7 @@ Rails.application.routes.draw do
   end
 
   resources :experts, only: :index
-
   resources :articles, only: :show
+  resources :notifications, only: :index
   get ":category", to: "category/articles#index", as: "category_articles"
 end

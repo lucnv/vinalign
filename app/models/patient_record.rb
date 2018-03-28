@@ -7,6 +7,7 @@ class PatientRecord < ApplicationRecord
   has_one :province, through: :district
   has_many :treatment_phases, dependent: :destroy
   has_many :price_lists, dependent: :delete_all
+  has_many :notification, as: :notifiable, dependent: :destroy
 
   validates :start_date, presence: true
   validates :first_name, presence: true, length: {maximum: Settings.validations.patient_record.first_name.max_length}

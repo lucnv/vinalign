@@ -5,6 +5,7 @@ class Notification < ApplicationRecord
   after_commit -> {NotificationRelayJob.perform_later self}
 
   scope :unread, ->{where is_read: false}
+  scope :recent_created, ->{order created_at: :desc}
 
   enum action: [:new_patient_record, :new_images_uploaded]
 end

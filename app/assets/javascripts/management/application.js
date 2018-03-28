@@ -27,3 +27,4 @@
 //= require js/jquery.ui.plupload/jquery.ui.plupload.min
 //= require js/jquery-ui.min
 //= require js/i18n/vi
+//= require notification
