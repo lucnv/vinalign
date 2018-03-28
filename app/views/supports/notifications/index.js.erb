@@ -1,2 +1,3 @@
+$("notification-message").html("You have <%= @unread_noti_count %> unread notifications");
 $("#notification-list").html("<%= j render partial: 'layouts/shared/notification', \
   collection: @notifications, as: :notification %>");

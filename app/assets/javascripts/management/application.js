@@ -28,3 +28,4 @@
 //= require js/jquery-ui.min
 //= require js/i18n/vi
 //= require notification
+//= require cable

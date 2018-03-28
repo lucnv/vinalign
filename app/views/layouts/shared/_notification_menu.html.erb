@@ -5,12 +5,12 @@
   <% end %>
 </a>
 <ul class="dropdown-menu">
-  <li class="header">You have <%= unread_noti_count %> unread notifications</li>
-    <li>
-      <ul class="menu" id="notification-list">
-      </ul>
-    </li>
-  <% if noti_count > 10 %>
-    <li class="footer"><a href="#">View all</a></li>
-  <% end %>
+  <li class="header" id="notification-message">
+    You have <%= unread_noti_count %> unread notifications
+  </li>
+  <li>
+    <ul class="menu" id="notification-list">
+    </ul>
+  </li>
+  <li class="footer"><a href="#">View all</a></li>
 </ul>

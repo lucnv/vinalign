@@ -52,6 +52,8 @@ gem "capistrano-rvm"
 gem "redis", "~> 3.0"
 gem "ckeditor"
 gem "file_validators"
+gem "sidekiq"
+
 
 group :production do
   gem "pg", "~> 0.20"
