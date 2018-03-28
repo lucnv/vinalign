@@ -9,6 +9,12 @@ class NotificationDecorator < ApplicationDecorator
     hash_value[:content]
   end
 
+  class << self
+    def collection_decorator_class
+      PaginatingDecorator
+    end
+  end
+
   private
   def hash_value
     @hash_value ||= case action.to_sym
@@ -27,6 +33,13 @@ class NotificationDecorator < ApplicationDecorator
           clinic_name: album.treatment_phase.patient_record.clinic.name,
           images_count: self.data["images_count"],
           album_name: album.name)
+      }
+    when :treatment_plan_file_uploaded
+      treatment_plan_file = self.notifiable
+      {
+        target_path: clinic_management_treatment_phase_path(treatment_plan_file.treatment_phase, tab: :treatment_plans),
+        content: I18n.t("notification.content.treatment_plan_file_uploaded",
+          file_name: self.data["file_name"])
       }
     end
   end

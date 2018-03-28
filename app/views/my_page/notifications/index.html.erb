@@ -1,0 +1,10 @@
+<% provide :header_title, t(".notifications") %>
+<% content_for :notifications_activation, "active" %>
+<div class="box">
+  <div class="box-body">
+    <ul>
+      <%= render partial: :notification, collection: @notifications, as: :notification %>
+    </ul>
+    <%= render "shared/full_pagination", records: @notifications %>
+  </div>
+</div>
