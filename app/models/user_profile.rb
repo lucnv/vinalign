@@ -4,7 +4,6 @@ class UserProfile < ApplicationRecord
   has_many :messages, foreign_key: :sender_id
   has_many :received_notifications, class_name: Notification.name, foreign_key: :recipient_id
 
-
   validates :user, presence: true
   validates :clinic, :first_name, :last_name, presence: true, if: :doctor?
 

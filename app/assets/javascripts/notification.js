@@ -10,7 +10,7 @@ $(document).on("turbolinks:load", function() {
 
 function readNotification(container){
   $.ajax({
-    url: "/my_page/notifications/" + container.data("notification"),
+    url: "/supports/notifications/" + container.data("notification-id"),
     type: "PUT",
     dataType: "script",
     data: {is_read: 1}
