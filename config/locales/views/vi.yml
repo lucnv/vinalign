@@ -53,6 +53,7 @@ vi:
       new_patient_record: Phòng khám <b>%{clinic_name}</b> đã thêm một hồ sơ bệnh nhân mới
       images_uploaded: Phòng khám <b>%{clinic_name}</b> đã thêm %{images_count} ảnh vào album <b>%{album_name}</b> của bệnh nhân
       treatment_plan_file_uploaded: Quản trị viên đã tải lên file điều trị <b>%{file_name}</b> cho bệnh nhân
+      price_list_uploaded: Quản trị viên đã cập nhật bảng giá cho hồ sơ bệnh nhân <b>%{patient_name}</b>
   layouts:
     application:
       title_front: Vinalign | Clear Aligner Solutions

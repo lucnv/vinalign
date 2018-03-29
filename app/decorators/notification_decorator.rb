@@ -41,6 +41,12 @@ class NotificationDecorator < ApplicationDecorator
         content: I18n.t("notification.content.treatment_plan_file_uploaded",
           file_name: self.data["file_name"])
       }
+    when :price_list_uploaded
+      patient_record = self.notifiable
+      {
+        target_path: clinic_management_patient_record_price_lists_path(patient_record_id: patient_record.id),
+        content: I18n.t("notification.content.price_list_uploaded", patient_name: patient_record.full_name)
+      }
     end
   end
 end

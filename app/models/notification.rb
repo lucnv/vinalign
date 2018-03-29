@@ -7,7 +7,8 @@ class Notification < ApplicationRecord
   scope :unread, ->{where is_read: false}
   scope :recent_created, ->{order created_at: :desc}
 
-  enum action: [:new_patient_record, :images_uploaded, :treatment_plan_file_uploaded]
+  enum action: [:new_patient_record, :images_uploaded, :treatment_plan_file_uploaded,
+    :price_list_uploaded]
 
   private
   def push_notification
