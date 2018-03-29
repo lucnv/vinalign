@@ -2,11 +2,11 @@
   <div id="header-top-second" class="clearfix text-right">
     <ul class="list-inline">
       <% if user_signed_in? %>
-        <div class="dropdown show active-drop">
-          <button type="button" class="btn btn-default btn-sm pointer dropdown-toggle">
+        <div class="dropdown">
+          <button type="button" class="btn btn-default btn-sm pointer dropdown-toggle" data-toggle="dropdown">
             <%= current_user.full_name %>
           </button>
-          <div class="dropdown-menu dropdown-menu-right show">
+          <div class="dropdown-menu dropdown-menu-right">
             <% if current_user.admin? %>
               <%= link_to admin_root_path, class: "dropdown-item" do %>
                 <i class="fa fa-cogs pr-2"></i>
@@ -26,12 +26,12 @@
           </div>
         </div>
       <% else %>
-      <div class="active-drop show">
-        <%= link_to new_user_session_path, id: "btn-login", class: "btn btn-default btn-flat btn-sm link-light dropdown-toggle--no-caret" do %>
+      <div class="dropdown">
+        <%= link_to new_user_session_path, id: "btn-login", data: {toggle: "dropdown"}, class: "btn btn-default btn-flat btn-sm link-light dropdown-toggle--no-caret" do %>
           <i class="fa fa-lock pr-2"></i>
           <%= t(".log_in") %>
         <% end %>
-        <ul class="dropdown-menu dropdown-menu-right login-dropdown show">
+        <ul class="dropdown-menu dropdown-menu-right login-dropdown">
           <li>
             <div class="">
               <%= form_for(User.new, as: :user, url: session_path(:user)) do |f| %>
