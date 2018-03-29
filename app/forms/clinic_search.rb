@@ -10,11 +10,7 @@ class ClinicSearch
     search_params = RANSACK_ATTRIBUTES.inject({}) do |params, attribute|
       params.merge attribute => public_send(attribute)
     end
-    if name.present?
-      clinic_ids = Clinic.search_by_name(name).pluck :id
-      return Clinic.none unless clinic_ids.present?
-      search_params.merge! id_in: clinic_ids
-    end
+    scope = scope.search_by_name(name) if name.present?
     scope.ransack(search_params).result
   end
 end

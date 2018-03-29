@@ -1,4 +1,6 @@
 class Expert < ApplicationRecord
+  include PgSearch
+
   ATTRIBUTES = [:first_name, :last_name, :district_id, :address,
     :avatar, :title, :workplace, :facebook_url, :priority]
   PRIORITIES = Settings.experts.priorities
@@ -22,9 +24,14 @@ class Expert < ApplicationRecord
   scope :priority_desc, ->{order priority: :desc}
   scope :full_name_asc, ->{order "CONCAT(last_name, first_name)"}
 
+  before_save :update_normalized_fields
+
   mount_uploader :avatar, AvatarUploader
 
   delegate :id, :name, to: :province, prefix: true, allow_nil: true
+
+  pg_search_scope :search_by_full_name, against: {first_name: "A", last_name: "A", normalized_name: "B"}
+  pg_search_scope :search_by_workplace, against: {workplace: "A", normalized_workplace: "B"}
 
   def full_name
     last_name + " " + first_name
@@ -34,5 +41,11 @@ class Expert < ApplicationRecord
     def ransackable_scopes auth_object = nil
       [:full_name_cont]
     end
+  end
+
+  private
+  def update_normalized_fields
+    self.normalized_name = (self.first_name + " " + self.last_name).to_url.gsub "-", " "
+    self.normalized_workplace = self.workplace.to_url.gsub "-", " "
   end
 end

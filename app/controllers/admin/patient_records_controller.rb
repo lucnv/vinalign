@@ -3,9 +3,11 @@ class Admin::PatientRecordsController < Admin::BaseController
   before_action :clinic, only: [:index, :new, :create]
 
   def index
-    @q = @clinic.patient_records.ransack params[:q]
-    @patient_records = @q.result.recent_created.page(params[:page])
-      .per(Settings.patient_records.per_page).includes(:clinic).decorate
+    search_params = params[:patient_record_search].try :permit, PatientRecordSearch::SEARCHABLE_ATTRIBUTES
+    @patient_record_search = PatientRecordSearch.new search_params
+    @patient_records = @patient_record_search.result(@clinic.patient_records)
+      .recent_created.page(params[:page]).per(Settings.patient_records.per_page)
+      .includes(:clinic).decorate
   end
 
   def show

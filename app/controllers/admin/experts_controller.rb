@@ -2,8 +2,10 @@ class Admin::ExpertsController < Admin::BaseController
   before_action :expert, except: [:index, :new, :create]
 
   def index
-    @q = Expert.ransack params[:q]
-    @experts = @q.result.priority_desc.full_name_asc.page(params[:page]).per(Settings.experts.per_page).decorate
+    search_params = params[:expert_search].try :permit, ExpertSearch::SEARCHABLE_ATTRIBUTES
+    @expert_search = ExpertSearch.new search_params
+    @experts = @expert_search.result.priority_desc.full_name_asc
+      .page(params[:page]).per(Settings.experts.per_page).decorate
     @support = Supports::Expert.new
   end
 

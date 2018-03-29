@@ -7,7 +7,7 @@
 <% end %>
 <div class="box">
   <div class="box-header with-border">
-    <%= render "filter", q: @q, clinic: @clinic %>
+    <%= render "filter", patient_record_search: @patient_record_search, clinic: @clinic %>
   </div>
   <div class="box-body">
     <%= render "shared/full_pagination", records: @patient_records %>

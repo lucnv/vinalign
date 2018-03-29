@@ -2,8 +2,9 @@ class Admin::ArticlesController < Admin::BaseController
   before_action :load_article, only: [:edit, :update, :destroy]
 
   def index
-    @q = Article.ransack params[:q]
-    @articles = @q.result.recent_created.page(params[:page]).per(Settings.articles.per_page)
+    search_params = params[:article_search].try :permit, ArticleSearch::SEARCHABLE_ATTRIBUTES
+    @article_search = ArticleSearch.new search_params
+    @articles = @article_search.result.recent_created.page(params[:page]).per(Settings.articles.per_page)
   end
 
   def new
