@@ -53,7 +53,8 @@ gem "capistrano-sidekiq"
 gem "redis", "~> 3.0"
 gem "ckeditor"
 gem "sidekiq"
-
+gem "pg_search"
+gem "stringex"
 
 group :production do
   gem "pg", "~> 0.20"

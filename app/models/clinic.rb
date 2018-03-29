@@ -1,4 +1,6 @@
 class Clinic < ApplicationRecord
+  include PgSearch
+
   belongs_to :district
 
   has_one :province, through: :district
@@ -13,6 +15,8 @@ class Clinic < ApplicationRecord
     .where user_profiles: {clinic_id: nil}
   end
 
+  before_save :update_normalized_fields
+
   delegate :id, :name, to: :province, prefix: true, allow_nil: true
   delegate :name, to: :district, prefix: true, allow_nil: true
   delegate :full_name, to: :doctor, prefix: true, allow_nil: true
@@ -21,7 +25,14 @@ class Clinic < ApplicationRecord
   validates :district_id, presence: true
   validates :address, presence: true
 
+  pg_search_scope :search_by_name, against: {name: "A", normalized_name: "B"}
+
   def full_address
     [address, district_name, province_name].compact.join ", "
+  end
+
+  private
+  def update_normalized_fields
+    self.normalized_name = self.name.to_url.gsub "-", " "
   end
 end

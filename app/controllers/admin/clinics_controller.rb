@@ -2,8 +2,9 @@ class Admin::ClinicsController < Admin::BaseController
   before_action :clinic, except: [:index, :new, :create]
 
   def index
-    @q = Clinic.ransack params[:q]
-    @clinics = @q.result.recent_created.page(params[:page]).per(Settings.clinics.per_page)
+    search_params = params[:clinic_search].try :permit, ClinicSearch::SEARCHABLE_ATTRIBUTES
+    @clinic_search = ClinicSearch.new search_params
+    @clinics = @clinic_search.result.recent_created.page(params[:page]).per(Settings.clinics.per_page)
       .decorate
     @support = Supports::Clinic.new
   end
