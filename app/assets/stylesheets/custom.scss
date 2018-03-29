@@ -90,6 +90,13 @@ img.image-full-width {
   min-height: 40vh;
 }
 
+.carousel-caption {
+  background: rgba(0,0,0,0.5);
+  h2, p.text-muted {
+    color: #ffffff!important;
+  }
+}
+
 @media (min-width: 992px) {
   #navbar-collapse-1 {
     display: block!important;
