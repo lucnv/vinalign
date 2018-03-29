@@ -30,6 +30,7 @@ Rails.application.routes.draw do
     resources :albums, only: [:edit, :update, :destroy]
     resources :experts
     resources :articles
+    resources :treatment_phases, only: [:edit, :update, :destroy]
   end
 
   namespace :clinic_management do
@@ -42,6 +43,7 @@ Rails.application.routes.draw do
       resources :albums, only: [:new, :create]
     end
     resources :albums, only: [:edit, :update, :destroy]
+    resources :treatment_phases, only: [:edit, :update, :destroy]
   end
 
   namespace :my_page do

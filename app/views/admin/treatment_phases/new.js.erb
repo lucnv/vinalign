@@ -1,0 +1,3 @@
+$("#modal_holder").html("<%= j render 'shared/treatment_phases/modal', \
+  treatment_phase: @treatment_phase, form_path: admin_patient_record_treatment_phases_path(@patient_record) %>");
+$("#treatment_phase_modal").modal();

@@ -319,6 +319,8 @@ vi:
         send: Gửi
       treatment_plan_files:
         treatment_plan_files: Tệp tin kế hoạch điều trị
+      treatment_phase:
+        confirm_delete: Bạn có chắc chắn muốn xóa giai đoạn điều trị "%{treatment_phase}"?
   supports:
     districts:
       index:

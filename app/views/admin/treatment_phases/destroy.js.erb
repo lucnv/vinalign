@@ -1,0 +1,4 @@
+<% if @treatment_phase.destroyed? %>
+  $("#treatment-phase-<%= @treatment_phase.id %>").remove();
+<% end %>
+$("#flash-messages").html("<%= j render 'layouts/shared/flash' %>");
