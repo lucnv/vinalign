@@ -1,12 +1,12 @@
-<%= search_form_for q, url: experts_path, html: {class: "form-horizontal"} do |f| %>
+<%= form_for expert_search, url: experts_path, html: {method: :get, class: "form-horizontal"} do |f| %>
   <div class="row justify-content-center">
     <div class="col-md-2">
-      <%= f.label :full_name_cont, Expert.human_attribute_name(:full_name) %>
-      <%= f.text_field :full_name_cont, class: "form-control" %>
+      <%= f.label :full_name, Expert.human_attribute_name(:full_name) %>
+      <%= f.text_field :full_name, class: "form-control" %>
     </div>
     <div class="col-md-2">
-      <%= f.label :workplace_cont, Expert.human_attribute_name(:workplace) %>
-      <%= f.text_field :workplace_cont, class: "form-control" %>
+      <%= f.label :workplace, Expert.human_attribute_name(:workplace) %>
+      <%= f.text_field :workplace, class: "form-control" %>
     </div>
     <div class="col-md-2">
       <%= f.label :province_id_eq, Expert.human_attribute_name(:province) %>

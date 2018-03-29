@@ -2,9 +2,10 @@ class ClinicManagement::PatientRecordsController < ClinicManagement::BaseControl
   before_action :patient_record, :authorize_patient_record, except: [:index, :new, :create]
 
   def index
-    @q = current_clinic.patient_records.ransack params[:q]
-    @patient_records = @q.result.recent_created.page(params[:page])
-      .per(Settings.patient_records.per_page).decorate
+    search_params = params[:patient_record_search].try :permit, PatientRecordSearch::SEARCHABLE_ATTRIBUTES
+    @patient_record_search = PatientRecordSearch.new search_params
+    @patient_records = @patient_record_search.result(current_clinic.patient_records)
+      .recent_created.page(params[:page]).per(Settings.patient_records.per_page).decorate
   end
 
   def new

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180329185209) do
+ActiveRecord::Schema.define(version: 20180329211021) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20180329185209) do
     t.integer "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "normalized_title"
   end
 
   create_table "ckeditor_assets", force: :cascade do |t|
@@ -79,6 +80,8 @@ ActiveRecord::Schema.define(version: 20180329185209) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "priority", default: 0
+    t.string "normalized_name"
+    t.string "normalized_workplace"
     t.index ["district_id"], name: "index_experts_on_district_id"
   end
 
@@ -130,6 +133,7 @@ ActiveRecord::Schema.define(version: 20180329185209) do
     t.datetime "updated_at", null: false
     t.string "address"
     t.string "status"
+    t.string "normalized_name"
     t.index ["clinic_id"], name: "index_patient_records_on_clinic_id"
     t.index ["district_id"], name: "index_patient_records_on_district_id"
   end

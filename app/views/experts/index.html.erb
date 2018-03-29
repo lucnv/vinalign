@@ -1,7 +1,7 @@
 <section class="main-container">
   <div class="container">
     <h1 class="text-center title logo-font text-default"><%= t ".experts_list" %></h1>
-    <%= render "filter", q: @q, support: @support %>
+    <%= render "filter", expert_search: @expert_search, support: @support %>
     <% if @experts.present? %>
       <div class="row grid-space-10">
         <%= render partial: :expert, collection: @experts, as: :expert %>
