@@ -1,0 +1,4 @@
+$("#modal_holder").html("<%= j render 'shared/treatment_phases/modal', \
+  form_path: clinic_management_patient_record_treatment_phases_path(@patient_record),\
+  treatment_phase: @treatment_phase %>");
+$("#treatment_phase_modal").modal();

@@ -5,10 +5,12 @@
   patient_name: @patient_record.full_name) %>
 <% breadcrumb :admin_patient_record_treatment_phases, @patient_record %>
 
-<%= link_to new_admin_patient_record_treatment_phase_path(@patient_record),
+<%= link_to new_admin_patient_record_treatment_phase_path(@patient_record), remote: true,
   class: "btn btn-primary btn-flat" do  %>
   <i class="fa fa-plus"></i>
   <%= t ".add_treatment_phase" %>
 <% end %>
-<%= render partial: "shared/treatment_phases/treatment_phase",
-  collection: @treatment_phases, as: :treatment_phase, locals: {scope: :admin} %>
+<div id="treatment-phase-list">
+  <%= render partial: "shared/treatment_phases/treatment_phase",
+    collection: @treatment_phases, as: :treatment_phase, locals: {scope: :admin} %>
+</div>

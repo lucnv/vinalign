@@ -1,9 +1,30 @@
-<div class="panel panel-default">
+<div class="panel panel-default" id="treatment-phase-<%= treatment_phase.id %>">
   <div class="panel-heading">
     <strong>
       <i class="fa fa-calendar" aria-hidden="true"></i>
       <%= link_to treatment_phase.name, url_for([scope, treatment_phase]) %>
     </strong>
+    <div class="dropdown pull-right">
+      <a data-toggle="dropdown"><i class="fa fa-bars"></i></a>
+      <ul class="dropdown-menu dropdown-menu-right dropdown-btns">
+        <li>
+          <%= link_to edit_polymorphic_path([scope, treatment_phase]), remote: true,
+            class: "btn btn-xs btn-flat" do %>
+            <i class="fa fa-pencil-square-o"></i>
+            <%= t ".edit" %>
+          <% end %>
+        </li>
+        <li class="divider"></li>
+        <li>
+          <%= link_to polymorphic_path([scope, treatment_phase]), method: :delete, remote: true,
+            data: {confirm: t(".confirm_delete", treatment_phase: treatment_phase.name)},
+            class: "btn btn-xs btn-flat" do %>
+            <i class="fa fa-pencil-square-o"></i>
+            <%= t ".delete" %>
+          <% end %>
+        </li>
+      </ul>
+    </div>
   </div>
   <div class="panel-body">
     <p>

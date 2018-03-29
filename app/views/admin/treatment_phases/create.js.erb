@@ -1,0 +1,10 @@
+<% if @treatment_phase.errors.blank? %>
+  $("#treatment_phase_modal").modal("hide");
+  $("#treatment-phase-list").prepend("<%= j render 'shared/treatment_phases/treatment_phase', \
+    treatment_phase: @treatment_phase, scope: :admin %>");
+<% else %>
+  $("#treatment-phase-form").html("<%= j render 'shared/treatment_phases/form', \
+    treatment_phase: @treatment_phase,\
+    form_path: admin_patient_record_treatment_phases_path(@patient_record) %>");
+<% end %>
+$("#flash-messages").html("<%= j render 'layouts/shared/flash' %>");
