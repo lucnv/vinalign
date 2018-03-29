@@ -49,9 +49,9 @@ gem "capistrano3-puma"
 gem "capistrano-rails", require: false
 gem "capistrano-bundler", require: false
 gem "capistrano-rvm"
+gem "capistrano-sidekiq"
 gem "redis", "~> 3.0"
 gem "ckeditor"
-gem "file_validators"
 gem "sidekiq"
 
 
