@@ -1,8 +1,9 @@
-<%= search_form_for q, url: admin_clinics_path, html: {class: "form-horizontal"} do |f| %>
+<%= form_for clinic_search, url: admin_clinics_path,
+  html: {class: "form-horizontal", method: :get} do |f| %>
   <div class="row">
     <div class="col-md-2">
-      <%= f.label :name_cont, Clinic.human_attribute_name(:name) %>
-      <%= f.text_field :name_cont, class: "form-control" %>
+      <%= f.label :name, Clinic.human_attribute_name(:name) %>
+      <%= f.text_field :name, class: "form-control" %>
     </div>
     <div class="col-md-2">
       <%= f.label :province_id_eq, Clinic.human_attribute_name(:province) %>
