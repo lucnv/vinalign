@@ -60,7 +60,7 @@ class Admin::ClinicsController < Admin::BaseController
 
   private
   def clinic_params
-    params.require(:clinic).permit(Clinic::ADMIN_PERSIT_PARAMS).merge(clinic: {doctor_attributes: {user_attributes: {role: :doctor}}})
+    params.require(:clinic).permit(Clinic::ADMIN_PERSIT_PARAMS).to_h.deep_merge({doctor_attributes: {user_attributes: {role: "doctor"}}})
   end
 
   def clinic
