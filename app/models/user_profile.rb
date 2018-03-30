@@ -8,7 +8,7 @@ class UserProfile < ApplicationRecord
 
   ADMIN_PERSIT_PARAMS = [:avatar, :first_name, :last_name, :dob, :gender, :phone_number, user_attributes: [:id, :email, :password, :password_confirmation, :username]]
 
-  validates :user, presence: true
+  validates :user, :first_name, :last_name, presence: true
   validates :clinic, :first_name, :last_name, presence: true, if: :doctor?
 
   enum gender: Settings.genders.map(&:to_sym)

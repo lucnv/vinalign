@@ -10,7 +10,7 @@ class Clinic < ApplicationRecord
 
   accepts_nested_attributes_for :doctor
 
-  ADMIN_PERSIT_PARAMS = [:name, :phone_number, :district_id, :address, doctor_attributes: [:id, :avatar, :first_name, :last_name, :dob, :gender, :phone_number, user_attributes: [:id, :email, :password, :password_confirmation, :username]]]
+  ADMIN_PERSIT_PARAMS = [:name, :phone_number, :district_id, :address, doctor_attributes: [:id, :avatar, :first_name, :last_name, :dob, :gender, :phone_number, user_attributes: [:id, :email, :password, :password_confirmation, :username, :role]]]
 
   scope :recent_created, ->{order created_at: :desc}
   scope :has_no_doctor, -> do
