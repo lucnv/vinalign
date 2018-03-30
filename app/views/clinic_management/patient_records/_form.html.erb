@@ -107,7 +107,8 @@
       class: "control-label col-md-2" %>
     <div class="col-md-7">
       <%= f.file_field :profile_photo, id: "image_upload" %>
-      <%= image_tag patient_record.profile_photo_url, id: "image_preview",
+      </br>
+      <%= image_tag patient_record.profile_photo_was.url, id: "image_preview",
         size: "300x300", style: "border: 1px;" %>
     </div>
   </div>

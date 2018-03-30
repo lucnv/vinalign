@@ -23,6 +23,8 @@ vi:
         phone_number: Số điện thoại
         first_name: Tên
         last_name: Họ
+        dob: Ngày sinh
+        gender: Giới tính
       user:
         login: Đăng nhập
         password: Mật khẩu
