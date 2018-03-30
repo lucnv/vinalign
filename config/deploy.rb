@@ -28,3 +28,6 @@ set :puma_preload_app, false
 set :sidekiq_role, :app
 set :sidekiq_config, -> {File.join(current_path, "config", "sidekiq.yml")}
 set :sidekiq_env, "production"
+set :pty, false
+SSHKit.config.command_map[:sidekiq] = "source ~/.bash_profile && RAILS_ENV=production bundle exec sidekiq"
+SSHKit.config.command_map[:sidekiqctl] = "source ~/.bash_profile && RAILS_ENV=production bundle exec sidekiqctl"
