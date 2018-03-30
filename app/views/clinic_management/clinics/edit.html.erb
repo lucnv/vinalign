@@ -1,0 +1,61 @@
+<% provide :header_title, t(".edit_clinic") %>
+<% content_for :my_profile_activation, "active" %>
+<% content_for :my_profile_edit_clinic_activation, "active" %>
+<div class="box">
+  <div class="box-body">
+    <%= form_for @clinic, url: clinic_management_clinic_path, html: {class: "form-horizontal"} do |f| %>
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= f.label :name, class: "control-label col-md-4" do %>
+            <%= Clinic.human_attribute_name :name %>
+            <span class="text-danger">*</span>
+          <% end %>
+          <div class="col-md-5">
+            <%= f.text_field :name, class: "form-control" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :phone_number, Clinic.human_attribute_name(:phone_number),
+            class: "control-label col-md-4" %>
+          <div class="col-md-5">
+            <%= f.text_field :phone_number, class: "form-control" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= label_tag :province, class: "control-label col-md-4" do %>
+            <%= Clinic.human_attribute_name :province %>
+            <span class="text-danger">*</span>
+          <% end %>
+          <div class="col-md-5">
+            <%= select_tag :province, options_for_select(@support.province_options, @clinic.province_id),
+              {include_blank: t(".select_province"), class: "form-control province_selection"} %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :district_id, class: "control-label col-md-4" do %>
+            <%= Clinic.human_attribute_name :district %>
+            <span class="text-danger">*</span>
+          <% end %>
+          <div class="col-md-5">
+            <%= f.select :district_id, @support.district_options, {include_blank: t(".select_district")},
+              class: "form-control district_selection" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :address, class: "control-label col-md-4" do %>
+            <%= Clinic.human_attribute_name(:address) %>
+            <span class="text-danger">*</span>
+          <% end %>
+          <div class="col-md-5">
+            <%= f.text_field :address, class: "form-control" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-md-offset-4 col-md-5">
+            <%= f.submit class: "btn btn-primary btn-flat" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

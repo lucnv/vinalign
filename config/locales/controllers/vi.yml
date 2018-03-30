@@ -88,6 +88,10 @@ vi:
       destroy:
         success: Xóa album thành công
         failed: Xóa album thất bại
+    clinics:
+      update:
+        success: Cập nhật phòng khám thành công
+        failed: Cập nhật phòng khám thất bại
   images:
     create:
       success: Thêm mới ảnh thành công

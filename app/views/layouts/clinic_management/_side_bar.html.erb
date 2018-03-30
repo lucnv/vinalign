@@ -33,20 +33,8 @@
           <%= yield :patient_record_side_bar %>
         <% end %>
       </li>
-      <li class="header"><%= t ".manage_my_page" %></li>
-      <li class="<%= content_for :notifications_activation %>">
-        <%= link_to my_page_notifications_path do %>
-          <i class="fa fa-bell"></i>
-          <span><%= t ".notifications" %></span>
-        <% end %>
-      </li>
-      <li class="<%= content_for :my_profile_activation %>">
-        <%= link_to my_page_profile_path do %>
-          <i class="fa  fa-info-circle"></i>
-          <span><%= t ".profile" %></span>
-        <% end %>
-      </li>
-      <li class="header"></li>
+      <%= render "layouts/shared/profile_side_bar" %>
+      <li class="header">MORE</li>
       <li>
         <%= link_to root_path do %>
           <i class="fa fa-home"></i>

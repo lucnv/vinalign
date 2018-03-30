@@ -13,4 +13,10 @@
         value: link_to(clinic.facebook, clinic.facebook, target: :_blank) %>
     </table>
   </div>
+  <div class="box-footer">
+    <%= link_to edit_clinic_management_clinic_path, class: "btn btn-warning btn-flat pull-right" do %>
+      <i class="fa fa-pencil-square-o"></i>
+      <%= t ".edit" %>
+    <% end %>
+  </div>
 </div>

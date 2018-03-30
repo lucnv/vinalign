@@ -85,7 +85,6 @@ vi:
         articles: Bài viết
         log_out: *log_out
         edit_info: *edit_info
-        manage_my_page: QUẢN LÝ TRANG CÁ NHÂN
         notifications: Thông báo
       clinic_side_bar:
         patient_records: Hồ sơ bệnh nhân
@@ -105,13 +104,14 @@ vi:
         experts: Chuyên gia
         log_out: *log_out
         edit_info: *edit_info
-        manage_my_page: QUẢN LÝ TRANG CÁ NHÂN
         notifications: Thông báo
     shared:
       patient_record_side_bar:
         administrative_informations: Thông tin hành chính
         price_lists: Bảng giá
         treatment_phases: Giai đoạn điều trị
+      profile_side_bar:
+        manage_my_page: QUẢN LÝ TRANG CÁ NHÂN
   admin:
     users:
       filter:
@@ -299,6 +299,9 @@ vi:
     price_lists:
       index:
         price_lists_title_html: Hồ sơ bệnh nhân - Danh sách bảng giá <small>%{patient_record_name}</small>
+    clinics:
+      edit:
+        edit_clinic: Chỉnh sửa thông tin phòng khám
   my_page:
     notifications:
       index:
