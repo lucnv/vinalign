@@ -333,3 +333,5 @@ vi:
       not_supported: Trình duyệt của bạn không hỗ trợ Flash, Silverlight hoặc HTML5.
     filed_uploaded: Đã tải lên thành công
     images: ảnh!
+    images_presentation:
+      album: "Album: %{album_name}"
