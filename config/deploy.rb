@@ -7,7 +7,7 @@ set :repo_url, "git@github.com:otchoo/vinalign.git"
 set :pty, true
 set :linked_files, %w(config/database.yml config/application.yml)
 set :linked_dirs, %w(log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads)
-set :keep_releases, 5
+set :keep_releases, 3
 set :rvm_type, :user
 
 set :puma_rackup, -> {File.join(current_path, "config.ru")}
@@ -20,7 +20,11 @@ set :puma_error_log, -> {"#{shared_path}/log/puma_error.log"}
 set :puma_role, :app
 set :puma_env, fetch(:rack_env, fetch(:rails_env, "production"))
 set :puma_threads, [0, 8]
-set :puma_workers, 0
+set :puma_workers, 1
 set :puma_worker_timeout, nil
 set :puma_init_active_record, true
 set :puma_preload_app, false
+
+set :sidekiq_role, :app
+set :sidekiq_config, {File.join(current_path, "config", "sidekiq.yml")}
+set :sidekiq_env, "production"
