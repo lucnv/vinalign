@@ -24,7 +24,7 @@ class Admin::PatientRecordsController < Admin::BaseController
     @patient_record = @clinic.patient_records.build patient_record_params
     if @patient_record.save
       flash[:success] = t ".success"
-      redirect_to admin_patient_record_path(@patient_record)
+      redirect_to admin_patient_record_treatment_phases_path(patient_record_id: @patient_record.id)
     else
       support_for_patient_record
       flash.now[:failed] = t ".failed"
