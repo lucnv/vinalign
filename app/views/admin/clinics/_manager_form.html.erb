@@ -51,15 +51,19 @@
     </div>
   </div>
   <div class="form-group">
-    <%= df.label :first_name, UserProfile.human_attribute_name(:first_name),
-    class: "control-label col-md-4" %>
+    <%= df.label :first_name, class: "control-label col-md-4" do %>
+      <%= UserProfile.human_attribute_name(:first_name) %>
+      <span class="text-danger">*</span>
+    <% end %>
     <div class="col-md-5">
       <%= df.text_field :first_name, class: "form-control" %>
     </div>
   </div>
   <div class="form-group">
-    <%= df.label :last_name, UserProfile.human_attribute_name(:last_name),
-    class: "control-label col-md-4" %>
+    <%= df.label :last_name, class: "control-label col-md-4" do %>
+      <%= UserProfile.human_attribute_name(:last_name) %>
+      <span class="text-danger">*</span>
+    <% end %>
     <div class="col-md-5">
       <%= df.text_field :last_name, class: "form-control" %>
     </div>
@@ -72,14 +76,7 @@
     </div>
   </div>
   <div class="form-group">
-    <%= df.label :gender, UserProfile.human_attribute_name(:gender),
-    class: "control-label col-md-4" %>
-    <div class="col-md-5">
-      <%= df.text_field :gender, class: "form-control" %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= df.label :gender, class: "control-label col-md-4" do %> 
+    <%= df.label :gender, class: "control-label col-md-4" do %>
       <%= UserProfile.human_attribute_name(:gender) %>
       <span class="text-danger">*</span>
     <% end %>
