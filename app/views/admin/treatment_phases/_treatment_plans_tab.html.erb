@@ -5,11 +5,13 @@
   </div>
 
   <div class="col col-md-4">
-    <%= render "shared/treatment_phases/treatment_plan_files", 
-      treatment_plan_files: support.treatment_plan_files %>
-    <%= form_for [:admin, treatment_phase, TreatmentPlanFile.new], 
-      html: {class: "auto_upload_files"} do |f| %>
-      <%= f.file_field :source %>
+    <%= button_tag class: "btn btn-primary btn-flat pull-right", id: "add-files",
+      data: {toggle: "modal", target: "#modal-upload-files"} do %>
+      <i class="fa fa-plus" aria-hidden="true"></i>
+      <%= t(".add") %>
     <% end %>
+    <%= render "shared/treatment_phases/treatment_plan_files",
+      treatment_plan_files: support.treatment_plan_files %>
+    <%= render "shared/treatment_phases/form_upload", treatment_phase: treatment_phase %>
   </div>
 </div>
