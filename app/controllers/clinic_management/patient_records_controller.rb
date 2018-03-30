@@ -19,7 +19,7 @@ class ClinicManagement::PatientRecordsController < ClinicManagement::BaseControl
     if @patient_record.save
       CreateNotificationForAdminsService.new(@patient_record, :new_patient_record).perform
       flash[:success] = t ".success"
-      redirect_to clinic_management_patient_record_path(@patient_record)
+      redirect_to clinic_management_patient_record_treatment_phases_path(patient_record_id: @patient_record.id)
     else
       support_for_patient_record
       flash.now[:failed] = t ".failed"

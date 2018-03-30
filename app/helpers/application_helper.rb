@@ -26,4 +26,9 @@ module ApplicationHelper
   def notification_content_format content
     simple_format content, {}, wrapper_tag: "span"
   end
+
+  def article_content_format content
+    sanitize content, tags: Loofah::HTML5::WhiteList::ALLOWED_ELEMENTS_WITH_LIBXML2 + ["iframe"],
+      attributes: Loofah::HTML5::WhiteList::ALLOWED_ATTRIBUTES
+  end
 end
