@@ -16,6 +16,7 @@ vi:
     log_out: &log_out Thoát
     search: &search Tìm kiếm
     edit_info: &edit_info Chỉnh sửa thông tin
+    add: &add Thêm
     total_records_found: &total_records_found
       zero: Không tìm thấy bản ghi
       one: "%{count} bản ghi được tìm thấy"
@@ -66,6 +67,7 @@ vi:
         log_in: Đăng nhập
         log_out: *log_out
         did_not_receive_confirmation_instructions: Bạn chưa nhận được hướng dẫn xác nhận tài khoản?
+        management: Trang quản lý
     admin:
       title_admin: Vinalign | Admin
       header:
@@ -86,6 +88,7 @@ vi:
         log_out: *log_out
         edit_info: *edit_info
         notifications: Thông báo
+        home_page: Trang chủ
       clinic_side_bar:
         patient_records: Hồ sơ bệnh nhân
         details: Thông tin phòng khám
@@ -105,6 +108,8 @@ vi:
         log_out: *log_out
         edit_info: *edit_info
         notifications: Thông báo
+        home_page: Trang chủ
+        more: THÊM
     shared:
       patient_record_side_bar:
         administrative_informations: Thông tin hành chính
@@ -112,6 +117,9 @@ vi:
         treatment_phases: Giai đoạn điều trị
       profile_side_bar:
         manage_my_page: QUẢN LÝ TRANG CÁ NHÂN
+        edit_clinic: Chỉnh sửa phòng khám
+        profile: Thông tin
+        notifications: Thông báo
   admin:
     users:
       filter:
@@ -222,15 +230,19 @@ vi:
       show:
         expert_title_html: Chuyên gia <small>%{name}</small>
         edit: *edit
+        account: Tài khoản
     articles:
       index:
         articles_management: Quản lý bài viết
+        add_new_article: Thêm mới bài viết
       filter:
         search: *search
       new:
         new_article: Tạo mới bài viết
       article:
         confirm_delete: Bạn có chắc chắn muốn xóa bài viết "%{title}"?
+        edit: *edit
+        delete: *delete
       edit:
         edit_article: Chỉnh sửa bài viết
   clinic_management:
@@ -306,6 +318,16 @@ vi:
     notifications:
       index:
         notifications: Thông báo
+    profiles:
+      show:
+        profile: Hồ sơ
+      account:
+        account: Tài khoản
+      general_info:
+        general_info: Thông tin cá nhân
+      clinic_info:
+        clinic_info: Thông tin
+        edit: *edit
   shared:
     patient_records:
       details:
@@ -331,7 +353,9 @@ vi:
   images:
     form_upload:
       not_supported: Trình duyệt của bạn không hỗ trợ Flash, Silverlight hoặc HTML5.
+      add_image: Thêm ảnh
     filed_uploaded: Đã tải lên thành công
     images: ảnh!
     images_presentation:
       album: "Album: %{album_name}"
+      add: *add
