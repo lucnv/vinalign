@@ -17,7 +17,7 @@ class Admin::TreatmentPlanFilesController < Admin::BaseController
   end
 
   def treatment_plan_file_params
-    params.require(:treatment_plan_file).permit :source
+    {source: params[:sources]}
   end
 
   def push_notification
