@@ -1,0 +1,26 @@
+<li class="header"><%= t ".manage_my_page" %></li>
+<li class="<%= content_for :notifications_activation %>">
+  <%= link_to my_page_notifications_path do %>
+    <i class="fa fa-bell"></i>
+    <span><%= t ".notifications" %></span>
+  <% end %>
+</li>
+<li class="<%= 'active menu-open' if content_for? :my_profile_activation %>">
+  <%= link_to my_page_profile_path do %>
+    <i class="fa  fa-info-circle"></i>
+    <span><%= t ".profile" %></span>
+    <span class="pull-right-container">
+      <i class="fa fa-angle-left pull-right"></i>
+    </span>
+  <% end %>
+  <ul class="treeview-menu">
+    <% if current_user.doctor? %>
+      <li class="<%= content_for :my_profile_edit_clinic_activation %>">
+        <%= link_to edit_clinic_management_clinic_path do %>
+          <i class="fa fa-circle-o"></i>
+          <%= t ".edit_clinic" %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</li>
