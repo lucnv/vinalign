@@ -152,4 +152,16 @@ body {
   }
 }
 
+.navbar-custom-menu > .navbar-nav > li > .dropdown-menu {
+  width: 600px;
+  max-width: 100vh;
+}
+
+.navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a {
+  white-space: normal!important;
+}
+
+.navbar-nav > .notifications-menu > .dropdown-menu > li .menu {
+  max-height: 70vh!important;
+}
 //end
