@@ -5,9 +5,12 @@ class Clinic < ApplicationRecord
 
   has_one :province, through: :district
   has_one :doctor, class_name: UserProfile.name, foreign_key: :clinic_id, dependent: :destroy
+  has_one :user, through: :doctor
   has_many :patient_records, dependent: :destroy
 
-  ADMIN_PERSIT_PARAMS = [:name, :phone_number, :district_id, :address]
+  accepts_nested_attributes_for :doctor
+
+  ADMIN_PERSIT_PARAMS = [:name, :phone_number, :district_id, :address, doctor_attributes: [:id, :avatar, :first_name, :last_name, :dob, :gender, :phone_number, user_attributes: [:id, :email, :password, :password_confirmation, :username]]]
 
   scope :recent_created, ->{order created_at: :desc}
   scope :has_no_doctor, -> do

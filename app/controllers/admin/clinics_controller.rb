@@ -1,5 +1,6 @@
 class Admin::ClinicsController < Admin::BaseController
   before_action :clinic, except: [:index, :new, :create]
+  before_action :allow_without_password, only: [:update]
 
   def index
     search_params = params[:clinic_search].try :permit, ClinicSearch::SEARCHABLE_ATTRIBUTES
@@ -15,6 +16,8 @@ class Admin::ClinicsController < Admin::BaseController
 
   def new
     @clinic = Clinic.new
+    @clinic.build_doctor
+    @clinic.build_doctor.build_user
     support_for_clinic
   end
 
@@ -66,5 +69,13 @@ class Admin::ClinicsController < Admin::BaseController
 
   def support_for_clinic
     @support = Supports::Clinic.new @clinic
+  end
+
+  def allow_without_password
+    user = params[:clinic][:doctor_attributes][:user_attributes]
+    if user[:password].blank? && user[:password_confirmation].blank?
+      user.delete(:password)
+      user.delete(:password_confirmation)
+    end
   end
 end

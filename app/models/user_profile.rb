@@ -1,8 +1,12 @@
 class UserProfile < ApplicationRecord
-  belongs_to :user, dependent: :destroy
-  belongs_to :clinic, optional: true
+  belongs_to :user, dependent: :destroy, inverse_of: :user_profile
+  belongs_to :clinic, optional: true, inverse_of: :user_profile
   has_many :messages, foreign_key: :sender_id
   has_many :received_notifications, class_name: Notification.name, foreign_key: :recipient_id
+
+  accepts_nested_attributes_for :user
+
+  ADMIN_PERSIT_PARAMS = [:avatar, :first_name, :last_name, :dob, :gender, :phone_number, user_attributes: [:id, :email, :password, :password_confirmation, :username]]
 
   validates :user, presence: true
   validates :clinic, :first_name, :last_name, presence: true, if: :doctor?

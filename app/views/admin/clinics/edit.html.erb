@@ -5,6 +5,7 @@
   <div class="box-body">
     <%= form_for [:admin, @clinic], html: {class: "form-horizontal", multipart: true} do |f| %>
       <%= render "form", f: f, clinic: @clinic %>
+      <%= render "manager_form", f: f, clinic: @clinic %>
     <% end %>
   </div>
 </div>
