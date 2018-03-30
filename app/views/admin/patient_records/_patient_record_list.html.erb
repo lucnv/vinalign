@@ -6,6 +6,7 @@
     <th><%= PatientRecord.human_attribute_name :age %></th>
     <th><%= PatientRecord.human_attribute_name :phone_number %></th>
     <th><%= PatientRecord.human_attribute_name :start_date %></th>
+    <th><%= PatientRecord.human_attribute_name :status %></th>
   </thead>
   <tbody>
     <%= render partial: :patient_record, collection: patient_records, as: :patient_record %>

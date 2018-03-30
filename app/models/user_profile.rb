@@ -1,6 +1,6 @@
 class UserProfile < ApplicationRecord
   belongs_to :user, dependent: :destroy, inverse_of: :user_profile
-  belongs_to :clinic, optional: true, inverse_of: :user_profile
+  belongs_to :clinic, optional: true
   has_many :messages, foreign_key: :sender_id
   has_many :received_notifications, class_name: Notification.name, foreign_key: :recipient_id
 
