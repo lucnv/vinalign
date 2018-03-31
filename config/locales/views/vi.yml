@@ -214,6 +214,10 @@ vi:
         new_album: Album mới
       treatment_plans_tab:
         add: *add
+      album:
+        edit: *edit
+        delete: *delete
+        onfirm_delete: Bạn chắc chắn muốn xóa album '%{album}'?
     experts:
       index:
         experts_title: Quản lý chuyên gia
@@ -255,6 +259,7 @@ vi:
         cancel: *cancel
       persist_album_modal:
         new_album: Album mới
+        edit_album: Sửa album
   clinic_management:
     patient_records:
       index:
