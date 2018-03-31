@@ -62,6 +62,7 @@ Rails.application.routes.draw do
 
   namespace :download do
     resources :treatment_plan_files, only: :show
+    resources :images, only: :show
   end
 
   resources :experts, only: :index

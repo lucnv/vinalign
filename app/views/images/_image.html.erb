@@ -1,5 +1,10 @@
 <div class="col col-md-4">
   <div class="thumbnail">
+    <%= link_to download_image_path(image),
+      class: "pull-right", target: "_blank" do %>
+      <%= t ".download" %>
+      <i class="fa fa-download"></i>
+    <% end %>
     <%= link_to image.source.url, class: "image-popup image-link pt-image" do %>
       <%= image_tag image.source.thumb.url %>
       <span class="image-name"><%= File.basename image.source.url %></span>
