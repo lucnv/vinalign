@@ -8,4 +8,6 @@ class TreatmentPhase < ApplicationRecord
 
   validates :name, presence: true
   validates :start_date, presence: true
+
+  delegate :full_name, to: :patient_record, allow_nil: true
 end

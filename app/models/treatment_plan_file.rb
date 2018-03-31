@@ -4,6 +4,8 @@ class TreatmentPlanFile < ApplicationRecord
 
   mount_uploader :source, OrthoFileUploader
 
+  delegate :full_name, to: :treatment_phase, allow_nil: true
+
   before_destroy :clean_s3
 
   private
