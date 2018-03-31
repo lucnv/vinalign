@@ -6,10 +6,12 @@
   <div class="col-md-6">
     <%= render "shared/patient_records/details", patient_record: @patient_record %>
   </div>
-  <%= image_tag @patient_record.profile_photo.medium.url %>
+  <div class="col-md-6 text-center">
+    <%= link_to edit_clinic_management_patient_record_path(@patient_record),
+      class: "btn btn-warning btn-flat pull-right" do %>
+      <i class="fa fa-pencil-square-o"></i>
+      <%= t ".edit" %>
+    <% end %>
+    <%= image_tag @patient_record.profile_photo.medium.url, width: "50%" %>
+  </div>
 </div>
-<%= link_to edit_clinic_management_patient_record_path(@patient_record),
-  class: "btn btn-warning btn-flat" do %>
-  <i class="fa fa-pencil-square-o"></i>
-  <%= t ".edit" %>
-<% end %>

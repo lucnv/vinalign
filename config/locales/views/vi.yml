@@ -17,6 +17,7 @@ vi:
     search: &search Tìm kiếm
     edit_info: &edit_info Chỉnh sửa thông tin
     add: &add Thêm
+    download: &download Tải về
     total_records_found: &total_records_found
       zero: Không tìm thấy bản ghi
       one: "%{count} bản ghi được tìm thấy"
@@ -53,7 +54,7 @@ vi:
     content:
       new_patient_record: Phòng khám <b>%{clinic_name}</b> đã thêm một hồ sơ bệnh nhân mới
       images_uploaded: Phòng khám <b>%{clinic_name}</b> đã thêm %{images_count} ảnh vào album <b>%{album_name}</b> của bệnh nhân
-      treatment_plan_file_uploaded: Quản trị viên đã tải lên file điều trị <b>%{file_name}</b> cho bệnh nhân
+      treatment_plan_file_uploaded: Quản trị viên đã tải lên file điều trị <b>%{file_name}</b> cho bệnh nhân <b class="text-red">%{patient_name} </b>
       price_list_uploaded: Quản trị viên đã cập nhật bảng giá cho hồ sơ bệnh nhân <b>%{patient_name}</b>
   layouts:
     application:
@@ -209,6 +210,10 @@ vi:
         add_treatment_phase: Thêm mới giai đoạn điều trị
       show:
         treatment_phase_title_html: Hồ sơ bệnh nhân - %{treatment_phase_name} <small>%{clinic_name} - %{patient_name}</small>
+      images_tab:
+        new_album: Album mới
+      treatment_plans_tab:
+        add: *add
     experts:
       index:
         experts_title: Quản lý chuyên gia
@@ -245,6 +250,11 @@ vi:
         delete: *delete
       edit:
         edit_article: Chỉnh sửa bài viết
+    albums:
+      form:
+        cancel: *cancel
+      persist_album_modal:
+        new_album: Album mới
   clinic_management:
     patient_records:
       index:
@@ -291,6 +301,8 @@ vi:
         treatment_phase_title_html: Hồ sơ bệnh nhân - %{treatment_phase_name} <small>%{patient_record_name}</small>
       images_tab:
         new_album: Album mới
+      treatment_plans_tab:
+        download: *download
       album:
         edit: *edit
         delete: *delete
@@ -333,6 +345,7 @@ vi:
       details:
         male: *male
         female: *female
+        account: Hồ sơ
     treatment_phases:
       form:
         create_treatment_phase: Tạo mới giai đoạn điều trị
@@ -346,6 +359,8 @@ vi:
         treatment_plan_files: Tệp tin kế hoạch điều trị
       treatment_phase:
         confirm_delete: Bạn có chắc chắn muốn xóa giai đoạn điều trị "%{treatment_phase}"?
+      treatment_plan_file:
+        download: *download
   supports:
     districts:
       index:
@@ -356,6 +371,8 @@ vi:
       add_image: Thêm ảnh
     filed_uploaded: Đã tải lên thành công
     images: ảnh!
+    image:
+      download: *download
     images_presentation:
       album: "Album: %{album_name}"
       add: *add

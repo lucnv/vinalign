@@ -63,6 +63,16 @@ vi:
       destroy:
         success: Xóa bài viết thành công
         failed: Xóa bài viết thất bại
+    albums:
+      create:
+        success: Tạo mới album thành công
+        failed: Tạo mới album thất bại
+      update:
+        success: Cập nhật album thành công
+        failed: Cập nhật album thất bại
+      destroy:
+        success: Xóa album thành công
+        failed: Xóa album thất bại
   clinic_management:
     patient_records:
       create:

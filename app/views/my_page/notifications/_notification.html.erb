@@ -1,7 +1,7 @@
 <li class="<%= 'bg-warning' unless notification.is_read? %>">
   <%= link_to notification.target_path, data: {"notification-id" => notification.id},
     onclick: (notification.is_read? ? "javascript:void(0)" : "readNotification($(this))") do %>
-    <i class="fa fa-users text-aqua"></i><%= notification_content_format notification.content %>
+    <i class="fa fa-users text-aqua"></i>&nbsp;<%= notification_content_format notification.content %>
     <br/>
     <%= time_with_format notification.created_at %>
   <% end %>

@@ -87,11 +87,11 @@
 <div class="col-md-6">
   <div class="form-group">
     <%= f.label :avatar, Expert.human_attribute_name(:avatar),
-      class: "control-label col-md-4" %>
-    <div class="col-md-5">
-      <%= f.file_field :avatar, id: "image_upload", class: "form-control" %>
+      class: "control-label col-md-2" %>
+    <div class="col-md-10">
+      <%= f.file_field :avatar, id: "image_upload" %>
       </br>
-      <%= image_tag expert.avatar_was, id: "image_preview", width: 300, style: "border: 1px;" %>
+      <%= image_tag expert.avatar_was, id: "image_preview", width: "50%", style: "border: 1px;" %>
     </div>
   </div>
 </div>
