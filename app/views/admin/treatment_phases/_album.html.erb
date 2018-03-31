@@ -1,9 +1,31 @@
-<%= content_tag :div, class: "list-group-item group-item-album", 
+<%= content_tag :div, class: "list-group-item group-item-album",
   id: "album-#{album.id}" do %>
-  <%= link_to album_images_path(album), remote: true do %>
-    <i class="fa fa-folder"></i>
-    <%= album.name %>
-  <% end %>
-  <br/>
-  <small class="date"><%= album.created_at %></small>
+  <div>
+    <%= link_to album_images_path(album), remote: true do %>
+      <i class="fa fa-folder"></i>
+      <span class="album-name"><%= album.name %></span>
+    <% end %>
+    <div class="dropdown pull-right dropdown-menu-right">
+      <a class="dropdown-toggle" type="button" data-toggle="dropdown">
+        <i class="fa fa-cog"></i>
+      </a>
+      <ul class="dropdown-menu dropdown-menu-right">
+        <li>
+          <%= link_to edit_admin_album_path(album), remote: true do %>
+            <i class="fa fa-pencil"></i>
+            <%= t ".edit" %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to admin_album_path(album), method: :delete,
+            data: {confirm: t(".confirm_delete", album: album.name)} do %>
+            <i class="fa fa-trash"></i>
+            <%= t ".delete" %>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <small class="date"><%= time_with_format album.created_at %></small>
 <% end %>
+</br>

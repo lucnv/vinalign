@@ -1,6 +1,6 @@
 <% if @album.errors.blank? %>
   $("#persit_album_modal").modal("hide");
-  $("#album-list").append("<%= j render 'clinic_management/treatment_phases/album', album: @album %>");
+  $("#album-list").append("<%= j render 'admin/treatment_phases/album', album: @album %>");
   $("#form-upload").html("<%= j render 'images/form_upload', album: @album %>");
   $("#images-presentation").html("<%= j render 'images/images_presentation', images: @images, album: @album %>");
 <% else %>
