@@ -20,7 +20,7 @@ set :puma_error_log, -> {"#{shared_path}/log/puma_error.log"}
 set :puma_role, :app
 set :puma_env, fetch(:rack_env, fetch(:rails_env, "production"))
 set :puma_threads, [0, 8]
-set :puma_workers, 1
+set :puma_workers, 0
 set :puma_worker_timeout, nil
 set :puma_init_active_record, true
 set :puma_preload_app, false
@@ -28,6 +28,8 @@ set :puma_preload_app, false
 set :sidekiq_role, :app
 set :sidekiq_config, -> {File.join(current_path, "config", "sidekiq.yml")}
 set :sidekiq_env, "production"
+set :sidekiq_pid, -> {"#{shared_path}/tmp/pids/sidekiq-0.pid"}
+set :sidekiq_log, -> {"#{shared_path}/log/sidekiq.log"}
 set :pty, false
 SSHKit.config.command_map[:sidekiq] = "source ~/.bash_profile && RAILS_ENV=production bundle exec sidekiq"
 SSHKit.config.command_map[:sidekiqctl] = "source ~/.bash_profile && RAILS_ENV=production bundle exec sidekiqctl"
