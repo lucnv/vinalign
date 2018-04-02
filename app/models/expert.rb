@@ -21,7 +21,7 @@ class Expert < ApplicationRecord
     where "LOWER(CONCAT(#{Expert.table_name}.last_name, #{Expert.table_name}.first_name)) \
       LIKE '%#{name.to_s.downcase}%'"
   end
-  scope :priority_desc, ->{order priority: :desc}
+  scope :priority_sort, ->{order priority: :asc}
   scope :full_name_asc, ->{order "CONCAT(last_name, first_name)"}
 
   before_save :update_normalized_fields
