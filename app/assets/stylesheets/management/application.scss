@@ -29,6 +29,19 @@
 .active-album {
   border-left-width: 3px;
   border-left-color: #3c8dbc;
+  background-color: #3c8dbc;
+  a, a:hover, a:focus {
+    color: #ffffff;
+  }
+}
+
+.list-group-item.group-item-album {
+  a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+  }
 }
 
 .no-margin {

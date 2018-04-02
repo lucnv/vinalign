@@ -1,8 +1,9 @@
 <% if @album.errors.blank? %>
-  $("#persit_album_modal").modal("hide");
+  $(".group-item-album.active-album").removeClass("active-album");
   $("#album-list").prepend("<%= j render 'admin/treatment_phases/album', album: @album %>");
-  $("#form-upload").html("<%= j render 'images/form_upload', album: @album %>");
-  $("#images-presentation").html("<%= j render 'images/images_presentation', images: @images, album: @album %>");
+  $(".group-item-album#album-<%= @album.id %>").addClass("active-album");
+  $("#images-presentation").html("<%= j render 'images/images_presentation', images: [], album: @album %>");
+  $("#persit_album_modal").modal("hide");
 <% else %>
   $("#album-form").html("<%= j render 'form', album: @album, \
     form_path: admin_treatment_phase_albums_path(@treatment_phase) %>");
