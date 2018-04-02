@@ -28,7 +28,7 @@ set :puma_preload_app, false
 set :sidekiq_role, :app
 set :sidekiq_config, -> {File.join(current_path, "config", "sidekiq.yml")}
 set :sidekiq_env, "production"
-set :sidekiq_pid, -> {"#{shared_path}/tmp/pids/sidekiq-0.pid"}
+set :sidekiq_pid, -> {"#{shared_path}/tmp/pids/sidekiq.pid"}
 set :sidekiq_log, -> {"#{shared_path}/log/sidekiq.log"}
 set :pty, false
 SSHKit.config.command_map[:sidekiq] = "source ~/.bash_profile && RAILS_ENV=production bundle exec sidekiq"
