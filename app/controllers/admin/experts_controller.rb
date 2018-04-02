@@ -4,7 +4,7 @@ class Admin::ExpertsController < Admin::BaseController
   def index
     search_params = params[:expert_search].try :permit, ExpertSearch::SEARCHABLE_ATTRIBUTES
     @expert_search = ExpertSearch.new search_params
-    @experts = @expert_search.result.priority_desc.full_name_asc
+    @experts = @expert_search.result.priority_sort.full_name_asc
       .page(params[:page]).per(Settings.experts.per_page).decorate
     @support = Supports::Expert.new
   end
