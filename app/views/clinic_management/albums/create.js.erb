@@ -1,8 +1,9 @@
 <% if @album.errors.blank? %>
+  $(".group-item-album.active-album").removeClass("active-album");
+  $("#album-list").prepend("<%= j render 'clinic_management/treatment_phases/album', album: @album %>");
+  $(".group-item-album#album-<%= @album.id %>").addClass("active-album");
+  $("#images-presentation").html("<%= j render 'images/images_presentation', images: [], album: @album %>");
   $("#persit_album_modal").modal("hide");
-  $("#album-list").append("<%= j render 'clinic_management/treatment_phases/album', album: @album %>");
-  $("#form-upload").html("<%= j render 'images/form_upload', album: @album %>");
-  $("#images-presentation").html("<%= j render 'images/images_presentation', images: @images, album: @album %>");
 <% else %>
   $("#album-form").html("<%= j render 'form', album: @album, \
     form_path: clinic_management_treatment_phase_albums_path(@treatment_phase) %>");
