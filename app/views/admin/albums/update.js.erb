@@ -1,5 +1,6 @@
 <% if @album.errors.blank? %>
-  $("#album-<%= @album.id %> .album-name").text("<%= @album.name %>");
+  $("#album-<%= @album.id %>").remove();
+  $("#album-list").prepend("<%= j render 'admin/treatment_phases/album', album: @album %>");
   $("#persit_album_modal").modal("hide");
 <% else %>
   $("#album-form").html("<%= j render 'form', album: @album, \
