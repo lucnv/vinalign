@@ -45,3 +45,19 @@
       <%= f.text_field :address, class: "form-control" %>
     </div>
   </div>
+  <div class="form-group">
+    <%= f.label :website, class: "control-label col-md-4" do %>
+      <%= Clinic.human_attribute_name :website %>
+    <% end %>
+    <div class="col-md-5">
+      <%= f.text_field :website, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :facebook, class: "control-label col-md-4" do %>
+      <%= Clinic.human_attribute_name :facebook %>
+    <% end %>
+    <div class="col-md-5">
+      <%= f.text_field :facebook, class: "form-control" %>
+    </div>
+  </div>
