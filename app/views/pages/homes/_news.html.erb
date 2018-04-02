@@ -1,6 +1,6 @@
 <section class="home-section clearfix">
   <div class="bd-example">
-    <div id="news_carousel" class="carousel slide" data-ride="carousel">
+    <div id="news_carousel" class="carousel slide" data-ride="carousel" data-interval="3000">
       <ol class="carousel-indicators">
         <% @articles.each_with_index do |article, index| %>
           <li data-target="#news_carousel" data-slide-to='<%= index %>' class="<%=' active' if index == 0%>"></li>
@@ -9,12 +9,12 @@
       <div class="carousel-inner">
         <% @articles.each_with_index do |article, index| %>
           <div class="carousel-item <%= 'active' if index == 0%>">
-            <%= image_tag article.represent_image.big_thumb.url, class: "d-block w-100" %>
             <%= link_to article_path(article) do %>
-              <div class="carousel-caption d-none d-md-block">
-                <h2><%= article.title %></h2>
-                <p class="text-muted"><%= article.summary %></p>
-              </div>
+              <%= image_tag article.represent_image.big_thumb.url, class: "d-block w-100" %>
+                <div class="carousel-caption d-none d-md-block">
+                  <h2><%= article.title %></h2>
+                  <p class="text-muted"><%= article.summary %></p>
+                </div>
             <% end %>
           </div>
         <% end %>
