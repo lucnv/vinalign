@@ -1,11 +1,11 @@
 <% posts.each do |post| %>
   <section class="home-section clearfix">
     <div class="container p-0">
-      <h3 class="title logo-font text-default pl-10"><%= article_content_format post.title %></h3>
+      <h3 class="title logo-font text-default"><%= article_content_format post.title %></h3>
       <div class="separator"></div>
       <p class="text-justify">
         <%= article_content_format post.content %>
-        <%= image_tag post.represent_image.big_thumb.url %>
+        <%= image_tag post.represent_image.url %>
       </p>
     </div>
   </section>
