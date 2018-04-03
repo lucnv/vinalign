@@ -1,7 +1,9 @@
 <section class="main-container">
   <div class="container">
     <%= render "pages/homes/news" %>
-    <%= render "pages/homes/technologies" %>
-    <%= render "pages/homes/orthodontic_system" %>
+    <% if @home_posts.try(:size) %>
+      <%= render "pages/homes/technologies", post: @home_posts.first %>
+      <%= render "pages/homes/posts", posts: @home_posts[0..-2] %>
+    <% end %>
   </div>
 </section>

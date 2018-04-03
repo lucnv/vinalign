@@ -1,12 +1,13 @@
 <section class="home-section clearfix">
   <div class="row">
     <div class="col-lg-7">
-      <img src="https://s3-ap-southeast-1.amazonaws.com/vinalign/front/catalog/web2-1.png" alt="">
+      <%= image_tag post.represent_image.big_thumb.url %>
     </div>
     <div class="col-lg-5">
-      <h3 class="logo-font mt-4 text-justify"><span class="text-default ">
-        Correct the position of your teeth in the most discreet way - with VINALIGN ALIGNER,
-         the transparent splint system by VINALIGN
+      <h2 class="title logo-font text-default text-muted"><%= article_content_format post.title %><span class="text-muted"></h2>
+      <div class="separator-2 hidden-lg-down mt-3"></div>
+      <h3 class="logo-font mt-4 text-justify"><span class="text-default">
+        <%= article_content_format post.content %>
       </span></h3>
       <div class="separator-3 hidden-lg-down"></div>
     </div>

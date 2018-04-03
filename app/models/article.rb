@@ -6,7 +6,7 @@ class Article < ApplicationRecord
   scope :recent_created, ->{order created_at: :desc}
   scope :by_category, ->(category){where category: category}
 
-  enum category: [:news, :case_gallery]
+  enum category: [:news, :case_gallery, :home]
 
   mount_uploader :represent_image, PreviewImageUploader
 
