@@ -24,6 +24,10 @@ class PatientRecord < ApplicationRecord
     where "LOWER(CONCAT(#{PatientRecord.table_name}.last_name, #{PatientRecord.table_name}.first_name)) \
       LIKE '%#{name.to_s.downcase}%'"
   end
+  scope :start_date_from, ->(time) do
+    time = Time.parse time.to_s
+    where start_date: time.beginning_of_day..Time.zone.now
+  end
 
   mount_uploader :profile_photo, AvatarUploader
 
@@ -46,7 +50,7 @@ class PatientRecord < ApplicationRecord
 
   class << self
     def ransackable_scopes auth_object = nil
-      [:full_name_cont]
+      [:full_name_cont, :start_date_from]
     end
   end
 
