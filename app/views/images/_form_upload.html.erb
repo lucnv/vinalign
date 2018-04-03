@@ -23,16 +23,14 @@
         multipart_params: {
           "<%= request_forgery_protection_token %>": "<%= form_authenticity_token %>"
         },
+        max_file_size : "100mb",
         file_data_name: "sources",
-        // filters: [
-        //   {
-        //     title: "Image files",
-        //     extensions: "jpg, gif, png, jpeg"
-        //   }, {
-        //     title: "Zip files",
-        //     extensions: "zip,avi"
-        //   }
-        // ],
+        filters: [
+          {
+            title: "Image files",
+            extensions: "jpg,gif,png,jpeg"
+          }
+        ],
         rename: true,
         sortable: true,
         dragdrop: true,
@@ -43,7 +41,7 @@
         },
         init: {
           FilesAdded: function(up, files) {
-            up.start();
+            return
           },
           UploadComplete: function(up, files) {
             alert("<%= I18n.t('images.filed_uploaded') %> " + files.length + " <%= I18n.t('images.images') %>");
@@ -52,6 +50,9 @@
             $.ajax({
               url: "<%= album_images_path(album) %>"
             }).done(function() {});
+          },
+          Error: function(up, args) {
+            alert(args.message);
           }
         }
       });
