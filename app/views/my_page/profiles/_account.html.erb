@@ -9,4 +9,10 @@
       <%= render "shared/data", attribute: User.human_attribute_name(:password), value: "********" %>
     </table>
   </div>
+  <div class="box-footer">
+    <%= link_to edit_my_page_password_path, class: "btn btn-warning btn-flat pull-right" do %>
+      <i class="fa fa-pencil-square-o"></i>
+      <%= t ".change_password" %>
+    <% end %>
+  </div>
 </div>

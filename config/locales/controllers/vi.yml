@@ -102,6 +102,15 @@ vi:
       update:
         success: Cập nhật phòng khám thành công
         failed: Cập nhật phòng khám thất bại
+  my_page:
+    profiles:
+      update:
+        success: Cập nhật hồ sơ thành công
+        failed: Cập nhật hồ sơ thất bại
+    passwords:
+      update:
+        success: Cập nhật mật khẩu thành công
+        failed: Cập nhật mật khẩu thất bại
   images:
     create:
       success: Thêm mới ảnh thành công

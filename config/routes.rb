@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   mount ActionCable.server => "/cable"
+
   devise_for :users
 
   root "pages#show", page: :home
@@ -49,7 +50,8 @@ Rails.application.routes.draw do
 
   namespace :my_page do
     resources :notifications, only: :index
-    resource :profile, only: :show
+    resource :profile, only: [:show, :edit, :update]
+    resource :password, only: [:edit, :update]
   end
 
   resources :albums do

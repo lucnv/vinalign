@@ -7,6 +7,7 @@ class UserProfile < ApplicationRecord
   accepts_nested_attributes_for :user
 
   ADMIN_PERSIT_PARAMS = [:avatar, :first_name, :last_name, :dob, :gender, :phone_number, user_attributes: [:id, :email, :password, :password_confirmation, :username]]
+  UPDATE_PROFILE_PARAMS = [:avatar, :first_name, :last_name, :dob, :gender, :phone_number]
 
   validates :user, :first_name, :last_name, presence: true
 

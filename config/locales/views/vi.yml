@@ -121,6 +121,8 @@ vi:
         edit_clinic: Chỉnh sửa phòng khám
         profile: Thông tin
         notifications: Thông báo
+        edit_profile: Chỉnh sửa profile
+        change_password: Thay đổi mật khẩu
   admin:
     users:
       filter:
@@ -340,11 +342,15 @@ vi:
         profile: Hồ sơ
       account:
         account: Tài khoản
+        change_password: Thay đổi mật khẩu
       general_info:
         general_info: Thông tin cá nhân
       clinic_info:
         clinic_info: Thông tin
         edit: *edit
+    passwords:
+      edit:
+        update_password: Cập nhật mật khẩu
   shared:
     patient_records:
       details:
