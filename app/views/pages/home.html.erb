@@ -3,7 +3,7 @@
     <%= render "pages/homes/news" %>
     <% if @home_posts.try(:size) %>
       <%= render "pages/homes/technologies", post: @home_posts.first %>
-      <%= render "pages/homes/posts", posts: @home_posts[0..-2] %>
+      <%= render "pages/homes/posts", posts: @home_posts[1..-1] %>
     <% end %>
   </div>
 </section>

@@ -1,10 +1,10 @@
 <section class="home-section clearfix">
   <div class="row">
     <div class="col-lg-7">
-      <%= image_tag post.represent_image.big_thumb.url %>
+      <%= image_tag post.represent_image.url %>
     </div>
     <div class="col-lg-5">
-      <h2 class="title logo-font text-default text-muted"><%= article_content_format post.title %><span class="text-muted"></h2>
+      <h2 class="title logo-font text-default text-muted mt-5"><%= article_content_format post.title %><span class="text-muted"></h2>
       <div class="separator-2 hidden-lg-down mt-3"></div>
       <h3 class="logo-font mt-4 text-justify"><span class="text-default">
         <%= article_content_format post.content %>
