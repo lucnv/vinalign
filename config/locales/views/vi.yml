@@ -372,6 +372,8 @@ vi:
         confirm_delete: Bạn có chắc chắn muốn xóa giai đoạn điều trị "%{treatment_phase}"?
       treatment_plan_file:
         download: *download
+      form_upload:
+        add_file: Thêm tệp tin kế hoạch điều trị
   supports:
     districts:
       index:
@@ -387,3 +389,6 @@ vi:
     images_presentation:
       album: "Album: %{album_name}"
       add: *add
+  files:
+    filed_uploaded: Đã tải lên thành công
+    files: tệp!
