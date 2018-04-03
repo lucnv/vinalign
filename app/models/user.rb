@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :messages, through: :user_profile
 
   ADMIN_PERSIT_PARAMS = [:email, :password, :password_confirmation, :username, user_profile_attributes: [:id, :clinic_id, :first_name, :last_name]]
+  UPDATE_PASSWORD_PARAMS = [:password, :password_confirmation, :current_password]
 
   validates :username, presence: true, uniqueness: {case_sensitive: false},
     length: {maximum: Settings.validations.user.username.max_length,

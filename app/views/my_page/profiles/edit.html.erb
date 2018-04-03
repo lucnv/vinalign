@@ -1,0 +1,68 @@
+<% provide :header_title, t(".edit_profile") %>
+<% content_for :my_profile_activation, "active" %>
+<% content_for :my_profile_edit_profile_activation, "active" %>
+<div class="box">
+  <div class="box-body">
+    <%= form_for @profile, url: my_page_profile_path,
+      html: {class: "form-horizontal", multipart: true} do |f| %>
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= f.label :avatar, class: "control-label col-md-4" do %>
+            <%= UserProfile.human_attribute_name :avatar %>
+          <% end %>
+          <div class="col-md-5">
+            <%= f.file_field :avatar %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :first_name, class: "control-label col-md-4" do %>
+            <%= UserProfile.human_attribute_name :first_name %>
+            <span class="text-danger">*</span>
+          <% end %>
+          <div class="col-md-5">
+            <%= f.text_field :first_name, class: "form-control" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :last_name, class: "control-label col-md-4" do %>
+            <%= UserProfile.human_attribute_name :last_name %>
+            <span class="text-danger">*</span>
+          <% end %>
+          <div class="col-md-5">
+            <%= f.text_field :last_name, class: "form-control" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :dob, class: "control-label col-md-4" do %>
+            <%= UserProfile.human_attribute_name :dob %>
+          <% end %>
+          <div class="col-md-5">
+            <%= f.date_field :dob, class: "form-control" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :gender, class: "control-label col-md-4" do %>
+            <%= UserProfile.human_attribute_name :gender %>
+          <% end %>
+          <div class="col-md-5">
+            <%= f.select :gender, gender_options, {include_blank: t(".select_gender")},
+              class: "form-control" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :phone_number, class: "control-label col-md-4" do %>
+            <%= UserProfile.human_attribute_name :phone_number %>
+          <% end %>
+          <div class="col-md-5">
+            <%= f.text_field :phone_number, class: "form-control" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-md-offset-4 col-md-5">
+            <%= f.submit class: "btn btn-primary btn-flat" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

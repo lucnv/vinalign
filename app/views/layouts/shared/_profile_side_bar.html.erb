@@ -22,5 +22,17 @@
         <% end %>
       </li>
     <% end %>
+    <li class="<%= content_for :my_profile_edit_profile_activation %>">
+      <%= link_to edit_my_page_profile_path do %>
+        <i class="fa fa-circle-o"></i>
+        <%= t ".edit_profile" %>
+      <% end %>
+    </li>
+    <li class="<%= content_for :my_profile_change_password_activation %>">
+      <%= link_to edit_my_page_password_path do %>
+        <i class="fa fa-circle-o"></i>
+        <%= t ".change_password" %>
+      <% end %>
+    </li>
   </ul>
 </li>

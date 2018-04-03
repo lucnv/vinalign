@@ -31,6 +31,7 @@ vi:
         password_confirmation: Xác nhận khẩu
         clinic: Phòng khám
         username: Tên đăng nhập
+        current_password: Mật khẩu hiện tại
       patient_record:
         id: Id
         clinic: Phòng khám

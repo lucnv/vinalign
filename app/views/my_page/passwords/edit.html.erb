@@ -1,0 +1,44 @@
+<% provide :header_title, t(".change_password") %>
+<% content_for :my_profile_activation, "active" %>
+<% content_for :my_profile_edit_profile_activation, "active" %>
+<div class="box">
+  <div class="box-body">
+    <%= form_for current_user, url: my_page_password_path,
+      html: {class: "form-horizontal", multipart: true} do |f| %>
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= f.label :current_password, class: "control-label col-md-4" do %>
+            <%= User.human_attribute_name :current_password %>
+            <span class="text-danger">*</span>
+          <% end %>
+          <div class="col-md-5">
+            <%= f.password_field :current_password, class: "form-control" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :password, class: "control-label col-md-4" do %>
+            <%= User.human_attribute_name :password %>
+            <span class="text-danger">*</span>
+          <% end %>
+          <div class="col-md-5">
+            <%= f.password_field :password, class: "form-control" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :password_confirmation, class: "control-label col-md-4" do %>
+            <%= User.human_attribute_name :password_confirmation %>
+            <span class="text-danger">*</span>
+          <% end %>
+          <div class="col-md-5">
+            <%= f.password_field :password_confirmation, class: "form-control" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-md-offset-4 col-md-5">
+            <%= f.submit t(".update_password"), class: "btn btn-primary btn-flat" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
