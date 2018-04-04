@@ -118,6 +118,22 @@ body {
     min-height: 35vh;
   }
 }
+
+//begin custom plupload according to client requirement
+.plupload_header_content {
+  padding-left: 15px!important;
+  .plupload_logo, .plupload_header_title {
+    display: none;
+  }
+  .plupload_header_text {
+    padding-top: 20px;
+  }
+}
+.plupload_buttons a.plupload_button {
+  font-weight: bold;
+}
+//end
+
 //begin custom adminLTE according to client requirement
 .main-sidebar {
   background-color:  #3c8dbc!important;
