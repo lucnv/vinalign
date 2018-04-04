@@ -165,11 +165,11 @@ vi:
         confirm_delete: Bạn có chắc chắn muốn xóa hồ sơ này?
         delete: Xóa
       show:
-        patient_record_title_html: Hồ sơ bệnh nhân <small>%{clinic_name} - %{patient_name}</small>
+        patient_record_title_html: Hồ sơ bệnh nhân <small>%{clinic_name} -</small> %{patient_name}
         edit: *edit
       edit:
         edit_patient_record: Sửa hồ sơ bệnh nhân
-        edit_patient_record_title_html: Sửa hồ sơ bệnh nhân <small>%{clinic_name} - %{patient_name}</small>
+        edit_patient_record_title_html: Sửa hồ sơ bệnh nhân <small>%{clinic_name} -</small> %{patient_name}
       new:
         new_patient_record_title_html: Thêm mới hồ sơ bệnh nhân <small>%{clinic_name}</small>
       form:
@@ -192,7 +192,7 @@ vi:
         create: *create
         cancel: *cancel
       index:
-        price_lists_title_html: Hồ sơ bệnh nhân - Danh sách bảng giá <small>%{clinic_name} - %{patient_name}</small>
+        price_lists_title_html: Hồ sơ bệnh nhân - Danh sách bảng giá <small>%{clinic_name} -</small> %{patient_name}
         add_price_list: Thêm bảng giá
         action: *action
       edit:
@@ -207,11 +207,11 @@ vi:
       new:
         new_treatment_phase: Tạo mới giai đoạn điều trị
       index:
-        treatment_phases_title_html: Hồ sơ bệnh nhân - Các giai đoạn điều trị <small>%{clinic_name} - %{patient_name}</small>
+        treatment_phases_title_html: Hồ sơ bệnh nhân - Các giai đoạn điều trị </br><small>%{clinic_name} -</small> %{patient_name}
         treatment_phases: Giai đoạn điều trị
         add_treatment_phase: Thêm mới giai đoạn điều trị
       show:
-        treatment_phase_title_html: Hồ sơ bệnh nhân - %{treatment_phase_name} <small>%{clinic_name} - %{patient_name}</small>
+        treatment_phase_title_html: Hồ sơ bệnh nhân - %{treatment_phase_name} </br><small>%{clinic_name} -</small> %{patient_name}
       images_tab:
         new_album: Album mới
       treatment_plans_tab:
