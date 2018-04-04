@@ -120,6 +120,9 @@ body {
 }
 
 //begin custom plupload according to client requirement
+.plupload_container {
+  min-height: 380px!important;
+}
 .plupload_header_content {
   padding-left: 15px!important;
   .plupload_logo, .plupload_header_title {
@@ -129,9 +132,33 @@ body {
     padding-top: 20px;
   }
 }
-.plupload_buttons a.plupload_button {
-  font-weight: bold;
+
+.plupload_view_list #uploader_dropbox.plupload_content {
+  top: 100px;
+  bottom: 54px;
 }
+.plupload_buttons a.plupload_button {
+  font-weight: 600;
+  span {
+    background-image: none;
+    padding: 10px 20px;
+    color: #ffffff;
+    &.ui-icon {
+      display: none;
+    }
+  }
+  &.plupload_add span {
+    background-color: #3c8dbc;
+  }
+  &.plupload_start span {
+    background-image: none;
+  }
+  &.plupload_start:not(.ui-button-disabled) span {
+    background-color: #dd4b39;
+    color: #ffffff;
+  }
+}
+
 //end
 
 //begin custom adminLTE according to client requirement
