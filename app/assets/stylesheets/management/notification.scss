@@ -1,0 +1,13 @@
+.notification-list {
+
+  li {
+    &:hover {
+      background-color: #f4f4f4;
+    }
+    padding: 10px;
+    border-bottom: 1px solid #f4f4f4;
+    a {
+      color: black;
+    }
+  }
+}

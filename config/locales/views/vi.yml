@@ -52,10 +52,10 @@ vi:
         have_your_own_account: "Bạn đã có tài khoản?"
   notification:
     content:
-      new_patient_record: Phòng khám <b>%{clinic_name}</b> đã thêm một hồ sơ bệnh nhân mới
-      images_uploaded: Phòng khám <b>%{clinic_name}</b> đã thêm %{images_count} ảnh vào album <b>%{album_name}</b> của bệnh nhân
-      treatment_plan_file_uploaded: Quản trị viên đã tải lên file điều trị <b>%{file_name}</b> cho bệnh nhân <b class="text-red">%{patient_name} </b>
-      price_list_uploaded: Quản trị viên đã cập nhật bảng giá cho hồ sơ bệnh nhân <b>%{patient_name}</b>
+      new_patient_record: Phòng khám <b>%{clinic_name}</b> đã thêm một hồ sơ của bệnh nhân <b class="text-red">%{patient_name}</b>
+      images_uploaded: Phòng khám <b>%{clinic_name}</b> đã thêm %{images_count} ảnh vào album <b>%{album_name}</b> của bệnh nhân <b class="text-red">%{patient_name}</b>
+      treatment_plan_file_uploaded: Quản trị viên <b>%{admin_name}</b> đã tải lên file điều trị <b>%{file_name}</b> cho bệnh nhân <b class="text-red">%{patient_name} </b>
+      price_list_uploaded: Quản trị viên <b>%{admin_name}</b> đã cập nhật bảng giá cho hồ sơ bệnh nhân <b class="text-red">%{patient_name}</b>
   layouts:
     application:
       title_front: Vinalign | Clear Aligner Solutions
@@ -336,7 +336,8 @@ vi:
   my_page:
     notifications:
       index:
-        notifications: Thông báo
+        notifications: Thông báo của bạn
+        unread_notification_title_html: Bạn có <b>%{count}</b> thông báo chưa đọc
     profiles:
       show:
         profile: Hồ sơ

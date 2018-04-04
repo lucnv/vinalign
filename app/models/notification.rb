@@ -1,6 +1,7 @@
 class Notification < ApplicationRecord
   belongs_to :notifiable, polymorphic: true
   belongs_to :receiver, class_name: UserProfile.name, foreign_key: :recipient_id
+  belongs_to :creator, class_name: UserProfile.name, foreign_key: :creator_id
 
   after_commit :push_notification
 
@@ -9,6 +10,10 @@ class Notification < ApplicationRecord
 
   enum action: [:new_patient_record, :images_uploaded, :treatment_plan_file_uploaded,
     :price_list_uploaded]
+
+  def is_unread?
+    !is_read?
+  end
 
   private
   def push_notification

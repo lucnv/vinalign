@@ -24,6 +24,7 @@ class Admin::TreatmentPlanFilesController < Admin::BaseController
     doctor = @treatment_phase.patient_record.clinic.doctor
     doctor.received_notifications.create notifiable: @treatment_plan_file,
       action: :treatment_plan_file_uploaded,
-      data: {file_name: File.basename(@treatment_plan_file.source.to_s)}
+      data: {file_name: File.basename(@treatment_plan_file.source.to_s)},
+      creator: current_user.user_profile
   end
 end
