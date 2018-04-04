@@ -15,7 +15,7 @@ class Admin::PriceListsController < Admin::BaseController
     if @price_list.save
       price_list_collection
       flash.now[:success] = t ".success"
-      NotifyUpdatePriceListService.new(@patient_record).perform
+      NotifyUpdatePriceListService.new(current_user.user_profile, @patient_record).perform
     else
       flash.now[:failed] = t ".failed"
     end
@@ -30,7 +30,7 @@ class Admin::PriceListsController < Admin::BaseController
       @patient_record = @price_list.patient_record
       price_list_collection
       flash.now[:success] = t ".success"
-      NotifyUpdatePriceListService.new(@price_list.patient_record).perform
+      NotifyUpdatePriceListService.new(current_user.user_profile, @price_list.patient_record).perform
     else
       flash.now[:failed] = t ".failed"
     end

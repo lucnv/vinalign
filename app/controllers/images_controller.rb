@@ -10,7 +10,9 @@ class ImagesController < ApplicationController
       @upload_success = true
       @images = @album.images
       flash.now[:success] = t ".success"
-      CreateUploadImagesNotification.new(album, 1).perform unless current_user.admin?
+      unless current_user.admin?
+        CreateUploadImagesNotification.new(current_user.user_profile, album, 1).perform
+      end
     else
       @upload_success = false
       flash.now[:failed] = t ".failed"

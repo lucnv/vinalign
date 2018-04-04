@@ -1,8 +1,11 @@
 <% provide :header_title, t(".notifications") %>
 <% content_for :notifications_activation, "active" %>
 <div class="box">
+  <div class="box-header">
+    <%= t ".unread_notification_title_html", count: @unread_count %>
+  </div>
   <div class="box-body">
-    <ul>
+    <ul class="list-unstyled notification-list">
       <%= render partial: :notification, collection: @notifications, as: :notification %>
     </ul>
     <%= render "shared/full_pagination", records: @notifications %>

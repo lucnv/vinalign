@@ -4,7 +4,7 @@ class Supports::NotificationsController < ApplicationController
       format.js do
         @unread_noti_count = current_user.user_profile.received_notifications.unread.count
         @notifications = current_user.user_profile.received_notifications.recent_created
-          .limit(Settings.notifications.on_dropdown_menu).decorate
+          .limit(Settings.notifications.on_dropdown_menu).includes(:creator).decorate
       end
     end
   end
