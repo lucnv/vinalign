@@ -2,8 +2,7 @@
   $(".group-item-album.active-album").removeClass("active-album");
   $("#album-<%= @album.id %>").remove();
   $("#album-list").prepend("<%= j render 'clinic_management/treatment_phases/album', album: @album %>");
-  $(".group-item-album#album-<%= @album.id %>").addClass("active-album");
-  $("#images-presentation").html("<%= j render 'images/images_presentation', images: [], album: @album %>");
+  $.ajax({url: "<%= album_images_path(@album) %>"});
   $("#persit_album_modal").modal("hide");
 <% else %>
   $("#album-form").html("<%= j render 'form', album: @album, \
