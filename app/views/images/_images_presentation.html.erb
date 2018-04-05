@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-12">
-    <h4><%= t(".album", album_name: @album.name) %></h4>
+    <h3><%= t(".album", album_name: @album.name) %></h3>
   </div>
 </div>
 </br>
@@ -13,19 +13,19 @@
       </label>
     </div>
     <div class="col-md-8 mb-15">
-      <%= button_tag class: "btn btn-primary btn-flat ml-10 pull-right", id: "add-images",
+      <%= button_tag class: "btn btn-primary btn-flat ml-10 min-width-btn pull-right", id: "add-images",
         data: {toggle: "modal", target: "#modal-upload-images"}, type: "button" do %>
         <i class="fa fa-plus" aria-hidden="true"></i>
         <%= t(".add") %>
       <% end %>
-      <!-- <%= button_tag class: "btn btn-success btn-flat ml-10 pull-right", id: "download-images",
+      <!-- <%= button_tag class: "btn btn-success btn-flat ml-10 min-width-btn pull-right", id: "download-images",
         data: {toggle: "modal", target: "#modal-upload-images"}, disabled: true do %>
-        <i class="fa fa-plus" aria-hidden="true"></i>
+        <i class="fa fa-download" aria-hidden="true"></i>
         <%= t(".download") %>
       <% end %> -->
-      <%= button_tag class: "btn btn-danger btn-flat ml-10 pull-right", id: "delete-images", disabled: true,
+      <%= button_tag class: "btn btn-danger btn-flat ml-10 min-width-btn pull-right", id: "delete-images", disabled: true,
         data: {confirm: t(".confirm_delete")} do %>
-        <i class="fa fa-plus" aria-hidden="true"></i>
+        <i class="fa fa-trash-o" aria-hidden="true"></i>
         <%= t(".delete") %>
       <% end %>
     </div>

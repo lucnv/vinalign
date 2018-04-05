@@ -42,6 +42,10 @@ img.image-full-width {
   cursor: pointer;
 }
 
+.min-width-btn {
+  min-width: 90px;
+}
+
 .active-drop {
   .dropdown-menu {
       visibility: hidden;
