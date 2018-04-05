@@ -1,12 +1,14 @@
 $(document).on("turbolinks:load", function() {
   $("#images-presentation").on("change","input[type=checkbox]", function() {
     if(this.id === "chk_all") {
-      $("input[type=checkbox]").next("a").children("img").toggleClass("blur")
+
       if(this.checked) {
         $("input[type=checkbox]").prop("checked", true)
+        $("input[type=checkbox]").next("a").children("img").addClass("blur")
       }
       else {
         $("input[type=checkbox]").prop("checked", false)
+        $("input[type=checkbox]").next("a").children("img").removeClass("blur")
       }
     }
     else {
