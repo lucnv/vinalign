@@ -1,0 +1,19 @@
+<tr id="patient-record-<%= patient_record.id %>">
+  <td>
+    <%= index_on_pagination patient_record_counter, assigns["patient_records"].current_page,
+      Settings.patient_records.per_page %>
+  </td>
+  <td>
+    <%= link_to patient_record.full_name, url_for([scope, patient_record, :treatment_phases]) %>
+  </td>
+  <td><%= t ".#{patient_record.gender}" %></td>
+  <td><%= patient_record.age %></td>
+  <td><%= patient_record.phone_number %></td>
+  <td><%= time_with_format patient_record.start_date %></td>
+  <td class="text-red"><%= patient_record.status %></td>
+  <td class="sharing-status"><%= t ".#{patient_record.is_sharing? ? 'sharing' : 'not_sharing'}" %></td>
+  <td class="manipulation_menu">
+    <%= render "shared/patient_records/manipulation_menu", patient_record: patient_record,
+      scope: scope %>
+  </td>
+</tr>

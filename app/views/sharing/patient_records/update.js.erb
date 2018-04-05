@@ -1,0 +1,11 @@
+$("#patient-record-<%= @patient_record.id %> .sharing-status")
+  .text('<%= t ".#{@patient_record.is_sharing? ? "sharing" : "not_sharing"}" %>');
+$("#patient-record-<%= @patient_record.id %> .manipulation_menu")
+  .html("<%= j render 'shared/patient_records/manipulation_menu', patient_record: @patient_record,\
+  scope: (current_user.admin? ? :admin : :clinic_management) %>");
+$("#flash-messages").html("<%= j render 'layouts/shared/flash' %>");
+<% if @patient_record.is_sharing? %>
+  $("#modal_holder").html("<%= j render 'sharing/patient_records/shared_link_modal', \
+    patient_record: @patient_record %>");
+  $("#shared_link_modal").modal();
+<% end %>

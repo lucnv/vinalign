@@ -55,7 +55,8 @@ Rails.application.routes.draw do
   end
 
   namespace :sharing do
-    resources :patient_records, only: :show do
+    resources :patient_records, only: [:show, :update] do
+      get "shared_link", on: :member
       resources :treatment_phases, only: :show
     end
   end

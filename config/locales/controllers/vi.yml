@@ -111,6 +111,10 @@ vi:
       update:
         success: Cập nhật mật khẩu thành công
         failed: Cập nhật mật khẩu thất bại
+  sharing:
+    patient_records:
+      update:
+        success: Thay đổi trạng thái chia sẻ thành công
   images:
     create:
       success: Thêm mới ảnh thành công
