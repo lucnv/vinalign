@@ -19,6 +19,16 @@ class ImagesController < ApplicationController
     end
   end
 
+  def destroy
+    if params[:checked_params].present?
+      Image.destroy(params[:checked_params].keys)
+      @delete_success = true
+      flash.now[:success] = t ".success"
+    else
+     flash.now[:failed] = t ".failed"
+    end
+  end
+
   private
   def image_params
     {source: params[:sources]}

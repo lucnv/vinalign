@@ -1,5 +1,6 @@
 .content .loading {
   background: rgba(255,255,255,0.7);
+  z-index: 2;
 }
 
 .content .loading>.fa {

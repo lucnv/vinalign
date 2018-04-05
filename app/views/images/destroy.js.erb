@@ -1,0 +1,4 @@
+<% if @delete_success %>
+  $.ajax({url: "<%= album_images_path(@album) %>"});
+<% end %>
+$("#flash-messages").html("<%= j render 'layouts/shared/flash' %>");

@@ -1,14 +1,35 @@
 <div class="row">
   <div class="col-md-12">
-    <%= button_tag class: "btn btn-primary btn-flat pull-right", id: "add-images",
-      data: {toggle: "modal", target: "#modal-upload-images"} do %>
-      <i class="fa fa-plus" aria-hidden="true"></i>
-      <%= t(".add") %>
-    <% end %>
     <h4><%= t(".album", album_name: @album.name) %></h4>
   </div>
 </div>
 </br>
-<div class="row">
-  <%= render partial: :image, collection: images, as: :image %>
-</div>
+<%= form_tag(album_images_path, method: :delete, remote: true) %>
+  <div class="row">
+    <div class="col-md-4 mt-15">
+      <label class="select_all">
+        <%= check_box_tag "chk_all" %>
+        <%= t ".select_all" %>
+      </label>
+    </div>
+    <div class="col-md-8 mb-15">
+      <%= button_tag class: "btn btn-primary btn-flat ml-10 pull-right", id: "add-images",
+        data: {toggle: "modal", target: "#modal-upload-images"}, type: "button" do %>
+        <i class="fa fa-plus" aria-hidden="true"></i>
+        <%= t(".add") %>
+      <% end %>
+      <!-- <%= button_tag class: "btn btn-success btn-flat ml-10 pull-right", id: "download-images",
+        data: {toggle: "modal", target: "#modal-upload-images"}, disabled: true do %>
+        <i class="fa fa-plus" aria-hidden="true"></i>
+        <%= t(".download") %>
+      <% end %> -->
+      <%= button_tag class: "btn btn-danger btn-flat ml-10 pull-right", id: "delete-images", disabled: true,
+        data: {confirm: t(".confirm_delete")} do %>
+        <i class="fa fa-plus" aria-hidden="true"></i>
+        <%= t(".delete") %>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+      <%= render partial: :image, collection: images, as: :image %>
+  </div>

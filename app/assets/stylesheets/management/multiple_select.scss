@@ -1,0 +1,22 @@
+#images-presentation {
+  input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+    margin: 0;
+    z-index: 1;
+  }
+
+  #chk_all {
+    vertical-align: middle;
+  }
+
+  .checkbox {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+  }
+
+  .blur {
+    opacity: 0.5;
+  }
+}
