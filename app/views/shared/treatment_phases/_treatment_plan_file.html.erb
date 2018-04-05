@@ -1,11 +1,27 @@
-<li class="list-group-item">
+<li class="list-group-item treatment-plan-file-<%= treatment_plan_file.id %>">
   <i class="fa fa-file-code-o"></i>
   <strong><%= File.basename treatment_plan_file.source.url %></strong>
-  <%= link_to download_treatment_plan_file_path(treatment_plan_file), 
-    class: "pull-right", target: "_blank" do %>
-    <%= t ".download" %>
-    <i class="fa fa-download"></i>
-  <% end %>
+  <div class="dropdown pull-right">
+    <a data-toggle="dropdown"><i class="fa fa-bars"></i></a>
+    <ul class="dropdown-menu dropdown-menu-right dropdown-btns pull-right">
+      <li>
+        <%= link_to download_treatment_plan_file_path(treatment_plan_file), class: "btn btn-xs btn-flat", target: "_blank" do %>
+          <i class="fa fa-download"></i>
+          <%= t ".download" %>
+        <% end %>
+      </li>
+      <% if current_user.admin? %>
+        <li class="divider"></li>
+        <li>
+          <%= link_to admin_treatment_phase_treatment_plan_file_path(@treatment_phase, treatment_plan_file), method: :delete, remote: true,
+            data: {confirm: t(".confirm_delete", treatment_plan_file: File.basename(treatment_plan_file.source.url))}, class: "btn btn-xs btn-flat" do %>
+            <i class="fa fa-pencil-square-o"></i>
+            <%= t ".delete" %>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
   <br/>
   <%= number_to_human_size treatment_plan_file.source.size %>
 </li>

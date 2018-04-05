@@ -399,6 +399,8 @@ vi:
         confirm_delete: Bạn có chắc chắn muốn xóa giai đoạn điều trị "%{treatment_phase}"?
       treatment_plan_file:
         download: *download
+        delete: *delete
+        confirm_delete: Bạn có chắc chắn muốn xóa file kế hoạch "%{treatment_plan_file}"?
       form_upload:
         add_file: Thêm tệp tin kế hoạch điều trị
   supports:

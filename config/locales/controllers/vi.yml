@@ -29,6 +29,9 @@ vi:
       create:
         success: Tạo mới hồ sơ điều trị thành công
         failed: Tạo mới hồ sơ điều trị thất bại
+      destroy:
+        success: Xóa hồ sơ điều trị thành công
+        failed: Xóa hồ sơ điều trị thất bại
     clinics:
       create:
         success: Tạo mới phòng khám thành công
