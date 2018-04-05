@@ -25,7 +25,7 @@ Rails.application.routes.draw do
     end
     resources :price_lists, only: [:edit, :update, :destroy]
     resources :treatment_phases, only: :show do
-      resources :treatment_plan_files, only: :create
+      resources :treatment_plan_files, only: [:create, :destroy]
       resources :albums, only: [:new, :create]
     end
     resources :albums, only: [:edit, :update, :destroy]
