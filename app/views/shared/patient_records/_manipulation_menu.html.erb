@@ -1,0 +1,44 @@
+<div class="dropdown btn-dropdown">
+  <a data-toggle="dropdown"><i class="fa fa-bars"></i></a>
+  <ul class="dropdown-menu dropdown-menu-right dropdown-btns">
+    <li>
+      <%= link_to url_for([:edit, scope, patient_record]), class: "btn btn-xs btn-flat" do %>
+        <i class="fa fa-pencil-square-o"></i>
+        <%= t ".edit" %>
+      <% end %>
+    </li>
+    <li class="divider"></li>
+    <% if patient_record.is_sharing? %>
+      <li>
+        <%= link_to shared_link_sharing_patient_record_path(patient_record), remote: true do %>
+          <i class="fa fa-link"></i>
+          <%= t ".get_sharing_link" %>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to sharing_patient_record_path(patient_record, is_sharing: false),
+          method: :patch, remote: true do %>
+          <i class="fa fa-share-alt"></i>
+          <%= t ".stop_sharing" %>
+        <% end %>
+      </li>
+    <% else %>
+      <li>
+        <%= link_to sharing_patient_record_path(patient_record, is_sharing: true),
+          method: :patch, remote: true do %>
+          <i class="fa fa-share-alt"></i>
+          <%= t ".share" %>
+        <% end %>
+      </li>
+    <% end %>
+    <li class="divider"></li>
+    <li>
+      <%= link_to url_for([scope, patient_record]), method: :delete,
+        data: {confirm: t(".confirm_delete", patient_name: patient_record.full_name)},
+        class: "btn btn-xs btn-flat" do %>
+        <i class="fa fa-trash-o"></i>
+        <%= t ".delete" %>
+      <% end %>
+    </li>
+  </ul>
+</div>

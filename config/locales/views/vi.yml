@@ -18,6 +18,9 @@ vi:
     edit_info: &edit_info Chỉnh sửa thông tin
     add: &add Thêm
     download: &download Tải về
+    sharing: &sharing Đang chia sẻ
+    not_sharing: &not_sharing Không chia sẻ
+    close: &close Đóng
     total_records_found: &total_records_found
       zero: Không tìm thấy bản ghi
       one: "%{count} bản ghi được tìm thấy"
@@ -186,6 +189,8 @@ vi:
         search: *search
         start_date_from: Ngày bắt đầu từ
         start_date_to: Ngày bắt đầu đến
+      patient_record_list:
+        sharing_status: Trạng thái chia sẻ
     price_lists:
       new:
         new_price_list: Bảng giá mới
@@ -294,6 +299,8 @@ vi:
         search: *search
         start_date_from: Ngày bắt đầu từ
         start_date_to: Ngày bắt đầu đến
+      patient_record_list:
+        sharing_status: Trạng thái chia sẻ
     treatment_phases:
       new:
         new_treatment_phase: Tạo mới giai đoạn điều trị
@@ -352,12 +359,31 @@ vi:
     passwords:
       edit:
         update_password: Cập nhật mật khẩu
+  sharing:
+    patient_records:
+      update:
+        sharing: *sharing
+        not_sharing: *not_sharing
+      shared_link_modal:
+        sharing_patient_record: Chia sẻ hồ sơ bệnh nhân
+        shared_patient_record_link_html: Liên kết chia sẻ hồ sơ bệnh nhân <b>%{patient_name}</b> thuộc phòng khám <b>%{clinic_name}</b>
+        close: *close
   shared:
     patient_records:
       details:
         male: *male
         female: *female
         account: Hồ sơ
+      patient_record:
+        sharing: *sharing
+        not_sharing: *not_sharing
+      manipulation_menu:
+        edit: *edit
+        delete: *delete
+        confirm_delete: Bạn có chắc chắn muốn xóa hồ sơ bệnh nhân "%{patient_name}"?
+        get_sharing_link: Nhận liên kết chia sẻ
+        stop_sharing: Dừng chia sẻ
+        share: Chia sẻ
     treatment_phases:
       form:
         create_treatment_phase: Tạo mới giai đoạn điều trị

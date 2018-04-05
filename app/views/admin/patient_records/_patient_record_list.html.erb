@@ -7,8 +7,10 @@
     <th><%= PatientRecord.human_attribute_name :phone_number %></th>
     <th><%= PatientRecord.human_attribute_name :start_date %></th>
     <th><%= PatientRecord.human_attribute_name :status %></th>
+    <th><%= t ".sharing_status" %></th>
   </thead>
   <tbody>
-    <%= render partial: :patient_record, collection: patient_records, as: :patient_record %>
+    <%= render partial: "shared/patient_records/patient_record", collection: patient_records,
+      as: :patient_record, locals: {scope: :admin} %>
   </tbody>
 </table>

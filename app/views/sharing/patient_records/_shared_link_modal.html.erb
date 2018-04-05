@@ -1,0 +1,24 @@
+<div class="modal fade" id="shared_link_modal" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <%= t ".sharing_patient_record" %>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>
+          <%= t ".shared_patient_record_link_html", patient_name: patient_record.full_name,
+            clinic_name: patient_record.clinic.name %>:
+        </p>
+        <p><mark><%= sharing_patient_record_url(patient_record.public_token) %></mark></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-gray btn-flat" data-dismiss="modal">
+          <%= t ".close" %>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
