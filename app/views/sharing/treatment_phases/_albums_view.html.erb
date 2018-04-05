@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-md-3">
+    <div class="list-group">
+      <%= render partial: "album", collection: albums, as: :album,
+        locals: {patient_record: patient_record, treatment_phase: treatment_phase, current_album: current_album} %>
+    </div>
+  </div>
+  <div class="col-md-9">
+    <div class="row" id="images-presentation">
+      <% if current_album.present? %>
+        <%= render partial: "image", collection: current_album.images, as: :image %>
+      <% end %>
+    </div>
+  </div>
+</div>

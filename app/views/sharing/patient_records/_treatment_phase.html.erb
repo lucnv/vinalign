@@ -1,0 +1,21 @@
+<div class="listing-item white-bg bordered mb-10">
+  <div class="body">
+    <h4>
+      <%= link_to sharing_patient_record_treatment_phase_path(patient_record_id: patient_record.public_token,
+        id: treatment_phase.id) do %>
+        <%= treatment_phase.name %>
+      <% end %>
+    </h4>
+    <p>
+      <b><%= TreatmentPhase.human_attribute_name :start_date %>:</b>
+      <%= time_with_format treatment_phase.start_date %>
+    </p>
+    <%= custom_simple_format treatment_phase.description %>
+    <div class="elements-list clearfix">
+      <%= link_to sharing_patient_record_treatment_phase_path(patient_record_id: patient_record.public_token,
+        id: treatment_phase.id), class: "pull-right margin-clear btn btn-sm btn-default-transparent" do %>
+        <%= t ".view_details" %>
+      <% end %>
+    </div>
+  </div>
+</div>

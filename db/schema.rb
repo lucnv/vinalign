@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180404203626) do
+ActiveRecord::Schema.define(version: 20180405012439) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -136,6 +136,8 @@ ActiveRecord::Schema.define(version: 20180404203626) do
     t.string "address"
     t.string "status"
     t.string "normalized_name"
+    t.string "public_token"
+    t.boolean "is_sharing", default: false
     t.index ["clinic_id"], name: "index_patient_records_on_clinic_id"
     t.index ["district_id"], name: "index_patient_records_on_district_id"
   end

@@ -1,0 +1,12 @@
+<% if current_album.id == album.id %>
+  <div class="list-group-item active">
+    <i class="fa fa-folder"></i>
+    <span><%= album.name %></span>
+  </div>
+<% else %>
+  <%= link_to sharing_patient_record_treatment_phase_path(patient_record_id: patient_record.public_token,
+    id: treatment_phase.id, album_id: album.id), class: "list-group-item", remote: true do %>
+    <i class="fa fa-folder"></i>
+    <span><%= album.name %></span>
+  <% end %>
+<% end %>

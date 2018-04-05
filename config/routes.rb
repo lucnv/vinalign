@@ -54,6 +54,12 @@ Rails.application.routes.draw do
     resource :password, only: [:edit, :update]
   end
 
+  namespace :sharing do
+    resources :patient_records, only: :show do
+      resources :treatment_phases, only: :show
+    end
+  end
+
   resources :albums do
     resources :images, only: [:index, :create]
   end
