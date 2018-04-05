@@ -25,6 +25,7 @@
  *= require css/jquery-ui-1.10.4.custom
  *= require custom
  *= require management/notification
+ *= require management/multiple_select
  */
 
 .active-album {
@@ -47,6 +48,18 @@
 
 .no-margin {
   margin: 0px;
+}
+
+.ml-10 {
+  margin-left: 10px;
+}
+
+.mt-15 {
+  margin-top: 15px;
+}
+
+.mb-15 {
+  margin-bottom: 15px;
 }
 
 .pagination {

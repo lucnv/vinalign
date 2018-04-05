@@ -418,6 +418,8 @@ vi:
     images_presentation:
       album: "Album: %{album_name}"
       add: *add
+      select_all: Chọn tất cả
+      confirm_delete: Bạn có chắc chắn muốn xóa ảnh?
   files:
     filed_uploaded: Đã tải lên thành công
     files: tệp!

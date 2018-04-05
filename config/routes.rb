@@ -62,7 +62,9 @@ Rails.application.routes.draw do
   end
 
   resources :albums do
-    resources :images, only: [:index, :create]
+    resources :images, only: [:index, :create] do
+      delete :destroy, on: :collection
+    end
   end
 
   resources :treatment_phases do
