@@ -29,6 +29,10 @@ class PatientRecord < ApplicationRecord
     where start_date: time.beginning_of_day..Time.zone.now
   end
 
+  before_create :generate_public_token
+  before_save :update_normalized_name
+  before_destroy :clean_s3
+
   mount_uploader :profile_photo, AvatarUploader
 
   enum gender: Settings.genders.map(&:to_sym)
@@ -37,8 +41,6 @@ class PatientRecord < ApplicationRecord
   delegate :name, to: :clinic, prefix: true, allow_nil: true
   delegate :name, to: :district, prefix: true, allow_nil: true
 
-  before_save :update_normalized_name
-  before_destroy :clean_s3
 
   pg_search_scope :search_by_full_name, against: {first_name: "A", last_name: "A", normalized_name: "B"}
 
@@ -66,5 +68,9 @@ class PatientRecord < ApplicationRecord
 
   def update_normalized_name
     self.normalized_name = (self.first_name + " " + self.last_name).to_url.gsub "-", " "
+  end
+
+  def generate_public_token
+    self.public_token = SecureRandom.base58 50
   end
 end

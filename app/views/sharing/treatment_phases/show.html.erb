@@ -1,0 +1,15 @@
+<section class="main-container">
+  <div class="container">
+    <h2>Ho so benh nhan - <%= @patient_record.full_name %> - <%= @treatment_phase.name %></h2>
+    <div class="justify-content-lg-center">
+      <h4 class="mt-4"><%= t ".treatment_phase_info" %></h4>
+      <div class="separator-2"></div>
+      <h4 class="mt-4"><%= t ".albums" %></h4>
+      <div class="separator-2"></div>
+      <div id="albums-view">
+        <%= render "albums_view", albums: @albums, current_album: @current_album,
+          patient_record: @patient_record, treatment_phase: @treatment_phase %>
+      </div>
+    </div>
+  </div>
+</section>

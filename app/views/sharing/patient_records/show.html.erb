@@ -1,0 +1,21 @@
+<section class="main-container">
+  <div class="container">
+    <h2>Ho so benh nhan - <%= @patient_record.full_name %></h2>
+    <div class="justify-content-lg-center">
+      <h4 class="mt-4"><%= t ".patient_info" %></h4>
+      <div class="separator-2"></div>
+      <div class="row">
+        <div class="col-md-3">
+          <%= image_tag @patient_record.profile_photo.medium.url %>
+        </div>
+        <div class="col-md-9">
+          <%= render "patient_info", patient_record: @patient_record %>
+        </div>
+      </div>
+      <h4 class="mt-4"><%= t ".treatment_phases" %></h4>
+      <div class="separator-2"></div>
+      <%= render partial: "treatment_phase", collection: @patient_record.treatment_phases,
+        as: :treatment_phase, locals: {patient_record: @patient_record} %>
+    </div>
+  </div>
+</section>

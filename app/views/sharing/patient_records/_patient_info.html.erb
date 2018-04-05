@@ -1,0 +1,20 @@
+<table class="table table-striped">
+  <%= render "shared/data", attribute: PatientRecord.human_attribute_name(:start_date),
+    value: time_with_format(patient_record.start_date) %>
+  <%= render "shared/data", attribute: PatientRecord.human_attribute_name(:full_name),
+    value: patient_record.full_name %>
+  <%= render "shared/data", attribute: PatientRecord.human_attribute_name(:dob),
+    value: time_with_format(patient_record.dob) %>
+    <%= render "shared/data", attribute: PatientRecord.human_attribute_name(:gender),
+    value: t("gender.#{patient_record.gender}") %>
+  <%= render "shared/data", attribute: PatientRecord.human_attribute_name(:address),
+    value: patient_record.full_address %>
+  <%= render "shared/data", attribute: PatientRecord.human_attribute_name(:phone_number),
+    value: patient_record.phone_number %>
+  <%= render "shared/data", attribute: PatientRecord.human_attribute_name(:email),
+    value: patient_record.email %>
+  <%= render "shared/data", attribute: PatientRecord.human_attribute_name(:doctor),
+    value: patient_record.doctor %>
+  <%= render "shared/data", attribute: PatientRecord.human_attribute_name(:status),
+    value: patient_record.status %>
+</table>

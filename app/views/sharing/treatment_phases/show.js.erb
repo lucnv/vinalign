@@ -1,0 +1,4 @@
+<% if @current_album.present? %>
+  $("#albums-view").html("<%= j render 'albums_view', albums: @albums, current_album: @current_album, \
+    patient_record: @patient_record, treatment_phase: @treatment_phase %>");
+<% end %>
