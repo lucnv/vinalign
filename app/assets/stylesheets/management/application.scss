@@ -133,6 +133,10 @@ body {
   }
 }
 
+.table>tbody>tr>td {
+  vertical-align: middle;
+}
+
 //begin custom plupload according to client requirement
 .plupload_container {
   min-height: 380px!important;
