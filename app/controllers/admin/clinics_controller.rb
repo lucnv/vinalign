@@ -6,7 +6,7 @@ class Admin::ClinicsController < Admin::BaseController
     search_params = params[:clinic_search].try :permit, ClinicSearch::SEARCHABLE_ATTRIBUTES
     @clinic_search = ClinicSearch.new search_params
     @clinics = @clinic_search.result.recent_created.page(params[:page]).per(Settings.clinics.per_page)
-      .decorate
+      .includes(:doctor, :district, :province).decorate
     @support = Supports::Clinic.new
   end
 

@@ -1,5 +1,4 @@
 .notification-list {
-
   li {
     &:hover {
       background-color: #f4f4f4;
@@ -9,5 +8,14 @@
     a {
       color: black;
     }
+  }
+}
+
+#notification-icon {
+  .fa {
+    font-size: 18px;
+  }
+  .label {
+    font-size: 12px;
   }
 }

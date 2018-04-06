@@ -6,13 +6,13 @@
 </a>
 <ul class="dropdown-menu">
   <li class="header" id="notification-message">
-    You have <%= unread_noti_count %> unread notifications
+    <%= t ".unread_notification_title_html", count: unread_noti_count %>
   </li>
   <li>
     <ul class="menu" id="notification-list">
     </ul>
   </li>
   <li class="footer">
-    <%= link_to "View all", my_page_notifications_path %>
+    <%= link_to t(".view_all"), my_page_notifications_path %>
   </li>
 </ul>
