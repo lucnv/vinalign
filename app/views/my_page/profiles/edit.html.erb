@@ -7,14 +7,6 @@
       html: {class: "form-horizontal", multipart: true} do |f| %>
       <div class="col-md-6">
         <div class="form-group">
-          <%= f.label :avatar, class: "control-label col-md-4" do %>
-            <%= UserProfile.human_attribute_name :avatar %>
-          <% end %>
-          <div class="col-md-5">
-            <%= f.file_field :avatar %>
-          </div>
-        </div>
-        <div class="form-group">
           <%= f.label :first_name, class: "control-label col-md-4" do %>
             <%= UserProfile.human_attribute_name :first_name %>
             <span class="text-danger">*</span>
@@ -60,6 +52,17 @@
         <div class="form-group">
           <div class="col-md-offset-4 col-md-5">
             <%= f.submit class: "btn btn-primary btn-flat" %>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= f.label :avatar, UserProfile.human_attribute_name(:avatar),
+            class: "control-label col-md-4" %>
+          <div class="col-md-8">
+            <%= f.file_field :avatar, id: "image_upload" %>
+            </br>
+            <%= image_tag @profile.avatar_was, id: "image_preview", width: "50%", style: "border: 1px;" %>
           </div>
         </div>
       </div>

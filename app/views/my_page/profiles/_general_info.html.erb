@@ -4,6 +4,7 @@
   </div>
   <div class="box-body">
     <table class="table table-striped">
+      <%= render "shared/data", attribute: UserProfile.human_attribute_name(:avatar), value: image_tag(user_profile.avatar.small.url) %>
       <%= render "shared/data", attribute: UserProfile.human_attribute_name(:full_name), value: user_profile.full_name %>
       <%= render "shared/data", attribute: UserProfile.human_attribute_name(:dob),
         value: time_with_format(user_profile.dob) %>

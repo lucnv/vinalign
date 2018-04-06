@@ -353,12 +353,16 @@ vi:
         change_password: Thay đổi mật khẩu
       general_info:
         general_info: Thông tin cá nhân
+        edit: Thay đổi thông tin
       clinic_info:
         clinic_info: Thông tin
         edit: *edit
+      edit:
+        edit_profile: Chỉnh sửa thông tin
     passwords:
       edit:
         update_password: Cập nhật mật khẩu
+        change_password: Cập nhật mật khẩu
   sharing:
     patient_records:
       update:
