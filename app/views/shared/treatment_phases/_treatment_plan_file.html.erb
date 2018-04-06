@@ -4,15 +4,31 @@
   <%= render "shared/treatment_phases/treatment_plan_file_manipulation", treatment_plan_file: treatment_plan_file,
     treatment_phase: treatment_phase %>
   <div><%= number_to_human_size treatment_plan_file.source.size %></div>
-  <div>
-    <% case treatment_plan_file.doctor_opinion.to_s
-       when "not_yet" %>
-        <i class="fa fa-info-circle text-info"></i>
-    <% when "agree" %>
-        <i class="fa fa-check-circle text-success"></i>
-    <% when "disagree" %>
-        <i class="fa fa-times-circle text-danger"></i>
+  <div class="doctor-opinion clearfix">
+    <span>
+      <% case treatment_plan_file.doctor_opinion.to_s
+         when "not_yet" %>
+          <i class="fa fa-info-circle text-info"></i>
+      <% when "agree" %>
+          <i class="fa fa-check-circle text-success"></i>
+      <% when "disagree" %>
+          <i class="fa fa-times-circle text-danger"></i>
+      <% end %>
+      <%= t ".#{treatment_plan_file.doctor_opinion}" %>
+    </span>
+    <% if current_user.doctor? && treatment_plan_file.not_yet? %>
+      <span class="pull-right doctor-opinion-button clearfix">
+        <%= link_to clinic_management_treatment_plan_file_path(treatment_plan_file, doctor_opinion: :agree),
+          method: :patch, remote: true, class: "btn btn-flat btn-success" do %>
+          <i class="fa fa-check-circle"></i>
+          <%= t ".agree" %>
+        <% end %>
+        <%= link_to clinic_management_treatment_plan_file_path(treatment_plan_file, doctor_opinion: :disagree),
+          method: :patch, remote: true, class: "btn btn-flat btn-danger" do %>
+          <i class="fa fa-times-circle"></i>
+          <%= t ".disagree" %>
+        <% end %>
+      </span>
     <% end %>
-    <%= t ".#{treatment_plan_file.doctor_opinion}" %>
   </div>
 </li>
