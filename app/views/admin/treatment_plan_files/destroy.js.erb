@@ -1,4 +1,4 @@
 <% if @treatment_plan_file.errors.blank? %>
-  $("#treatment_plan_file_list .treatment-plan-file-<%= @treatment_plan_file.id %>").remove();
+  $("#treatment-plan-file-<%= @treatment_plan_file.id %>").remove();
 <% end %>
 $("#flash-messages").html("<%= j render 'layouts/shared/flash' %>");

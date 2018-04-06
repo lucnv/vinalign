@@ -54,6 +54,22 @@ class NotificationDecorator < ApplicationDecorator
         content: I18n.t("notification.content.price_list_uploaded", patient_name: patient_record.full_name,
           admin_name: admin.full_name)
       }
+    when :agree_treatment_plan_file
+      treatment_plan_file = self.notifiable
+      doctor = self.creator
+      {
+        target_path: admin_treatment_phase_path(treatment_plan_file.treatment_phase, tab: :treatment_plans),
+        content: I18n.t("notification.content.agree_treatment_plan_file", clinic_name: doctor.clinic.name,
+          file_name: self.data["file_name"], patient_name: treatment_plan_file.treatment_phase.patient_record.full_name)
+      }
+    when :disagree_treatment_plan_file
+      treatment_plan_file = self.notifiable
+      doctor = self.creator
+      {
+        target_path: admin_treatment_phase_path(treatment_plan_file.treatment_phase, tab: :treatment_plans),
+        content: I18n.t("notification.content.disagree_treatment_plan_file", clinic_name: doctor.clinic.name,
+          file_name: self.data["file_name"], patient_name: treatment_plan_file.treatment_phase.patient_record.full_name)
+      }
     end
   end
 end

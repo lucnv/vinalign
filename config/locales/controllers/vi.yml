@@ -105,6 +105,10 @@ vi:
       update:
         success: Cập nhật phòng khám thành công
         failed: Cập nhật phòng khám thất bại
+    treatment_plan_files:
+      update:
+        success: Cập nhật ý kiến về file kế hoạch điều trị thành công
+        failed: Cập nhật ý kiến về file kế hoạch điều trị thất bại
   my_page:
     profiles:
       update:

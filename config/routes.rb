@@ -46,6 +46,7 @@ Rails.application.routes.draw do
     resources :albums, only: [:edit, :update, :destroy]
     resources :treatment_phases, only: [:edit, :update, :destroy]
     resource :clinic, only: [:edit, :update]
+    resources :treatment_plan_files, only: :update
   end
 
   namespace :my_page do

@@ -14,6 +14,6 @@ class Supports::TreatmentPhase
   end
 
   def treatment_plan_files
-    @treatment_plan_files ||= treatment_phase.treatment_plan_files
+    @treatment_plan_files ||= treatment_phase.treatment_plan_files.recent_created
   end
 end
