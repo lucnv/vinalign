@@ -1,5 +1,5 @@
 <% if @treatment_plan_file.errors.blank? %>
   $("#treatment_plan_file_list").append("<%= j render 'shared/treatment_phases/treatment_plan_file', \
-    treatment_plan_file: @treatment_plan_file %>")
+    treatment_plan_file: @treatment_plan_file, treatment_phase: @treatment_phase %>")
 <% end %>
 $("#flash-messages").html("<%= j render 'layouts/shared/flash' %>");
