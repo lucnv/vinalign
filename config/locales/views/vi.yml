@@ -59,6 +59,8 @@ vi:
       images_uploaded: Phòng khám <b>%{clinic_name}</b> đã thêm %{images_count} ảnh vào album <b>%{album_name}</b> của bệnh nhân <b class="text-red">%{patient_name}</b>
       treatment_plan_file_uploaded: Quản trị viên <b>%{admin_name}</b> đã tải lên file điều trị <b>%{file_name}</b> cho bệnh nhân <b class="text-red">%{patient_name} </b>
       price_list_uploaded: Quản trị viên <b>%{admin_name}</b> đã cập nhật bảng giá cho hồ sơ bệnh nhân <b class="text-red">%{patient_name}</b>
+      agree_treatment_plan_file: Phòng khám <b>%{clinic_name}</b> đã đồng ý với file kế hoạch điều trị <b>%{file_name}</b> cho bệnh nhân <b class="text-red">%{patient_name}</b>
+      disagree_treatment_plan_file: Phòng khám <b>%{clinic_name}</b> không đồng ý với file kế hoạch điều trị <b>%{file_name}</b> cho bệnh nhân <b class="text-red">%{patient_name}</b>
   layouts:
     application:
       title_front: Vinalign | Clear Aligner Solutions
@@ -397,10 +399,16 @@ vi:
         treatment_plan_files: Tệp tin kế hoạch điều trị
       treatment_phase:
         confirm_delete: Bạn có chắc chắn muốn xóa giai đoạn điều trị "%{treatment_phase}"?
-      treatment_plan_file:
+      treatment_plan_file_manipulation:
         download: *download
         delete: *delete
         confirm_delete: Bạn có chắc chắn muốn xóa file kế hoạch "%{treatment_plan_file}"?
+        agree: Đồng ý
+        disagree: Không đồng ý
+      treatment_plan_file:
+        not_yet: Chưa có ý kiến
+        agree: Đồng ý
+        disagree: Không đồng ý
       form_upload:
         add_file: Thêm tệp tin kế hoạch điều trị
   supports:

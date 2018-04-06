@@ -1,27 +1,18 @@
-<li class="list-group-item treatment-plan-file-<%= treatment_plan_file.id %>">
+<li class="list-group-item" id="treatment-plan-file-<%= treatment_plan_file.id %>">
   <i class="fa fa-file-code-o"></i>
   <strong><%= File.basename treatment_plan_file.source.url %></strong>
-  <div class="dropdown pull-right">
-    <a data-toggle="dropdown"><i class="fa fa-bars"></i></a>
-    <ul class="dropdown-menu dropdown-menu-right dropdown-btns pull-right">
-      <li>
-        <%= link_to download_treatment_plan_file_path(treatment_plan_file), class: "btn btn-xs btn-flat", target: "_blank" do %>
-          <i class="fa fa-download"></i>
-          <%= t ".download" %>
-        <% end %>
-      </li>
-      <% if current_user.admin? %>
-        <li class="divider"></li>
-        <li>
-          <%= link_to admin_treatment_phase_treatment_plan_file_path(@treatment_phase, treatment_plan_file), method: :delete, remote: true,
-            data: {confirm: t(".confirm_delete", treatment_plan_file: File.basename(treatment_plan_file.source.url))}, class: "btn btn-xs btn-flat" do %>
-            <i class="fa fa-pencil-square-o"></i>
-            <%= t ".delete" %>
-          <% end %>
-        </li>
-      <% end %>
-    </ul>
+  <%= render "shared/treatment_phases/treatment_plan_file_manipulation", treatment_plan_file: treatment_plan_file,
+    treatment_phase: treatment_phase %>
+  <div><%= number_to_human_size treatment_plan_file.source.size %></div>
+  <div>
+    <% case treatment_plan_file.doctor_opinion.to_s
+       when "not_yet" %>
+        <i class="fa fa-info-circle text-info"></i>
+    <% when "agree" %>
+        <i class="fa fa-check-circle text-success"></i>
+    <% when "disagree" %>
+        <i class="fa fa-times-circle text-danger"></i>
+    <% end %>
+    <%= t ".#{treatment_plan_file.doctor_opinion}" %>
   </div>
-  <br/>
-  <%= number_to_human_size treatment_plan_file.source.size %>
 </li>

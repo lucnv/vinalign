@@ -3,7 +3,6 @@
     <%= render "shared/treatment_phases/conversation", treatment_phase: treatment_phase,
       messages: support.messages %>
   </div>
-
   <div class="col col-md-4">
     <%= button_tag class: "btn btn-primary btn-flat pull-right", id: "add-files",
       data: {toggle: "modal", target: "#modal-upload-files"} do %>
@@ -11,7 +10,7 @@
       <%= t(".add") %>
     <% end %>
     <%= render "shared/treatment_phases/treatment_plan_files",
-      treatment_plan_files: support.treatment_plan_files %>
+      treatment_plan_files: support.treatment_plan_files, treatment_phase: treatment_phase %>
     <%= render "shared/treatment_phases/form_upload", treatment_phase: treatment_phase %>
   </div>
 </div>

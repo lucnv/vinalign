@@ -9,7 +9,7 @@ class Notification < ApplicationRecord
   scope :recent_created, ->{order created_at: :desc}
 
   enum action: [:new_patient_record, :images_uploaded, :treatment_plan_file_uploaded,
-    :price_list_uploaded]
+    :price_list_uploaded, :agree_treatment_plan_file, :disagree_treatment_plan_file]
 
   def is_unread?
     !is_read?

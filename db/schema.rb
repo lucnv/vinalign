@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180405012439) do
+ActiveRecord::Schema.define(version: 20180406020632) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -172,6 +172,7 @@ ActiveRecord::Schema.define(version: 20180405012439) do
     t.bigint "treatment_phase_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "doctor_opinion", default: 0
     t.index ["treatment_phase_id"], name: "index_treatment_plan_files_on_treatment_phase_id"
   end
 
