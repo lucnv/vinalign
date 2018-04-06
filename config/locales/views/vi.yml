@@ -128,6 +128,9 @@ vi:
         notifications: Thông báo
         edit_profile: Chỉnh sửa profile
         change_password: Thay đổi mật khẩu
+      notification_menu:
+        unread_notification_title_html: Bạn có <b>%{count}</b> thông báo chưa đọc
+        view_all: Xem tất cả
   admin:
     users:
       filter:
@@ -419,6 +422,9 @@ vi:
     districts:
       index:
         select_district: Chọn quận/huyện
+    notifications:
+      index:
+        unread_notification_title_html: Bạn có <b>%{count}</b> thông báo chưa đọc
   images:
     form_upload:
       not_supported: Trình duyệt của bạn không hỗ trợ Flash, Silverlight hoặc HTML5.
