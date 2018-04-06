@@ -17,20 +17,6 @@
           <%= t ".delete" %>
         <% end %>
       </li>
-    <% elsif treatment_plan_file.not_yet? %>
-      <li class="divider"></li>
-      <li>
-        <%= link_to clinic_management_treatment_plan_file_path(treatment_plan_file, doctor_opinion: :agree),
-          method: :patch, remote: true do %>
-          <i class="fa fa-check-circle"></i>
-          <%= t ".agree" %>
-        <% end %>
-        <%= link_to clinic_management_treatment_plan_file_path(treatment_plan_file, doctor_opinion: :disagree),
-          method: :patch, remote: true do %>
-          <i class="fa fa-times-circle"></i>
-          <%= t ".disagree" %>
-        <% end %>
-      </li>
     <% end %>
   </ul>
 </div>
