@@ -8,10 +8,17 @@ $(document).on("turbolinks:load", function() {
   function stick_navbar() {
     if (window.pageYOffset >= sticky) {
       $("#sticked-navbar").addClass("sticked");
-      $(".main-container").addClass("sticked-body")
+      if ($("#navbar-collapse-1").hasClass("show")) {
+        $(".main-container").addClass("sticked-body-mobile-collapse");
+      }
+      else {
+        $(".main-container").addClass("sticked-body");
+      }
+
     } else {
       $("#sticked-navbar").removeClass("sticked");
-      $(".main-container").removeClass("sticked-body")
+      $(".main-container").removeClass("sticked-body");
+      $(".main-container").removeClass("sticked-body-mobile-collapse");
     }
   }
 

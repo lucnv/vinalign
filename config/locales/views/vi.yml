@@ -134,7 +134,7 @@ vi:
         edit_clinic: Chỉnh sửa phòng khám
         profile: Thông tin
         notifications: Thông báo
-        edit_profile: Chỉnh sửa profile
+        edit_profile: Chỉnh sửa thông tin cá nhân
         change_password: Thay đổi mật khẩu
       notification_menu:
         unread_notification_title_html: Bạn có <b>%{count}</b> thông báo chưa đọc
@@ -389,7 +389,7 @@ vi:
         general_info: Thông tin cá nhân
         edit: Thay đổi thông tin
       clinic_info:
-        clinic_info: Thông tin
+        clinic_info: Thông tin phòng khám
         edit: *edit
       edit:
         edit_profile: Chỉnh sửa thông tin
@@ -484,3 +484,9 @@ vi:
       index:
         news: *news
         case_gallery: *case_gallery
+  experts:
+    index:
+      experts_list: Giới thiệu chuyên gia
+    filter:
+      all_provinces: Chọn tỉnh/thành phố
+      search: *search

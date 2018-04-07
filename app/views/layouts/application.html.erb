@@ -6,6 +6,18 @@
     <%= action_cable_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <%= render "shared/meta_tag_google",
+      description: Settings.meta_tag.google.description,
+      keywords: Settings.meta_tag.google.keywords,
+      copyright: Settings.meta_tag.google.copyright,
+      application_name: Settings.meta_tag.google.application_name %>
+    <%= render "shared/meta_tag_facebook",
+      og_title: Settings.meta_tag.facebook.og_title,
+      og_type: Settings.meta_tag.facebook.og_type,
+      og_image: Settings.meta_tag.facebook.og_image,
+      og_url: Settings.meta_tag.facebook.og_url,
+      og_description: Settings.meta_tag.facebook.og_description %>
+
     <%= stylesheet_link_tag "application", media: "all" %>
     <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic" %>
     <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Raleway:700,400,300" %>
@@ -14,7 +26,7 @@
 
     <%= javascript_include_tag "application" %>
 
-    <link rel="shortcut icon" type="image/png" href="https://s3-ap-southeast-1.amazonaws.com/vinalign/favicon.png"/>
+    <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
   </head>
 
   <body>
