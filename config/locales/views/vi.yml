@@ -69,6 +69,10 @@ vi:
     header:
       navigation:
         site_slogan: VNL - Clean Aligner Solutions
+        news: news
+        case_gallery: Case Gallery
+        home: Home
+        expert: Expert
       devise_buttons:
         <<: *new
         sign_up: Đăng kí
@@ -459,3 +463,14 @@ vi:
   files:
     filed_uploaded: Đã tải lên thành công
     files: tệp!
+  articles:
+    show:
+      news: news
+      case_gallery: Case Gallery
+      related_articles: Related articles
+      more: More
+  category:
+    articles:
+      index:
+        news: news
+        case_gallery: Case Gallery

@@ -45,11 +45,11 @@
                 </li>
                 <li class="nav-seperated"></li>
                 <li class="nav-item">
-                  <%= link_to t(".news"), category_articles_path(category: :news), class: "nav-link" %>
+                  <%= link_to t(".news"), category_articles_path(category: :news), class: "nav-link #{content_for :news}" %>
                 </li>
                 <li class="nav-seperated"></li>
                 <li class="nav-item">
-                  <%= link_to t(".case_gallery"), category_articles_path(category: :case_gallery), class: "nav-link" %>
+                  <%= link_to t(".case_gallery"), category_articles_path(category: :case_gallery), class: "nav-link #{content_for :case_gallery}" %>
                 </li>
                 <li class="nav-seperated"></li>
                 <li class="nav-item">
