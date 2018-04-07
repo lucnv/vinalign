@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180407052628) do
+ActiveRecord::Schema.define(version: 20180407075816) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,8 @@ ActiveRecord::Schema.define(version: 20180407052628) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "normalized_title"
+    t.string "slug"
+    t.index ["slug"], name: "index_articles_on_slug", unique: true
   end
 
   create_table "ckeditor_assets", force: :cascade do |t|
@@ -143,6 +145,7 @@ ActiveRecord::Schema.define(version: 20180407052628) do
     t.boolean "is_sharing", default: false
     t.index ["clinic_id"], name: "index_patient_records_on_clinic_id"
     t.index ["district_id"], name: "index_patient_records_on_district_id"
+    t.index ["public_token"], name: "index_patient_records_on_public_token", unique: true
   end
 
   create_table "price_lists", force: :cascade do |t|

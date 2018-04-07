@@ -10,10 +10,6 @@ class Article < ApplicationRecord
     where created_at: time.beginning_of_month..time.end_of_month
   end
 
-  enum category: [:news, :case_gallery, :home]
-
-  mount_uploader :represent_image, PreviewImageUploader
-
   validates :title, presence: true, length: {maximum: Settings.validations.article.title.max_length}
   validates :summary, presence: true, length: {maximum: Settings.validations.article.summary.max_length}
   validates :content, presence: true, length: {maximum: Settings.validations.article.content.max_length}
@@ -23,11 +19,25 @@ class Article < ApplicationRecord
 
   before_save :update_normalized_title
 
+  enum category: [:news, :case_gallery, :home]
+
+  mount_uploader :represent_image, PreviewImageUploader
+
   pg_search_scope :search_by_title, against: {title: "A", normalized_title: "B"}
+
+  acts_as_url :title, url_attribute: :slug, sync_url: true, callback_method: :before_save
+
+  def friendly_url_params
+    {id: slug}
+  end
 
   class << self
     def ransackable_scopes auth_object = nil
       [:created_at_month]
+    end
+
+    def friendly_find param
+      find_by! slug: param
     end
   end
 
