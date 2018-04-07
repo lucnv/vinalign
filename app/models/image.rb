@@ -4,7 +4,7 @@ class Image < ApplicationRecord
   before_save :update_source_details
   before_destroy :clean_s3
 
-  scope :order_name_asc, ->{order name: :asc}
+  scope :order_name_asc, ->{order file_name: :asc}
 
   mount_uploader :source, ImageUploader
 

@@ -27,8 +27,8 @@ class Supports::TreatmentPhase
   end
 
   def album_images
-    @first_album_images ||= if @album.present?
-      @first_album.images
+    @album_images ||= if @album.present?
+      @album.images.order_name_asc
     else
       Image.none
     end

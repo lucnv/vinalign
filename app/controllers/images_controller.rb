@@ -2,13 +2,13 @@ class ImagesController < ApplicationController
   before_action :album
 
   def index
-    @images = @album.images
+    @images = @album.images.order_name_asc
   end
 
   def create
     if @album.images.create image_params
       @upload_success = true
-      @images = @album.images
+      @images = @album.images.order_name_asc
       flash.now[:success] = t ".success"
       unless current_user.admin?
         CreateUploadImagesNotification.new(current_user.user_profile, album, 1).perform
