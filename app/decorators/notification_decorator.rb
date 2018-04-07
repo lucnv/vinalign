@@ -30,7 +30,7 @@ class NotificationDecorator < ApplicationDecorator
       album = self.notifiable
       doctor = self.creator
       {
-        target_path: admin_treatment_phase_path(album.treatment_phase, tab: :images),
+        target_path: admin_treatment_phase_path(album.treatment_phase, tab: :images, album: album.id),
         content: I18n.t("notification.content.images_uploaded",
           clinic_name: doctor.clinic.name,
           images_count: self.data["images_count"],

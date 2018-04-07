@@ -23,7 +23,7 @@ class Admin::TreatmentPhasesController < Admin::BaseController
 
   def show
     @treatment_phase = TreatmentPhase.find params[:id]
-    @support = Supports::TreatmentPhase.new @treatment_phase
+    @support = Supports::TreatmentPhase.new @treatment_phase, params
   end
 
   def edit

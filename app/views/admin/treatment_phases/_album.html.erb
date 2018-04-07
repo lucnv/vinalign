@@ -1,4 +1,4 @@
-<%= content_tag :div, class: "list-group-item group-item-album",
+<%= content_tag :div, class: "list-group-item group-item-album #{'active-album' if current_album.id == album.id}",
   id: "album-#{album.id}" do %>
   <div>
     <%= link_to album_images_path(album), remote: true do %>
