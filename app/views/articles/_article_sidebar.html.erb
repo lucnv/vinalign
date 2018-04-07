@@ -5,7 +5,7 @@
   <br/>
   <div class="media-body">
     <h6 class="media-heading">
-      <%= link_to article.title, article %>
+      <%= link_to article.title, article_path(article.friendly_url_params) %>
     </h6>
     <p class="small margin-clear">
       <i class="fa fa-calendar pr-10"></i><%= time_with_format article.created_at %>

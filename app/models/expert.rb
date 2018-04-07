@@ -22,7 +22,7 @@ class Expert < ApplicationRecord
       LIKE '%#{name.to_s.downcase}%'"
   end
   scope :priority_sort, ->{order priority: :asc}
-  scope :full_name_asc, ->{order "CONCAT(last_name, first_name)"}
+  scope :full_name_asc, ->{order first_name: :asc, last_name: :asc}
 
   before_save :update_normalized_fields
 

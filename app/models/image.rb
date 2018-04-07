@@ -1,10 +1,12 @@
 class Image < ApplicationRecord
   belongs_to :album
 
-  mount_uploader :source, ImageUploader
-
   before_save :update_source_details
   before_destroy :clean_s3
+
+  scope :order_name_asc, ->{order name: :asc}
+
+  mount_uploader :source, ImageUploader
 
   private
   def clean_s3

@@ -1,13 +1,13 @@
 <article class="blogpost">
   <div class="row">
     <div class="col-md-4">
-      <%= link_to article do %>
+      <%= link_to article_path(article.friendly_url_params) do %>
         <%= image_tag article.represent_image.thumb.url %>
       <% end %>
     </div>
     <div class="col-md-8">
       <header>
-        <h2><%= link_to article.title, article %></h2>
+        <h2><%= link_to article.title, article_path(article.friendly_url_params) %></h2>
         <div class="post-info">
           <span class="post-date">
             <i class="fa fa-calendar"></i>

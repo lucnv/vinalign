@@ -465,12 +465,12 @@ vi:
     files: tệp!
   articles:
     show:
-      news: news
-      case_gallery: Case Gallery
-      related_articles: Related articles
-      more: More
+      news: *news
+      case_gallery: *case_gallery
+      related_articles: Bài viết liên quan
+      more: Xem thêm
   category:
     articles:
       index:
-        news: news
-        case_gallery: Case Gallery
+        news: *news
+        case_gallery: *case_gallery
