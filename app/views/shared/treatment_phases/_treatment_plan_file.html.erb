@@ -1,9 +1,9 @@
 <li class="list-group-item" id="treatment-plan-file-<%= treatment_plan_file.id %>">
   <i class="fa fa-file-code-o"></i>
-  <strong><%= File.basename treatment_plan_file.source.url %></strong>
+  <strong><%= treatment_plan_file.file_name %></strong>
   <%= render "shared/treatment_phases/treatment_plan_file_manipulation", treatment_plan_file: treatment_plan_file,
     treatment_phase: treatment_phase %>
-  <div><%= number_to_human_size treatment_plan_file.source.size %></div>
+  <div><%= number_to_human_size treatment_plan_file.file_size %></div>
   <div class="doctor-opinion clearfix">
     <span>
       <% case treatment_plan_file.doctor_opinion.to_s

@@ -77,3 +77,10 @@ vi:
         district: Quận Huyện
         address: Địa chỉ
         priority: Độ ưu tiên
+      article:
+        title: Tiêu đề
+        category: Thể loại
+        created_at: Thời gian tạo
+        represent_image: Ảnh đại diện
+        content: Nội dung
+        summary: Tóm lược

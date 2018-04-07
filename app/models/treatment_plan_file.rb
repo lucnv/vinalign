@@ -10,6 +10,7 @@ class TreatmentPlanFile < ApplicationRecord
 
   delegate :full_name, to: :treatment_phase, allow_nil: true
 
+  before_save :update_source_details
   before_destroy :clean_s3
 
   def doctor_expressed?
@@ -22,5 +23,12 @@ class TreatmentPlanFile < ApplicationRecord
   rescue Excon::Errors::Error => error
     puts error
     false
+  end
+
+  def update_source_details
+    if source.present?
+      self.assign_attributes file_name: source.file.filename, content_type: source.file.content_type,
+        file_size: source.file.size
+    end
   end
 end
