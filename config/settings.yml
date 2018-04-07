@@ -83,3 +83,15 @@ front:
   carousel:
     news:
       limit: 5
+meta_tag:
+  google:
+    description: "Chỉnh nha trong suốt Vinalign Việt Nam. Lần đầu tiên tại Việt Nam có một sản phẩm khay chỉnh nha trong suốt sử dụng công nghệ kỹ thuật số, hiện đại tiên tiến ra đời. Là sự tự hào của người Việt."
+    keywords: [Nha khoa, chỉnh nha, vinalign, trong suốt, răng, chỉnh răng]
+    copyright: "Công Ty TNHH Nghiên Cứu Ứng Dụng Nha Khoa Vinalign Việt Nam"
+    application_name: "Vinalign"
+  facebook:
+    og_title: "Chỉnh nha trong suốt Vinalign Việt Nam"
+    og_type: "website"
+    og_image: http://vinalign.com/vinalign-square.png
+    og_url: http://www.vinalign.com/
+    og_description: "Chỉnh nha trong suốt Vinalign Việt Nam. Lần đầu tiên tại Việt Nam có một sản phẩm khay chỉnh nha trong suốt sử dụng công nghệ kỹ thuật số, hiện đại tiên tiến ra đời. Là sự tự hào của người Việt."
