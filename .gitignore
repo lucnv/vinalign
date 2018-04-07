@@ -25,7 +25,8 @@ config/environments/*.local.yml
 
 # Other
 config/database.yml
-public/*
+public/assets*
+public/uploads*
 .env
 coverage/
 .rspec
