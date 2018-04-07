@@ -4,6 +4,7 @@ vi:
     online: &online Trực tuyến
     main_navigation: &main_navigation THANH ĐIỀU HƯỚNG CHÍNH
     patient_records: &patient_records Hồ sơ bệnh nhân
+    select_gender: &select_gender Chọn giới tính
     male: &male Nam
     female: &female Nữ
     patient_record_list: &patient_record_list Danh sách hồ sơ bệnh nhân
@@ -101,6 +102,7 @@ vi:
         edit_info: *edit_info
         notifications: Thông báo
         home_page: Trang chủ
+        more: THÊM
       clinic_side_bar:
         patient_records: Hồ sơ bệnh nhân
         details: Thông tin phòng khám
@@ -149,13 +151,21 @@ vi:
     clinics:
       filter:
         search: *search
-        all_provinces: Chọn tỉnh thành
+        all_provinces: Chọn tỉnh/thành phố
       index:
         clinics_management: Quản lí phòng khám
         add_new_clinic: Thêm mới phòng khám
       form:
-        select_province: Chọn tỉnh thành
-        select_district: Chọn quận huyện
+        select_province: Chọn tỉnh/thành phố
+        select_district: Chọn quận/huyện
+        clinic_info: Thông tin phòng khám
+      manager_form:
+        manager_info: Thông tin người quản lí
+        account_info: Thông tin tài khoản
+        select_gender: *select_gender
+        male: *male
+        female: *female
+
       new:
         new_clinic: Thêm mới phòng khám
       show:
@@ -253,7 +263,7 @@ vi:
         edit_expert_title_html: Chỉnh sửa chuyên gia <small>%{name}</small>
       filter:
         search: *search
-        all_provinces: Chọn tỉnh thành
+        all_provinces: Chọn tỉnh/thành phố
       show:
         expert_title_html: Chuyên gia <small>%{name}</small>
         edit: *edit
