@@ -1,3 +1,4 @@
+<% content_for @article.category.to_sym, "active" %>
 <section class="main-container">
   <div class="container">
     <div class="row">
@@ -5,7 +6,7 @@
         <h1 class="page-title"><%= t ".#{@article.category}" %></h1>
         <article class="blogpost full">
           <header class="p-0">
-            <h3 class="my-4"><%= @article.title %></h3>
+            <h3 class="my-4 text-uppercase"><%= @article.title %></h3>
             <div class="post-info mb-4">
               <span class="post-date">
                 <i class="fa fa-calendar"></i>
@@ -14,7 +15,7 @@
             </div>
           </header>
           <div class="blogpost-content text-justify">
-            <p class="mb-4">
+            <p class="mb-4 summary">
               <strong><%= article_content_format @article.summary %></strong>
             </p>
             <%= article_content_format @article.content %>

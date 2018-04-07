@@ -2,10 +2,10 @@
   <section class="home-section clearfix">
     <div class="container p-0">
       <h3 class="title logo-font text-default"><%= article_content_format post.title %></h3>
-      <div class="separator"></div>
+      <div class="separator-2"></div>
       <p class="text-justify">
         <%= article_content_format post.content %>
-        <%= image_tag post.represent_image.url %>
+        <%= image_tag post.represent_image.url, class: "mt-3" %>
       </p>
     </div>
   </section>
