@@ -8,7 +8,7 @@
   <div class="col-md-9">
     <div class="row" id="images-presentation">
       <% if current_album.present? %>
-        <%= render partial: "image", collection: current_album.images, as: :image %>
+        <%= render partial: "image", collection: current_album.images.order_name_asc, as: :image %>
       <% end %>
     </div>
   </div>
