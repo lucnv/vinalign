@@ -23,7 +23,7 @@ vi:
     not_sharing: &not_sharing Không chia sẻ
     close: &close Đóng
     news: &news Tin tức
-    case_gallery: &case_gallery Case gallery
+    case_gallery: &case_gallery Case lâm sàng
     total_records_found: &total_records_found
       zero: Không tìm thấy bản ghi
       one: "%{count} bản ghi được tìm thấy"
@@ -70,10 +70,11 @@ vi:
     header:
       navigation:
         site_slogan: VNL - Clean Aligner Solutions
-        news: news
-        case_gallery: Case Gallery
-        home: Home
-        expert: Expert
+        news: Tin tức
+        case_gallery: Case lâm sàng
+        home: Trang chủ
+        expert: Chuyên gia
+        why_vinalign: Về chúng tôi
       devise_buttons:
         <<: *new
         sign_up: Đăng kí
@@ -81,6 +82,11 @@ vi:
         log_out: *log_out
         did_not_receive_confirmation_instructions: Bạn chưa nhận được hướng dẫn xác nhận tài khoản?
         management: Trang quản lý
+    footer:
+      about:
+        about_us: Về chúng tôi
+      contact:
+        contact_us: Liên hệ
     admin:
       title_admin: Vinalign | Admin
       header:
