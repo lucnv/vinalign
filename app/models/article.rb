@@ -4,6 +4,7 @@ class Article < ApplicationRecord
   PERSIST_ATTRIBUTES = [:title, :summary, :content, :category, :represent_image]
 
   scope :recent_created, ->{order created_at: :desc}
+  scope :earlier_created, ->{order created_at: :asc}
   scope :by_category, ->(category){where category: category}
   scope :created_at_month, ->(time) do
     time = Time.parse time.to_s
