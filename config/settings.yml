@@ -68,6 +68,7 @@ preview_image:
 image:
   versions:
     thumb: [400, 250]
+    large: [1200, 750]
 logo:
   url: https://s3-ap-southeast-1.amazonaws.com/vinalign/logo.png
 logo_square:

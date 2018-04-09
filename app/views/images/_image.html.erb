@@ -1,7 +1,7 @@
 <div class="col col-md-4">
   <div class="thumbnail">
     <%= check_box_tag "checked_params[#{image.id}]", image.id, checked = false, options = {class: "pull-right checkbox"} %>
-    <%= link_to image.source.url, class: "image-popup image-link pt-image" do %>
+    <%= link_to image.source.large.url, class: "image-popup image-link pt-image" do %>
       <%= image_tag image.source.thumb.url %>
     <% end %>
     <%= link_to download_image_path(image),
