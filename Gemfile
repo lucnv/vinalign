@@ -55,6 +55,7 @@ gem "ckeditor"
 gem "sidekiq"
 gem "pg_search"
 gem "stringex"
+gem "roo"
 
 group :production do
   gem "pg", "~> 0.20"

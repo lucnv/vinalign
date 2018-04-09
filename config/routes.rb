@@ -20,7 +20,9 @@ Rails.application.routes.draw do
     end
     resources :users, only: [:index, :new, :create]
     resources :patient_records, except: [:index, :new, :create] do
-      resources :price_lists, only: [:index, :new, :create]
+      resources :price_lists, only: [:index, :new, :create] do
+        post :import, on: :collection
+      end
       resources :treatment_phases, only: [:index, :new, :create]
     end
     resources :price_lists, only: [:edit, :update, :destroy]

@@ -1,5 +1,5 @@
 class Admin::PriceListsController < Admin::BaseController
-  before_action :patient_record, only: [:index, :new, :create]
+  before_action :patient_record, only: [:index, :new, :create, :import]
   before_action :price_list, only: [:edit, :update, :destroy]
 
   def index
@@ -41,6 +41,16 @@ class Admin::PriceListsController < Admin::BaseController
       @patient_record = @price_list.patient_record
       price_list_collection
       flash[:success] = t ".success"
+    else
+      flash[:failed] = t ".failed"
+    end
+    redirect_to admin_patient_record_price_lists_path @patient_record
+  end
+
+  def import
+    if ImportPriceListsService.new(@patient_record, params[:file]).perform
+      flash[:success] = t ".success"
+      NotifyUpdatePriceListService.new(current_user.user_profile, @patient_record).perform
     else
       flash[:failed] = t ".failed"
     end

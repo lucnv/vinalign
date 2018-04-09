@@ -235,6 +235,11 @@ vi:
         edit: *edit
         delete: *delete
         confirm_delete: Bạn có muốn xóa bảng giá này?
+      import_modal:
+        import: Import
+        import_price_lists: Import bảng giá
+        close: *close
+        select_file_to_import: Chọn file để import
     treatment_phases:
       new:
         new_treatment_phase: Tạo mới giai đoạn điều trị
