@@ -1,7 +1,7 @@
 <% provide :header_title, t(".expert_title_html", name: @expert.full_name) %>
 <% breadcrumb :admin_expert, @expert %>
 <% content_for :experts_activation, "active" %>
-<div class="row">
+<div class="row expert-detail">
   <div class="col-md-6">
     <div class="box">
       <div class="box-header">
@@ -23,12 +23,15 @@
             value: @expert.priority %>
         </table>
       </div>
+      <div class="box-footer">
+        <%= link_to edit_admin_expert_path(@expert), class: "btn btn-warning btn-flat pull-right" do %>
+          <i class="fa fa-pencil-square-o"></i>
+          <%= t ".edit" %>
+        <% end %>
+      </div>
     </div>
   </div>
-  <%= image_tag @expert.avatar.medium.url %>
+  <div class="col-md-6">
+    <%= image_tag @expert.avatar.url %>
+  </div>
 </div>
-<%= link_to edit_admin_expert_path(@expert),
-  class: "btn btn-warning btn-flat" do %>
-  <i class="fa fa-pencil-square-o"></i>
-  <%= t ".edit" %>
-<% end %>

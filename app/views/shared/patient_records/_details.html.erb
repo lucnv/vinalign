@@ -24,4 +24,11 @@
         value: patient_record.status %>
     </table>
   </div>
+  <div class="box-footer">
+    <%= link_to url_for([:edit, scope, patient_record]),
+      class: "btn btn-warning btn-flat pull-right" do %>
+      <i class="fa fa-pencil-square-o"></i>
+      <%= t ".edit" %>
+    <% end %>
+  </div>
 </div>

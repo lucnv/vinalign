@@ -418,6 +418,7 @@ vi:
         male: *male
         female: *female
         account: Hồ sơ
+        edit: *edit
       patient_record:
         sharing: *sharing
         not_sharing: *not_sharing
