@@ -1,9 +1,17 @@
 $(document).on("turbolinks:load", function() {
-  $("#album-list .group-item-album a").click(function() {
-    $("#images-presentation").magnificPopup({
-      delegate: "div div div a.pt-image",
-      type: "image",
-      gallery: {enabled: true}
-    });
-  })
+  $("#images-list").magnificPopup({
+    delegate: "div div a.pt-image",
+    type: "image",
+    gallery: {enabled: true},
+    image: {
+      verticalFit: true,
+      titleSrc: function(item) {
+        return item.el.siblings(".image-name").text();
+      }
+    },
+    zoom: {
+      enabled: true,
+      duration: 300
+    }
+  });
 });
