@@ -1,7 +1,7 @@
 <% if @album.errors.blank? %>
-  $(".group-item-album.active-album").removeClass("active-album");
-  $("#album-list").prepend("<%= j render 'clinic_management/treatment_phases/album', album: @album %>");
-  $.ajax({url: "<%= album_images_path(@album) %>"});
+  $("#album-list").html("<%= j render partial: 'shared/treatment_phases/album', collection: @albums, as: :album, \
+    locals: {current_album: @album, scope: :clinic_management} %>")
+  $("#images-presentation").html("<%= j render 'images/images_presentation', album: @album, images: @album.images %>")
   $("#persit_album_modal").modal("hide");
 <% else %>
   $("#album-form").html("<%= j render 'form', album: @album, \

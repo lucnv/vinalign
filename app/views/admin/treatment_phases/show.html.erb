@@ -15,9 +15,8 @@
   </div>
 </div>
 <div class="nav-tabs-custom">
-  <%= render "shared/treatment_phases/nav_tabs", treatment_phase: @treatment_phase,
-    scope: :admin %>
+  <%= render "shared/treatment_phases/nav_tabs", treatment_phase: @treatment_phase, scope: :admin %>
   <div class="tab-content">
-    <%= render "#{active_tab}_tab", treatment_phase: @treatment_phase, support: @support %>
+    <%= render "shared/treatment_phases/#{active_tab}_tab", treatment_phase: @treatment_phase, support: @support, scope: :admin %>
   </div>
 </div>

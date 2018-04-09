@@ -60,6 +60,7 @@ vi:
         price: Giá
       album:
         name: Tên
+        end_date: Ngày kết thúc
       clinic:
         name: Tên
         province: Tỉnh thành

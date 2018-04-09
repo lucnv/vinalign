@@ -253,10 +253,6 @@ vi:
         new_album: Album mới
       treatment_plans_tab:
         add: *add
-      album:
-        edit: *edit
-        delete: *delete
-        onfirm_delete: Bạn chắc chắn muốn xóa album '%{album}'?
     experts:
       index:
         experts_title: Quản lý chuyên gia
@@ -461,6 +457,12 @@ vi:
         disagree: Không đồng ý
       form_upload:
         add_file: Thêm tệp tin kế hoạch điều trị
+      album:
+        edit: *edit
+        delete: *delete
+        confirm_delete: Bạn chắc chắn muốn xóa album '%{album}'?
+      images_tab:
+        new_album: Album mới
   supports:
     districts:
       index:

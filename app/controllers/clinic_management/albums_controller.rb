@@ -4,13 +4,14 @@ class ClinicManagement::AlbumsController < ClinicManagement::BaseController
 
   def new
     @album = Album.new
+    @album.end_date = Time.zone.now
   end
 
   def create
     @album = @treatment_phase.albums.build album_params
     if @album.save
       flash.now[:success] = t ".success"
-      @albums = @treatment_phase.albums
+      @albums = @treatment_phase.albums.recent_end_date
     else
       flash.now[:failed] = t ".failed"
     end
@@ -23,6 +24,7 @@ class ClinicManagement::AlbumsController < ClinicManagement::BaseController
     @album.assign_attributes album_params
     if @album.save
       flash.now[:success] = t ".success"
+      @albums =  @album.treatment_phase.albums.recent_end_date
     else
       flash.now[:failed] = t ".failed"
     end
