@@ -21,6 +21,9 @@ vi:
       destroy:
         success: Xóa bảng giá thành công
         failed: Xóa bảng giá thất bại
+      import:
+        success: Import bảng giá thành công
+        failed: Import bảng giá thất bại. Vui lòng kiểm tra lại file tải lên!
     treatment_phases:
       create:
         success: Tạo mới giai đoạn điều trị thành công
