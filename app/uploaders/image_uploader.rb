@@ -34,7 +34,7 @@ class ImageUploader < CarrierWave::Uploader::Base
     process resize_to_fill: Settings.image.versions.thumb
   end
 
-  version :big_thumb do
+  version :large do
     process resize_to_limit: Settings.image.versions.large
   end
 
