@@ -65,6 +65,10 @@ img.image-full-width {
   @extend .min-width-btn;
   margin-top: 1px;
 }
+
+.forgot-password {
+  margin-top: 3px;
+}
 .active-drop {
   .dropdown-menu {
       visibility: hidden;
