@@ -24,6 +24,7 @@ vi:
     close: &close Đóng
     news: &news Tin tức
     case_gallery: &case_gallery Case lâm sàng
+    home: &home Trang chủ
     total_records_found: &total_records_found
       zero: Không tìm thấy bản ghi
       one: "%{count} bản ghi được tìm thấy"
@@ -292,10 +293,14 @@ vi:
         select_category: Chọn thể loại
         news: *news
         case_gallery: *case_gallery
+        home: *home
       article:
         confirm_delete: Bạn có chắc chắn muốn xóa bài viết "%{title}"?
         edit: *edit
         delete: *delete
+        news: *news
+        case_gallery: *case_gallery
+        home: *home
       edit:
         edit_article: Chỉnh sửa bài viết
       filter:
@@ -303,10 +308,9 @@ vi:
         search: *search
         news: *news
         case_gallery: *case_gallery
+        home: *home
         all_categories: Tất cả thể loại
-      article:
-        news: *news
-        case_gallery: *case_gallery
+
     albums:
       form:
         cancel: *cancel
@@ -441,6 +445,8 @@ vi:
     treatment_phases:
       form:
         create_treatment_phase: Tạo mới giai đoạn điều trị
+        treatment_phases: Giai đoạn điều trị
+        cancel: *cancel
       nav_tabs:
         images: Hình ảnh
         treatment_plans: Kế hoạch điều trị
@@ -452,6 +458,8 @@ vi:
         treatment_plan_files: Tệp tin kế hoạch điều trị
       treatment_phase:
         confirm_delete: Bạn có chắc chắn muốn xóa giai đoạn điều trị "%{treatment_phase}"?
+        edit: *edit
+        delete: *delete
       treatment_plan_file_manipulation:
         download: *download
         delete: *delete
@@ -476,6 +484,8 @@ vi:
         download: *download
         software_name: "Cài đặt phần mềm: VINALIGN  ORTHO STUDIO VIEWER"
         step_1: "<b> Bước 1: </b> Tải xuống phần mềm"
+      modal:
+        new_treatment_phase: Tạo mới giai đoạn điều trị
   supports:
     districts:
       index:
@@ -505,6 +515,7 @@ vi:
     show:
       news: *news
       case_gallery: *case_gallery
+      home: *home
       related_articles: Bài viết liên quan
       more: Xem thêm
   category:
@@ -512,6 +523,7 @@ vi:
       index:
         news: *news
         case_gallery: *case_gallery
+        home: *home
   experts:
     index:
       experts_list: Giới thiệu chuyên gia

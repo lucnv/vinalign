@@ -2,10 +2,10 @@
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <%= t(treatment_phase.persisted? ? ".edit_treatment_phase" : ".new_treatment_phase") %>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
+        <h4 class="modal-title"><%= t(treatment_phase.persisted? ? ".edit_treatment_phase" : ".new_treatment_phase") %></h4>
       </div>
       <div id="treatment-phase-form">
         <%= render "shared/treatment_phases/form", treatment_phase: treatment_phase,

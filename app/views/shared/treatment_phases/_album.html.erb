@@ -16,6 +16,7 @@
             <%= t ".edit" %>
           <% end %>
         </li>
+        <li class="divider"></li>
         <li>
           <%= link_to url_for([scope, album]), method: :delete,
             data: {confirm: t(".confirm_delete", album: album.name)} do %>
