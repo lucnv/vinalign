@@ -1,5 +1,5 @@
 class Admin::TreatmentPhasesController < Admin::BaseController
-  TABS = %w(images treatment_plans communication)
+  TABS = %w(images treatment_plans settings)
   before_action :patient_record, only: [:index, :new, :create]
   before_action :load_treatment_phase, only: [:edit, :update, :destroy]
 

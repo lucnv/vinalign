@@ -171,7 +171,6 @@ vi:
         select_gender: *select_gender
         male: *male
         female: *female
-
       new:
         new_clinic: Thêm mới phòng khám
       show:
@@ -183,6 +182,12 @@ vi:
         edit: *edit
         delete: *delete
         confirm_delete: Bạn có muốn xóa phòng khám này?
+      clinic_info:
+        clinic_info: Thông tin phòng khám
+      doctor_manager_info:
+        doctor_manager: Bác sĩ quản lí phòng khám
+        general_info: Thông tin cá nhân
+        account: Thông tin tài khoản
     patient_records:
       index:
         patient_records_title_html: Hồ sơ bệnh nhân <small>%{clinic_name}</small>
@@ -365,6 +370,7 @@ vi:
       nav_tabs:
         images: Hình ảnh
         treatment_plans: Kế hoạch điều trị
+        settings: Cài đặt
     albums:
       new:
         new_album: Album mới
@@ -438,6 +444,7 @@ vi:
       nav_tabs:
         images: Hình ảnh
         treatment_plans: Kế hoạch điều trị
+        settings: Cài đặt
       conversation:
         conversation: Trao đổi
         send: Gửi
@@ -463,6 +470,12 @@ vi:
         confirm_delete: Bạn chắc chắn muốn xóa album '%{album}'?
       images_tab:
         new_album: Album mới
+      treatment_plans_tab:
+        add: *add
+      settings_tab:
+        download: *download
+        software_name: "Cài đặt phần mềm: VINALIGN  ORTHO STUDIO VIEWER"
+        step_1: "<b> Bước 1: </b> Tải xuống phần mềm"
   supports:
     districts:
       index:

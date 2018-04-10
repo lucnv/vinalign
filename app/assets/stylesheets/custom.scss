@@ -61,6 +61,10 @@ img.image-full-width {
   min-width: 90px;
 }
 
+.btn-send-message {
+  @extend .min-width-btn;
+  margin-top: 1px;
+}
 .active-drop {
   .dropdown-menu {
       visibility: hidden;
