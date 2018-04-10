@@ -41,7 +41,13 @@
         },
         init: {
           FilesAdded: function(up, files) {
-            return
+            var maxfiles = "<%= Settings.album.max_images.to_i %>" - $("#images-list").children().length;
+            maxfiles = Math.max(0, maxfiles)
+
+            if(up.files.length > maxfiles ) {
+              up.splice(maxfiles);
+              alert("<%= I18n.t('images.too_much_image', max: Settings.album.max_images) %>");
+            }
           },
           UploadComplete: function(up, files) {
             alert("<%= I18n.t('images.filed_uploaded') %> " + files.length + " <%= I18n.t('images.images') %>");
