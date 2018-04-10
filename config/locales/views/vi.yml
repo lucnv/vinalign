@@ -476,6 +476,7 @@ vi:
       add_image: Thêm ảnh
     filed_uploaded: Đã tải lên thành công
     images: ảnh!
+    too_much_image: Số ảnh tối đa trong 1 album là %{max} ảnh!
     image:
       download: *download
     images_presentation:

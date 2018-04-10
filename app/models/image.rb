@@ -1,5 +1,6 @@
 class Image < ApplicationRecord
   belongs_to :album
+  validates_associated :album
 
   before_save :update_source_details
   before_destroy :clean_s3

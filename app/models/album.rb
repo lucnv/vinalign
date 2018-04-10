@@ -9,4 +9,5 @@ class Album < ApplicationRecord
 
   validates :name, presence: true, uniqueness: {scope: :treatment_phase_id}
   validates :end_date, presence: true
+  validates_length_of :images, maximum: Settings.album.max_images
 end
