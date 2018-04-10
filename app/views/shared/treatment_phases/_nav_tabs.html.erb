@@ -5,4 +5,7 @@
   <li class="<%= content_for :treatment_phase_treatment_plans_activation %>">
     <%= link_to t(".treatment_plans"), polymorphic_path([scope, treatment_phase], tab: :treatment_plans) %>
   </li>
+  <li class="<%= content_for :treatment_phase_settings_activation %>">
+    <%= link_to t(".settings"), polymorphic_path([scope, treatment_phase], tab: :settings) %>
+  </li>
 </ul>
