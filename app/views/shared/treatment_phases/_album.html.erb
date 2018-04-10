@@ -11,13 +11,13 @@
       </a>
       <ul class="dropdown-menu dropdown-menu-right">
         <li>
-          <%= link_to edit_admin_album_path(album), remote: true do %>
+          <%= link_to url_for([:edit, scope, album]), remote: true do %>
             <i class="fa fa-pencil"></i>
             <%= t ".edit" %>
           <% end %>
         </li>
         <li>
-          <%= link_to admin_album_path(album), method: :delete,
+          <%= link_to url_for([scope, album]), method: :delete,
             data: {confirm: t(".confirm_delete", album: album.name)} do %>
             <i class="fa fa-trash"></i>
             <%= t ".delete" %>
@@ -26,5 +26,5 @@
       </ul>
     </div>
   </div>
-  <small class="date"><%= time_with_format album.updated_at %></small>
+  <small class="date"><%= time_with_format album.end_date %></small>
 <% end %>

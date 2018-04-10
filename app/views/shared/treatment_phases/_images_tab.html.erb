@@ -1,10 +1,10 @@
 <div class="row">
   <div class="col col-md-3">
     <div class="list-group" id="album-list">
-      <%= render partial: "album", collection: support.albums, as: :album,
-        locals: {current_album: support.album} %>
+      <%= render partial: "shared/treatment_phases/album", collection: support.albums, as: :album,
+        locals: {current_album: support.album, scope: scope} %>
     </div>
-    <%= link_to new_admin_treatment_phase_album_path(treatment_phase), remote: true,
+    <%= link_to url_for([:new, scope, treatment_phase, :album]), remote: true,
       class: "btn btn-primary btn-flat" do %>
       <i class="fa fa-plus"></i>
       <%= t ".new_album" %>

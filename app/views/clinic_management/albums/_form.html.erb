@@ -9,6 +9,15 @@
         <%= f.text_field :name, class: "form-control" %>
       </div>
     </div>
+    <div class="form-group">
+      <%= f.label :end_date, class: "control-label col-md-3" do %>
+        <%= Album.human_attribute_name(:end_date) %>
+        <span class="text-danger">*</span>
+      <% end %>
+      <div class="col-md-7">
+        <%= f.date_field :end_date, class: "form-control" %>
+      </div>
+    </div>
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-gray btn-flat" data-dismiss="modal">

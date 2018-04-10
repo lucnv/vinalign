@@ -7,7 +7,7 @@ class Supports::TreatmentPhase
   end
 
   def albums
-    @albums ||= treatment_phase.albums.recent_updated
+    @albums ||= treatment_phase.albums.recent_end_date
   end
 
   def messages
