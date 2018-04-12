@@ -4,6 +4,10 @@ class Admin::PriceListsController < Admin::BaseController
 
   def index
     price_list_collection
+    respond_to do |format|
+      format.html
+      format.xlsx
+    end
   end
 
   def new

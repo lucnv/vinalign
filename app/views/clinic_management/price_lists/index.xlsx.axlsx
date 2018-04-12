@@ -1,0 +1,12 @@
+wb = xlsx_package.workbook
+
+wb.styles do |style|
+  price_cell = style.add_style(format_code: "#,##0")
+  wb.add_worksheet(name: "Price lists") do |sheet|
+    sheet.add_row %w(item price)
+
+    @price_lists.each do |price_list|
+      sheet.add_row [price_list.item, price_list.price], style: [nil, price_cell]
+    end
+  end
+end

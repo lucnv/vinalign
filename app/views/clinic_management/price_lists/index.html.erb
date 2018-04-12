@@ -15,4 +15,11 @@
       </tbody>
     </table>
   </div>
+  <div class="box-footer">
+    <%= link_to clinic_management_patient_record_price_lists_path(@patient_record, format: :xlsx),
+      class: "btn btn-primary btn-flat" do %>
+      <i class="fa fa-download"></i>
+      <%= t ".export_price_lists" %>
+    <% end %>
+  </div>
 </div>

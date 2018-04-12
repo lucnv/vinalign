@@ -233,6 +233,7 @@ vi:
         price_lists_title_html: Hồ sơ bệnh nhân - Danh sách bảng giá <small>%{clinic_name} -</small> %{patient_name}
         add_price_list: Thêm bảng giá
         action: *action
+        export_price_lists: Xuất bảng giá
       edit:
         edit_price_list: Sửa bảng giá
         update: *update
@@ -388,6 +389,7 @@ vi:
     price_lists:
       index:
         price_lists_title_html: Hồ sơ bệnh nhân - Danh sách bảng giá <small>%{patient_record_name}</small>
+        export_price_lists: Xuất bảng giá
     clinics:
       edit:
         edit_clinic: Chỉnh sửa thông tin phòng khám

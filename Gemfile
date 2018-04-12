@@ -56,6 +56,10 @@ gem "sidekiq"
 gem "pg_search"
 gem "stringex"
 gem "roo"
+gem "axlsx", "~> 2.0"
+gem "axlsx_rails"
+gem "rubyzip"
+gem "zip-zip", "~> 0.3"
 
 group :production do
   gem "pg", "~> 0.20"
